@@ -21,7 +21,7 @@ Read the complete original text source, scripts, styles, page metadata, sitemap,
 ## Image provenance
 
 - Approved logo: unchanged from original repo; no claim of newly acquired rights.
-- `public/assets/home-patio-hero.webp` and `home-patio-hero-800.webp`: original generated scene, built-in imagegen; display credit included. Final prompt: wide editorial scene of a modest cream/oak living room opening onto a compact planted ground-level patio; natural light, warm cream/sage palette, no people, text, logos, or unsafe mounted objects. Original generation is an illustration, not a photographed project or independently tested arrangement.
+- `public/assets/home-patio-hero.webp` and `home-patio-hero-800.webp`: original generated scene, built-in imagegen; AI-image disclosure is in the editorial policy rather than overlaid on the banner. Final prompt: wide editorial scene of a modest cream/oak living room opening onto a compact planted ground-level patio; natural light, warm cream/sage palette, no people, text, logos, or unsafe mounted objects. Original generation is an illustration, not a photographed project or independently tested arrangement.
 - `drawer-zones`, `under-sink`, `entryway`, `patio-layout`, `container-planting`, `removable-hook`, `reversible-room`, `window-moisture`: original code-authored SVG planning illustrations. PNG renderings are provided for social images. Not copied from references; schematic, not to scale.
 
 ## Verification and limits
@@ -29,3 +29,7 @@ Read the complete original text source, scripts, styles, page metadata, sitemap,
 Run `npm test`, `npm run build`, `npm run check:site`, then `node scripts/export-pages.mjs`. The checker verifies all built HTML, local resources, fragment targets, h1/main landmarks, image alt/dimensions, canonicals, social metadata, Article fields, and sitemap targets. Tests exercise calculation rounding, invalid inputs, and balcony/exposure restrictions.
 
 No browser-based mobile/desktop visual verification, Lighthouse score, axe score, or field Core Web Vitals result is claimed. Managed preview/browser tooling is unavailable. External-source references were researched; the automated HTML checker checks local links, not the availability of every external site. Search Console ownership/indexing and GA4 activation require real owner configuration. No analytics, advertisements, commercial account registration, DNS cutover, or paid action occurred.
+
+## Visual refinement after owner feedback
+
+Removed fixed image-height cropping, card hover zoom, and the rounded planner mask. Images retain their full intrinsic proportions. Below 1100 px the homepage text panel follows the full-width hero image rather than covering a cropped background. Redrew the eight original SVGs with varied palettes, viewpoints, and compositions, and regenerated their PNG social images. A dark forest category band separates the light article and planner sections. Removed the banner overlay credit and placed an explicit image-provenance explanation in the editorial policy.
