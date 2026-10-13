@@ -1,37 +1,63 @@
-# Little Home Ideas — publishing workflow
+# Publishing Little Home Ideas
 
-This repository is a dependency-free static website published from `main` on GitHub Pages.
+The authoring source is Astro. The checked-in root HTML is generated output retained for the existing GitHub Pages `main` / root setup. **Never hand-edit generated HTML or indexes.** A future approved Git-based Astro host can build `dist` directly and dispense with the root export.
 
-## Permanent site sections
-- `index.html`: homepage
-- `ideas/index.html`: all published guides
-- `small-spaces/index.html`: small spaces and storage
-- `garden-patio/index.html`: garden and patio
-- `diy-home/index.html`: DIY and home updates
-- `tools/index.html`: interactive tools directory
-- `tools/patio-privacy-planner/index.html`: patio privacy planner
-- `about/`, `contact/`, `editorial-policy/`, `privacy/`, `disclosure/`: information pages
-- `assets/site.css`: shared design
-- `assets/site.js`: shared utility script
-- `assets/logo.webp`: approved optimized logo
+## Local setup
 
-## Publishing a new article
-1. Research and fact-check the topic; check applicable safety claims and avoid invented firsthand tests.
-2. Copy `templates/article.html` into `articles/your-descriptive-slug/index.html`.
-3. Replace ALL placeholders: title, description, canonical URL, category, date, body, related links, JSON-LD.
-4. Add a linked card to `ideas/index.html` and the relevant category index; consider featuring it on the homepage.
-5. Add the canonical article URL to `sitemap.xml`.
-6. Test navigation, images, mobile layout, accessibility, spelling and factual claims.
-7. Commit to `main`; GitHub Pages deploys the changes.
+Use Node 24 and Python 3 for the generated-site audit.
 
-Do not publish a placeholder article or unverified prices. Use descriptive image filenames and alt text. For every external affiliate link, add appropriate disclosure and `rel="sponsored nofollow"` where applicable.
+```sh
+npm ci
+npm run dev
+```
 
-## Before monetization
-- Confirm appropriate commercial hosting and domain HTTPS redirects.
-- Publish real operator/contact details and finalize privacy documentation.
-- Add analytics only after appropriate privacy and consent assessment.
-- Verify the site in Google Search Console and submit `/sitemap.xml`.
-- Review affiliate disclosures and local legal requirements.
+## Add one article
 
-## Site limitations
-This is a small static site without a CMS, automated article feed, backend contact form or scheduled publication. Category indexes and sitemap are currently updated manually with each new article. A content-driven build (for example Astro) is a sensible later upgrade if publishing volume increases.
+1. Create `src/content/articles/your-descriptive-slug.md`. Its filename defines the existing-style URL `/articles/your-descriptive-slug/`.
+2. Start with the following frontmatter, then write the article in Markdown:
+
+```yaml
+---
+title: "A specific, useful title"
+description: "A unique description of the problem this guide solves."
+category: small-spaces
+date: 2026-10-13
+image: /assets/your-original-diagram.svg
+imageAlt: "Describe the useful information in the illustration."
+reviewed: false
+draft: true
+sources: []
+---
+```
+
+Allowed categories: `small-spaces`, `garden-patio`, `diy-home`, `renter-friendly`, `practical-solutions`. Add `updated` only after a substantive change. Source objects contain `title` and a valid HTTPS `url`.
+
+3. Research and review according to `docs/editorial-plan.md`. Place the licensed/original image in `public/assets/`. For an SVG illustration provide a same-name PNG for Article and social metadata. Use compatible dimensions, useful alt text, and an image credit. For a photographic cover, adjust the shared caption behavior rather than calling it a schematic.
+4. Set `reviewed: true` and `draft: false` only after review. Both flags and a nonfuture publication date are required. Future dates are released at the next build after that date, not automatically at midnight.
+5. Run:
+
+```sh
+npm test
+npm run build
+npm run check:site
+node scripts/export-pages.mjs
+```
+
+6. Review the diff, including automatically updated generated files. Open a working-branch Pull Request. Merge after checks and visual review. Existing GitHub Pages branch publishing handles deployment; no source-setting change is included here.
+
+The homepage, archive, category, related guides, table of contents, canonical, metadata, Article schema, and sitemap update automatically. You do not edit these pages individually.
+
+## Shared design
+
+- `src/layouts/Base.astro`: site-wide head, logo, navigation, footer.
+- `src/styles/site.css`: permanent visual system and responsive rules.
+- `src/pages/index.astro`: permanent homepage composition.
+- `src/components/Card.astro`: article listing presentation.
+- `src/data/pages.json`: informational page content; still requires real operator/contact inputs.
+- `public/assets/logo.webp`: approved logo. Keep unchanged.
+
+## CI and export
+
+CI builds, tests, audits, exports, and checks for a clean diff. It uploads the `dist` site as an artifact. It neither merges the PR nor changes hosting/DNS. If generated output is stale, run the export and commit it. `.generated-pages.json` tracks owned output; only previously generated files absent from the next build are removed.
+
+Before commercial launch follow `docs/analytics-and-launch.md`. No GA4, ad, or tracking script is enabled by this project.
