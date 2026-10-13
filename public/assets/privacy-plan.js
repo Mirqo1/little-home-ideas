@@ -1,17 +1,25 @@
-export function planPrivacy({space,width,panelWidth,budget,need,exposure,approved}) {
+export function planPrivacy({space,width,panelWidth,budget,need,exposure,approved,patioWidth=width,depth=8,height=6,modulePrice=null,extraCost=0}) {
  if(!['patio','balcony'].includes(space)||!['low','medium','high'].includes(budget)||!['view','flex','green'].includes(need)||!['sheltered','exposed'].includes(exposure))return {error:'Select valid preferences.'};
  if(!Number.isFinite(width)||width<1||width>100||!Number.isFinite(panelWidth)||panelWidth<1||panelWidth>10)return {error:'Enter a screening width of 1–100 feet and an example module width of 1–10 feet.'};
- const modules=Math.ceil(width/panelWidth);const surplus=Number((modules*panelWidth-width).toFixed(2));
- const summary=`Paper-layout estimate: ${modules} modules at ${panelWidth} feet each cover ${modules*panelWidth} feet (${surplus} feet beyond your ${width}-foot target). This assumes straight, gap-free placement; hinges, overlaps, supports, and usable screen width may change the count. It is not a purchase or installation plan.`;
+ if(!Number.isFinite(patioWidth)||patioWidth<1||patioWidth>100||!Number.isFinite(depth)||depth<2||depth>100||!Number.isFinite(height)||height<1||height>10)return {error:'Enter an outdoor width of 1–100 feet, depth of 2–100 feet, and target screening height of 1–10 feet.'};
+ if(width>patioWidth)return {error:'The screening target cannot be wider than the outdoor boundary. Reduce the target or correct the outdoor width.'};
+ if(modulePrice!==null && (!Number.isFinite(modulePrice)||modulePrice<0||modulePrice>100000))return {error:'Enter a valid price per module, or leave it blank.'};
+ if(!Number.isFinite(extraCost)||extraCost<0||extraCost>100000)return {error:'Enter valid additional costs, or use zero.'};
+ const modules=Math.ceil(width/panelWidth),coverage=Number((modules*panelWidth).toFixed(2)),surplus=Number((coverage-width).toFixed(2)),fits=coverage<=patioWidth;
  const restricted=(space==='balcony'&&!approved)||exposure==='exposed';
- let ideas=[['Test the sightline from your chair','Try moving or turning seating within an existing permitted layout. Keep doors, exits, and circulation clear.']];
- if(!restricted){
-  if(need==='green')ideas.push(['Research container plants','Match climate, light, mature size, maintenance, drainage, and permitted wet weight. Growth and screening vary.']);
-  if(need==='flex')ideas.push(['Research a movable outdoor screen','Use the exact manufacturer’s outdoor, stabilization, and storage instructions. Removable does not mean safe in all weather.']);
-  if(need==='view')ideas.push(['Research targeted screening','Focus on one viewing angle instead of enclosing the entire boundary. Check support footprints, product limits, and permissions.']);
-  if(budget==='low')ideas.push(['Use a layout trial before shopping','Work with suitable items you already own. Do not improvise a wind-catching fabric or railing attachment.']);
-  else ideas.push(['Compare purpose-built systems','Compare actual usable dimensions and all required supports, delivery, and storage costs. No product prices are assumed.']);
- }
- const warning=restricted?'Pause screen and planter selection: exposed sites need appropriate product and building guidance; balconies need confirmed loads, wind limits, drainage, and management permission. Never assume a railing can support an attachment.':'Check lease or HOA rules, drainage, loads, and product-specific wind limits. Keep exits clear. No railing attachments or structural capacity are assessed by this tool.';
- return {summary,ideas:ideas.slice(0,3),warning,modules,surplus,restricted};
+ let title,detail,alternatives;
+ if(restricted){title='Start with the seating layout';detail='Before adding screens or heavy planters, resolve the building and weather checks. Try a different permitted seating position to reduce the direct sightline.';alternatives=['Use an existing sheltered corner if it remains accessible.','Record the viewing angle you want to block and discuss restrictions with management.'];}
+ else if(budget==='low'){title='Try a no-purchase layout first';detail='Use the furniture and suitable plants you already have to test one viewing angle. If it helps, measure the remaining gap before comparing products.';alternatives=[need==='green'?'Compare a small container-plant grouping for your light and climate.':'Compare a short, purpose-built outdoor screen only after the layout trial.','Keep any movable arrangement easy to remove and store.'];}
+ else if(need==='green'){title='Compare a container-plant privacy zone';detail='Research plants for your actual light, climate, mature size, and watering routine. Check approved wet weight and drainage. Plant growth does not provide a guaranteed immediate privacy screen.';alternatives=['Compare a suitable manufactured screen if you need coverage immediately.','Place plants where you can reach them without blocking exits.'];}
+ else if(need==='flex'){title='Compare a removable outdoor screen';detail='Look for a system with clear outdoor stabilization, wind, folding, and storage instructions. Confirm its footprint and usable width, not only the advertised panel width.';alternatives=['Compare a targeted short screen to reduce bulk.','Use seating orientation to reduce the amount of screening needed.'];}
+ else {title='Screen the one sightline that matters';detail='Research a purpose-built outdoor screen for the seating position, rather than enclosing the entire patio. Use actual product dimensions and required supports before buying.';alternatives=['Compare container plants for a softer, partial boundary.','Try rotating the seat to reduce the target width.'];}
+ if(budget==='high'&&!restricted&&need==='view'){title='Compare a complete modular privacy system';detail+=' Compare the full system cost, all specified supports, and storage requirements as well as individual modules.';}
+ const checklist=['Mark the viewing angle from the seat you actually use.','Confirm lease or HOA permission, exits, drainage, and required access.','Check usable product width, support footprints, target height, and all manufacturer restrictions.','Plan safe handling and storage before installation.'];
+ if(space==='balcony')checklist.splice(2,0,'Confirm balcony permitted loads and wind restrictions with building management; include wet soil weight.');
+ if(!fits)checklist.unshift('The example modules exceed the outdoor width. Choose another module size or layout; do not buy this count as-is.');
+ const warning=restricted?'Screen and planter selection is paused: exposed or uncertain sites need appropriate product guidance; balconies also need confirmed building permission, loads, drainage, and wind restrictions. No railing attachments are assessed.':'This is a planning worksheet, not a structural assessment or safety approval. Follow product-specific installation and weather instructions. Keep exits clear; do not improvise railing attachments.';
+ const total=modulePrice===null?null:Math.round((modules*modulePrice+extraCost)*100)/100;
+ return {title,detail,alternatives,checklist,warning,modules,coverage,surplus,fits,restricted,total,modulePrice,extraCost,space,width,panelWidth,patioWidth,depth,height,budget,need,exposure,
+ summary:`Paper-layout estimate: ${modules} example modules at ${panelWidth} feet cover ${coverage} feet, ${surplus} feet beyond your ${width}-foot target. This assumes straight, gap-free placement; supports, hinges, and overlaps can change usable coverage. It is not a purchase or installation plan.`,
+ ideas:[[title,detail],...alternatives.map((x,i)=>['Alternative '+(i+1),x])]};
 }
