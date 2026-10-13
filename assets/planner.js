@@ -1,4 +1,4 @@
-import {planPrivacy} from './privacy-plan.js';
+import {planPrivacy} from './privacy-plan.js?v=worksheet-20261013';
 const form=document.getElementById('privacy-form'),out=document.getElementById('results'),empty=out.innerHTML;
 const dollars=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(value);
 const num=id=>Number(document.getElementById(id).value);
