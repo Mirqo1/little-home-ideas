@@ -1,0 +1,15 @@
+---
+import '../styles/site.css';
+import { categories } from '../data/categories';
+const {title, description, image='/assets/home-patio-hero.webp', schema, noindex=false} = Astro.props;
+const canonical = new URL(Astro.url.pathname==='/404/'?'/404.html':Astro.url.pathname, Astro.site).href;
+const current=Astro.url.pathname;
+const verification=import.meta.env.GSC_VERIFICATION;
+---
+<!doctype html><html lang="en-US"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#284634"/><title>{title.includes('Little Home Ideas') ? title : `${title} | Little Home Ideas`}</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/>{noindex && <meta name="robots" content="noindex,follow"/>}{verification && <meta name="google-site-verification" content={verification}/>}
+<meta property="og:type" content={schema?.['@type']==='Article' ? 'article':'website'}/><meta property="og:site_name" content="Little Home Ideas"/><meta property="og:locale" content="en_US"/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content={new URL(image.endsWith('.svg')?image.replace('.svg','.png'):image,Astro.site).href}/><meta name="twitter:card" content="summary_large_image"/><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+<script type="application/ld+json" set:html={JSON.stringify(schema || {'@context':'https://schema.org','@type':'WebSite',name:'Little Home Ideas',url:Astro.site.href}).replace(/</g,'\u003c')}/>
+</head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container masthead"><a href="/" aria-label="Little Home Ideas home"><img class="logo" src="/assets/logo.webp" alt="Little Home Ideas" width="413" height="230"/></a><p class="masthead-note">Thoughtful ideas for<br/>the place you call home.</p><a class="header-tools" href="/tools/">A little help planning ↗</a></div><nav class="container nav" aria-label="Main navigation"><a href="/ideas/" aria-current={current==='/ideas/'?'page':undefined}>All ideas</a>{categories.map(c=><a href={`/${c.slug}/`} aria-current={current===`/${c.slug}/`?'page':undefined}>{c.name}</a>)}<a href="/tools/" aria-current={current.startsWith('/tools/')?'page':undefined}>Free tools</a></nav></header>
+<main id="main"><slot/></main>
+<footer class="site-footer"><div class="container footer-top"><div><p class="footer-brand">Little Home Ideas</p><p>Small ideas. Better living.</p></div><nav aria-label="About and editorial"><a href="/about/">About us</a><a href="/editorial-policy/">Our editorial approach</a><a href="/contact/">Contact</a></nav></div><div class="container footer-bottom"><p>© {new Date().getUTCFullYear()} Little Home Ideas</p><nav aria-label="Legal information"><a href="/privacy/">Privacy</a><a href="/disclosure/">Affiliate disclosure</a></nav></div></footer>
+</body></html>

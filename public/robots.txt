@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /src/
+Disallow: /scripts/
+Disallow: /docs/
+Disallow: /templates/
+Disallow: /public/
+Sitemap: https://littlehomeideas.com/sitemap-index.xml
