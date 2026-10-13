@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://littlehomeideas.com/sitemap.xml
