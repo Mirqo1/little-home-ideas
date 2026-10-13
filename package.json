@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "build:pages": "astro build && node scripts/export-pages.mjs",
-    "test": "node --test scripts/planner.test.mjs",
+    "test": "node --test scripts/*.test.mjs",
     "check:site": "python scripts/check_site.py dist"
   },
   "repository": {
@@ -24,5 +24,8 @@
     "@astrojs/sitemap": "^3.7.4",
     "astro": "^7.3.8"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "happy-dom": "^21.0.1"
+  }
 }
