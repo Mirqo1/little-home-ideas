@@ -1,6 +1,6 @@
 ---
-import {categories} from '../data/categories';
-import {articleUrl} from '../data/articles';
-const {article}=Astro.props;const d=article.data;
+import {categories} from '../data/categories';import {articleUrl} from '../data/articles';import {categoryVisuals} from '../data/visuals';
+const {article}=Astro.props;const d=article.data;const usePhoto=['organize-small-kitchen-drawers','patio-privacy-ideas-for-renters','small-patio-furniture-layout','reversible-living-room-updates','removable-hooks-rental-wall-checklist'].includes(article.id);const visual=usePhoto?categoryVisuals[d.category]:null;
 ---
-<article class="article-card"><a class="card-image" href={articleUrl(article.id)} tabindex="-1" aria-hidden="true"><img src={d.image} alt="" width="960" height="640" loading="lazy" decoding="async"/></a><p class="eyebrow">{categories.find(c=>c.slug===d.category)?.name}</p><h3><a href={articleUrl(article.id)}>{d.title}</a></h3><p>{d.description}</p><a class="text-link" href={articleUrl(article.id)}>Read the guide <span aria-hidden="true">↗</span><span class="sr-only">: {d.title}</span></a></article>
+<article class="article-card" data-article-card data-article-id={article.id} data-category={d.category} data-search={(d.title+' '+d.description).toLowerCase()}>
+<div class="card-media"><a class="card-image" href={articleUrl(article.id)} tabindex="-1" aria-hidden="true"><img src={visual?.image || d.image} alt="" width="960" height="640" loading="lazy" decoding="async"/></a><button class="save-idea" type="button" data-save={article.id} aria-pressed="false" aria-label={`Save ${d.title}`} hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button></div><div class="card-copy"><p class="eyebrow">{categories.find(c=>c.slug===d.category)?.navLabel}</p><h3><a href={articleUrl(article.id)}>{d.title}</a></h3><p>{d.description}</p><a class="text-link" href={articleUrl(article.id)}>Read the guide <span aria-hidden="true">→</span><span class="sr-only">: {d.title}</span></a></div></article>
