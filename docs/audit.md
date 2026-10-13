@@ -33,3 +33,7 @@ No browser-based mobile/desktop visual verification, Lighthouse score, axe score
 ## Visual refinement after owner feedback
 
 Removed fixed image-height cropping, card hover zoom, and the rounded planner mask. Images retain their full intrinsic proportions. Below 1100 px the homepage text panel follows the full-width hero image rather than covering a cropped background. Redrew the eight original SVGs with varied palettes, viewpoints, and compositions, and regenerated their PNG social images. A dark forest category band separates the light article and planner sections. Removed the banner overlay credit and placed an explicit image-provenance explanation in the editorial policy.
+
+## Finished worksheet and homepage refinement
+
+Strengthened navigation type, changed the hero button icon to a right arrow, replaced the category list with light illustrated cards, clarified the reader-facing editorial promise, and rebuilt the footer. The Patio Privacy Planner now includes measured outdoor dimensions, screening targets, a consistently scaled SVG boundary sketch, module fit warnings, distinct priority/budget approaches, optional arithmetic from visitor-entered prices, and a local text download and print view. No accounts, live prices, tracking, or answer transmission were added.
