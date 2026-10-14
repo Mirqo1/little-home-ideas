@@ -1,4 +1,4 @@
-import {spaceFeatures,sideNames} from './space-features.js?v=usability-20261014';
+import {spaceFeatures,sideNames} from './space-features.js?v=sides-20261014';
 export {sideNames};
 const round=n=>Number(n.toFixed(2));
 export function overlaps(a,b){return a.x<b.x+b.w-.001&&a.x+a.w>b.x+.001&&a.y<b.y+b.d-.001&&a.y+a.d>b.y+.001;}
@@ -43,8 +43,8 @@ export function planLayout(o){
   let wallLength=0;
   if(b.wall){
    if(!Number.isFinite(o.wallHeight)||o.wallHeight<1||o.wallHeight>30)return fail('Enter a wall height from the floor (1–30 ft).','wall-height');
-   wallLength=(b.rail||b.screen)?b.wallLength:L;
-   if(!Number.isFinite(wallLength)||wallLength<=0||wallLength>=L&&(b.rail||b.screen))return fail(sideNames[b.side]+': enter a wall length greater than 0 and shorter than '+L+' ft, leaving room for the screen or railing.',b.side+'-wall-length');
+   wallLength=b.wallLength??L;
+   if(!Number.isFinite(wallLength)||wallLength<=0||wallLength>L||wallLength===L&&(b.rail||b.screen))return fail(sideNames[b.side]+': enter a wall length greater than 0 and shorter than '+L+' ft, leaving room for the screen or railing.',b.side+'-wall-length');
    if(!['start','end'].includes(b.wallAt??'start'))return {error:'Choose where the wall starts.'};
    const start=b.wallAt==='end'?L-wallLength:0;
    wallSegments.push({side:b.side,start,end:start+wallLength,height:o.wallHeight});
@@ -58,7 +58,7 @@ export function planLayout(o){
    if(openLength<=0)return {error:sideNames[b.side]+': this side is entirely wall. Remove the screen or describe a partial wall.'};
    if(!['full','above'].includes(b.mode))return {error:'Choose a valid screen position.'};
    const base=b.rail&&b.mode==='above'?o.railHeight:0;
-   if(height<=base)return fail(sideNames[b.side]+': the screen top ('+height+' ft) must be above the railing ('+base+' ft). Increase the top height or cover the railing too.','screen-height');
+   if(height<=base)return fail(sideNames[b.side]+': the screen top ('+height+' ft) must be above the railing ('+base+' ft). Increase the top height or cover the railing too.',b.side+'-mode','cover-rail');
    const width=b.screenWidth===null?openLength:b.screenWidth;
    if(!Number.isFinite(width)||width<=0||width>openLength+.001)return fail(sideNames[b.side]+': the available section is '+round(openLength)+' ft, but the requested screen is '+width+' ft. Use a shorter length or cover the full available section.',b.side+'-screen-width','full-section');
    const modules=Math.ceil(width/panelWidth),coverage=round(modules*panelWidth),surplus=round(coverage-width);

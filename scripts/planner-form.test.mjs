@@ -183,3 +183,21 @@ test('dragging across another piece does not flash errors and invalid release re
   assert.match(w.document.getElementById('planner-message').textContent,/spot is occupied/);
  }finally{w.happyDOM.abort();}
 });
+test('partial wall length is available without rail or screen and plant bulk setting is absent',()=>{
+ const w=setup();try{
+  check(w,'left-wall');assert.equal(w.document.getElementById('left-wall-length').disabled,false);
+  const length=w.document.getElementById('left-wall-length');length.value='2';length.dispatchEvent(new w.Event('input',{bubbles:true}));submit(w);
+  assert.equal(w.document.getElementById('planner-message').hidden,true);assert.ok(w.document.querySelector('[data-feature="wall-left"]'));
+  assert.equal(w.document.getElementById('plant-style'),null);
+ }finally{w.happyDOM.abort();}
+});
+test('side A feedback stays on A even when D uses a different screen mode',()=>{
+ const w=setup();try{
+  check(w,'back-rail');check(w,'left-rail');check(w,'left-screen');
+  w.document.getElementById('back-mode').value='above';w.document.getElementById('left-mode').value='full';w.document.getElementById('rail-height').value='5';w.document.getElementById('screen-height').value='3';submit(w);
+  assert.equal(w.document.getElementById('back-mode').getAttribute('aria-invalid'),'true');assert.equal(w.document.getElementById('screen-height').getAttribute('aria-invalid'),null);
+  assert.match(w.document.getElementById('back-mode-error').textContent,/A · far side/);
+  [...w.document.querySelectorAll('#planner-message button')].find(b=>b.textContent==='Cover this railing and the space above').click();
+  assert.equal(w.document.getElementById('planner-message').hidden,true);assert.equal(w.document.getElementById('left-mode').value,'full');
+ }finally{w.happyDOM.abort();}
+});

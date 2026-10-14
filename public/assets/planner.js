@@ -1,6 +1,6 @@
-import {privacyScene} from './privacy-scene.js?v=usability-20261014';
-import {planLayout,sideNames,rotateFurniture} from './layout-plan.js?v=usability-20261014';
-import {bindFurniture} from './furniture-controls.js?v=usability-20261014';
+import {privacyScene} from './privacy-scene.js?v=sides-20261014';
+import {planLayout,sideNames,rotateFurniture} from './layout-plan.js?v=sides-20261014';
+import {bindFurniture} from './furniture-controls.js?v=sides-20261014';
 const form=document.getElementById('privacy-form'),out=document.getElementById('results'),message=document.getElementById('planner-message'),stateNote=document.getElementById('planner-state-note');
 const decimalInputs=[...form.querySelectorAll('input[inputmode="decimal"]')],rows=[...form.querySelectorAll('.boundary-row')];
 const dollars=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(v);
@@ -28,8 +28,9 @@ function notice(text,focus=false,field=null,action=null){
   const edit=el('button','Go to this setting','reset-button');edit.type='button';edit.addEventListener('click',()=>{document.getElementById('product-details').open ||= field==='panel-width';input.focus();});message.append(edit);
  }
  if(action){
-  const fix=el('button',action==='full-section'?'Use full available section':action==='reset-furniture'?'Reset furniture positions & update':'Remove furniture & update','button secondary');fix.type='button';
+  const fix=el('button',action==='cover-rail'?'Cover this railing and the space above':action==='full-section'?'Use full available section':action==='reset-furniture'?'Reset furniture positions & update':'Remove furniture & update','button secondary');fix.type='button';
   fix.addEventListener('click',()=>{
+   if(action==='cover-rail'){document.getElementById(field).value='full';syncFields();}
    if(action==='full-section'){document.getElementById(field.replace('-screen-width','-custom-width')).checked=false;syncFields();}
    if(action==='remove-furniture'){document.getElementById('furniture').value='none';syncFields();}
    if(action==='reset-furniture')ignoreSavedPositions=true;
@@ -45,7 +46,7 @@ function syncFields(){
  toggle(document.getElementById('plant-fields'),Number(value('plant-count'))>0);
  const plantChoices=document.getElementById('plant-choices'),count=Number(value('plant-count'));
  while(plantChoices.children.length>count)plantChoices.lastElementChild.remove();
- while(plantChoices.children.length<count){const n=plantChoices.children.length,group=el('div'),label=el('label','Plant '+(n+1)+' illustration'),select=el('select');select.id='plant-style-'+n;label.htmlFor=select.id;for(const [v,t]of [['thuja','Small thuja in a pot'],['leafy','Leafy plant in a pot']]){const option=el('option',t);option.value=v;select.append(option);}select.value=value('plant-style');group.append(label,select);plantChoices.append(group);}
+ while(plantChoices.children.length<count){const n=plantChoices.children.length,group=el('div'),label=el('label','Plant '+(n+1)+' illustration'),select=el('select');select.id='plant-style-'+n;label.htmlFor=select.id;for(const [v,t]of [['thuja','Small thuja in a pot'],['leafy','Leafy plant in a pot']]){const option=el('option',t);option.value=v;select.append(option);}select.value='thuja';group.append(label,select);plantChoices.append(group);}
  toggle(document.getElementById('wall-fields'),rows.some(r=>checked(r.dataset.side+'-wall')));
  toggle(document.getElementById('rail-fields'),rows.some(r=>checked(r.dataset.side+'-rail')));
  toggle(document.getElementById('screen-common'),rows.some(r=>checked(r.dataset.side+'-screen')));
@@ -53,13 +54,13 @@ function syncFields(){
   const side=row.dataset.side,wall=checked(side+'-wall'),rail=checked(side+'-rail'),screenInput=document.getElementById(side+'-screen');
   screenInput.disabled=false;row.querySelector('.boundary-hint').hidden=true;
   const screen=screenInput.checked,L=['back','front'].includes(side)?num('patio-width'):num('depth'),wallInput=document.getElementById(side+'-wall-length');
-  if(wall&&(rail||screen)&&wallInput.dataset.auto==='true'&&Number.isFinite(L))wallInput.value=String(Number((L/2).toFixed(2)));
-  toggle(row.querySelector('.boundary-mixed'),wall&&(rail||screen));
+  if(wall&&wallInput.dataset.auto==='true'&&Number.isFinite(L)){const custom=checked(side+'-custom-width')?num(side+'-screen-width'):NaN;const initial=screen&&Number.isFinite(custom)&&custom>0&&custom<L?L-custom:(rail||screen)?L/2:L;wallInput.value=String(Number(initial.toFixed(2)));}
+  toggle(row.querySelector('.boundary-mixed'),wall);
   toggle(row.querySelector('.boundary-screen'),screen);
   toggle(row.querySelector('.screen-placement'),screen&&rail);
   if(!rail)document.getElementById(side+'-mode').value='full';
   toggle(row.querySelector('.screen-length'),screen&&checked(side+'-custom-width'));
-  const open=wall?(rail||screen)?L-num(side+'-wall-length'):0:L,coverage=row.querySelector('.side-coverage');
+  const open=wall?L-num(side+'-wall-length'):L,coverage=row.querySelector('.side-coverage');
   coverage.textContent=Number.isFinite(open)&&open>0?'Available screen section: '+Number(open.toFixed(2))+' ft. It is covered in full by default.':'Enter floor and wall lengths to determine the available section.';
   const custom=document.getElementById(side+'-screen-width');
   if(screen&&checked(side+'-custom-width')&&!custom.value.trim()&&Number.isFinite(open)&&open>0)custom.value=String(Number(open.toFixed(2)));
@@ -69,7 +70,7 @@ function syncFields(){
  const product=document.getElementById('product-details');
  for(const input of product.querySelectorAll('input')){input.disabled=!product.open;input.setCustomValidity('');}
 }
-form.addEventListener('change',e=>{if(e.target.id==='plant-style')for(const i of document.querySelectorAll('#plant-choices select'))i.value=e.target.value;syncFields();pending();});
+form.addEventListener('change',()=>{syncFields();pending();});
 document.getElementById('product-details').addEventListener('toggle',()=>{syncFields();if(ignoreProductToggle||(!document.getElementById('product-details').open&&!lastPlan)){ignoreProductToggle=false;stateNote.hidden=true;return;}pending();});
 syncFields();
 for(const input of decimalInputs)input.addEventListener('input',()=>{
@@ -89,7 +90,7 @@ function validate(){
  return true;
 }
 function read(){
- return {space:value('space'),patioWidth:num('patio-width'),depth:num('depth'),height:num('screen-height'),estimatePanels:document.getElementById('product-details').open,panelWidth:document.getElementById('product-details').open?num('panel-width'):3,hasRoof:checked('has-roof'),roofHeight:num('roof-height'),wallHeight:num('wall-height'),railHeight:num('rail-height'),furniture:value('furniture'),plantCount:Number(value('plant-count')),plantStyle:value('plant-style'),plantStyles:[...document.querySelectorAll('#plant-choices select')].map(i=>i.value),plantWidth:num('plant-width'),plantHeight:num('plant-height'),seatWidth:num('seat-width'),seatDepth:num('seat-depth'),tableWidth:num('table-width'),tableDepth:num('table-depth'),modulePrice:document.getElementById('product-details').open&&value('module-price').trim()?num('module-price'):null,extraCost:document.getElementById('product-details').open?num('extra-cost'):0,
+ return {space:value('space'),patioWidth:num('patio-width'),depth:num('depth'),height:num('screen-height'),estimatePanels:document.getElementById('product-details').open,panelWidth:document.getElementById('product-details').open?num('panel-width'):3,hasRoof:checked('has-roof'),roofHeight:num('roof-height'),wallHeight:num('wall-height'),railHeight:num('rail-height'),furniture:value('furniture'),plantCount:Number(value('plant-count')),plantStyles:[...document.querySelectorAll('#plant-choices select')].map(i=>i.value),plantWidth:num('plant-width'),plantHeight:num('plant-height'),seatWidth:num('seat-width'),seatDepth:num('seat-depth'),tableWidth:num('table-width'),tableDepth:num('table-depth'),modulePrice:document.getElementById('product-details').open&&value('module-price').trim()?num('module-price'):null,extraCost:document.getElementById('product-details').open?num('extra-cost'):0,
  boundaries:rows.map(row=>{const side=row.dataset.side;return {side,wall:checked(side+'-wall'),rail:checked(side+'-rail'),screen:checked(side+'-screen'),wallLength:num(side+'-wall-length'),wallAt:value(side+'-wall-at'),mode:checked(side+'-rail')?value(side+'-mode'):'full',screenWidth:checked(side+'-custom-width')?num(side+'-screen-width'):null};})};
 }
 const signature=o=>[o.furniture,o.seatWidth,o.seatDepth,o.tableWidth,o.tableDepth].join('|');
