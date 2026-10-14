@@ -1,3 +1,4 @@
+import {bindOpenings} from '../public/assets/wall-openings.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -12,14 +13,14 @@ function setup(){
  const w=new Window();
  w.SVGElement.prototype.getBoundingClientRect=()=>({left:0,top:0,width:960,height:740});
  w.document.body.innerHTML=page.slice(page.indexOf('<header'),page.indexOf('<script'));
- vm.runInNewContext(source,{document:w.document,window:w,planLayout,sideNames,rotateFurniture,privacyScene,bindFurniture,Intl,URL,Blob,setTimeout,queueMicrotask});
+ vm.runInNewContext(source,{document:w.document,window:w,planLayout,sideNames,rotateFurniture,privacyScene,bindFurniture,bindOpenings,Intl,URL,Blob,setTimeout,queueMicrotask});
  return w;
 }
 function submit(w){w.document.getElementById('privacy-form').requestSubmit();}
 function check(w,id){const i=w.document.getElementById(id);i.checked=true;i.dispatchEvent(new w.Event('change',{bubbles:true}));}
 function panels(w){const d=w.document.getElementById('product-details');d.open=true;d.dispatchEvent(new w.Event('toggle'));}
 function cover(w,side,v){check(w,side+'-custom-width');w.document.getElementById(side+'-screen-width').value=v;}
-function furniture(w){const i=w.document.getElementById('furniture');i.value='bistro';i.dispatchEvent(new w.Event('change',{bubbles:true}));}
+function furniture(w){check(w,'furniture');}
 for(const value of ['2.16','2,16','3.45','3,45'])test('module width '+value+' generates a spatial plan',()=>{
  const w=setup();try{panels(w);cover(w,'back','6');w.document.getElementById('panel-width').value=value;submit(w);assert.equal(w.document.querySelector('.plan-metrics strong')?.textContent,value.startsWith('2')?'3':'2');assert.ok(w.document.querySelector('.plan-sketch'));}finally{w.happyDOM.abort();}
 });
@@ -144,30 +145,30 @@ test('start over closes optional product settings and clears pending feedback',a
 });
 test('plants render as selectable pieces and seating rotation persists through an update',()=>{
  const w=setup();try{
-  furniture(w);const count=w.document.getElementById('plant-count');count.value='2';count.dispatchEvent(new w.Event('change',{bubbles:true}));submit(w);
+  furniture(w);check(w,'plant-thuja-1');check(w,'plant-thuja-2');submit(w);
   assert.equal(w.document.querySelectorAll('[data-feature="plant"]').length,2);
   assert.match(w.document.querySelector('#layout-piece').textContent,/Potted thuja 1/);
   [...w.document.querySelectorAll('.item-toolbar button')].find(b=>b.textContent==='Rotate right ↷').click();
   assert.match(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/facing 90 degrees/);
   submit(w);assert.match(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/facing 90 degrees/);
-  w.document.getElementById('layout-piece').value='plant-0';w.document.getElementById('layout-piece').dispatchEvent(new w.Event('change'));
+  w.document.getElementById('layout-piece').value='plant-thuja-1';w.document.getElementById('layout-piece').dispatchEvent(new w.Event('change'));
   assert.ok([...w.document.querySelectorAll('.item-toolbar button')].every(b=>b.disabled));
  }finally{w.happyDOM.abort();}
 });
 test('R rotates focused seating and a plant moves with the same keyboard controls',()=>{
  const w=setup();try{
-  furniture(w);const count=w.document.getElementById('plant-count');count.value='1';count.dispatchEvent(new w.Event('change',{bubbles:true}));submit(w);
+  furniture(w);check(w,'plant-thuja-1');submit(w);
   const chair=w.document.querySelector('[data-item-id="item-0"][tabindex]');chair.dispatchEvent(new w.KeyboardEvent('keydown',{key:'r',bubbles:true}));
   assert.match(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/facing 90 degrees/);
-  const plant=w.document.querySelector('[data-item-id="plant-0"][tabindex]');plant.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowDown',bubbles:true}));
-  assert.match(w.document.querySelector('[data-item-id="plant-0"][tabindex]').getAttribute('aria-label'),/0, 0.25 ft/);
+  const plant=w.document.querySelector('[data-item-id="plant-thuja-1"][tabindex]');plant.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowDown',bubbles:true}));
+  assert.match(w.document.querySelector('[data-item-id="plant-thuja-1"][tabindex]').getAttribute('aria-label'),/0, 0.25 ft/);
  }finally{w.happyDOM.abort();}
 });
-test('each plant has an independent illustration selector',()=>{
+test('plant checkboxes add a mixed selection without count or type menus',()=>{
  const w=setup();try{
-  const count=w.document.getElementById('plant-count');count.value='2';count.dispatchEvent(new w.Event('change',{bubbles:true}));
-  w.document.getElementById('plant-style-1').value='leafy';submit(w);
-  assert.ok(w.document.querySelector('[aria-label^="Potted thuja 1"]'));assert.ok(w.document.querySelector('[aria-label^="Potted leafy plant 2"]'));
+  check(w,'plant-thuja-1');check(w,'plant-thuja-2');
+  w.document.getElementById('plant-thuja-2').checked=false;check(w,'plant-leafy-1');submit(w);
+  assert.ok(w.document.querySelector('[aria-label^="Potted thuja 1"]'));assert.ok(w.document.querySelector('[aria-label^="Potted leafy plant 2"]'));assert.equal(w.document.getElementById('plant-count'),null);assert.equal(w.document.getElementById('seat-width'),null);
  }finally{w.happyDOM.abort();}
 });
 test('dragging across another piece does not flash errors and invalid release restores position',()=>{
@@ -199,5 +200,26 @@ test('side A feedback stays on A even when D uses a different screen mode',()=>{
   assert.match(w.document.getElementById('back-mode-error').textContent,/A · far side/);
   [...w.document.querySelectorAll('#planner-message button')].find(b=>b.textContent==='Cover this railing and the space above').click();
   assert.equal(w.document.getElementById('planner-message').hidden,true);assert.equal(w.document.getElementById('left-mode').value,'full');
+ }finally{w.happyDOM.abort();}
+});
+test('wall choices enable openings; windows move vertically and doors move along the wall, surviving update',()=>{
+ const w=setup();try{
+  assert.equal(w.document.getElementById('door-1').disabled,true);
+  w.document.getElementById('back-screen').checked=false;check(w,'back-wall');check(w,'door-1');check(w,'window-1');submit(w);
+  assert.equal(w.document.getElementById('planner-message').hidden,true);
+  const window=w.document.querySelector('[data-opening-id="window-1"][tabindex]');window.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowUp',bubbles:true}));
+  assert.match(w.document.querySelector('[data-opening-id="window-1"][tabindex]').getAttribute('aria-label'),/bottom 3.25 ft/);
+  const door=w.document.querySelector('[data-opening-id="door-1"][tabindex]');door.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowLeft',bubbles:true}));
+  submit(w);assert.match(w.document.querySelector('[data-opening-id="window-1"][tabindex]').getAttribute('aria-label'),/bottom 3.25 ft/);
+  const reset=[...w.document.querySelectorAll('button')].find(b=>b.textContent==='Reset item positions & directions');reset.click();assert.match(w.document.querySelector('[data-opening-id="window-1"][tabindex]').getAttribute('aria-label'),/bottom 3 ft/);
+ }finally{w.happyDOM.abort();}
+});
+test('pointer movement carries a window along the chosen wall and up its plane',()=>{
+ const w=setup();try{
+  w.document.getElementById('back-screen').checked=false;check(w,'back-wall');check(w,'window-1');submit(w);
+  const scene=w.document.querySelector('.scene-container'),face=scene.querySelector('[data-opening-id="window-1"][tabindex]'),scale=Number(scene.querySelector('svg').getAttribute('data-projection-scale'));
+  face.dispatchEvent(new w.PointerEvent('pointerdown',{button:0,clientX:100,clientY:100,pointerId:1,bubbles:true}));
+  scene.dispatchEvent(new w.PointerEvent('pointermove',{clientX:100+.8*scale,clientY:100+(.38-.85*.5)*scale,pointerId:1,bubbles:true}));scene.dispatchEvent(new w.PointerEvent('pointerup',{pointerId:1,bubbles:true}));
+  assert.match(scene.querySelector('[data-opening-id="window-1"][tabindex]').getAttribute('aria-label'),/1 ft along side, bottom 3.5 ft/);
  }finally{w.happyDOM.abort();}
 });
