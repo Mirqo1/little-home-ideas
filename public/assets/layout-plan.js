@@ -1,12 +1,12 @@
-import {spaceFeatures,sideNames} from './space-features.js?v=plants-20261014';
+import {spaceFeatures,sideNames} from './space-features.js?v=usability-20261014';
 export {sideNames};
 const round=n=>Number(n.toFixed(2));
 export function overlaps(a,b){return a.x<b.x+b.w-.001&&a.x+a.w>b.x+.001&&a.y<b.y+b.d-.001&&a.y+a.d>b.y+.001;}
-export function moveFurniture(items,id,x,y,W,D){
+export function moveFurniture(items,id,x,y,W,D,allowOverlap=false){
  const index=items.findIndex(i=>i.id===id);if(index<0||![x,y,W,D].every(Number.isFinite))return {error:'Select a valid furniture position.'};
  const item=items[index];if(item.w>W||item.d>D)return {error:'This furniture piece does not fit the floor.'};
  const next={...item,x:Math.min(round(Math.max(0,x)),W-item.w),y:Math.min(round(Math.max(0,y)),D-item.d)};
- if(items.some((other,i)=>i!==index&&overlaps(next,other)))return {error:'Furniture pieces overlap. Move this piece to a clear part of the floor.'};
+ if(!allowOverlap&&items.some((other,i)=>i!==index&&overlaps(next,other)))return {error:'Furniture pieces overlap. Move this piece to a clear part of the floor.'};
  return {items:items.map((i,n)=>n===index?next:{...i})};
 }
 export function rotateFurniture(items,id,W,D,turn=90){
@@ -43,8 +43,8 @@ export function planLayout(o){
   let wallLength=0;
   if(b.wall){
    if(!Number.isFinite(o.wallHeight)||o.wallHeight<1||o.wallHeight>30)return fail('Enter a wall height from the floor (1–30 ft).','wall-height');
-   wallLength=b.rail?b.wallLength:L;
-   if(!Number.isFinite(wallLength)||wallLength<=0||wallLength>=L&&b.rail)return fail(sideNames[b.side]+': enter a wall length greater than 0 and shorter than '+L+' ft, leaving room for the railing.',b.side+'-wall-length');
+   wallLength=(b.rail||b.screen)?b.wallLength:L;
+   if(!Number.isFinite(wallLength)||wallLength<=0||wallLength>=L&&(b.rail||b.screen))return fail(sideNames[b.side]+': enter a wall length greater than 0 and shorter than '+L+' ft, leaving room for the screen or railing.',b.side+'-wall-length');
    if(!['start','end'].includes(b.wallAt??'start'))return {error:'Choose where the wall starts.'};
    const start=b.wallAt==='end'?L-wallLength:0;
    wallSegments.push({side:b.side,start,end:start+wallLength,height:o.wallHeight});
@@ -55,7 +55,7 @@ export function planLayout(o){
    railSegments.push({side:b.side,start,end,height:o.railHeight});
   }
   if(b.screen){
-   if(openLength<=0)return {error:sideNames[b.side]+': this side is entirely wall. Remove the screen or describe a wall-and-railing split.'};
+   if(openLength<=0)return {error:sideNames[b.side]+': this side is entirely wall. Remove the screen or describe a partial wall.'};
    if(!['full','above'].includes(b.mode))return {error:'Choose a valid screen position.'};
    const base=b.rail&&b.mode==='above'?o.railHeight:0;
    if(height<=base)return fail(sideNames[b.side]+': the screen top ('+height+' ft) must be above the railing ('+base+' ft). Increase the top height or cover the railing too.','screen-height');
@@ -72,7 +72,9 @@ export function planLayout(o){
  if(plantCount&&(!Number.isFinite(plantWidth)||plantWidth<.5||plantWidth>5||!Number.isFinite(plantHeight)||plantHeight<1||plantHeight>8))return fail('Enter a plant footprint width of 0.5–5 ft and total height of 1–8 ft.','plant-width');
  if(plantCount&&o.hasRoof&&plantHeight>o.roofHeight)return fail('The plant height ('+plantHeight+' ft) exceeds the roof underside ('+o.roofHeight+' ft). Enter a shorter total plant height or correct the roof measurement.','plant-height');
  for(let n=0;n<plantCount;n++){
-  const item={id:'plant-'+n,kind:'plant',plantStyle,label:(plantStyle==='thuja'?'Potted thuja ':'Potted leafy plant ')+(n+1),w:plantWidth,d:plantWidth,baseW:plantWidth,baseD:plantWidth,rotation:0,height:plantHeight};
+  const style=o.plantStyles?.[n]??plantStyle;
+  if(!['thuja','leafy'].includes(style))return fail('Choose a valid illustration for each plant.','plant-count');
+  const item={id:'plant-'+n,kind:'plant',plantStyle:style,label:(style==='thuja'?'Potted thuja ':'Potted leafy plant ')+(n+1),w:plantWidth,d:plantWidth,baseW:plantWidth,baseD:plantWidth,rotation:0,height:plantHeight};
   const placed=freePosition(item,items,W,D);
   if(!placed)return fail('There is not enough clear floor space for all these plant footprints. Use fewer or smaller plants, or change the furniture.','plant-count');
   items.push(placed);

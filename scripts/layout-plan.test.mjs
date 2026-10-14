@@ -64,3 +64,14 @@ test('an overlapping rotation is rejected without changing the pieces',()=>{
  assert.match(result.error,/overlap/);assert.equal(items[0].rotation,0);assert.equal(items[0].w,1);
  assert.match(rotateFurniture(items,'table',6,6).error,/chair or bench/);
 });
+test('a wall can occupy the remainder of a screened side without a railing',()=>{
+ const p=planLayout({...base,wallHeight:7,boundaries:boundaries({back:{wall:true,rail:false,wallLength:4,wallAt:'end',screenWidth:null}})});
+ assert.equal(p.error,undefined);assert.equal(p.screens[0].width,6);assert.equal(p.screens[0].start,0);assert.equal(p.wallSegments[0].start,6);assert.equal(p.railSegments.length,0);
+});
+test('one layout mixes plant types and transient dragging can pass through occupied footprints',()=>{
+ const p=planLayout({...base,furniture:'bistro',plantCount:2,plantStyles:['thuja','leafy'],boundaries:boundaries()});
+ assert.equal(p.items[3].plantStyle,'thuja');assert.equal(p.items[4].plantStyle,'leafy');
+ const x=p.items[0].x,y=p.items[0].y;
+ assert.ok(moveFurniture(p.items,'plant-0',x,y,10,8,true).items);
+ assert.match(moveFurniture(p.items,'plant-0',x,y,10,8).error,/overlap/);
+});

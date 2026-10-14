@@ -109,7 +109,7 @@ test('floor resizing, mixed-side defaults and removing all screens do not trap t
  const w=setup();try{
   const floor=w.document.getElementById('patio-width');floor.value='4';floor.dispatchEvent(new w.Event('input',{bubbles:true}));
   submit(w);assert.equal(w.document.getElementById('planner-message').hidden,true);assert.match(w.document.querySelector('.screen-summary').textContent,/4 ft/);
-  check(w,'back-wall');assert.equal(w.document.getElementById('back-screen').disabled,true);
+  check(w,'back-wall');assert.equal(w.document.getElementById('back-screen').disabled,false);
   submit(w);assert.equal(w.document.getElementById('planner-message').hidden,true);assert.ok(w.document.querySelector('[data-feature="wall-back"]'));
   check(w,'back-rail');check(w,'back-screen');assert.equal(w.document.getElementById('back-wall-length').value,'2');
   submit(w);assert.equal(w.document.getElementById('planner-message').hidden,true);
@@ -161,5 +161,25 @@ test('R rotates focused seating and a plant moves with the same keyboard control
   assert.match(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/facing 90 degrees/);
   const plant=w.document.querySelector('[data-item-id="plant-0"][tabindex]');plant.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowDown',bubbles:true}));
   assert.match(w.document.querySelector('[data-item-id="plant-0"][tabindex]').getAttribute('aria-label'),/0, 0.25 ft/);
+ }finally{w.happyDOM.abort();}
+});
+test('each plant has an independent illustration selector',()=>{
+ const w=setup();try{
+  const count=w.document.getElementById('plant-count');count.value='2';count.dispatchEvent(new w.Event('change',{bubbles:true}));
+  w.document.getElementById('plant-style-1').value='leafy';submit(w);
+  assert.ok(w.document.querySelector('[aria-label^="Potted thuja 1"]'));assert.ok(w.document.querySelector('[aria-label^="Potted leafy plant 2"]'));
+ }finally{w.happyDOM.abort();}
+});
+test('dragging across another piece does not flash errors and invalid release restores position',()=>{
+ const w=setup();try{
+  furniture(w);submit(w);const scene=w.document.querySelector('.scene-container'),face=scene.querySelector('[data-item-id="item-0"]');
+  const scale=Number(scene.querySelector('svg').getAttribute('data-projection-scale'));
+  face.dispatchEvent(new w.PointerEvent('pointerdown',{bubbles:true,button:0,clientX:100,clientY:100,pointerId:1}));
+  scene.dispatchEvent(new w.PointerEvent('pointermove',{bubbles:true,clientX:100+2.5*.8*scale,clientY:100+2.5*.38*scale,pointerId:1}));
+  assert.equal(w.document.getElementById('planner-message').hidden,true);
+  assert.match(scene.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/at 4, 6 ft/);
+  scene.dispatchEvent(new w.PointerEvent('pointerup',{bubbles:true,pointerId:1}));
+  assert.match(scene.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/at 1.5, 6 ft/);
+  assert.match(w.document.getElementById('planner-message').textContent,/spot is occupied/);
  }finally{w.happyDOM.abort();}
 });
