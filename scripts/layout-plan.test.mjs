@@ -13,7 +13,7 @@ test('module rounding is per side and mixed sides leave exactly the remaining ra
 });
 test('mixed sections validate length, screen location and roof without changing geometry by space type',()=>{
  for(const length of [0,10,NaN])assert.match(planLayout({...base,wallHeight:8,railHeight:3.5,boundaries:boundaries({back:{wall:true,rail:true,wallLength:length}})}).error,/wall length/);
- assert.match(planLayout({...base,boundaries:boundaries({back:{mode:'above'}})}).error,/needs a railing/);
+ assert.equal(planLayout({...base,boundaries:boundaries({back:{mode:'above'}})}).screens[0].base,0);
  assert.match(planLayout({...base,hasRoof:true,roofHeight:5,boundaries:boundaries()}).error,/roof/);
  const p=planLayout({...base,boundaries:boundaries()}),b=planLayout({...base,space:'balcony',boundaries:boundaries()});
  assert.deepEqual(p.screens,b.screens);assert.match(b.warning,/permitted loads/);
@@ -30,7 +30,14 @@ test('screen drag deltas invert the isometric projection across display sizes',(
  const svg={getBoundingClientRect:()=>({width:480,height:370}),getAttribute:()=>20};
  const d=floorDelta(svg,8,3.8);assert.ok(Math.abs(d.x-1)<1e-9);assert.ok(Math.abs(d.y)<1e-9);
 });
-test('a rounded module overflow on one side is rejected, even when aggregate totals could fit',()=>{
+test('panel count overflow is a review note while the requested layout remains valid',()=>{
  const p=planLayout({...base,boundaries:boundaries({left:{screen:true,screenWidth:null}})});
- assert.match(p.error,/D.*3 whole modules.*9 ft.*8 ft/);
+ assert.equal(p.error,undefined);assert.match(p.reviewNotes[0],/D.*3 whole panels.*9 ft.*8 ft/);
+ assert.equal(p.screens[1].width,8);
+ const layout=planLayout({...base,estimatePanels:false,panelWidth:NaN,boundaries:boundaries({left:{screen:true,screenWidth:null}})});
+ assert.equal(layout.error,undefined);assert.equal(layout.reviewNotes.length,0);
+});
+test('a roof without any screen can be drawn below the old screen-height setting',()=>{
+ const p=planLayout({...base,hasRoof:true,roofHeight:5,boundaries:boundaries({back:{screen:false}})});
+ assert.equal(p.error,undefined);assert.equal(p.screens.length,0);assert.equal(p.roofHeight,5);
 });
