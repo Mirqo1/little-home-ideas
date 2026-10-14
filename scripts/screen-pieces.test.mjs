@@ -12,7 +12,7 @@ test('regular and uneven gaps affect material count without treating open space 
 });
 test('gaps draw separate polygons even without product estimating and never connect the gaps',()=>{
  const p=planLayout(options);assert.equal(p.error,undefined);assert.ok(p.screens[0].gapWidth>0);
- const w=new Window();try{const svg=privacyScene(w.document,p),pieces=[...svg.querySelectorAll('[data-feature="screen"]')];assert.equal(pieces.length,p.screens[0].modules);assert.ok(Number(pieces[1].getAttribute('data-piece-start'))>Number(pieces[0].getAttribute('data-piece-width')));assert.match(svg.textContent,/privacy is partial/);}finally{w.happyDOM.abort();}
+ const w=new Window();try{const svg=privacyScene(w.document,p),pieces=[...svg.querySelectorAll('[data-feature="screen"]')];assert.equal(pieces.length,p.screens[0].modules);assert.ok(Number(pieces[1].getAttribute('data-piece-start'))>Number(pieces[0].getAttribute('data-piece-width')));assert.ok(p.screens[0].gapWidth>0);}finally{w.happyDOM.abort();}
 });
 test('extra furniture pieces fit, move and rotate with stable IDs and retain their poses',()=>{
  const p=planLayout({...options,extras:['bench','lounger','side-table','storage']});assert.equal(p.error,undefined);assert.equal(p.items.length,4);

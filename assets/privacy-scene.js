@@ -1,6 +1,6 @@
 export function privacyScene(document,p,preview=false,{showRoof=true,showWalls=true,selectedItem=null}={}){
  const make=(tag,attrs={},text)=>{const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,String(v));if(text)e.textContent=text;return e;};
- const svg=make('svg',{viewBox:'0 0 960 740',role:(p.items?.length||p.openings?.length)?'group':'img','aria-labelledby':preview?'preview-title preview-desc':'plan-sketch-title plan-sketch-desc',class:preview?'plan-preview':'plan-sketch'});
+ const svg=make('svg',{viewBox:'0 0 960 640',role:(p.items?.length||p.openings?.length)?'group':'img','aria-labelledby':preview?'preview-title preview-desc':'plan-sketch-title plan-sketch-desc',class:preview?'plan-preview':'plan-sketch'});
  const screens=p.screens??[{side:p.screenSide??'back',start:0,width:p.width,coverage:p.coverage,base:p.screenBase??0,height:p.height,modules:p.modules}];
  const wallSegments=p.wallSegments??(p.walls??[]).map(side=>({side,start:0,end:['back','front'].includes(side)?p.patioWidth:p.depth,height:p.wallHeight}));
  const railSegments=p.railSegments??(p.railSides??[]).map(side=>({side,start:0,end:['back','front'].includes(side)?p.patioWidth:p.depth,height:p.railHeight}));
@@ -8,19 +8,22 @@ export function privacyScene(document,p,preview=false,{showRoof=true,showWalls=t
  const edge=(side,t,z=0)=>side==='back'?[t,0,z]:side==='front'?[t,D,z]:side==='left'?[0,t,z]:[W,t,z];
  const length=s=>['back','front'].includes(s)?W:D;
  const raw=([x,y,z=0])=>[.8*(x-y),.38*(x+y)-.85*z];
- const bounds=[[0,0],[W,0],[W,D],[0,D],[0,0,top],[W,0,top],[W,D,top],[0,D,top],...screens.map(s=>edge(s.side,s.start+s.width,s.height))].map(raw);
- const xs=bounds.map(q=>q[0]),ys=bounds.map(q=>q[1]),minX=Math.min(...xs),minY=Math.min(...ys),dx=Math.max(...xs)-minX,dy=Math.max(...ys)-minY,scale=Math.min(810/dx,520/dy);
- svg.setAttribute('data-projection-scale',scale);svg.setAttribute('data-projection-x',(960-dx*scale)/2-minX*scale);svg.setAttribute('data-projection-y',90-minY*scale);
- const point=q=>{const [x,y]=raw(q);return [(x-minX)*scale+(960-dx*scale)/2,(y-minY)*scale+90];};
+ const movableTop=Math.max(0,...(p.items??[]).map(i=>i.height??3.7));
+ const geometry=[[0,0],[W,0],[W,D],[0,D],...screens.flatMap(s=>[edge(s.side,s.start,s.height),edge(s.side,s.start+s.width,s.height)]),...wallSegments.flatMap(s=>[edge(s.side,s.start,s.height),edge(s.side,s.end,s.height)]),...railSegments.flatMap(s=>[edge(s.side,s.start,s.height),edge(s.side,s.end,s.height)])];
+ if(movableTop)geometry.push([0,0,movableTop],[W,0,movableTop],[W,D,movableTop],[0,D,movableTop]);
+ if(p.roofHeight!=null)geometry.push([0,0,p.roofHeight],[W,0,p.roofHeight],[W,D,p.roofHeight],[0,D,p.roofHeight]);
+ const bounds=geometry.map(raw),xs=bounds.map(q=>q[0]),ys=bounds.map(q=>q[1]),minX=Math.min(...xs),minY=Math.min(...ys),dx=Math.max(...xs)-minX,dy=Math.max(...ys)-minY,scale=Math.min(870/dx,560/dy);
+ svg.setAttribute('data-projection-scale',scale);svg.setAttribute('data-projection-x',(960-dx*scale)/2-minX*scale);svg.setAttribute('data-projection-y',25-minY*scale);
+ const point=q=>{const [x,y]=raw(q);return [(x-minX)*scale+(960-dx*scale)/2,(y-minY)*scale+25];};
  const poly=(coords,attrs)=>make('polygon',{points:coords.map(q=>point(q).join(',')).join(' '),...attrs});
  const line=(a,b,attrs)=>{const u=point(a),v=point(b);return make('line',{x1:u[0],y1:u[1],x2:v[0],y2:v[1],...attrs});};
  const label=(q,text,ox=0,oy=0)=>{const [x,y]=point(q);return make('text',{x:x+ox,y:y+oy,fill:'#294b3c','font-size':17,'font-family':'Arial,sans-serif','text-anchor':'middle','paint-order':'stroke',stroke:'#f7f5ef','stroke-width':5,'stroke-linejoin':'round'},text);};
  svg.append(make('title',{id:preview?'preview-title':'plan-sketch-title'},'Your outdoor space in a 3D view'),make('desc',{id:preview?'preview-desc':'plan-sketch-desc'},W+' by '+D+' feet. '+screens.map(s=>s.side+': target '+s.width+' ft. Starts '+s.base+' feet above the floor; top '+s.height+' ft; '+(p.estimatePanels===false?'':s.modules+' estimated panels.')).join(' ')+' Roof '+(p.roofHeight??'none')+'; railing '+(p.railHeight??'none')+'; walls '+(p.walls?.join(', ')||'none')+'. '+(p.items?.length??0)+' furniture pieces. Geometry only; no structural or access approval.'));
- svg.append(make('rect',{x:0,y:0,width:960,height:740,fill:'#f7f5ef',rx:8}),make('text',{x:30,y:40,fill:'#294b3c','font-size':23,'font-family':'Arial,sans-serif'},preview?'An example to help you get started':'Your space & privacy layout'),make('text',{x:30,y:70,fill:'#647067','font-size':15,'font-family':'Arial,sans-serif'},'A far · B right · C near · D left · all measurements in feet'));
+ svg.append(make('rect',{x:0,y:0,width:960,height:640,fill:'#f7f5ef',rx:8}));
  svg.append(poly([[0,0],[W,0],[W,D],[0,D]],{fill:'#e3e8dc',stroke:'#a1b09b','stroke-width':2}));
  for(let i=1;i<5;i++)svg.append(line([W*i/5,0],[W*i/5,D],{stroke:'#cad3c3'}),line([0,D*i/5],[W,D*i/5],{stroke:'#cad3c3'}));
  const surfaces=[];let drawingItem=null;
- const surface=(coords,attrs)=>surfaces.push({coords,attrs:drawingItem?{...attrs,'data-item-id':drawingItem,'class':'furniture-face'}:attrs,depth:coords.reduce((v,q)=>v+q[0]+q[1],0)/coords.length});
+ const surface=(coords,attrs)=>{const locked=drawingItem&&(p.items??[]).find(i=>i.id===drawingItem)?.locked;surfaces.push({coords,attrs:drawingItem?{...attrs,'data-item-id':drawingItem,'class':'furniture-face'+(locked?' is-locked':''),...(locked?{'pointer-events':'none'}:{})}:attrs,depth:coords.reduce((v,q)=>v+q[0]+q[1],0)/coords.length});};
  if(showWalls)for(const wall of wallSegments){
   const holes=(p.openings??[]).filter(o=>o.side===wall.side),cuts=[wall.start,wall.end,...holes.flatMap(o=>[o.start,o.start+o.width])].sort((a,b)=>a-b),levels=[0,wall.height,...holes.flatMap(o=>[o.bottom,o.bottom+o.height])].sort((a,b)=>a-b);
   for(let i=0;i<cuts.length-1;i++)for(let j=0;j<levels.length-1;j++){
@@ -31,16 +34,16 @@ export function privacyScene(document,p,preview=false,{showRoof=true,showWalls=t
 
  if(showWalls)for(const opening of p.openings??[]){
   const wall=wallSegments.find(w=>w.side===opening.side),lo=opening.start,hi=lo+opening.width,z=opening.bottom,top=z+opening.height,active=opening.id===selectedItem;
-  const before=surfaces.length,attrs={'data-opening-id':opening.id,class:'opening-face'};
-  surface([edge(opening.side,lo,z),edge(opening.side,hi,z),edge(opening.side,hi,top),edge(opening.side,lo,top)],{...attrs,fill:opening.kind==='door'?'#b98759':'#b7d7e1','fill-opacity':.055,stroke:active?'#163f34':'#5a6f6b','stroke-opacity':active?.75:.35,'stroke-width':active?4:3,tabindex:0,role:'button','aria-pressed':active,'data-feature':opening.kind,'aria-label':opening.label+' on '+opening.side+' wall, '+opening.start+' ft along side, bottom '+opening.bottom+' ft. Left/right arrows move along the wall; up/down move a window.'});
+  const before=surfaces.length,attrs={'data-opening-id':opening.id,class:'opening-face'+(opening.locked?' is-locked':''),...(opening.locked?{'pointer-events':'none'}:{})};
+  surface([edge(opening.side,lo,z),edge(opening.side,hi,z),edge(opening.side,hi,top),edge(opening.side,lo,top)],{...attrs,fill:opening.kind==='door'?'#b98759':'#b7d7e1','fill-opacity':0,stroke:active?'#163f34':'#5a6f6b','stroke-opacity':active?.55:.16,'stroke-width':active?2.5:1.3,tabindex:opening.locked?-1:0,'aria-disabled':!!opening.locked,role:'button','aria-pressed':active,'data-feature':opening.kind,'aria-label':opening.label+' on '+opening.side+' wall, '+opening.start+' ft along side, bottom '+opening.bottom+' ft. Left/right arrows move along the wall; up/down move a window.'});
   const bar=Math.min(.06,opening.width/10);
   if(opening.kind==='window'){
    const mid=(lo+hi)/2,mz=(z+top)/2;
-   surface([edge(opening.side,mid-bar,z),edge(opening.side,mid+bar,z),edge(opening.side,mid+bar,top),edge(opening.side,mid-bar,top)],{...attrs,fill:'#5a7780','fill-opacity':.2});
-   surface([edge(opening.side,lo,mz-bar),edge(opening.side,hi,mz-bar),edge(opening.side,hi,mz+bar),edge(opening.side,lo,mz+bar)],{...attrs,fill:'#5a7780','fill-opacity':.2});
+   surface([edge(opening.side,mid-bar,z),edge(opening.side,mid+bar,z),edge(opening.side,mid+bar,top),edge(opening.side,mid-bar,top)],{...attrs,fill:'#5a7780','fill-opacity':.07});
+   surface([edge(opening.side,lo,mz-bar),edge(opening.side,hi,mz-bar),edge(opening.side,hi,mz+bar),edge(opening.side,lo,mz+bar)],{...attrs,fill:'#5a7780','fill-opacity':.07});
   }else{
    const handle=hi-Math.min(.35,opening.width*.15),hz=opening.height*.48;
-   surface([edge(opening.side,handle-.09,hz-.09),edge(opening.side,handle+.09,hz-.09),edge(opening.side,handle+.09,hz+.09),edge(opening.side,handle-.09,hz+.09)],{...attrs,fill:'#40534b','fill-opacity':.3});
+   surface([edge(opening.side,handle-.09,hz-.09),edge(opening.side,handle+.09,hz-.09),edge(opening.side,handle+.09,hz+.09),edge(opening.side,handle-.09,hz+.09)],{...attrs,fill:'#40534b','fill-opacity':.1});
   }
   for(let n=before;n<surfaces.length;n++)surfaces[n].depth=['back','front'].includes(wall.side)?(lo+hi)/2+(wall.side==='front'?D:0)+.01:(lo+hi)/2+(wall.side==='right'?W:0)+.01;
  }
@@ -54,7 +57,7 @@ export function privacyScene(document,p,preview=false,{showRoof=true,showWalls=t
  }
  for(const item of p.items??[]){
   drawingItem=item.id??null;
-  const focusAttrs=item.id?{tabindex:0,role:'button','aria-label':(item.label??item.kind)+' at '+item.x+', '+item.y+' ft'+(['chair','bench','lounger','storage','side-table'].includes(item.kind)?', facing '+(item.rotation??0)+' degrees. Arrows move; R rotates.':'. Arrow keys move.'),'aria-pressed':item.id===selectedItem,stroke:item.id===selectedItem?'#1d4337':'#806a50','stroke-width':item.id===selectedItem?3:1.5}:{};
+  const focusAttrs=item.id?{tabindex:item.locked?-1:0,'aria-disabled':!!item.locked,role:'button','aria-label':(item.label??item.kind)+' at '+item.x+', '+item.y+' ft'+(['chair','bench','lounger','storage','side-table'].includes(item.kind)?', facing '+(item.rotation??0)+' degrees. Arrows move; R rotates.':'. Arrow keys move.'),'aria-pressed':item.id===selectedItem,stroke:item.id===selectedItem?'#1d4337':'#806a50','stroke-width':item.id===selectedItem?3:1.5}:{};
   if(item.kind==='plant'){
    const cx=item.x+item.w/2,cy=item.y+item.d/2,h=item.height,pot=Math.min(1,h*.3),ring=(z,r=1)=>Array.from({length:8},(_,n)=>{const a=n*Math.PI/4;return [cx+Math.cos(a)*item.w/2*r,cy+Math.sin(a)*item.d/2*r,z];});
    const bottom=ring(0,.65),rim=ring(pot,.9);
@@ -112,10 +115,6 @@ export function privacyScene(document,p,preview=false,{showRoof=true,showWalls=t
   svg.append(poly([[0,0,p.roofHeight],[W,0,p.roofHeight],[W,D,p.roofHeight],[0,D,p.roofHeight]],{fill:'#b9cee0','fill-opacity':.2,stroke:'#7993a5','stroke-width':2,'stroke-dasharray':'7 4','data-feature':'roof','pointer-events':'none'}));
   svg.append(label([W,D,p.roofHeight],'Roof '+p.roofHeight+' ft',45,-12));
  }
- svg.append(label([W/2,D],'C · width '+W+' ft',0,40),label([0,D/2],'D · depth '+D+' ft',-55,0),label([W/2,0],'A',0,22),label([W,D/2],'B',30,10));
- svg.append(make('text',{x:30,y:675,fill:'#294b3c','font-size':17,'font-family':'Arial,sans-serif'},screens.length+' screened side'+(screens.length===1?'':'s')+' · screen top '+p.height+' ft above floor'));
- svg.append(make('text',{x:30,y:700,fill:'#53634b','font-size':16,'font-family':'Arial,sans-serif'},screens.some(s=>s.gapWidth>0)?'Open gaps are shown between screen pieces; privacy is partial.':p.estimatePanels===false?'Privacy coverage is drawn to your requested dimensions.':p.modules+' whole panels estimated; the drawing shows the requested screen area.'));
- svg.append(make('text',{x:30,y:724,fill:'#647067','font-size':13,'font-family':'Arial,sans-serif'},'Blue roof · sand walls · dark railing · wood furniture · potted plants · green screening'));
-
+ svg.append(label([W/2,D],'C · width '+W+' ft',0,32),label([0,D/2],'D · depth '+D+' ft',-55,0),label([W/2,0],'A',0,22),label([W,D/2],'B',30,10));
  return svg;
 }

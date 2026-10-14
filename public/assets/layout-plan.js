@@ -1,12 +1,12 @@
-import {screenPieces} from './screen-pieces.js?v=gaps-span-20261014';
-import {wallOpenings} from './wall-openings.js?v=gaps-span-20261014';
-import {spaceFeatures,sideNames} from './space-features.js?v=gaps-span-20261014';
+import {screenPieces} from './screen-pieces.js?v=controls-20261014';
+import {wallOpenings} from './wall-openings.js?v=controls-20261014';
+import {spaceFeatures,sideNames} from './space-features.js?v=controls-20261014';
 export {sideNames};
 const round=n=>Number(n.toFixed(2));
 export function overlaps(a,b){return a.x<b.x+b.w-.001&&a.x+a.w>b.x+.001&&a.y<b.y+b.d-.001&&a.y+a.d>b.y+.001;}
 export function moveFurniture(items,id,x,y,W,D,allowOverlap=false){
  const index=items.findIndex(i=>i.id===id);if(index<0||![x,y,W,D].every(Number.isFinite))return {error:'Select a valid furniture position.'};
- const item=items[index];if(item.w>W||item.d>D)return {error:'This furniture piece does not fit the floor.'};
+ const item=items[index];if(item.locked)return {error:'This object is locked. Unlock it in the object list.'};if(item.w>W||item.d>D)return {error:'This furniture piece does not fit the floor.'};
  const next={...item,x:Math.min(round(Math.max(0,x)),W-item.w),y:Math.min(round(Math.max(0,y)),D-item.d)};
  if(!allowOverlap&&items.some((other,i)=>i!==index&&overlaps(next,other)))return {error:'Furniture pieces overlap. Move this piece to a clear part of the floor.'};
  return {items:items.map((i,n)=>n===index?next:{...i})};
@@ -14,6 +14,7 @@ export function moveFurniture(items,id,x,y,W,D,allowOverlap=false){
 export function rotateFurniture(items,id,W,D,turn=90){
  const index=items.findIndex(i=>i.id===id),item=items[index];
  if(!item||!['chair','bench','lounger','storage','side-table'].includes(item.kind)||![W,D,turn].every(Number.isFinite)||turn%90!==0)return {error:'Select a movable piece to rotate.'};
+ if(item.locked)return {error:'This object is locked. Unlock it in the object list.'};
  const rotation=((item.rotation??0)+turn%360+360)%360,bw=item.baseW??item.w,bd=item.baseD??item.d,w=rotation%180?bd:bw,d=rotation%180?bw:bd;
  if(w>W||d>D)return {error:'The rotated piece does not fit this floor. Keep its current direction or change its dimensions.'};
  const next={...item,baseW:bw,baseD:bd,rotation,w,d,x:Math.min(Math.max(0,item.x+(item.w-w)/2),W-w),y:Math.min(Math.max(0,item.y+(item.d-d)/2),D-d)};
@@ -72,17 +73,19 @@ export function planLayout(o){
  const defaults=wallOpenings(o.openings??[],wallSegments);
  const reviewNotes=estimatePanels?screens.filter(s=>!s.fits).map(s=>sideNames[s.side]+': '+s.modules+' whole panels would cover '+s.coverage+' ft of material plus '+s.gapWidth+' ft of gaps; the available section is '+s.available+' ft. The drawing shows your requested '+s.width+' ft, not an approved panel fit. Compare a different system; only shorten panels if its instructions allow it.'):[];
  let items=room.items.map((i,index)=>({...i,baseW:i.w,baseD:i.d,rotation:0,id:'item-'+index,label:i.kind==='table'?'Table':i.kind==='bench'?'Bench':'Chair '+(index===0?'1':'2')}));
+ items=items.filter(i=>!(o.deletedItems??[]).includes(i.id));
  const extraTypes={bench:{kind:'bench',label:'Compact bench',w:4,d:1.5,height:3.7},lounger:{kind:'lounger',label:'Lounge chair',w:2,d:5,height:2.5},'side-table':{kind:'side-table',label:'Side table',w:1.5,d:1.5,height:1.8},storage:{kind:'storage',label:'Storage chest',w:3,d:1.5,height:2}};
- if(!Array.isArray(o.extras??[])||new Set(o.extras??[]).size!==(o.extras??[]).length)return fail('Choose each extra piece once.','furniture');
- for(const kind of o.extras??[]){if(!extraTypes[kind])return fail('Choose a valid extra piece.','furniture');const spec=extraTypes[kind],item={...spec,id:'extra-'+kind,baseW:spec.w,baseD:spec.d,rotation:0};const placed=freePosition(item,items,W,D);if(!placed)return fail('There is no clear floor space for the '+spec.label.toLowerCase()+'. Remove a piece or use a larger floor.','extra-'+kind);items.push(placed);}
+ const extraObjects=o.extraRequests??(o.extras??[]).map(kind=>({kind,id:'extra-'+kind}));
+ if(!Array.isArray(extraObjects)||extraObjects.length>24||new Set(extraObjects.map(i=>i.id)).size!==extraObjects.length)return fail('Choose up to six of each extra piece.','furniture');
+ for(const request of extraObjects){const kind=request.kind;if(!extraTypes[kind])return fail('Choose a valid extra piece.','furniture');const spec=extraTypes[kind],item={...spec,id:request.id,label:request.label??spec.label,sourceKey:request.sourceKey,baseW:spec.w,baseD:spec.d,rotation:0};const placed=freePosition(item,items,W,D);if(!placed)return fail('There is no clear floor space for the '+spec.label.toLowerCase()+'. Reduce its quantity or use a larger floor.',request.sourceKey??'extra-'+kind);items.push(placed);}
  const plantCount=o.plantCount??0,plantStyle=o.plantStyle??'thuja',plantWidth=o.plantWidth??1.5,plantHeight=o.plantHeight??4;
- if(!Number.isInteger(plantCount)||plantCount<0||plantCount>6||!['thuja','leafy'].includes(plantStyle))return fail('Choose 0–6 potted plants and a valid illustration.','plant-count');
+ if(!Number.isInteger(plantCount)||plantCount<0||plantCount>12||!['thuja','leafy'].includes(plantStyle))return fail('Choose up to twelve potted plants and a valid illustration.','plant-count');
  if(plantCount&&(!Number.isFinite(plantWidth)||plantWidth<.5||plantWidth>5||!Number.isFinite(plantHeight)||plantHeight<1||plantHeight>8))return fail('Enter a plant footprint width of 0.5–5 ft and total height of 1–8 ft.','plant-width');
  if(plantCount&&o.hasRoof&&plantHeight>o.roofHeight)return fail('The plant height ('+plantHeight+' ft) exceeds the roof underside ('+o.roofHeight+' ft). Enter a shorter total plant height or correct the roof measurement.','plant-height');
  for(let n=0;n<plantCount;n++){
   const style=o.plantStyles?.[n]??plantStyle;
   if(!['thuja','leafy'].includes(style))return fail('Choose a valid illustration for each plant.','plant-count');
-  const item={id:o.plantIds?.[n]??'plant-'+n,kind:'plant',plantStyle:style,label:(style==='thuja'?'Potted thuja ':'Potted leafy plant ')+(n+1),w:plantWidth,d:plantWidth,baseW:plantWidth,baseD:plantWidth,rotation:0,height:plantHeight};
+  const item={id:o.plantIds?.[n]??'plant-'+n,kind:'plant',plantStyle:style,label:o.plantLabels?.[n]??(style==='thuja'?'Potted thuja ':'Potted leafy plant ')+(n+1),sourceKey:o.plantSources?.[n],w:plantWidth,d:plantWidth,baseW:plantWidth,baseD:plantWidth,rotation:0,height:plantHeight};
   const placed=freePosition(item,items,W,D);
   if(!placed)return fail('There is not enough clear floor space for all these plant footprints. Use fewer or smaller plants, or change the furniture.','plant-count');
   items.push(placed);
@@ -98,7 +101,7 @@ export function planLayout(o){
    if(![0,90,180,270].includes(rotation)||(!['chair','bench','lounger','storage','side-table'].includes(item.kind)&&rotation!==0))return fail('Choose a seating direction in 90-degree steps.','furniture','reset-furniture');
    const w=rotation%180?item.baseD:item.baseW,d=rotation%180?item.baseW:item.baseD;
    if(!Number.isFinite(custom.x)||!Number.isFinite(custom.y)||custom.x<0||custom.y<0||custom.x+w>W+.001||custom.y+d>D+.001)return fail('A moved piece no longer fits this floor. Reset its positions for the new floor or restore the old floor dimensions.','patio-width','reset-furniture');
-   items[n]={...item,x:custom.x,y:custom.y,rotation,w,d};placedIds.add(item.id);
+   items[n]={...item,x:custom.x,y:custom.y,rotation,w,d,locked:!!custom.locked};placedIds.add(item.id);
   }
   // New plants find a free spot around the user's existing arrangement.
   for(let n=0;n<items.length;n++)if(!placedIds.has(items[n].id)){
@@ -108,6 +111,7 @@ export function planLayout(o){
   }
   if(items.some((a,i)=>items.some((b,j)=>j>i&&overlaps(a,b))))return fail('Item footprints overlap. Reset their positions or separate them.','furniture','reset-furniture');
  }
+ for(const item of [...items,...openingPlan.openings])item.locked=(o.lockedIds??[]).includes(item.id)||(o.lockedIds===undefined&&!!item.locked);
  const modules=screens.reduce((s,i)=>s+i.modules,0),coverage=round(screens.reduce((s,i)=>s+i.coverage,0)),width=round(screens.reduce((s,i)=>s+i.width,0)),surplus=round(screens.reduce((s,i)=>s+i.surplus,0)),fits=screens.every(s=>s.fits);
  const price=o.modulePrice??null,extras=o.extraCost??0;
  if(price!==null&&(!Number.isFinite(price)||price<0||price>100000)||!Number.isFinite(extras)||extras<0||extras>100000)return {error:'Enter valid nonnegative prices, or leave the module price blank.'};
