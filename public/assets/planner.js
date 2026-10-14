@@ -1,8 +1,8 @@
-import {parseGaps} from './screen-pieces.js?v=print-20261014';
-import {bindOpenings} from './wall-openings.js?v=print-20261014';
-import {privacyScene} from './privacy-scene.js?v=print-20261014';
-import {planLayout,sideNames,rotateFurniture} from './layout-plan.js?v=print-20261014';
-import {bindFurniture} from './furniture-controls.js?v=print-20261014';
+import {parseGaps} from './screen-pieces.js?v=print-final-20261014';
+import {bindOpenings} from './wall-openings.js?v=print-final-20261014';
+import {privacyScene} from './privacy-scene.js?v=print-final-20261014';
+import {planLayout,sideNames,rotateFurniture} from './layout-plan.js?v=print-final-20261014';
+import {bindFurniture} from './furniture-controls.js?v=print-final-20261014';
 const form=document.getElementById('privacy-form'),out=document.getElementById('results'),message=document.getElementById('planner-message'),stateNote=document.getElementById('planner-state-note');
 const decimalInputs=[...form.querySelectorAll('input[inputmode="decimal"]')],rows=[...form.querySelectorAll('.boundary-row')];
 const dollars=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(v);
@@ -192,7 +192,7 @@ function render(p){
  out.append(el('p',reminder,'notice'));
  const report=el('section',undefined,'planner-print-details');report.append(el('h3','Layout details'),el('p','Reference: A is the original far side; D is the original left side. Positions are measured from the A/D corner.','small'));
  const reportTable=(title,headings,records)=>{if(!records.length)return;const t=el('table'),header=el('thead'),row=el('tr'),body=el('tbody');t.append(el('caption',title));for(const heading of headings){const th=el('th',heading);th.scope='col';row.append(th);}header.append(row);t.append(header,body);for(const record of records){const row=el('tr');for(const value of record)row.append(el('td',String(value)));body.append(row);}report.append(t);};
- reportTable('Privacy screens',['Side','Span','Elevation','Pieces / gaps'],p.screens.map(s=>[sideNames[s.side],s.width+' ft',s.base+'–'+s.height+' ft',s.modules+' × '+s.pieceWidth+' ft / '+s.gapWidth+' ft open']));
+ reportTable('Privacy screens',['Side','Span','Elevation','Pieces / gaps'],p.screens.map(s=>[sideNames[s.side],s.width+' ft',s.base+'–'+s.height+' ft',s.modules+' pieces; last '+s.lastPanel+' ft / '+s.gapWidth+' ft open']));
  reportTable('Walls & railings',['Side','Structure','Position along side','Height'],[...p.wallSegments.map(s=>[sideNames[s.side],'Wall',s.start+'–'+s.end+' ft',s.height+' ft']),...p.railSegments.map(s=>[sideNames[s.side],'Railing',s.start+'–'+s.end+' ft',s.height+' ft'])]);
  reportTable('Furniture & plants',['Object','Footprint','Position (x, y)','Direction'],p.items.map(i=>[i.label,i.w+' × '+i.d+' ft',i.x+', '+i.y+' ft',i.kind==='plant'?'—':(i.rotation??0)+'°']));
  reportTable('Doors & windows',['Opening / side','Size','Position along wall','Bottom above floor'],p.openings.map(i=>[i.label+' / '+sideNames[i.side],i.width+' × '+i.height+' ft',i.start+' ft',i.bottom+' ft']));
