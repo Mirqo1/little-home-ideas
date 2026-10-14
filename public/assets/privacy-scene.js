@@ -22,7 +22,7 @@ export function privacyScene(document,p,preview=false,{showRoof=true,showWalls=t
  const surfaces=[];let drawingItem=null;
  const surface=(coords,attrs)=>surfaces.push({coords,attrs:drawingItem?{...attrs,'data-item-id':drawingItem,'class':'furniture-face'}:attrs,depth:coords.reduce((v,q)=>v+q[0]+q[1],0)/coords.length});
  if(showWalls)for(const wall of wallSegments)surface([edge(wall.side,wall.start),edge(wall.side,wall.end),edge(wall.side,wall.end,wall.height),edge(wall.side,wall.start,wall.height)],{fill:'#cbbfaf','fill-opacity':.48,stroke:'#ac9c88','stroke-width':2,'data-feature':'wall-'+wall.side,'pointer-events':'none'});
- const screenFill=p.restricted?'#aeb5af':p.fits?'#6f9379':'#bf9360';
+ const screenFill=p.restricted?'#aeb5af':'#6f9379';
  for(const screen of screens){
   const count=p.estimatePanels===false?1:screen.modules,step=p.estimatePanels===false?screen.width:p.panelWidth;
   for(let i=0;i<count;i++){

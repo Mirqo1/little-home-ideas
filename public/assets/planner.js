@@ -1,6 +1,6 @@
-import {privacyScene} from './privacy-scene.js?v=friendly-20261014';
-import {planLayout,sideNames} from './layout-plan.js?v=friendly-20261014';
-import {bindFurniture} from './furniture-controls.js?v=friendly-20261014';
+import {privacyScene} from './privacy-scene.js?v=friendly2-20261014';
+import {planLayout,sideNames} from './layout-plan.js?v=friendly2-20261014';
+import {bindFurniture} from './furniture-controls.js?v=friendly2-20261014';
 const form=document.getElementById('privacy-form'),out=document.getElementById('results'),message=document.getElementById('planner-message'),stateNote=document.getElementById('planner-state-note');
 const decimalInputs=[...form.querySelectorAll('input[inputmode="decimal"]')],rows=[...form.querySelectorAll('.boundary-row')];
 const dollars=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(v);

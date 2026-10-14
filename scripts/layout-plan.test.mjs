@@ -35,7 +35,7 @@ test('panel count overflow is a review note while the requested layout remains v
  assert.equal(p.error,undefined);assert.match(p.reviewNotes[0],/D.*3 whole panels.*9 ft.*8 ft/);
  assert.equal(p.screens[1].width,8);
  const layout=planLayout({...base,estimatePanels:false,panelWidth:NaN,boundaries:boundaries({left:{screen:true,screenWidth:null}})});
- assert.equal(layout.error,undefined);assert.equal(layout.reviewNotes.length,0);
+ assert.equal(layout.error,undefined);assert.equal(layout.reviewNotes.length,0);assert.equal(layout.fits,true);
 });
 test('a roof without any screen can be drawn below the old screen-height setting',()=>{
  const p=planLayout({...base,hasRoof:true,roofHeight:5,boundaries:boundaries({back:{screen:false}})});

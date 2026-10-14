@@ -1,4 +1,4 @@
-import {spaceFeatures,sideNames} from './space-features.js?v=friendly-20261014';
+import {spaceFeatures,sideNames} from './space-features.js?v=friendly2-20261014';
 export {sideNames};
 const round=n=>Number(n.toFixed(2));
 export function overlaps(a,b){return a.x<b.x+b.w-.001&&a.x+a.w>b.x+.001&&a.y<b.y+b.d-.001&&a.y+a.d>b.y+.001;}
@@ -46,7 +46,7 @@ export function planLayout(o){
    const width=b.screenWidth===null?openLength:b.screenWidth;
    if(!Number.isFinite(width)||width<=0||width>openLength+.001)return fail(sideNames[b.side]+': the available section is '+round(openLength)+' ft, but the requested screen is '+width+' ft. Use a shorter length or cover the full available section.',b.side+'-screen-width','full-section');
    const modules=Math.ceil(width/panelWidth),coverage=round(modules*panelWidth),surplus=round(coverage-width);
-   screens.push({side:b.side,start,width,base,height,span:round(height-base),modules,coverage,surplus,fits:coverage<=openLength+.001,available:round(openLength)});
+   screens.push({side:b.side,start,width,base,height,span:round(height-base),modules,coverage,surplus,fits:!estimatePanels||coverage<=openLength+.001,available:round(openLength)});
   }
  }
  const reviewNotes=estimatePanels?screens.filter(s=>!s.fits).map(s=>sideNames[s.side]+': '+s.modules+' whole panels would cover '+s.coverage+' ft; the available section is '+s.available+' ft. The drawing shows your requested '+s.width+' ft, not an approved panel fit. Compare a different system; only shorten panels if its instructions allow it.'):[];
