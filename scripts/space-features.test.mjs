@@ -41,7 +41,7 @@ test('roof, walls, railing and furniture appear in the SVG and can be peeled awa
   assert.equal(svg.querySelectorAll('[data-feature^="rail-"]').length,2);
   assert.equal(svg.querySelectorAll('[data-feature="chair"]').length,2);
   assert.equal(svg.querySelectorAll('[data-feature="table"]').length,1);
-  assert.match(svg.textContent,/3.5–6 ft/);
+  assert.match(svg.textContent,/Starts 3.5 feet/);
   const hidden=privacyScene(w.document,p,false,{showRoof:false,showWalls:false});
   assert.equal(hidden.querySelectorAll('[data-feature="roof"],[data-feature^="wall-"]').length,0);
   assert.equal(hidden.querySelectorAll('[data-feature="chair"]').length,2);
