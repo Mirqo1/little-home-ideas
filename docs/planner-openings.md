@@ -1,0 +1,10 @@
+# Compact planner and wall openings
+
+- Furniture is one optional fixed illustrative bistro set: two 2 × 2 ft chair footprints and a 2 × 2 ft table. No bench choice or dimension entry in the UI. Rendered chair seat depth is 68% of its floor footprint, seat elevation 1.45 ft and slatted back top 3.7 ft. These are drawing examples rather than a product or clearance standard.
+- Four independent plant checkboxes (two thuja, two leafy); fixed illustrative 1.5 ft footprints / 4 ft height. Stable plant IDs preserve poses when selections change.
+- Up to one door and two windows, attached to selected existing wall sections. Optional wall selectors are limited to checked walls. Drawing markers default to at most 3 ft width; door at most 6.5 ft height, window at most 3 ft height. Small walls reduce symbol dimensions; labels describe this. Doors stay at floor level and move along the wall. Windows move along the wall and vertically. Pointer movement crosses other openings; release validates overlap and returns to the previous position on failure. Arrow keys provide equivalent movement. Wall resizing preserves valid poses and offers a reset on failure. Print and text worksheets include the opening markers and dimensions.
+- Wall faces are subdivided around openings, so the wall does not cover door/window markers. This is a drawing of existing openings, not permission or instructions to cut a wall.
+- The screen projection area increased from 790 × 475 to 810 × 520 SVG units; wider desktop results layout from the prior update remains. This affects the on-screen preview and result, not only print.
+- Product table explicitly shows per-side panel count and final panel used/excess length. Counts use a separate ceiling per side; no offcut transfer assumption. 3 ft and 7 ft at 1.2 ft per panel produce 3 + 6 = 9 panels, with 0.6 + 0.2 = 0.8 ft excess. Cutting feasibility is not assessed. A regression case of two 1.3 ft sides distinguishes this from pooled arithmetic (4 panels, not 3).
+
+Validation: automated geometry, keyboard, pointer, restored-position, collision and panel-rounding tests; static build; link/metadata audit; live UI review after deployment.

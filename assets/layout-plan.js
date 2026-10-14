@@ -1,4 +1,5 @@
-import {spaceFeatures,sideNames} from './space-features.js?v=sides-20261014';
+import {wallOpenings} from './wall-openings.js?v=openings-20261014';
+import {spaceFeatures,sideNames} from './space-features.js?v=openings-20261014';
 export {sideNames};
 const round=n=>Number(n.toFixed(2));
 export function overlaps(a,b){return a.x<b.x+b.w-.001&&a.x+a.w>b.x+.001&&a.y<b.y+b.d-.001&&a.y+a.d>b.y+.001;}
@@ -35,7 +36,7 @@ export function planLayout(o){
  if(o.hasRoof&&(!Number.isFinite(o.roofHeight)||o.roofHeight<2||o.roofHeight>30))return fail('Enter the floor-to-roof distance (2–30 ft).','roof-height');
  if(o.hasRoof&&hasScreens&&height>o.roofHeight)return fail('The screen top ('+height+' ft) is higher than the roof underside ('+o.roofHeight+' ft). Lower the screen top or correct the roof measurement.','screen-height');
  const room=spaceFeatures({...o,hasRoof:false,screenSide:'back',walls:[],hasRailing:false,screenMode:'full',height:hasScreens?height:1});
- if(room.error)return fail(room.error,'seat-width','remove-furniture');
+ if(room.error)return fail(room.error,'furniture','remove-furniture');
  if(!Array.isArray(o.boundaries)||o.boundaries.length!==4||new Set(o.boundaries.map(b=>b.side)).size!==4||o.boundaries.some(b=>!Object.hasOwn(sideNames,b.side)))return {error:'Provide each of the four sides once.'};
  const wallSegments=[],railSegments=[],screens=[];
  for(const b of o.boundaries){
@@ -61,10 +62,12 @@ export function planLayout(o){
    if(height<=base)return fail(sideNames[b.side]+': the screen top ('+height+' ft) must be above the railing ('+base+' ft). Increase the top height or cover the railing too.',b.side+'-mode','cover-rail');
    const width=b.screenWidth===null?openLength:b.screenWidth;
    if(!Number.isFinite(width)||width<=0||width>openLength+.001)return fail(sideNames[b.side]+': the available section is '+round(openLength)+' ft, but the requested screen is '+width+' ft. Use a shorter length or cover the full available section.',b.side+'-screen-width','full-section');
-   const modules=Math.ceil(width/panelWidth),coverage=round(modules*panelWidth),surplus=round(coverage-width);
-   screens.push({side:b.side,start,width,base,height,span:round(height-base),modules,coverage,surplus,fits:!estimatePanels||coverage<=openLength+.001,available:round(openLength)});
+   const modules=Math.ceil(width/panelWidth-1e-10),coverage=round(modules*panelWidth),surplus=round(coverage-width);
+   screens.push({side:b.side,start,width,base,height,span:round(height-base),modules,coverage,surplus,fits:!estimatePanels||coverage<=openLength+.001,available:round(openLength),lastPanel:round(width-(modules-1)*panelWidth)});
   }
  }
+ const openingPlan=wallOpenings(o.openings??[],wallSegments,o.openingPoses??[]);if(openingPlan.error)return openingPlan;
+ const defaults=wallOpenings(o.openings??[],wallSegments);
  const reviewNotes=estimatePanels?screens.filter(s=>!s.fits).map(s=>sideNames[s.side]+': '+s.modules+' whole panels would cover '+s.coverage+' ft; the available section is '+s.available+' ft. The drawing shows your requested '+s.width+' ft, not an approved panel fit. Compare a different system; only shorten panels if its instructions allow it.'):[];
  let items=room.items.map((i,index)=>({...i,baseW:i.w,baseD:i.d,rotation:0,id:'item-'+index,label:i.kind==='table'?'Table':i.kind==='bench'?'Bench':'Chair '+(index===0?'1':'2')}));
  const plantCount=o.plantCount??0,plantStyle=o.plantStyle??'thuja',plantWidth=o.plantWidth??1.5,plantHeight=o.plantHeight??4;
@@ -74,7 +77,7 @@ export function planLayout(o){
  for(let n=0;n<plantCount;n++){
   const style=o.plantStyles?.[n]??plantStyle;
   if(!['thuja','leafy'].includes(style))return fail('Choose a valid illustration for each plant.','plant-count');
-  const item={id:'plant-'+n,kind:'plant',plantStyle:style,label:(style==='thuja'?'Potted thuja ':'Potted leafy plant ')+(n+1),w:plantWidth,d:plantWidth,baseW:plantWidth,baseD:plantWidth,rotation:0,height:plantHeight};
+  const item={id:o.plantIds?.[n]??'plant-'+n,kind:'plant',plantStyle:style,label:(style==='thuja'?'Potted thuja ':'Potted leafy plant ')+(n+1),w:plantWidth,d:plantWidth,baseW:plantWidth,baseD:plantWidth,rotation:0,height:plantHeight};
   const placed=freePosition(item,items,W,D);
   if(!placed)return fail('There is not enough clear floor space for all these plant footprints. Use fewer or smaller plants, or change the furniture.','plant-count');
   items.push(placed);
@@ -103,7 +106,7 @@ export function planLayout(o){
  const modules=screens.reduce((s,i)=>s+i.modules,0),coverage=round(screens.reduce((s,i)=>s+i.coverage,0)),width=round(screens.reduce((s,i)=>s+i.width,0)),surplus=round(coverage-width),fits=screens.every(s=>s.fits);
  const price=o.modulePrice??null,extras=o.extraCost??0;
  if(price!==null&&(!Number.isFinite(price)||price<0||price>100000)||!Number.isFinite(extras)||extras<0||extras>100000)return {error:'Enter valid nonnegative prices, or leave the module price blank.'};
- return {...room,estimatePanels,reviewNotes,roofHeight:o.hasRoof?o.roofHeight:null,space:o.space,patioWidth:W,depth:D,height,panelWidth,wallHeight:wallSegments.length?o.wallHeight:null,railHeight:railSegments.length?o.railHeight:null,walls:wallSegments.map(s=>s.side),railSides:railSegments.map(s=>s.side),wallSegments,railSegments,screens,items,defaultItems,plantCount,plantStyle,plantWidth,plantHeight,modules,coverage,width,surplus,fits,modulePrice:price,extraCost:extras,total:price===null?null:round(modules*price+extras),restricted:false,
+ return {...room,estimatePanels,reviewNotes,roofHeight:o.hasRoof?o.roofHeight:null,space:o.space,patioWidth:W,depth:D,height,panelWidth,wallHeight:wallSegments.length?o.wallHeight:null,railHeight:railSegments.length?o.railHeight:null,walls:wallSegments.map(s=>s.side),railSides:railSegments.map(s=>s.side),wallSegments,railSegments,screens,items,defaultItems,openings:openingPlan.openings,defaultOpenings:defaults.openings??openingPlan.openings,plantCount,plantStyle,plantWidth,plantHeight,modules,coverage,width,surplus,fits,modulePrice:price,extraCost:extras,total:price===null?null:round(modules*price+extras),restricted:false,
  summary:modules+' example modules across '+screens.length+' sides. Counts are rounded up separately on each side; modules cannot be transferred around a corner. Supports and overlaps can change usable coverage.',
  warning:'A geometric layout only. Verify wind limits, product installation, permitted fixings, exits, and walking clearance.'+(o.space==='balcony'?' For a balcony, confirm building permission, guard requirements, drainage, and permitted loads. Screens are not replacement guards and railing attachments are not assessed.':'')};
 }
