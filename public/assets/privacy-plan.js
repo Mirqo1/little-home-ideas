@@ -1,11 +1,14 @@
-export function planPrivacy({space,width,panelWidth,budget,need,exposure,approved,patioWidth=width,depth=8,height=6,modulePrice=null,extraCost=0}) {
+import {spaceFeatures} from './space-features.js?v=room-20261014';
+export function planPrivacy({space,width,panelWidth,budget,need,exposure,approved,patioWidth=width,depth=8,height=6,modulePrice=null,extraCost=0,...features}) {
  if(!['patio','balcony'].includes(space)||!['low','medium','high'].includes(budget)||!['view','flex','green'].includes(need)||!['sheltered','exposed'].includes(exposure))return {error:'Select valid preferences.'};
  if(!Number.isFinite(width)||width<1||width>100||!Number.isFinite(panelWidth)||panelWidth<1||panelWidth>10)return {error:'Enter a screening width of 1–100 feet and an example module width of 1–10 feet.'};
  if(!Number.isFinite(patioWidth)||patioWidth<1||patioWidth>100||!Number.isFinite(depth)||depth<2||depth>100||!Number.isFinite(height)||height<1||height>10)return {error:'Enter an outdoor width of 1–100 feet, depth of 2–100 feet, and target screening height of 1–10 feet.'};
- if(width>patioWidth)return {error:'The screening target cannot be wider than the outdoor boundary. Reduce the target or correct the outdoor width.'};
+ const room=spaceFeatures({patioWidth,depth,height,...features});
+ if(room.error)return room;
+ if(width>room.boundaryLength)return {error:'The screening target cannot be wider than the chosen outdoor boundary. Reduce the target or choose another side.'};
  if(modulePrice!==null && (!Number.isFinite(modulePrice)||modulePrice<0||modulePrice>100000))return {error:'Enter a valid price per module, or leave it blank.'};
  if(!Number.isFinite(extraCost)||extraCost<0||extraCost>100000)return {error:'Enter valid additional costs, or use zero.'};
- const modules=Math.ceil(width/panelWidth),coverage=Number((modules*panelWidth).toFixed(2)),surplus=Number((coverage-width).toFixed(2)),fits=coverage<=patioWidth;
+ const modules=Math.ceil(width/panelWidth),coverage=Number((modules*panelWidth).toFixed(2)),surplus=Number((coverage-width).toFixed(2)),fits=coverage<=room.boundaryLength;
  const restricted=(space==='balcony'&&!approved)||exposure==='exposed';
  let title,detail,alternatives;
  if(restricted){title='Start with the seating layout';detail='Before adding screens or heavy planters, resolve the building and weather checks. Try a different permitted seating position to reduce the direct sightline.';alternatives=['Use an existing sheltered corner if it remains accessible.','Record the viewing angle you want to block and discuss restrictions with management.'];}
@@ -18,8 +21,11 @@ export function planPrivacy({space,width,panelWidth,budget,need,exposure,approve
  if(space==='balcony')checklist.splice(2,0,'Confirm balcony permitted loads and wind restrictions with building management; include wet soil weight.');
  if(!fits)checklist.unshift('The example modules exceed the outdoor width. Choose another module size or layout; do not buy this count as-is.');
  const warning=restricted?'Screen and planter selection is paused: exposed or uncertain sites need appropriate product guidance; balconies also need confirmed building permission, loads, drainage, and wind restrictions. No railing attachments are assessed.':'This is a planning worksheet, not a structural assessment or safety approval. Follow product-specific installation and weather instructions. Keep exits clear; do not improvise railing attachments.';
+ if(room.roofHeight!==null)checklist.push('Confirm required product clearance below the roof; the roof does not establish wind shelter or provide approved mounting points.');
+ if(room.railHeight!==null)checklist.push('Existing railing geometry is shown only. Do not assume the railing can support a screen or that a screen replaces a guard.');
+ if(room.items.length)checklist.push('Measure door swings and walking clearance around the furniture; the displayed footprints do not certify access or circulation.');
  const total=modulePrice===null?null:Math.round((modules*modulePrice+extraCost)*100)/100;
- return {title,detail,alternatives,checklist,warning,modules,coverage,surplus,fits,restricted,total,modulePrice,extraCost,space,width,panelWidth,patioWidth,depth,height,budget,need,exposure,
+ return {...room,title,detail,alternatives,checklist,warning,modules,coverage,surplus,fits,restricted,total,modulePrice,extraCost,space,width,panelWidth,patioWidth,depth,height,budget,need,exposure,
  summary:`Paper-layout estimate: ${modules} example modules at ${panelWidth} feet cover ${coverage} feet, ${surplus} feet beyond your ${width}-foot target. This assumes straight, gap-free placement; supports, hinges, and overlaps can change usable coverage. It is not a purchase or installation plan.`,
  ideas:[[title,detail],...alternatives.map((x,i)=>['Alternative '+(i+1),x])]};
 }
