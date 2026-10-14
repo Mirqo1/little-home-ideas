@@ -1,4 +1,4 @@
-import {moveFurniture,rotateFurniture} from './layout-plan.js?v=openings-20261014';
+import {moveFurniture,rotateFurniture} from './layout-plan.js?v=gaps-20261014';
 export function floorDelta(svg,dx,dy){
  const box=svg.getBoundingClientRect(),pixelScale=Math.min(box.width/960,box.height/740),scale=Number(svg.getAttribute('data-projection-scale'));
  if(!Number.isFinite(pixelScale)||pixelScale<=0||!Number.isFinite(scale)||scale<=0)return null;
@@ -27,7 +27,7 @@ export function bindFurniture(scene,plan,render,notice,moved,selected=()=>{}){
   const face=e.target.closest?.('[data-item-id]');if(!face||!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','r','R'].includes(e.key))return;
   e.preventDefault();const id=face.getAttribute('data-item-id'),item=select(id),step=e.shiftKey?1:.25;
   if(e.key.toLowerCase()==='r'){
-   if(!['chair','bench'].includes(item.kind))return;
+   if(!['chair','bench','lounger','storage','side-table'].includes(item.kind))return;
    const next=rotateFurniture(plan.items,id,plan.patioWidth,plan.depth,e.shiftKey?-90:90);
    if(next.error){notice(next.error);return;}plan.items=next.items;notice('');render(id);scene.querySelector('[data-item-id="'+id+'"][tabindex]')?.focus();moved(plan.items.find(i=>i.id===id));return;
   }

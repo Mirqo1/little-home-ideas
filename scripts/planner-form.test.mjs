@@ -1,3 +1,4 @@
+import {parseGaps} from '../public/assets/screen-pieces.js';
 import {bindOpenings} from '../public/assets/wall-openings.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -13,7 +14,7 @@ function setup(){
  const w=new Window();
  w.SVGElement.prototype.getBoundingClientRect=()=>({left:0,top:0,width:960,height:740});
  w.document.body.innerHTML=page.slice(page.indexOf('<header'),page.indexOf('<script'));
- vm.runInNewContext(source,{document:w.document,window:w,planLayout,sideNames,rotateFurniture,privacyScene,bindFurniture,bindOpenings,Intl,URL,Blob,setTimeout,queueMicrotask});
+ vm.runInNewContext(source,{document:w.document,window:w,parseGaps,planLayout,sideNames,rotateFurniture,privacyScene,bindFurniture,bindOpenings,Intl,URL,Blob,setTimeout,queueMicrotask});
  return w;
 }
 function submit(w){w.document.getElementById('privacy-form').requestSubmit();}
@@ -221,5 +222,18 @@ test('pointer movement carries a window along the chosen wall and up its plane',
   face.dispatchEvent(new w.PointerEvent('pointerdown',{button:0,clientX:100,clientY:100,pointerId:1,bubbles:true}));
   scene.dispatchEvent(new w.PointerEvent('pointermove',{clientX:100+.8*scale,clientY:100+(.38-.85*.5)*scale,pointerId:1,bubbles:true}));scene.dispatchEvent(new w.PointerEvent('pointerup',{pointerId:1,bubbles:true}));
   assert.match(scene.querySelector('[data-opening-id="window-1"][tabindex]').getAttribute('aria-label'),/1 ft along side, bottom 3.5 ft/);
+ }finally{w.happyDOM.abort();}
+});
+test('uneven gap input draws pieces and catches invalid lists without losing the last drawing',()=>{
+ const w=setup();try{
+  check(w,'back-separate');w.document.getElementById('back-piece-width').value='2';w.document.getElementById('back-gap-unit').value='cm';w.document.getElementById('back-gaps').value='15; 10; 20';submit(w);
+  assert.equal(w.document.getElementById('planner-message').hidden,true);assert.ok(w.document.querySelectorAll('[data-feature="screen"]').length>1);assert.match(w.document.querySelector('.screen-summary').textContent,/Open gaps/);
+  const drawing=w.document.querySelector('.plan-sketch').outerHTML;w.document.getElementById('back-gaps').value='15; bad';submit(w);assert.equal(w.document.querySelector('.plan-sketch').outerHTML,drawing);assert.equal(w.document.getElementById('back-gaps').getAttribute('aria-invalid'),'true');
+ }finally{w.happyDOM.abort();}
+});
+test('extra furniture checkboxes add distinct movable shapes and support rotation',()=>{
+ const w=setup();try{
+  check(w,'extra-storage');check(w,'extra-lounger');submit(w);assert.equal(w.document.getElementById('planner-message').hidden,true);assert.ok(w.document.querySelector('[data-feature="storage"]'));assert.ok(w.document.querySelector('[data-feature="lounger"]'));
+  const picker=w.document.getElementById('layout-piece');picker.value='extra-lounger';picker.dispatchEvent(new w.Event('change'));assert.equal(w.document.querySelector('.item-toolbar button').disabled,false);
  }finally{w.happyDOM.abort();}
 });

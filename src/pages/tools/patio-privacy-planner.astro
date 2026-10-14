@@ -1,8 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 ---
-<Base title="Patio Privacy Planner" description="Plan a patio or balcony with screens on multiple sides, partial walls and railings, and movable furniture.">
-<header class="container page-intro"><p class="eyebrow">Free planning tool · No account needed</p><h1>Patio Privacy Planner</h1><p class="lead">Start with floor dimensions. Choose walls, railings, and privacy screens, then arrange furniture, plants, doors, and windows.</p></header>
+<Base title="Patio & Balcony Layout Planner" description="Design a simple 3D patio or balcony layout with movable furniture, plants, doors, windows, and privacy screens with adjustable gaps.">
+<header class="container page-intro"><p class="eyebrow">Design your balcony or patio · Free · No account needed</p><h1>Patio &amp; Balcony Layout Planner</h1><p class="lead">Make a simple 3D layout of your outdoor space. Add walls and privacy screens, then drag furniture, plants, doors, and windows into place.</p><div class="planner-intro-actions"><a class="button" href="#arrange-space">Arrange furniture &amp; plants →</a><a class="button secondary" href="#privacy-form">Start with your floor</a></div></header>
 <section class="container section planner-layout">
 <form class="panel planner-form" id="privacy-form" novalidate>
 <fieldset class="planner-step step-floor"><legend><span>1</span> Floor &amp; roof</legend>
@@ -19,6 +19,10 @@ import Base from '../../layouts/Base.astro';
  <p class="small side-coverage" aria-live="polite"></p>
  <label class="check-label"><input type="checkbox" id="back-custom-width"/> Cover only part of this section</label>
  <div class="screen-length" hidden><label for="back-screen-width">A · far side: length to cover (ft)</label><input id="back-screen-width" type="text" inputmode="decimal" data-min="0.1" data-max="100" value="" disabled required/></div>
+ <label class="check-label"><input type="checkbox" id="back-separate"/> Separate screen pieces with gaps</label>
+ <div class="screen-piece-fields" hidden><label for="back-piece-width">A: width of each screen piece (ft)</label><input id="back-piece-width" type="text" inputmode="decimal" data-min="0.1" data-max="100" value="3" disabled required/>
+ <div class="field-pair gap-pair"><div><label for="back-gaps">A: gaps between pieces</label><input id="back-gaps" type="text" value="6" disabled/></div><div><label for="back-gap-unit">Gap unit</label><select id="back-gap-unit" disabled><option value="in">Inches</option><option value="cm">Centimeters</option></select></div></div>
+ <p class="small">One value repeats. For uneven spacing, use semicolons: 15; 10; 20. The last gap repeats after the list. Zero means no gap. 15 cm is about 5.91 inches. The last piece may be partial; cutting is not assessed.</p></div>
  <div class="screen-placement" hidden><label for="back-mode">Screen position on this railing</label><select id="back-mode"><option value="full">Cover the railing and the space above</option><option value="above">Only cover the space above the railing</option></select></div>
  </div>
 </div><div class="boundary-row" data-side="right" role="group" aria-label="B · right side">
@@ -28,6 +32,10 @@ import Base from '../../layouts/Base.astro';
  <p class="small side-coverage" aria-live="polite"></p>
  <label class="check-label"><input type="checkbox" id="right-custom-width"/> Cover only part of this section</label>
  <div class="screen-length" hidden><label for="right-screen-width">B · right side: length to cover (ft)</label><input id="right-screen-width" type="text" inputmode="decimal" data-min="0.1" data-max="100" value="" disabled required/></div>
+ <label class="check-label"><input type="checkbox" id="right-separate"/> Separate screen pieces with gaps</label>
+ <div class="screen-piece-fields" hidden><label for="right-piece-width">B: width of each screen piece (ft)</label><input id="right-piece-width" type="text" inputmode="decimal" data-min="0.1" data-max="100" value="3" disabled required/>
+ <div class="field-pair gap-pair"><div><label for="right-gaps">B: gaps between pieces</label><input id="right-gaps" type="text" value="6" disabled/></div><div><label for="right-gap-unit">Gap unit</label><select id="right-gap-unit" disabled><option value="in">Inches</option><option value="cm">Centimeters</option></select></div></div>
+ <p class="small">One value repeats. For uneven spacing, use semicolons: 15; 10; 20. The last gap repeats after the list. Zero means no gap. 15 cm is about 5.91 inches. The last piece may be partial; cutting is not assessed.</p></div>
  <div class="screen-placement" hidden><label for="right-mode">Screen position on this railing</label><select id="right-mode"><option value="full">Cover the railing and the space above</option><option value="above">Only cover the space above the railing</option></select></div>
  </div>
 </div><div class="boundary-row" data-side="front" role="group" aria-label="C · near side">
@@ -37,6 +45,10 @@ import Base from '../../layouts/Base.astro';
  <p class="small side-coverage" aria-live="polite"></p>
  <label class="check-label"><input type="checkbox" id="front-custom-width"/> Cover only part of this section</label>
  <div class="screen-length" hidden><label for="front-screen-width">C · near side: length to cover (ft)</label><input id="front-screen-width" type="text" inputmode="decimal" data-min="0.1" data-max="100" value="" disabled required/></div>
+ <label class="check-label"><input type="checkbox" id="front-separate"/> Separate screen pieces with gaps</label>
+ <div class="screen-piece-fields" hidden><label for="front-piece-width">C: width of each screen piece (ft)</label><input id="front-piece-width" type="text" inputmode="decimal" data-min="0.1" data-max="100" value="3" disabled required/>
+ <div class="field-pair gap-pair"><div><label for="front-gaps">C: gaps between pieces</label><input id="front-gaps" type="text" value="6" disabled/></div><div><label for="front-gap-unit">Gap unit</label><select id="front-gap-unit" disabled><option value="in">Inches</option><option value="cm">Centimeters</option></select></div></div>
+ <p class="small">One value repeats. For uneven spacing, use semicolons: 15; 10; 20. The last gap repeats after the list. Zero means no gap. 15 cm is about 5.91 inches. The last piece may be partial; cutting is not assessed.</p></div>
  <div class="screen-placement" hidden><label for="front-mode">Screen position on this railing</label><select id="front-mode"><option value="full">Cover the railing and the space above</option><option value="above">Only cover the space above the railing</option></select></div>
  </div>
 </div><div class="boundary-row" data-side="left" role="group" aria-label="D · left side">
@@ -46,6 +58,10 @@ import Base from '../../layouts/Base.astro';
  <p class="small side-coverage" aria-live="polite"></p>
  <label class="check-label"><input type="checkbox" id="left-custom-width"/> Cover only part of this section</label>
  <div class="screen-length" hidden><label for="left-screen-width">D · left side: length to cover (ft)</label><input id="left-screen-width" type="text" inputmode="decimal" data-min="0.1" data-max="100" value="" disabled required/></div>
+ <label class="check-label"><input type="checkbox" id="left-separate"/> Separate screen pieces with gaps</label>
+ <div class="screen-piece-fields" hidden><label for="left-piece-width">D: width of each screen piece (ft)</label><input id="left-piece-width" type="text" inputmode="decimal" data-min="0.1" data-max="100" value="3" disabled required/>
+ <div class="field-pair gap-pair"><div><label for="left-gaps">D: gaps between pieces</label><input id="left-gaps" type="text" value="6" disabled/></div><div><label for="left-gap-unit">Gap unit</label><select id="left-gap-unit" disabled><option value="in">Inches</option><option value="cm">Centimeters</option></select></div></div>
+ <p class="small">One value repeats. For uneven spacing, use semicolons: 15; 10; 20. The last gap repeats after the list. Zero means no gap. 15 cm is about 5.91 inches. The last piece may be partial; cutting is not assessed.</p></div>
  <div class="screen-placement" hidden><label for="left-mode">Screen position on this railing</label><select id="left-mode"><option value="full">Cover the railing and the space above</option><option value="above">Only cover the space above the railing</option></select></div>
  </div>
 </div></div>
@@ -53,9 +69,15 @@ import Base from '../../layouts/Base.astro';
 <div class="wall-opening-settings"><p class="field-title">Doors &amp; windows on existing walls</p><p class="small" id="openings-hint">Select a wall above to add an opening.</p><div class="opening-row"><label class="check-label"><input type="checkbox" id="door-1" data-opening="door"/> Door</label><div id="door-1-fields" hidden><label for="door-1-side">Door wall</label><select id="door-1-side"></select></div></div><div class="opening-row"><label class="check-label"><input type="checkbox" id="window-1" data-opening="window"/> Window 1</label><div id="window-1-fields" hidden><label for="window-1-side">Window 1 wall</label><select id="window-1-side"></select></div></div><div class="opening-row"><label class="check-label"><input type="checkbox" id="window-2" data-opening="window"/> Window 2</label><div id="window-2-fields" hidden><label for="window-2-side">Window 2 wall</label><select id="window-2-side"></select></div></div><p class="small">Drag doors along their wall; drag windows along the wall and up/down. Symbols start at up to 3 ft wide; door height up to 6.5 ft, window height up to 3 ft. Smaller wall sections reduce the symbol size. Existing-opening markers only; no construction, door swing, or access assessment.</p></div><div id="screen-common"><label for="screen-height">How high should the screen reach? (ft above floor)</label><input id="screen-height" type="text" inputmode="decimal" data-min="1" data-max="10" value="6" required/></div><p class="small">Measure from the floor to the top you want, even when screening starts above a railing. A point or comma works for decimals.</p>
 <details class="cost-details" id="product-details"><summary>Optional: estimate panels &amp; cost</summary><p class="small">You can draw your space without product measurements. Open this when comparing a specific panel system. Each side is rounded up separately; offcuts are not reused automatically.</p><label for="panel-width">Usable width of one panel (ft)</label><input id="panel-width" type="text" inputmode="decimal" data-min="0.1" data-max="100" value="3" disabled required/><label for="module-price">Price per module (USD)</label><input id="module-price" disabled type="text" inputmode="decimal" data-min="0" data-max="100000" placeholder="Leave blank if unknown"/><label for="extra-cost">Additional costs (USD)</label><input id="extra-cost" disabled type="text" inputmode="decimal" data-min="0" data-max="100000" value="0"/><p class="small">Assumes the same unit price on all sides. Add supports, delivery, and taxes yourself.</p></details>
 </fieldset>
-<fieldset class="planner-step step-furniture"><legend><span>3</span> Furniture &amp; plants</legend>
+<fieldset class="planner-step step-furniture" id="arrange-space"><legend><span>3</span> Arrange your space</legend>
 <label class="check-label"><input type="checkbox" id="furniture"/> Add two chairs and a small table</label>
 <p class="small">Fixed illustrative footprints: chairs 2 × 2 ft each; table 2 × 2 ft. Drag pieces and rotate chairs in the drawing. This is a visual arrangement, not a furniture or clearance specification.</p>
+<p class="field-title">Add more pieces</p><div class="compact-plants">
+<label class="check-label"><input type="checkbox" id="extra-bench" data-extra="bench"/> Compact bench</label>
+<label class="check-label"><input type="checkbox" id="extra-lounger" data-extra="lounger"/> Lounge chair</label>
+<label class="check-label"><input type="checkbox" id="extra-side-table" data-extra="side-table"/> Side table</label>
+<label class="check-label"><input type="checkbox" id="extra-storage" data-extra="storage"/> Storage chest</label>
+</div><p class="small">Fixed example footprints: bench 4 × 1.5 ft, lounger 2 × 5 ft, side table 1.5 × 1.5 ft, chest 3 × 1.5 ft. All can be dragged; rectangular pieces can be rotated. Choose only what fits.</p>
 <p class="field-title">Add potted plants</p><div class="compact-plants">
 <label class="check-label"><input type="checkbox" id="plant-thuja-1" data-plant="thuja"/> Thuja 1</label>
 <label class="check-label"><input type="checkbox" id="plant-thuja-2" data-plant="thuja"/> Thuja 2</label>
@@ -66,5 +88,5 @@ import Base from '../../layouts/Base.astro';
 <div class="plan-actions"><button class="button" type="submit">Show my layout →</button><button class="reset-button" type="reset">Start over</button></div><p class="small">Your answers stay on this page. Nothing is sent to us or stored automatically.</p><noscript><p>JavaScript is needed for the planner. Read the <a href="/articles/patio-privacy-ideas-for-renters/">patio privacy guide</a>.</p></noscript>
 </form>
 <section class="panel planner-result" aria-label="Your patio privacy worksheet"><h2>Your space, your layout</h2><p id="planner-state-note" class="small" hidden></p><p id="planner-message" class="form-error" role="alert" tabindex="-1" hidden></p><div id="results" role="region" aria-label="Planner results" aria-live="polite" tabindex="-1"><div class="planner-empty"><p class="eyebrow">Example only · 10 × 8 ft floor</p><div id="planner-preview"></div><h3>Build your layout from the floor up.</h3><p>Start with the floor dimensions. Add walls, railings, and screens on sides A–D, then move furniture into place.</p><p class="small">If a combination does not work, this example or your last valid plan stays visible while you correct it.</p></div></div></section>
-</section><section class="container planner-guidance"><h2>What the drawing means</h2><p>A rectangular floor, a flat full-area roof, wall/railing sections on four sides, example screen modules, furniture/plant footprints, and movable existing-door/window markers. Partial walls can share a side with a privacy screen, railing, or both. Screens cover the entire available section unless you choose a shorter length. Product panel counts are optional and never approve cutting or fitting a panel.</p><p>The planner checks geometric fit, furniture overlap, and opening overlap on each wall. It does not assess walking clearance, door swings, wind, structural loads, guard compliance, or mounting methods. Confirm product and building requirements before installation. Read our <a href="/articles/patio-privacy-ideas-for-renters/">patio privacy guide</a>.</p></section>
-<script type="module" src="/assets/planner.js?v=openings-20261014" is:inline></script></Base>
+</section><section class="container planner-guidance"><h2>What the drawing means</h2><p>A rectangular floor, a flat full-area roof, wall/railing sections on four sides, example screen modules, furniture/plant footprints, and movable existing-door/window markers. Partial walls can share a side with a privacy screen, railing, or both. Screens span the available section unless you choose a shorter length; separate pieces can leave regular or uneven gaps. Product panel counts are optional and never approve cutting or fitting a panel.</p><p>The planner checks geometric fit, furniture overlap, and opening overlap on each wall. It does not assess walking clearance, door swings, wind, structural loads, guard compliance, or mounting methods. Confirm product and building requirements before installation. Read our <a href="/articles/patio-privacy-ideas-for-renters/">patio privacy guide</a>.</p></section>
+<script type="module" src="/assets/planner.js?v=gaps-20261014" is:inline></script></Base>
