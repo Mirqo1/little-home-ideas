@@ -75,3 +75,11 @@ test('one layout mixes plant types and transient dragging can pass through occup
  assert.ok(moveFurniture(p.items,'plant-0',x,y,10,8,true).items);
  assert.match(moveFurniture(p.items,'plant-0',x,y,10,8).error,/overlap/);
 });
+test('above-railing errors identify the actual side and its setting',()=>{
+ const p=planLayout({...base,height:3,railHeight:5,boundaries:boundaries({back:{screen:false},left:{screen:true,rail:true,mode:'above'}})});
+ assert.match(p.error,/D · left side/);assert.equal(p.field,'left-mode');assert.equal(p.action,'cover-rail');
+});
+test('partial walls work with an entirely open remainder',()=>{
+ const p=planLayout({...base,wallHeight:7,boundaries:boundaries({back:{screen:false},left:{wall:true,wallLength:2,wallAt:'end'}})});
+ assert.equal(p.error,undefined);assert.deepEqual(p.wallSegments,[{side:'left',start:6,end:8,height:7}]);assert.equal(p.railSegments.length,0);assert.equal(p.screens.length,0);
+});

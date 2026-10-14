@@ -1,4 +1,4 @@
-import {moveFurniture,rotateFurniture} from './layout-plan.js?v=usability-20261014';
+import {moveFurniture,rotateFurniture} from './layout-plan.js?v=sides-20261014';
 export function floorDelta(svg,dx,dy){
  const box=svg.getBoundingClientRect(),pixelScale=Math.min(box.width/960,box.height/740),scale=Number(svg.getAttribute('data-projection-scale'));
  if(!Number.isFinite(pixelScale)||pixelScale<=0||!Number.isFinite(scale)||scale<=0)return null;
