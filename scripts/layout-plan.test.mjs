@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {planLayout,moveFurniture,overlaps} from '../public/assets/layout-plan.js';
+import {planLayout,moveFurniture,rotateFurniture,overlaps} from '../public/assets/layout-plan.js';
 import {floorDelta} from '../public/assets/furniture-controls.js';
 const sides=['back','right','front','left'];
 const base={space:'patio',patioWidth:10,depth:8,height:6,panelWidth:3,furniture:'none'};
@@ -40,4 +40,27 @@ test('panel count overflow is a review note while the requested layout remains v
 test('a roof without any screen can be drawn below the old screen-height setting',()=>{
  const p=planLayout({...base,hasRoof:true,roofHeight:5,boundaries:boundaries({back:{screen:false}})});
  assert.equal(p.error,undefined);assert.equal(p.screens.length,0);assert.equal(p.roofHeight,5);
+});
+test('potted plants can be added without furniture and fit around existing pieces',()=>{
+ const b=boundaries();
+ const p=planLayout({...base,plantCount:2,plantStyle:'thuja',plantWidth:1.5,plantHeight:4,boundaries:b});
+ assert.equal(p.items.length,2);assert.equal(p.items[0].kind,'plant');assert.equal(p.items[0].height,4);
+ assert.ok(!overlaps(p.items[0],p.items[1]));
+ const leafy=planLayout({...base,furniture:'bistro',plantCount:2,plantStyle:'leafy',boundaries:b});
+ assert.equal(leafy.items.filter(i=>i.kind==='plant').length,2);
+ assert.ok(!leafy.items.some((a,i)=>leafy.items.some((b,j)=>j>i&&overlaps(a,b))));
+ assert.match(planLayout({...base,hasRoof:true,roofHeight:3,plantCount:1,plantHeight:4,boundaries:boundaries({back:{screen:false}})}).error,/plant height/);
+});
+test('rotation swaps a rectangular seating footprint and preserves its pose on recalculation',()=>{
+ const p=planLayout({...base,furniture:'bistro',seatWidth:1.5,seatDepth:2.5,boundaries:boundaries()});
+ const turned=rotateFurniture(p.items,'item-0',10,8);
+ assert.equal(turned.error,undefined);assert.equal(turned.items[0].rotation,90);assert.equal(turned.items[0].w,2.5);assert.equal(turned.items[0].d,1.5);
+ const saved=planLayout({...base,furniture:'bistro',seatWidth:1.5,seatDepth:2.5,poses:turned.items,plantCount:2,boundaries:boundaries()});
+ assert.equal(saved.error,undefined);assert.equal(saved.items[0].rotation,90);assert.equal(saved.items[0].x,turned.items[0].x);assert.equal(saved.items.filter(i=>i.kind==='plant').length,2);
+});
+test('an overlapping rotation is rejected without changing the pieces',()=>{
+ const items=[{id:'seat',kind:'chair',x:0,y:0,w:1,d:3,baseW:1,baseD:3,rotation:0},{id:'table',kind:'table',x:1.5,y:1,w:1,d:1}];
+ const result=rotateFurniture(items,'seat',6,6);
+ assert.match(result.error,/overlap/);assert.equal(items[0].rotation,0);assert.equal(items[0].w,1);
+ assert.match(rotateFurniture(items,'table',6,6).error,/chair or bench/);
 });

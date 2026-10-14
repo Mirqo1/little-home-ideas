@@ -4,7 +4,7 @@ import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
 import {Window} from 'happy-dom';
 import {privacyScene} from '../public/assets/privacy-scene.js';
-import {planLayout,sideNames} from '../public/assets/layout-plan.js';
+import {planLayout,sideNames,rotateFurniture} from '../public/assets/layout-plan.js';
 import {bindFurniture} from '../public/assets/furniture-controls.js';
 const page=await readFile(new URL('../src/pages/tools/patio-privacy-planner.astro',import.meta.url),'utf8');
 const source=(await readFile(new URL('../public/assets/planner.js',import.meta.url),'utf8')).replace(/^import .*;\n/gm,'');
@@ -12,7 +12,7 @@ function setup(){
  const w=new Window();
  w.SVGElement.prototype.getBoundingClientRect=()=>({left:0,top:0,width:960,height:740});
  w.document.body.innerHTML=page.slice(page.indexOf('<header'),page.indexOf('<script'));
- vm.runInNewContext(source,{document:w.document,window:w,planLayout,sideNames,privacyScene,bindFurniture,Intl,URL,Blob,setTimeout,queueMicrotask});
+ vm.runInNewContext(source,{document:w.document,window:w,planLayout,sideNames,rotateFurniture,privacyScene,bindFurniture,Intl,URL,Blob,setTimeout,queueMicrotask});
  return w;
 }
 function submit(w){w.document.getElementById('privacy-form').requestSubmit();}
@@ -60,7 +60,7 @@ test('keyboard placement survives an update and reset positions restores it',()=
   chair.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowUp',bubbles:true}));
   chair=w.document.querySelector('[data-item-id="item-0"][tabindex]');assert.match(chair.getAttribute('aria-label'),/1.5, 5.75 ft/);
   submit(w);assert.match(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/1.5, 5.75 ft/);
-  [...w.document.querySelectorAll('button')].find(b=>b.textContent==='Reset furniture positions').click();
+  [...w.document.querySelectorAll('button')].find(b=>b.textContent==='Reset item positions & directions').click();
   assert.match(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/1.5, 6 ft/);
  }finally{w.happyDOM.abort();}
 });
@@ -140,5 +140,26 @@ test('start over closes optional product settings and clears pending feedback',a
   assert.equal(w.document.getElementById('product-details').open,false);
   assert.equal(w.document.getElementById('panel-width').disabled,true);
   assert.equal(w.document.getElementById('planner-state-note').hidden,true);
+ }finally{w.happyDOM.abort();}
+});
+test('plants render as selectable pieces and seating rotation persists through an update',()=>{
+ const w=setup();try{
+  furniture(w);const count=w.document.getElementById('plant-count');count.value='2';count.dispatchEvent(new w.Event('change',{bubbles:true}));submit(w);
+  assert.equal(w.document.querySelectorAll('[data-feature="plant"]').length,2);
+  assert.match(w.document.querySelector('#layout-piece').textContent,/Potted thuja 1/);
+  [...w.document.querySelectorAll('.item-toolbar button')].find(b=>b.textContent==='Rotate right ↷').click();
+  assert.match(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/facing 90 degrees/);
+  submit(w);assert.match(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/facing 90 degrees/);
+  w.document.getElementById('layout-piece').value='plant-0';w.document.getElementById('layout-piece').dispatchEvent(new w.Event('change'));
+  assert.ok([...w.document.querySelectorAll('.item-toolbar button')].every(b=>b.disabled));
+ }finally{w.happyDOM.abort();}
+});
+test('R rotates focused seating and a plant moves with the same keyboard controls',()=>{
+ const w=setup();try{
+  furniture(w);const count=w.document.getElementById('plant-count');count.value='1';count.dispatchEvent(new w.Event('change',{bubbles:true}));submit(w);
+  const chair=w.document.querySelector('[data-item-id="item-0"][tabindex]');chair.dispatchEvent(new w.KeyboardEvent('keydown',{key:'r',bubbles:true}));
+  assert.match(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/facing 90 degrees/);
+  const plant=w.document.querySelector('[data-item-id="plant-0"][tabindex]');plant.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowDown',bubbles:true}));
+  assert.match(w.document.querySelector('[data-item-id="plant-0"][tabindex]').getAttribute('aria-label'),/0, 0.25 ft/);
  }finally{w.happyDOM.abort();}
 });
