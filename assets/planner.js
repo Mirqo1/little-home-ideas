@@ -1,8 +1,8 @@
-import {parseGaps} from './screen-pieces.js?v=controls-20261014';
-import {bindOpenings} from './wall-openings.js?v=controls-20261014';
-import {privacyScene} from './privacy-scene.js?v=controls-20261014';
-import {planLayout,sideNames,rotateFurniture} from './layout-plan.js?v=controls-20261014';
-import {bindFurniture} from './furniture-controls.js?v=controls-20261014';
+import {parseGaps} from './screen-pieces.js?v=view-20261014';
+import {bindOpenings} from './wall-openings.js?v=view-20261014';
+import {privacyScene} from './privacy-scene.js?v=view-20261014';
+import {planLayout,sideNames,rotateFurniture} from './layout-plan.js?v=view-20261014';
+import {bindFurniture} from './furniture-controls.js?v=view-20261014';
 const form=document.getElementById('privacy-form'),out=document.getElementById('results'),message=document.getElementById('planner-message'),stateNote=document.getElementById('planner-state-note');
 const decimalInputs=[...form.querySelectorAll('input[inputmode="decimal"]')],rows=[...form.querySelectorAll('.boundary-row')];
 const dollars=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(v);
@@ -10,7 +10,7 @@ const value=id=>document.getElementById(id).value;
 const checked=id=>document.getElementById(id).checked;
 const num=id=>{const s=value(id).trim();return /^(?:[0-9]+(?:[.,][0-9]+)?|[.,][0-9]+)$/.test(s)?Number(s.replace(',','.')):NaN;};
 function el(tag,text,className){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;return n;}
-let lastPlan=null,lastSignature=null;
+let lastPlan=null,lastSignature=null,sceneView=0;
 const quantities=new Map(),nextIds=new Map(),deletedBase=new Set(),lockedIds=new Set();
 function requests(input){
  const kind=input.dataset.extra??input.dataset.plant,key=input.id,count=Number(input.value),ids=quantities.get(key)??[];
@@ -76,7 +76,8 @@ function syncFields(){
   toggle(row.querySelector('.screen-placement'),screen&&rail);
   if(!rail)document.getElementById(side+'-mode').value='full';
   toggle(row.querySelector('.screen-length'),screen&&checked(side+'-custom-width'));
-  toggle(row.querySelector('.screen-piece-fields'),screen&&checked(side+'-separate'));
+  toggle(row.querySelector('.screen-piece-fields'),screen&&(checked(side+'-separate')||document.getElementById('product-details').open));
+  const gap=document.getElementById(side+'-gaps');gap.disabled=!(screen&&checked(side+'-separate'));gap.hidden=!checked(side+'-separate');row.querySelector('label[for="'+side+'-gaps"]').hidden=!checked(side+'-separate');
   const open=wall?L-num(side+'-wall-length'):L,coverage=row.querySelector('.side-coverage');
   coverage.textContent=Number.isFinite(open)&&open>0?'Available screen section: '+Number(open.toFixed(2))+' ft. '+(checked(side+'-separate')?'This span includes the pieces and their open gaps.':'It is covered in full by default.'):'Enter floor and wall lengths to determine the available section.';
   const custom=document.getElementById(side+'-screen-width');
@@ -121,8 +122,8 @@ function validate(){
  return true;
 }
 function read(){
- return {space:value('space'),patioWidth:num('patio-width'),depth:num('depth'),height:num('screen-height'),estimatePanels:document.getElementById('product-details').open,panelWidth:document.getElementById('product-details').open?num('panel-width'):3,hasRoof:checked('has-roof'),roofHeight:num('roof-height'),wallHeight:num('wall-height'),railHeight:num('rail-height'),furniture:checked('furniture')?'bistro':'none',extraRequests:extraRequests(),plantCount:plantRequests().length,plantStyles:plantRequests().map(i=>i.kind),plantIds:plantRequests().map(i=>i.id),plantLabels:plantRequests().map(i=>i.label),plantSources:plantRequests().map(i=>i.sourceKey),deletedItems:[...deletedBase],lockedIds:[...lockedIds],plantWidth:1.5,plantHeight:4,seatWidth:2,seatDepth:2,tableWidth:2,tableDepth:2,openings:[...document.querySelectorAll('[data-opening]:checked')].map(i=>({id:i.id,kind:i.dataset.opening,side:value(i.id+'-side')})),modulePrice:document.getElementById('product-details').open&&value('module-price').trim()?num('module-price'):null,extraCost:document.getElementById('product-details').open?num('extra-cost'):0,
- boundaries:rows.map(row=>{const side=row.dataset.side;return {side,wall:checked(side+'-wall'),rail:checked(side+'-rail'),screen:checked(side+'-screen'),wallLength:num(side+'-wall-length'),wallAt:value(side+'-wall-at'),mode:checked(side+'-rail')?value(side+'-mode'):'full',screenWidth:checked(side+'-custom-width')?num(side+'-screen-width'):null,pieceWidth:checked(side+'-separate')?num(side+'-piece-width'):null,gaps:checked(side+'-separate')?parseGaps(value(side+'-gaps'),'in').gaps:[0]};})};
+ return {space:value('space'),patioWidth:num('patio-width'),depth:num('depth'),height:num('screen-height'),estimatePanels:document.getElementById('product-details').open,panelWidth:3,hasRoof:checked('has-roof'),roofHeight:num('roof-height'),wallHeight:num('wall-height'),railHeight:num('rail-height'),furniture:checked('furniture')?'bistro':'none',extraRequests:extraRequests(),plantCount:plantRequests().length,plantStyles:plantRequests().map(i=>i.kind),plantIds:plantRequests().map(i=>i.id),plantLabels:plantRequests().map(i=>i.label),plantSources:plantRequests().map(i=>i.sourceKey),deletedItems:[...deletedBase],lockedIds:[...lockedIds],plantWidth:1.5,plantHeight:4,seatWidth:2,seatDepth:2,tableWidth:2,tableDepth:2,openings:[...document.querySelectorAll('[data-opening]:checked')].map(i=>({id:i.id,kind:i.dataset.opening,side:value(i.id+'-side')})),modulePrice:document.getElementById('product-details').open&&value('module-price').trim()?num('module-price'):null,extraCost:document.getElementById('product-details').open?num('extra-cost'):0,
+ boundaries:rows.map(row=>{const side=row.dataset.side;return {side,wall:checked(side+'-wall'),rail:checked(side+'-rail'),screen:checked(side+'-screen'),wallLength:num(side+'-wall-length'),wallAt:value(side+'-wall-at'),mode:checked(side+'-rail')?value(side+'-mode'):'full',screenWidth:checked(side+'-custom-width')?num(side+'-screen-width'):null,separate:checked(side+'-separate'),pieceWidth:(checked(side+'-separate')||document.getElementById('product-details').open)?num(side+'-piece-width'):null,gaps:checked(side+'-separate')?parseGaps(value(side+'-gaps'),'in').gaps:[0]};})};
 }
 const signature=o=>[o.furniture,o.seatWidth,o.seatDepth,o.tableWidth,o.tableDepth].join('|');
 const defaultPlan=planLayout({space:'patio',patioWidth:10,depth:8,height:6,panelWidth:3,estimatePanels:false,furniture:'none',boundaries:['back','right','front','left'].map(side=>({side,wall:false,rail:false,screen:side==='back',mode:'full',screenWidth:null}))});
@@ -139,7 +140,7 @@ function makeText(p){
 function download(p){const url=URL.createObjectURL(new Blob([makeText(p)],{type:'text/plain;charset=utf-8'})),a=el('a');a.href=url;a.download='patio-privacy-worksheet.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function render(p){
  out.replaceChildren();
- const controls=el('div',undefined,'scene-controls'),scene=el('div',undefined,'scene-container'),options={showRoof:true,showWalls:true},status=el('p','Drag a piece to move it. Tab to a piece and use arrow keys (0.25 ft; Shift = 1 ft).','small furniture-status');
+ const controls=el('div',undefined,'scene-controls'),scene=el('div',undefined,'scene-container'),options={showRoof:true,showWalls:true,viewAngle:sceneView},status=el('p','Drag a piece to move it. Tab to a piece and use arrow keys (0.25 ft; Shift = 1 ft).','small furniture-status');
  status.setAttribute('role','status');status.setAttribute('aria-live','polite');
  scene.setAttribute('aria-live','off');
  const redraw=id=>{options.selectedItem=id??null;scene.replaceChildren(privacyScene(document,p,false,options));};
@@ -147,7 +148,12 @@ function render(p){
   if(!active)continue;const l=el('label'),c=el('input');c.type='checkbox';c.checked=true;l.append(c,document.createTextNode(label));controls.append(l);
   c.addEventListener('change',()=>{options[key]=c.checked;redraw(scene.dataset.selectedItem);});
  }
- redraw();out.append(controls,scene,el('p','A far · B right · C near · D left · all measurements in feet'+(p.screens.some(s=>s.gapWidth>0)?' · Open gaps reduce privacy.':''),'small scene-caption'));
+ const viewLabel=el('span','View: '+(sceneView/90+1)+' of 4','view-label');
+ for(const [label,turn]of [['↶ Rotate view',-90],['Rotate view ↷',90],['Reset view',0]]){
+  const button=el('button',label,'reset-button');button.type='button';button.setAttribute('aria-label',label.includes('↶')?'Rotate view left':label.includes('↷')?'Rotate view right':'Reset view');button.addEventListener('click',()=>{sceneView=turn?((sceneView+turn+360)%360):0;options.viewAngle=sceneView;viewLabel.textContent='View: '+(sceneView/90+1)+' of 4';redraw(scene.dataset.selectedItem);});controls.append(button);
+ }
+ controls.append(viewLabel);
+ redraw();out.append(controls,scene,el('p','A–D keep their original side names when the view rotates · all measurements in feet'+(p.screens.some(s=>s.gapWidth>0)?' · Open gaps reduce privacy.':''),'small scene-caption'));
  const allPieces=()=>[...p.items,...p.openings],rotatable=i=>['chair','bench','lounger','storage','side-table'].includes(i.kind)&&!i.locked;
  if(allPieces().length){
   const tools=el('div',undefined,'item-toolbar'),selectLabel=el('label','Rotate furniture'),picker=el('select'),left=el('button','↶ Rotate left','button secondary'),right=el('button','Rotate right ↷','button secondary'),trash=el('button','🗑','button secondary delete-object'),activeLabel=el('p',undefined,'selected-object');
@@ -192,4 +198,4 @@ form.addEventListener('submit',e=>{
  if(p.error){notice(p.error,false,p.field,p.action);message.scrollIntoView?.({behavior:'smooth',block:'center'});return;}
  lastPlan=p;lastSignature=key;notice('');render(p);stateNote.hidden=false;stateNote.textContent='Layout updated. The drawing matches your current settings.';document.getElementById('layout-result').scrollIntoView?.({behavior:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
 });
-form.addEventListener('reset',()=>{quantities.clear();nextIds.clear();deletedBase.clear();lockedIds.clear();document.getElementById('furniture').indeterminate=false;lastPlan=null;lastSignature=null;ignoreSavedPositions=false;ignoreOpeningPositions=false;notice('');stateNote.hidden=true;const products=document.getElementById('product-details');if(products.open){ignoreProductToggle=true;products.open=false;}out.innerHTML=empty;for(const i of decimalInputs){i.setCustomValidity('');if(i.id.endsWith('-wall-length'))i.dataset.auto='true';}queueMicrotask(syncFields);});
+form.addEventListener('reset',()=>{quantities.clear();nextIds.clear();deletedBase.clear();lockedIds.clear();sceneView=0;document.getElementById('furniture').indeterminate=false;lastPlan=null;lastSignature=null;ignoreSavedPositions=false;ignoreOpeningPositions=false;notice('');stateNote.hidden=true;const products=document.getElementById('product-details');if(products.open){ignoreProductToggle=true;products.open=false;}out.innerHTML=empty;for(const i of decimalInputs){i.setCustomValidity('');if(i.id.endsWith('-wall-length'))i.dataset.auto='true';}queueMicrotask(syncFields);});

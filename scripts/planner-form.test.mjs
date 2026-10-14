@@ -12,7 +12,7 @@ const page=await readFile(new URL('../src/pages/tools/patio-privacy-planner.astr
 const source=(await readFile(new URL('../public/assets/planner.js',import.meta.url),'utf8')).replace(/^import .*;\n/gm,'');
 function setup(){
  const w=new Window();
- w.SVGElement.prototype.getBoundingClientRect=()=>({left:0,top:0,width:960,height:740});
+ w.SVGElement.prototype.getBoundingClientRect=function(){const view=this.getAttribute('viewBox')?.split(' ').map(Number);return {left:0,top:0,width:960,height:view?.[3]??740};};
  w.document.body.innerHTML=page.slice(page.indexOf('<header'),page.indexOf('<script'));
  vm.runInNewContext(source,{document:w.document,window:w,parseGaps,planLayout,sideNames,rotateFurniture,privacyScene,bindFurniture,bindOpenings,Intl,URL,Blob,setTimeout,queueMicrotask});
  return w;
@@ -23,21 +23,21 @@ function panels(w){const d=w.document.getElementById('product-details');d.open=t
 function cover(w,side,v){check(w,side+'-custom-width');w.document.getElementById(side+'-screen-width').value=v;}
 function furniture(w){check(w,'furniture');}
 for(const value of ['2.16','2,16','3.45','3,45'])test('module width '+value+' generates a spatial plan',()=>{
- const w=setup();try{panels(w);cover(w,'back','6');w.document.getElementById('panel-width').value=value;submit(w);assert.equal(w.document.querySelector('.plan-metrics strong')?.textContent,value.startsWith('2')?'3':'2');assert.ok(w.document.querySelector('.plan-sketch'));}finally{w.happyDOM.abort();}
+ const w=setup();try{panels(w);cover(w,'back','6');w.document.getElementById('back-piece-width').value=value;submit(w);assert.equal(w.document.querySelector('.plan-metrics strong')?.textContent,value.startsWith('2')?'3':'2');assert.ok(w.document.querySelector('.plan-sketch'));}finally{w.happyDOM.abort();}
 });
 test('dimensions and prices accept commas and points together',()=>{
  const w=setup();try{
   panels(w);check(w,'back-custom-width');
-  for(const [id,v]of Object.entries({'patio-width':'10,25',depth:'8.16','back-screen-width':'6,45','screen-height':'6.12','panel-width':'2,16','module-price':'49,95','extra-cost':'25.50'}))w.document.getElementById(id).value=v;
+  for(const [id,v]of Object.entries({'patio-width':'10,25',depth:'8.16','back-screen-width':'6,45','screen-height':'6.12','back-piece-width':'2,16','module-price':'49,95','extra-cost':'25.50'}))w.document.getElementById(id).value=v;
   submit(w);assert.match(w.document.querySelector('.plan-cost').textContent,/\$175\.35/);assert.match(w.document.querySelector('.plan-metrics').textContent,/6.48 ft/);
  }finally{w.happyDOM.abort();}
 });
 test('invalid inputs preserve the example; a geometry error preserves the last result',()=>{
  const w=setup();try{
   panels(w);const preview=w.document.querySelector('.plan-preview').outerHTML;
-  w.document.getElementById('panel-width').value='bad';submit(w);
+  w.document.getElementById('back-piece-width').value='bad';submit(w);
   assert.equal(w.document.querySelector('.plan-preview').outerHTML,preview);assert.equal(w.document.getElementById('planner-message').hidden,false);
-  w.document.getElementById('panel-width').value='3';submit(w);
+  w.document.getElementById('back-piece-width').value='3';submit(w);
   const valid=w.document.querySelector('.plan-sketch').outerHTML;
   check(w,'has-roof');w.document.getElementById('roof-height').value='5';submit(w);
   assert.equal(w.document.querySelector('.plan-sketch').outerHTML,valid);assert.match(w.document.getElementById('planner-message').textContent,/roof.*last valid/);
@@ -140,7 +140,7 @@ test('start over closes optional product settings and clears pending feedback',a
   panels(w);submit(w);w.document.getElementById('privacy-form').reset();
   w.document.getElementById('product-details').dispatchEvent(new w.Event('toggle'));await Promise.resolve();
   assert.equal(w.document.getElementById('product-details').open,false);
-  assert.equal(w.document.getElementById('panel-width').disabled,true);
+  assert.equal(w.document.getElementById('back-piece-width').disabled,true);
   assert.equal(w.document.getElementById('planner-state-note').hidden,true);
  }finally{w.happyDOM.abort();}
 });
@@ -172,7 +172,7 @@ test('plant checkboxes add a mixed selection without count or type menus',()=>{
   assert.ok(w.document.querySelector('[aria-label^="Potted thuja 1"]'));assert.ok(w.document.querySelector('[aria-label^="Leafy potted plant 1"]'));assert.equal(w.document.getElementById('plant-count'),null);assert.equal(w.document.getElementById('seat-width'),null);
  }finally{w.happyDOM.abort();}
 });
-test('dragging across another piece does not flash errors and invalid release restores position',()=>{
+test('dragging across another piece does not flash errors and overlapping release keeps its new position',()=>{
  const w=setup();try{
   furniture(w);submit(w);const scene=w.document.querySelector('.scene-container'),face=scene.querySelector('[data-item-id="item-0"]');
   const scale=Number(scene.querySelector('svg').getAttribute('data-projection-scale'));
@@ -181,8 +181,9 @@ test('dragging across another piece does not flash errors and invalid release re
   assert.equal(w.document.getElementById('planner-message').hidden,true);
   assert.match(scene.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/at 4, 6 ft/);
   scene.dispatchEvent(new w.PointerEvent('pointerup',{bubbles:true,pointerId:1}));
-  assert.match(scene.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/at 1.5, 6 ft/);
-  assert.match(w.document.getElementById('planner-message').textContent,/spot is occupied/);
+  assert.match(scene.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/at 4, 6 ft/);
+  assert.equal(w.document.getElementById('planner-message').hidden,true);submit(w);
+  assert.match(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/at 4, 6 ft/);
  }finally{w.happyDOM.abort();}
 });
 test('partial wall length is available without rail or screen and plant bulk setting is absent',()=>{
@@ -266,5 +267,18 @@ test('US-only gap fields and successful submission scroll to the result; invalid
   assert.equal(w.document.getElementById('back-gap-unit'),null);assert.ok(!w.document.body.textContent.includes('Centimeters'));
   let scrolled=false;w.document.getElementById('layout-result').scrollIntoView=()=>{scrolled=true;};submit(w);assert.equal(scrolled,true);
   const drawing=w.document.querySelector('.plan-sketch').outerHTML;w.document.getElementById('plant-thuja-1').value='1.5';submit(w);assert.equal(w.document.querySelector('.plan-sketch').outerHTML,drawing);assert.match(w.document.getElementById('planner-message').textContent,/whole-number/);
+ }finally{w.happyDOM.abort();}
+});
+
+test('view rotation preserves furniture positions, survives updates and resets separately',()=>{
+ const w=setup();try{
+  furniture(w);submit(w);
+  const rotate=()=>w.document.querySelector('[aria-label="Rotate view right"]').click();rotate();
+  assert.equal(w.document.querySelector('.plan-sketch').getAttribute('data-view-angle'),'90');
+  assert.match(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/at 1.5, 6 ft/);
+  submit(w);assert.equal(w.document.querySelector('.plan-sketch').getAttribute('data-view-angle'),'90');
+  rotate();rotate();rotate();assert.equal(w.document.querySelector('.plan-sketch').getAttribute('data-view-angle'),'0');
+  rotate();w.document.querySelector('[aria-label="Reset view"]').click();assert.equal(w.document.querySelector('.plan-sketch').getAttribute('data-view-angle'),'0');
+  assert.equal(w.document.getElementById('panel-width'),null);assert.equal(w.document.querySelector('.planner-intro-actions'),null);
  }finally{w.happyDOM.abort();}
 });

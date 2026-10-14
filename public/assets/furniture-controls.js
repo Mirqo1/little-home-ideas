@@ -1,10 +1,11 @@
-import {projectionPixelScale} from './projection.js?v=controls-20261014';
-import {moveFurniture,rotateFurniture} from './layout-plan.js?v=controls-20261014';
+import {projectionPixelScale,viewRotation} from './projection.js?v=view-20261014';
+import {moveFurniture,rotateFurniture} from './layout-plan.js?v=view-20261014';
 export function floorDelta(svg,dx,dy){
  const pixelScale=projectionPixelScale(svg),scale=Number(svg.getAttribute('data-projection-scale'));
  if(!Number.isFinite(pixelScale)||pixelScale<=0||!Number.isFinite(scale)||scale<=0)return null;
  const difference=dx/pixelScale/scale/.8,sum=dy/pixelScale/scale/.38;
- return {x:(sum+difference)/2,y:(sum-difference)/2};
+ const u=(sum+difference)/2,v=(sum-difference)/2,{cos,sin}=viewRotation(svg);
+ return {x:cos*u+sin*v,y:-sin*u+cos*v};
 }
 export function bindFurniture(scene,plan,render,notice,moved,selected=()=>{}){
  let drag=null;
@@ -20,7 +21,7 @@ export function bindFurniture(scene,plan,render,notice,moved,selected=()=>{}){
   if(delta)commit(drag.id,drag.x+delta.x,drag.y+delta.y,true);
  });
  const finish=e=>{if(!drag)return;const id=drag.id,item=plan.items.find(i=>i.id===id),next=moveFurniture(plan.items,id,item.x,item.y,plan.patioWidth,plan.depth);
-  if(e.type==='pointercancel'||next.error){plan.items=drag.original;render(id);notice(e.type==='pointercancel'?'':"That spot is occupied. The piece returned to its starting position. Drag across other pieces and release on a clear spot.");}
+  if(e.type==='pointercancel'||next.error){plan.items=drag.original;render(id);notice(e.type==='pointercancel'?'':next.error);}
   drag=null;scene.classList.remove('is-dragging');if(scene.hasPointerCapture?.(e.pointerId))scene.releasePointerCapture(e.pointerId);moved(plan.items.find(i=>i.id===id));};
  scene.addEventListener('pointerup',finish);scene.addEventListener('pointercancel',finish);
  scene.addEventListener('focusin',e=>{const face=e.target.closest?.('[data-item-id]');if(face)select(face.getAttribute('data-item-id'));});

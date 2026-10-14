@@ -18,11 +18,11 @@ test('mixed sections validate length, screen location and roof without changing 
  const p=planLayout({...base,boundaries:boundaries()}),b=planLayout({...base,space:'balcony',boundaries:boundaries()});
  assert.deepEqual(p.screens,b.screens);assert.match(b.warning,/permitted loads/);
 });
-test('movement clamps to floor, rejects overlap, and retains full-size footprints',()=>{
+test('movement clamps to floor, allows overlap, and retains full-size footprints',()=>{
  const p=planLayout({...base,furniture:'bistro',boundaries:boundaries()});
  const edge=moveFurniture(p.items,'item-0',-10,-10,10,8);
  assert.equal(edge.items[0].x,0);assert.equal(edge.items[0].y,0);assert.equal(edge.items[0].w,2);
- const collide=moveFurniture(p.items,'item-0',p.items[1].x,p.items[1].y,10,8);assert.match(collide.error,/overlap/);
+ const collide=moveFurniture(p.items,'item-0',p.items[1].x,p.items[1].y,10,8);assert.ok(collide.items);assert.ok(overlaps(collide.items[0],collide.items[1]));
  assert.ok(!p.items.some((a,i)=>p.items.some((b,j)=>j>i&&overlaps(a,b))));
  const changed=planLayout({...base,patioWidth:7,furniture:'bistro',items:p.items,boundaries:boundaries()});assert.match(changed.error,/no longer fits/);
 });
@@ -58,10 +58,10 @@ test('rotation swaps a rectangular seating footprint and preserves its pose on r
  const saved=planLayout({...base,furniture:'bistro',seatWidth:1.5,seatDepth:2.5,poses:turned.items,plantCount:2,boundaries:boundaries()});
  assert.equal(saved.error,undefined);assert.equal(saved.items[0].rotation,90);assert.equal(saved.items[0].x,turned.items[0].x);assert.equal(saved.items.filter(i=>i.kind==='plant').length,2);
 });
-test('an overlapping rotation is rejected without changing the pieces',()=>{
+test('an overlapping rotation succeeds without mutating the original pieces',()=>{
  const items=[{id:'seat',kind:'chair',x:0,y:0,w:1,d:3,baseW:1,baseD:3,rotation:0},{id:'table',kind:'table',x:1.5,y:1,w:1,d:1}];
  const result=rotateFurniture(items,'seat',6,6);
- assert.match(result.error,/overlap/);assert.equal(items[0].rotation,0);assert.equal(items[0].w,1);
+ assert.equal(result.items[0].rotation,90);assert.equal(items[0].rotation,0);assert.equal(items[0].w,1);
  assert.match(rotateFurniture(items,'table',6,6).error,/movable piece/);
 });
 test('a wall can occupy the remainder of a screened side without a railing',()=>{
@@ -73,7 +73,7 @@ test('one layout mixes plant types and transient dragging can pass through occup
  assert.equal(p.items[3].plantStyle,'thuja');assert.equal(p.items[4].plantStyle,'leafy');
  const x=p.items[0].x,y=p.items[0].y;
  assert.ok(moveFurniture(p.items,'plant-0',x,y,10,8,true).items);
- assert.match(moveFurniture(p.items,'plant-0',x,y,10,8).error,/overlap/);
+ assert.ok(moveFurniture(p.items,'plant-0',x,y,10,8).items);
 });
 test('above-railing errors identify the actual side and its setting',()=>{
  const p=planLayout({...base,height:3,railHeight:5,boundaries:boundaries({back:{screen:false},left:{screen:true,rail:true,mode:'above'}})});
@@ -82,4 +82,14 @@ test('above-railing errors identify the actual side and its setting',()=>{
 test('partial walls work with an entirely open remainder',()=>{
  const p=planLayout({...base,wallHeight:7,boundaries:boundaries({back:{screen:false},left:{wall:true,wallLength:2,wallAt:'end'}})});
  assert.equal(p.error,undefined);assert.deepEqual(p.wallSegments,[{side:'left',start:6,end:8,height:7}]);assert.equal(p.railSegments.length,0);assert.equal(p.screens.length,0);
+});
+
+test('all four camera views invert floor dragging and dense default furniture can overlap',()=>{
+ for(const angle of [0,90,180,270]){
+  const cos=Math.cos(angle*Math.PI/180),sin=Math.sin(angle*Math.PI/180),u=cos*1.2-sin*.7,v=sin*1.2+cos*.7;
+  const svg={getBoundingClientRect:()=>({width:480,height:320}),getAttribute:key=>({'viewBox':'0 0 960 640','data-projection-scale':'30','data-view-angle':String(angle)})[key]};
+  const delta=floorDelta(svg,.8*(u-v)*15,.38*(u+v)*15);assert.ok(Math.abs(delta.x-1.2)<1e-8);assert.ok(Math.abs(delta.y-.7)<1e-8);
+ }
+ const p=planLayout({...base,patioWidth:3,depth:2,furniture:'bistro',plantCount:6,boundaries:boundaries({back:{screen:false}})});
+ assert.equal(p.error,undefined);assert.equal(p.items.length,9);assert.ok(p.items.every(i=>i.x>=0&&i.y>=0&&i.x+i.w<=3&&i.y+i.d<=2));
 });
