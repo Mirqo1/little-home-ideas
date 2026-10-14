@@ -55,3 +55,28 @@ test('correcting an invalid input and resetting clears validation',()=>{
   submit(w);assert.ok(w.document.querySelector('.plan-sketch'));
  }finally{w.happyDOM.abort();}
 });
+
+test('example preview is labeled and does not pretend to be a calculated plan',()=>{
+ const w=setup();
+ try{
+  assert.match(w.document.querySelector('.plan-preview desc').textContent,/10 by 8 feet/);
+  assert.equal(w.document.querySelector('.plan-sketch'),null);
+  submit(w);assert.equal(w.document.querySelector('.plan-preview'),null);
+ }finally{w.happyDOM.abort();}
+});
+test('spatial screen geometry responds to height, while preferences preserve the measured module count',()=>{
+ const w=setup();
+ try{
+  submit(w);
+  const initial=[...w.document.querySelectorAll('.plan-sketch polygon')].map(n=>n.getAttribute('points'));
+  w.document.getElementById('screen-height').value='3,5';
+  w.document.getElementById('need').value='green';
+  submit(w);
+  const changed=[...w.document.querySelectorAll('.plan-sketch polygon')].map(n=>n.getAttribute('points'));
+  assert.notDeepEqual(initial,changed);
+  assert.equal(w.document.querySelector('.plan-metrics strong').textContent,'2');
+  assert.match(w.document.querySelector('.plan-sketch desc').textContent,/3.5 feet high/);
+  w.document.getElementById('exposure').value='sheltered';submit(w);
+  assert.match(w.document.querySelector('#results h3').textContent,/container-plant/);
+ }finally{w.happyDOM.abort();}
+});

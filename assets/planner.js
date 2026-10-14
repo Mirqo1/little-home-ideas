@@ -1,5 +1,6 @@
-import {planPrivacy} from './privacy-plan.js?v=decimals-20261014';
-const form=document.getElementById('privacy-form'),out=document.getElementById('results'),empty=out.innerHTML;
+import {planPrivacy} from './privacy-plan.js?v=spatial-20261014';
+const form=document.getElementById('privacy-form'),out=document.getElementById('results');
+let empty;
 const dollars=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(value);
 const decimalInputs=[...form.querySelectorAll('input[inputmode="decimal"]')];
 const num=id=>{
@@ -21,27 +22,53 @@ function validateDecimals(){
 for(const input of decimalInputs)input.addEventListener('input',()=>input.setCustomValidity(''));
 function el(tag,text,className){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;return n;}
 function svgElement(tag,attrs,text){const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,String(v));if(text)e.textContent=text;return e;}
-function sketch(p){
- const svg=svgElement('svg',{viewBox:'0 0 960 620',role:'img','aria-labelledby':'plan-sketch-title plan-sketch-desc',class:'plan-sketch'});
- svg.append(svgElement('title',{id:'plan-sketch-title'},'Your outdoor boundary and example screening width'),svgElement('desc',{id:'plan-sketch-desc'},`${p.patioWidth} by ${p.depth} feet. Target: ${p.width} feet. Example modules cover ${p.coverage} feet. ${p.fits?'The example width fits within the boundary.':'The example width extends beyond the boundary.'} No support footprints or structural capacity are assessed.`));
- const scale=Math.min(700/Math.max(p.patioWidth,p.coverage),300/p.depth),x=120,y=185,w=p.patioWidth*scale,h=p.depth*scale;
- svg.append(svgElement('rect',{x:0,y:0,width:960,height:620,fill:'#f8f5ee',rx:14}));
- svg.append(svgElement('text',{x:120,y:65,fill:'#284634','font-size':26,'font-family':'sans-serif'},'Your paper layout'));
- svg.append(svgElement('rect',{x,y,width:w,height:h,fill:'#e7ece0',stroke:'#83967b','stroke-width':2}));
- for(let i=0;i<p.modules;i++){const mx=x+i*p.panelWidth*scale;svg.append(svgElement('rect',{x:mx,y:y-20,width:Math.max(1,p.panelWidth*scale-2),height:20,fill:p.restricted?'#b9bcb2':p.fits?'#56764d':'#a47748'}));}
- svg.append(svgElement('line',{x1:x,y1:y-51,x2:x+p.width*scale,y2:y-51,stroke:'#284634','stroke-width':2}));
- svg.append(svgElement('text',{x,y:y-74,fill:'#284634','font-size':20,'font-family':'sans-serif'},`Screening target: ${p.width} ft · height to research: ${p.height} ft`));
- svg.append(svgElement('text',{x,y:y+h+36,fill:'#53634b','font-size':20,'font-family':'sans-serif'},`Outdoor area: ${p.patioWidth} × ${p.depth} ft`));
- svg.append(svgElement('text',{x:120,y:553,fill:'#53634b','font-size':16,'font-family':'sans-serif'},p.restricted?'Gray modules are a geometry example only; product selection is paused.':`${p.modules} example modules · ${p.coverage} ft coverage · supports not included`));
- svg.append(svgElement('text',{x:120,y:584,fill:'#53634b','font-size':15,'font-family':'sans-serif'},'Plan view at a consistent scale. Not an engineered installation drawing.'));
+function sketch(p,preview=false){
+ const svg=svgElement('svg',{viewBox:'0 0 960 650',role:'img','aria-labelledby':preview?'preview-title preview-desc':'plan-sketch-title plan-sketch-desc',class:preview?'plan-preview':'plan-sketch'});
+ const titleId=preview?'preview-title':'plan-sketch-title',descId=preview?'preview-desc':'plan-sketch-desc';
+ svg.append(svgElement('title',{id:titleId},preview?'Example patio in a 3D view':'Your patio and screening in a 3D view'),svgElement('desc',{id:descId},`${p.patioWidth} by ${p.depth} feet. Target: ${p.width} feet, ${p.height} feet high. ${p.modules} example modules cover ${p.coverage} feet. ${p.fits?'Example modules fit within the outdoor width.':'Example modules extend beyond the outdoor width.'} A projected geometry illustration; supports and structural capacity are not assessed.`));
+ const raw=(x,y,z=0)=>[.8*(x-y),.38*(x+y)-.85*z];
+ const corners=[[0,0,0],[p.patioWidth,0,0],[p.patioWidth,p.depth,0],[0,p.depth,0],[0,0,p.height],[p.coverage,0,p.height],[p.coverage,0,0]].map(q=>raw(...q));
+ const xs=corners.map(q=>q[0]),ys=corners.map(q=>q[1]);
+ const minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);
+ const scale=Math.min(690/(maxX-minX),385/(maxY-minY));
+ const offsetX=(960-(maxX-minX)*scale)/2-minX*scale,offsetY=120-minY*scale;
+ const point=(x,y,z=0)=>{const q=raw(x,y,z);return [q[0]*scale+offsetX,q[1]*scale+offsetY];};
+ const polygon=(coords,attrs)=>svgElement('polygon',{points:coords.map(q=>point(...q).join(',')).join(' '),...attrs});
+ const line=(a,b,attrs)=>{const u=point(...a),v=point(...b);return svgElement('line',{x1:u[0],y1:u[1],x2:v[0],y2:v[1],...attrs});};
+ const label=(q,text,dx=0,dy=0)=>{const [x,y]=point(...q);svg.append(svgElement('text',{x:x+dx,y:y+dy,fill:'#294b3c','font-size':18,'font-family':'Arial,sans-serif','text-anchor':'middle'},text));};
+ svg.append(svgElement('rect',{x:0,y:0,width:960,height:650,fill:'#f7f5ef',rx:8}));
+ svg.append(svgElement('text',{x:35,y:43,fill:'#294b3c','font-size':23,'font-family':'Arial,sans-serif'},preview?'An example to help you get started':'Your spatial layout'));
+ svg.append(svgElement('text',{x:35,y:72,fill:'#647067','font-size':15,'font-family':'Arial,sans-serif'},'3D view · one straight boundary · measurements in feet'));
+ // Draw the floor first, then the vertical screen at the back boundary.
+ svg.append(polygon([[0,0],[p.patioWidth,0],[p.patioWidth,p.depth],[0,p.depth]],{fill:'#e3e8dc',stroke:'#a1b09b','stroke-width':2}));
+ for(let i=1;i<5;i++){
+  svg.append(line([p.patioWidth*i/5,0],[p.patioWidth*i/5,p.depth],{stroke:'#cad3c3','stroke-width':1}),line([0,p.depth*i/5],[p.patioWidth,p.depth*i/5],{stroke:'#cad3c3','stroke-width':1}));
+ }
+ const fill=p.restricted?'#aeb5af':p.fits?'#6f9379':'#bf9360';
+ for(let i=0;i<p.modules;i++){
+  const left=i*p.panelWidth,right=(i+1)*p.panelWidth;
+  svg.append(polygon([[left,0],[right,0],[right,0,p.height],[left,0,p.height]],{fill,'fill-opacity':.88,stroke:'#ffffff','stroke-width':1.5}));
+  // Decorative seams are only visual cues, never specified product components.
+  for(let j=1;j<4;j++)svg.append(line([left,0,p.height*j/4],[right,0,p.height*j/4],{stroke:'#ffffff','stroke-opacity':.28,'stroke-width':1}));
+ }
+ svg.append(line([0,0,p.height],[p.width,0,p.height],{stroke:'#294b3c','stroke-width':3,'stroke-dasharray':'7 5'}));
+ label([p.width/2,0,p.height],`Target ${p.width} ft` ,0,-45);
+ label([p.patioWidth/2,p.depth],`Outdoor width ${p.patioWidth} ft`,0,50);
+ label([0,p.depth/2],`Depth ${p.depth} ft`,-65,-10);
+ label([p.coverage,0,p.height/2],`${p.height} ft high`,65,0);
+ svg.append(svgElement('text',{x:35,y:585,fill:'#53634b','font-size':17,'font-family':'Arial,sans-serif'},`${p.modules} × ${p.panelWidth} ft modules = ${p.coverage} ft coverage`));
+ svg.append(svgElement('text',{x:35,y:617,fill:'#647067','font-size':15,'font-family':'Arial,sans-serif'},p.restricted?'Gray = geometry only. Resolve site restrictions before selecting screens.':'Illustrative modules. Supports, gaps, and installation requirements are not modeled.'));
  return svg;
 }
+const preview=document.getElementById('planner-preview');
+if(preview)preview.append(sketch({patioWidth:10,depth:8,width:6,height:6,panelWidth:3,modules:2,coverage:6,fits:true,restricted:false},true));
+empty=out.innerHTML;
 function makeText(p){return ['LITTLE HOME IDEAS — PATIO PRIVACY WORKSHEET',`Space: ${p.space}; outdoor area: ${p.patioWidth} × ${p.depth} ft`,`Target screening: ${p.width} ft wide × ${p.height} ft high`,'',p.title,p.detail,'',p.summary,`Fits within outdoor width: ${p.fits?'Yes, geometrically; support footprints still need checking.':'No.'}`,p.total===null?'No cost estimate entered.':`Your entered module price: ${dollars(p.modulePrice)}; extras: ${dollars(p.extraCost)}; arithmetic total: ${dollars(p.total)} (not a live quote).`,'','ALTERNATIVES',...p.alternatives.map(x=>'- '+x),'','BEFORE YOU BUY',...p.checklist.map(x=>'- '+x),'',p.warning,'','Guide: https://littlehomeideas.com/articles/patio-privacy-ideas-for-renters/'].join('\n');}
 function download(p){const url=URL.createObjectURL(new Blob([makeText(p)],{type:'text/plain;charset=utf-8'}));const a=el('a');a.href=url;a.download='patio-privacy-worksheet.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 form.addEventListener('submit',e=>{
  e.preventDefault();validateDecimals();if(!form.reportValidity())return;
  const rawPrice=document.getElementById('module-price').value.trim();
- const p=planPrivacy({space:document.getElementById('space').value,width:num('width'),patioWidth:num('patio-width'),depth:num('depth'),height:num('screen-height'),panelWidth:num('panel-width'),budget:document.getElementById('budget').value,need:document.getElementById('need').value,exposure:document.getElementById('exposure').value,approved:document.getElementById('approved').checked,modulePrice:rawPrice===''?null:num('module-price'),extraCost:num('extra-cost')});
+ const p=planPrivacy({space:document.getElementById('space').value,width:num('width'),patioWidth:num('patio-width'),depth:num('depth'),height:num('screen-height'),panelWidth:num('panel-width'),budget:'medium',need:document.getElementById('need').value,exposure:document.getElementById('exposure').value,approved:document.getElementById('approved').checked,modulePrice:rawPrice===''?null:num('module-price'),extraCost:num('extra-cost')});
  out.replaceChildren();
  if(p.error){out.append(el('p',p.error,'form-error'));out.focus();return;}
  out.append(el('p',p.restricted?'Check restrictions before selecting products':'Your recommended starting approach','eyebrow'),el('h3',p.title),el('p',p.detail));
