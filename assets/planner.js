@@ -1,7 +1,24 @@
-import {planPrivacy} from './privacy-plan.js?v=worksheet-20261013';
+import {planPrivacy} from './privacy-plan.js?v=decimals-20261014';
 const form=document.getElementById('privacy-form'),out=document.getElementById('results'),empty=out.innerHTML;
 const dollars=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(value);
-const num=id=>Number(document.getElementById(id).value);
+const decimalInputs=[...form.querySelectorAll('input[inputmode="decimal"]')];
+const num=id=>{
+ const value=document.getElementById(id).value.trim();
+ return /^(?:[0-9]+(?:[.,][0-9]+)?|[.,][0-9]+)$/.test(value)?Number(value.replace(',','.')):NaN;
+};
+function validateDecimals(){
+ for(const input of decimalInputs){
+  input.setCustomValidity('');
+  if(input.value.trim()===''){
+   if(input.required)input.setCustomValidity('Enter a measurement.');
+   continue;
+  }
+  const value=num(input.id),min=Number(input.dataset.min),max=Number(input.dataset.max);
+  if(!Number.isFinite(value))input.setCustomValidity('Enter a number using a decimal point or comma, for example 2.16 or 2,16.');
+  else if(value<min||value>max)input.setCustomValidity(`Enter a value from ${min} to ${max}.`);
+ }
+}
+for(const input of decimalInputs)input.addEventListener('input',()=>input.setCustomValidity(''));
 function el(tag,text,className){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;return n;}
 function svgElement(tag,attrs,text){const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,String(v));if(text)e.textContent=text;return e;}
 function sketch(p){
@@ -22,7 +39,7 @@ function sketch(p){
 function makeText(p){return ['LITTLE HOME IDEAS — PATIO PRIVACY WORKSHEET',`Space: ${p.space}; outdoor area: ${p.patioWidth} × ${p.depth} ft`,`Target screening: ${p.width} ft wide × ${p.height} ft high`,'',p.title,p.detail,'',p.summary,`Fits within outdoor width: ${p.fits?'Yes, geometrically; support footprints still need checking.':'No.'}`,p.total===null?'No cost estimate entered.':`Your entered module price: ${dollars(p.modulePrice)}; extras: ${dollars(p.extraCost)}; arithmetic total: ${dollars(p.total)} (not a live quote).`,'','ALTERNATIVES',...p.alternatives.map(x=>'- '+x),'','BEFORE YOU BUY',...p.checklist.map(x=>'- '+x),'',p.warning,'','Guide: https://littlehomeideas.com/articles/patio-privacy-ideas-for-renters/'].join('\n');}
 function download(p){const url=URL.createObjectURL(new Blob([makeText(p)],{type:'text/plain;charset=utf-8'}));const a=el('a');a.href=url;a.download='patio-privacy-worksheet.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 form.addEventListener('submit',e=>{
- e.preventDefault();if(!form.reportValidity())return;
+ e.preventDefault();validateDecimals();if(!form.reportValidity())return;
  const rawPrice=document.getElementById('module-price').value.trim();
  const p=planPrivacy({space:document.getElementById('space').value,width:num('width'),patioWidth:num('patio-width'),depth:num('depth'),height:num('screen-height'),panelWidth:num('panel-width'),budget:document.getElementById('budget').value,need:document.getElementById('need').value,exposure:document.getElementById('exposure').value,approved:document.getElementById('approved').checked,modulePrice:rawPrice===''?null:num('module-price'),extraCost:num('extra-cost')});
  out.replaceChildren();
@@ -38,4 +55,4 @@ form.addEventListener('submit',e=>{
  const actions=el('div',undefined,'plan-actions');const save=el('button','Save worksheet','button');save.type='button';save.addEventListener('click',()=>download(p));const print=el('button','Print plan','button secondary');print.type='button';print.addEventListener('click',()=>window.print());actions.append(save,print);out.append(actions,el('p','Saved worksheets are downloaded to your device. No answers are sent to us.','small'));
  out.focus();
 });
-form.addEventListener('reset',()=>{out.innerHTML=empty;});
+form.addEventListener('reset',()=>{for(const input of decimalInputs)input.setCustomValidity('');out.innerHTML=empty;});
