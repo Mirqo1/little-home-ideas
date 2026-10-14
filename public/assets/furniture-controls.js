@@ -1,5 +1,5 @@
-import {projectionPixelScale,viewRotation} from './projection.js?v=view-20261014';
-import {moveFurniture,rotateFurniture} from './layout-plan.js?v=view-20261014';
+import {projectionPixelScale,viewRotation} from './projection.js?v=print-20261014';
+import {moveFurniture,rotateFurniture} from './layout-plan.js?v=print-20261014';
 export function floorDelta(svg,dx,dy){
  const pixelScale=projectionPixelScale(svg),scale=Number(svg.getAttribute('data-projection-scale'));
  if(!Number.isFinite(pixelScale)||pixelScale<=0||!Number.isFinite(scale)||scale<=0)return null;
