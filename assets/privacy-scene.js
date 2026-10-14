@@ -4,7 +4,7 @@ export function privacyScene(document,p,preview=false,{showRoof=true,showWalls=t
  const screens=p.screens??[{side:p.screenSide??'back',start:0,width:p.width,coverage:p.coverage,base:p.screenBase??0,height:p.height,modules:p.modules}];
  const wallSegments=p.wallSegments??(p.walls??[]).map(side=>({side,start:0,end:['back','front'].includes(side)?p.patioWidth:p.depth,height:p.wallHeight}));
  const railSegments=p.railSegments??(p.railSides??[]).map(side=>({side,start:0,end:['back','front'].includes(side)?p.patioWidth:p.depth,height:p.railHeight}));
- const W=p.patioWidth,D=p.depth,top=Math.max(p.height,p.roofHeight??0,p.wallHeight??0,p.railHeight??0,3),side=p.screenSide??'back',base=p.screenBase??0;
+ const W=p.patioWidth,D=p.depth,top=Math.max(0,...screens.map(s=>s.height),p.roofHeight??0,p.wallHeight??0,p.railHeight??0,3),side=p.screenSide??'back',base=p.screenBase??0;
  const edge=(side,t,z=0)=>side==='back'?[t,0,z]:side==='front'?[t,D,z]:side==='left'?[0,t,z]:[W,t,z];
  const length=s=>['back','front'].includes(s)?W:D;
  const raw=([x,y,z=0])=>[.8*(x-y),.38*(x+y)-.85*z];
@@ -15,7 +15,7 @@ export function privacyScene(document,p,preview=false,{showRoof=true,showWalls=t
  const poly=(coords,attrs)=>make('polygon',{points:coords.map(q=>point(q).join(',')).join(' '),...attrs});
  const line=(a,b,attrs)=>{const u=point(a),v=point(b);return make('line',{x1:u[0],y1:u[1],x2:v[0],y2:v[1],...attrs});};
  const label=(q,text,ox=0,oy=0)=>{const [x,y]=point(q);return make('text',{x:x+ox,y:y+oy,fill:'#294b3c','font-size':17,'font-family':'Arial,sans-serif','text-anchor':'middle','paint-order':'stroke',stroke:'#f7f5ef','stroke-width':5,'stroke-linejoin':'round'},text);};
- svg.append(make('title',{id:preview?'preview-title':'plan-sketch-title'},'Your outdoor space in a 3D view'),make('desc',{id:preview?'preview-desc':'plan-sketch-desc'},W+' by '+D+' feet. '+screens.map(s=>s.side+': target '+s.width+' ft. Starts '+s.base+' feet above the floor; top '+s.height+' ft; '+s.modules+' modules.').join(' ')+' Roof '+(p.roofHeight??'none')+'; railing '+(p.railHeight??'none')+'; walls '+(p.walls?.join(', ')||'none')+'. '+(p.items?.length??0)+' furniture pieces. Geometry only; no structural or access approval.'));
+ svg.append(make('title',{id:preview?'preview-title':'plan-sketch-title'},'Your outdoor space in a 3D view'),make('desc',{id:preview?'preview-desc':'plan-sketch-desc'},W+' by '+D+' feet. '+screens.map(s=>s.side+': target '+s.width+' ft. Starts '+s.base+' feet above the floor; top '+s.height+' ft; '+(p.estimatePanels===false?'':s.modules+' estimated panels.')).join(' ')+' Roof '+(p.roofHeight??'none')+'; railing '+(p.railHeight??'none')+'; walls '+(p.walls?.join(', ')||'none')+'. '+(p.items?.length??0)+' furniture pieces. Geometry only; no structural or access approval.'));
  svg.append(make('rect',{x:0,y:0,width:960,height:740,fill:'#f7f5ef',rx:8}),make('text',{x:30,y:40,fill:'#294b3c','font-size':23,'font-family':'Arial,sans-serif'},preview?'An example to help you get started':'Your space & privacy layout'),make('text',{x:30,y:70,fill:'#647067','font-size':15,'font-family':'Arial,sans-serif'},'A far · B right · C near · D left · all measurements in feet'));
  svg.append(poly([[0,0],[W,0],[W,D],[0,D]],{fill:'#e3e8dc',stroke:'#a1b09b','stroke-width':2}));
  for(let i=1;i<5;i++)svg.append(line([W*i/5,0],[W*i/5,D],{stroke:'#cad3c3'}),line([0,D*i/5],[W,D*i/5],{stroke:'#cad3c3'}));
@@ -23,7 +23,13 @@ export function privacyScene(document,p,preview=false,{showRoof=true,showWalls=t
  const surface=(coords,attrs)=>surfaces.push({coords,attrs:drawingItem?{...attrs,'data-item-id':drawingItem,'class':'furniture-face'}:attrs,depth:coords.reduce((v,q)=>v+q[0]+q[1],0)/coords.length});
  if(showWalls)for(const wall of wallSegments)surface([edge(wall.side,wall.start),edge(wall.side,wall.end),edge(wall.side,wall.end,wall.height),edge(wall.side,wall.start,wall.height)],{fill:'#cbbfaf','fill-opacity':.48,stroke:'#ac9c88','stroke-width':2,'data-feature':'wall-'+wall.side,'pointer-events':'none'});
  const screenFill=p.restricted?'#aeb5af':p.fits?'#6f9379':'#bf9360';
- for(const screen of screens)for(let i=0;i<screen.modules;i++)surface([edge(screen.side,screen.start+i*p.panelWidth,screen.base),edge(screen.side,screen.start+(i+1)*p.panelWidth,screen.base),edge(screen.side,screen.start+(i+1)*p.panelWidth,screen.height),edge(screen.side,screen.start+i*p.panelWidth,screen.height)],{fill:screenFill,'fill-opacity':.65,stroke:'#ffffff','stroke-width':1.5,'data-feature':'screen','pointer-events':'none'});
+ for(const screen of screens){
+  const count=p.estimatePanels===false?1:screen.modules,step=p.estimatePanels===false?screen.width:p.panelWidth;
+  for(let i=0;i<count;i++){
+   const left=screen.start+i*step,right=screen.start+Math.min((i+1)*step,screen.width);if(right<=left)continue;
+   surface([edge(screen.side,left,screen.base),edge(screen.side,right,screen.base),edge(screen.side,right,screen.height),edge(screen.side,left,screen.height)],{fill:screenFill,'fill-opacity':.65,stroke:'#ffffff','stroke-width':1.5,'data-feature':'screen','pointer-events':'none'});
+  }
+ }
  for(const item of p.items??[]){
   drawingItem=item.id??null;
   const {x,y,w,d,kind}=item,z=kind==='table'?1.7:1.5,color=kind==='table'?'#ad835e':'#d3aa75';
@@ -50,7 +56,7 @@ export function privacyScene(document,p,preview=false,{showRoof=true,showWalls=t
  }
  svg.append(label([W/2,D],'C · width '+W+' ft',0,40),label([0,D/2],'D · depth '+D+' ft',-55,0),label([W/2,0],'A',0,22),label([W,D/2],'B',30,10));
  svg.append(make('text',{x:30,y:630,fill:'#294b3c','font-size':17,'font-family':'Arial,sans-serif'},screens.length+' screened side'+(screens.length===1?'':'s')+' · screen top '+p.height+' ft above floor'));
- svg.append(make('text',{x:30,y:658,fill:'#53634b','font-size':16,'font-family':'Arial,sans-serif'},p.modules+' × '+p.panelWidth+' ft modules = '+p.coverage+' ft coverage'));
+ svg.append(make('text',{x:30,y:658,fill:'#53634b','font-size':16,'font-family':'Arial,sans-serif'},p.estimatePanels===false?'Privacy coverage is drawn to your requested dimensions.':p.modules+' whole panels estimated; the drawing shows the requested screen area.'));
  svg.append(make('text',{x:30,y:688,fill:'#647067','font-size':14,'font-family':'Arial,sans-serif'},'Blue roof · sand walls · dark railing · wood furniture · green/gray screening'));
  svg.append(make('text',{x:30,y:715,fill:'#647067','font-size':14,'font-family':'Arial,sans-serif'},'Geometry example. No support, mounting, guard, wind, or walking-clearance assessment.'));
  return svg;

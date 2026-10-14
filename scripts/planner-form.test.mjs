@@ -17,19 +17,22 @@ function setup(){
 }
 function submit(w){w.document.getElementById('privacy-form').requestSubmit();}
 function check(w,id){const i=w.document.getElementById(id);i.checked=true;i.dispatchEvent(new w.Event('change',{bubbles:true}));}
+function panels(w){const d=w.document.getElementById('product-details');d.open=true;d.dispatchEvent(new w.Event('toggle'));}
+function cover(w,side,v){check(w,side+'-custom-width');w.document.getElementById(side+'-screen-width').value=v;}
 function furniture(w){const i=w.document.getElementById('furniture');i.value='bistro';i.dispatchEvent(new w.Event('change',{bubbles:true}));}
 for(const value of ['2.16','2,16','3.45','3,45'])test('module width '+value+' generates a spatial plan',()=>{
- const w=setup();try{w.document.getElementById('panel-width').value=value;submit(w);assert.equal(w.document.querySelector('.plan-metrics strong')?.textContent,value.startsWith('2')?'3':'2');assert.ok(w.document.querySelector('.plan-sketch'));}finally{w.happyDOM.abort();}
+ const w=setup();try{panels(w);cover(w,'back','6');w.document.getElementById('panel-width').value=value;submit(w);assert.equal(w.document.querySelector('.plan-metrics strong')?.textContent,value.startsWith('2')?'3':'2');assert.ok(w.document.querySelector('.plan-sketch'));}finally{w.happyDOM.abort();}
 });
 test('dimensions and prices accept commas and points together',()=>{
  const w=setup();try{
+  panels(w);check(w,'back-custom-width');
   for(const [id,v]of Object.entries({'patio-width':'10,25',depth:'8.16','back-screen-width':'6,45','screen-height':'6.12','panel-width':'2,16','module-price':'49,95','extra-cost':'25.50'}))w.document.getElementById(id).value=v;
   submit(w);assert.match(w.document.querySelector('.plan-cost').textContent,/\$175\.35/);assert.match(w.document.querySelector('.plan-metrics').textContent,/6.48 ft/);
  }finally{w.happyDOM.abort();}
 });
 test('invalid inputs preserve the example; a geometry error preserves the last result',()=>{
  const w=setup();try{
-  const preview=w.document.querySelector('.plan-preview').outerHTML;
+  panels(w);const preview=w.document.querySelector('.plan-preview').outerHTML;
   w.document.getElementById('panel-width').value='bad';submit(w);
   assert.equal(w.document.querySelector('.plan-preview').outerHTML,preview);assert.equal(w.document.getElementById('planner-message').hidden,false);
   w.document.getElementById('panel-width').value='3';submit(w);
@@ -79,11 +82,63 @@ test('hidden invalid optional values are ignored and start over restores the exa
   w.document.getElementById('privacy-form').reset();await Promise.resolve();assert.ok(w.document.querySelector('.plan-preview'));assert.equal(w.document.getElementById('roof-height').disabled,true);assert.equal(w.document.getElementById('planner-message').hidden,true);
  }finally{w.happyDOM.abort();}
 });
-test('rounded module overflow keeps the last plan and shows the failing side',()=>{
+test('full-side screening works by default; optional panel mismatch is advisory',()=>{
  const w=setup();try{
-  submit(w);const drawing=w.document.querySelector('.plan-sketch').outerHTML;
   check(w,'left-screen');submit(w);
-  assert.equal(w.document.querySelector('.plan-sketch').outerHTML,drawing);
-  assert.match(w.document.getElementById('planner-message').textContent,/D.*9 ft.*last valid/);
+  assert.equal(w.document.getElementById('planner-message').hidden,true);
+  assert.equal(w.document.querySelectorAll('.screen-summary tbody tr').length,2);
+  assert.equal(w.document.querySelector('.plan-metrics'),null);
+  panels(w);submit(w);
+  assert.equal(w.document.getElementById('planner-message').hidden,true);
+  assert.match(w.document.querySelector('.layout-review').textContent,/available section/);
+  assert.ok(w.document.querySelector('.plan-sketch'));
+ }finally{w.happyDOM.abort();}
+});
+test('screen starts is only available with a railing and resets when railing is removed',()=>{
+ const w=setup();try{
+  const group=w.document.querySelector('[data-side="back"] .screen-placement');
+  assert.equal(group.hidden,true);assert.equal(w.document.getElementById('back-mode').disabled,true);
+  check(w,'back-rail');w.document.getElementById('back-mode').value='above';
+  assert.equal(group.hidden,false);
+  const rail=w.document.getElementById('back-rail');rail.checked=false;rail.dispatchEvent(new w.Event('change',{bubbles:true}));
+  assert.equal(group.hidden,true);assert.equal(w.document.getElementById('back-mode').value,'full');
+  submit(w);assert.equal(w.document.getElementById('planner-message').hidden,true);
+ }finally{w.happyDOM.abort();}
+});
+test('floor resizing, mixed-side defaults and removing all screens do not trap the user',()=>{
+ const w=setup();try{
+  const floor=w.document.getElementById('patio-width');floor.value='4';floor.dispatchEvent(new w.Event('input',{bubbles:true}));
+  submit(w);assert.equal(w.document.getElementById('planner-message').hidden,true);assert.match(w.document.querySelector('.screen-summary').textContent,/4 ft/);
+  check(w,'back-wall');assert.equal(w.document.getElementById('back-screen').disabled,true);
+  submit(w);assert.equal(w.document.getElementById('planner-message').hidden,true);assert.ok(w.document.querySelector('[data-feature="wall-back"]'));
+  check(w,'back-rail');check(w,'back-screen');assert.equal(w.document.getElementById('back-wall-length').value,'2');
+  submit(w);assert.equal(w.document.getElementById('planner-message').hidden,true);
+ }finally{w.happyDOM.abort();}
+});
+test('a too-long custom screen can be corrected with one click without losing the plan',()=>{
+ const w=setup();try{
+  submit(w);cover(w,'back','11');submit(w);
+  assert.equal(w.document.getElementById('back-screen-width').getAttribute('aria-invalid'),'true');
+  [...w.document.querySelectorAll('#planner-message button')].find(b=>b.textContent==='Use full available section').click();
+  assert.equal(w.document.getElementById('planner-message').hidden,true);
+  assert.match(w.document.querySelector('.screen-summary').textContent,/10 ft/);
+ }finally{w.happyDOM.abort();}
+});
+test('a resized floor offers an explicit furniture recovery instead of forcing start over',()=>{
+ const w=setup();try{
+  furniture(w);submit(w);w.document.getElementById('patio-width').value='7';submit(w);
+  assert.match(w.document.getElementById('planner-message').textContent,/Reset furniture positions/);
+  [...w.document.querySelectorAll('#planner-message button')].find(b=>b.textContent==='Reset furniture positions & update').click();
+  assert.equal(w.document.getElementById('planner-message').hidden,true);
+  assert.ok(w.document.querySelector('[data-item-id="item-0"]'));
+ }finally{w.happyDOM.abort();}
+});
+test('start over closes optional product settings and clears pending feedback',async()=>{
+ const w=setup();try{
+  panels(w);submit(w);w.document.getElementById('privacy-form').reset();
+  w.document.getElementById('product-details').dispatchEvent(new w.Event('toggle'));await Promise.resolve();
+  assert.equal(w.document.getElementById('product-details').open,false);
+  assert.equal(w.document.getElementById('panel-width').disabled,true);
+  assert.equal(w.document.getElementById('planner-state-note').hidden,true);
  }finally{w.happyDOM.abort();}
 });
