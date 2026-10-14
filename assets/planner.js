@@ -1,6 +1,6 @@
-import {privacyScene} from './privacy-scene.js?v=friendly2-20261014';
-import {planLayout,sideNames} from './layout-plan.js?v=friendly2-20261014';
-import {bindFurniture} from './furniture-controls.js?v=friendly2-20261014';
+import {privacyScene} from './privacy-scene.js?v=plants-20261014';
+import {planLayout,sideNames,rotateFurniture} from './layout-plan.js?v=plants-20261014';
+import {bindFurniture} from './furniture-controls.js?v=plants-20261014';
 const form=document.getElementById('privacy-form'),out=document.getElementById('results'),message=document.getElementById('planner-message'),stateNote=document.getElementById('planner-state-note');
 const decimalInputs=[...form.querySelectorAll('input[inputmode="decimal"]')],rows=[...form.querySelectorAll('.boundary-row')];
 const dollars=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(v);
@@ -42,6 +42,7 @@ let ignoreSavedPositions=false,ignoreProductToggle=false;
 function syncFields(){
  toggle(document.getElementById('roof-fields'),checked('has-roof'));
  toggle(document.getElementById('furniture-fields'),value('furniture')!=='none');
+ toggle(document.getElementById('plant-fields'),Number(value('plant-count'))>0);
  toggle(document.getElementById('wall-fields'),rows.some(r=>checked(r.dataset.side+'-wall')));
  toggle(document.getElementById('rail-fields'),rows.some(r=>checked(r.dataset.side+'-rail')));
  toggle(document.getElementById('screen-common'),rows.some(r=>checked(r.dataset.side+'-screen')));
@@ -86,7 +87,7 @@ function validate(){
  return true;
 }
 function read(){
- return {space:value('space'),patioWidth:num('patio-width'),depth:num('depth'),height:num('screen-height'),estimatePanels:document.getElementById('product-details').open,panelWidth:document.getElementById('product-details').open?num('panel-width'):3,hasRoof:checked('has-roof'),roofHeight:num('roof-height'),wallHeight:num('wall-height'),railHeight:num('rail-height'),furniture:value('furniture'),seatWidth:num('seat-width'),seatDepth:num('seat-depth'),tableWidth:num('table-width'),tableDepth:num('table-depth'),modulePrice:document.getElementById('product-details').open&&value('module-price').trim()?num('module-price'):null,extraCost:document.getElementById('product-details').open?num('extra-cost'):0,
+ return {space:value('space'),patioWidth:num('patio-width'),depth:num('depth'),height:num('screen-height'),estimatePanels:document.getElementById('product-details').open,panelWidth:document.getElementById('product-details').open?num('panel-width'):3,hasRoof:checked('has-roof'),roofHeight:num('roof-height'),wallHeight:num('wall-height'),railHeight:num('rail-height'),furniture:value('furniture'),plantCount:Number(value('plant-count')),plantStyle:value('plant-style'),plantWidth:num('plant-width'),plantHeight:num('plant-height'),seatWidth:num('seat-width'),seatDepth:num('seat-depth'),tableWidth:num('table-width'),tableDepth:num('table-depth'),modulePrice:document.getElementById('product-details').open&&value('module-price').trim()?num('module-price'):null,extraCost:document.getElementById('product-details').open?num('extra-cost'):0,
  boundaries:rows.map(row=>{const side=row.dataset.side;return {side,wall:checked(side+'-wall'),rail:checked(side+'-rail'),screen:checked(side+'-screen'),wallLength:num(side+'-wall-length'),wallAt:value(side+'-wall-at'),mode:checked(side+'-rail')?value(side+'-mode'):'full',screenWidth:checked(side+'-custom-width')?num(side+'-screen-width'):null};})};
 }
 const signature=o=>[o.furniture,o.seatWidth,o.seatDepth,o.tableWidth,o.tableDepth].join('|');
@@ -97,7 +98,7 @@ function makeText(p){
  return ['LITTLE HOME IDEAS — PATIO LAYOUT','Space: '+p.space,'Floor: '+p.patioWidth+' × '+p.depth+' ft','Roof underside: '+(p.roofHeight??'none'),
  '','SCREENS',...p.screens.map(s=>sideNames[s.side]+': start '+s.start+' ft along side; target '+s.width+' ft; elevation '+s.base+'–'+s.height+' ft; '+(p.estimatePanels?s.modules+' estimated panels, '+s.coverage+' ft whole-panel coverage':'product count not requested')),
  '','WALLS',...p.wallSegments.map(s=>sideNames[s.side]+': '+s.start+'–'+s.end+' ft, height '+s.height+' ft'),'','RAILINGS',...p.railSegments.map(s=>sideNames[s.side]+': '+s.start+'–'+s.end+' ft, height '+s.height+' ft'),
- '','FURNITURE',...p.items.map(i=>i.label+': '+i.w+' × '+i.d+' ft; x='+i.x+', y='+i.y+' ft (from A/D floor corner)'),'',
+ '','FURNITURE',...p.items.map(i=>i.label+': footprint '+i.w+' × '+i.d+' ft; x='+i.x+', y='+i.y+' ft; rotation '+(i.rotation??0)+' degrees'+(i.height?'; total height '+i.height+' ft':'')+' (from A/D floor corner)'),'',
  p.total===null?'No cost entered.':'Entered cost arithmetic: '+dollars(p.total),p.summary,p.warning,'Guide: https://littlehomeideas.com/articles/patio-privacy-ideas-for-renters/'].join('\n');
 }
 function download(p){const url=URL.createObjectURL(new Blob([makeText(p)],{type:'text/plain;charset=utf-8'})),a=el('a');a.href=url;a.download='patio-privacy-worksheet.txt';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
@@ -113,9 +114,23 @@ function render(p){
  }
  redraw();out.append(controls,scene);
  if(p.items.length){
-  out.append(status);const reset=el('button','Reset furniture positions','reset-button');reset.type='button';
-  reset.addEventListener('click',()=>{p.items=p.defaultItems.map(i=>({...i}));notice('');redraw();status.textContent='Furniture restored to the starting arrangement.';});out.append(reset);
-  bindFurniture(scene,p,redraw,text=>notice(text),item=>{if(item)status.textContent=item.label+': '+item.x+' ft from side D, '+item.y+' ft from side A. This is its footprint corner.';});
+  const tools=el('div',undefined,'item-toolbar'),selectLabel=el('label','Select a piece'),picker=el('select'),left=el('button','↶ Rotate left','button secondary'),right=el('button','Rotate right ↷','button secondary');
+  picker.id='layout-piece';selectLabel.htmlFor=picker.id;
+  for(const item of p.items){const option=el('option',item.label);option.value=item.id;picker.append(option);}
+  left.type=right.type='button';
+  const selected=item=>{if(!item)return;picker.value=item.id;left.disabled=right.disabled=!['chair','bench'].includes(item.kind);};
+  const describe=item=>{if(item)status.textContent=item.label+': '+item.x+' ft from D, '+item.y+' ft from A'+(['chair','bench'].includes(item.kind)?'; facing '+(item.rotation??0)+'°.':'.');};
+  const rotate=turn=>{
+   const next=rotateFurniture(p.items,picker.value,p.patioWidth,p.depth,turn);
+   if(next.error){notice(next.error);return;}p.items=next.items;notice('');redraw(picker.value);describe(p.items.find(i=>i.id===picker.value));
+  };
+  picker.addEventListener('change',()=>{scene.dataset.selectedItem=picker.value;redraw(picker.value);selected(p.items.find(i=>i.id===picker.value));});
+  left.addEventListener('click',()=>rotate(-90));right.addEventListener('click',()=>rotate(90));
+  tools.append(selectLabel,picker,left,right);out.append(tools,status);
+  status.textContent='Drag a piece or use arrow keys to move it. Select seating to rotate with the buttons or R (Shift+R turns left).';
+  const reset=el('button','Reset item positions & directions','reset-button');reset.type='button';
+  reset.addEventListener('click',()=>{p.items=p.defaultItems.map(i=>({...i}));notice('');selected(p.items[0]);scene.dataset.selectedItem=p.items[0]?.id??'';redraw(p.items[0]?.id);status.textContent='Items restored to their starting arrangement.';});out.append(reset);
+  selected(p.items[0]);scene.dataset.selectedItem=p.items[0].id;redraw(p.items[0].id);bindFurniture(scene,p,redraw,text=>notice(text),describe,selected);
  }
  const table=el('table',undefined,'screen-summary'),caption=el('caption','Screening on each side'),head=el('thead'),hr=el('tr');
  for(const text of ['Side','Covered length','Height above floor',...(p.estimatePanels?['Panels']:[])]){const th=el('th',text);th.scope='col';hr.append(th);}head.append(hr);table.append(caption,head);
@@ -132,7 +147,7 @@ function render(p){
  save.type=print.type='button';save.addEventListener('click',()=>download(p));print.addEventListener('click',()=>window.print());actions.append(save,print);out.append(actions);
 }
 form.addEventListener('submit',e=>{
- e.preventDefault();if(!validate())return;const raw=read(),key=signature(raw);if(lastPlan&&key===lastSignature&&!ignoreSavedPositions)raw.items=lastPlan.items;
+ e.preventDefault();if(!validate())return;const raw=read(),key=signature(raw);if(lastPlan&&key===lastSignature&&!ignoreSavedPositions)raw.poses=lastPlan.items;
  ignoreSavedPositions=false;
  const p=planLayout(raw);
  if(p.error){notice(p.error,false,p.field,p.action);return;}

@@ -10,6 +10,6 @@ Screen module counts round up independently per side. Counts are now optional pr
 
 Furniture presets supply editable floor footprints. Pieces are dragged individually using inverse isometric projection and pointer capture. Arrow keys move 0.25 ft; Shift moves 1 ft. Movement clamps to the floor and rejects overlaps. Positions survive recalculation when the preset and dimensions remain unchanged, and appear in downloaded worksheets. Reset furniture positions restores the preset. Start over clears the plan.
 
-Limitations: rectangular floor, flat full-area roof, one contiguous wall/railing split per boundary, screening from that open section's beginning, shared heights, illustrative furniture heights, no rotation or arbitrary new pieces. Door swings, walking clearance, wind, mounting, guard compliance, and structural loads are not calculated.
+Limitations: rectangular floor, flat full-area roof, one contiguous wall/railing split per boundary, screening from that open section's beginning, shared heights, illustrative seating heights and configurable total plant heights, quarter-turn seating rotation and no arbitrary new item types. Door swings, walking clearance, wind, mounting, guard compliance, and structural loads are not calculated.
 
 Validation includes mixed sections, separate side counts, overflow rejection, decimal separators, invalid-plan preservation, pointer projection/movement, keyboard movement, reset, position persistence, costs, and conditional inputs. The older planPrivacy API remains compatible but is not used by the editor UI.
