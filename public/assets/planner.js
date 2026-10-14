@@ -1,8 +1,8 @@
-import {parseGaps} from './screen-pieces.js?v=gaps-span-20261014';
-import {bindOpenings} from './wall-openings.js?v=gaps-span-20261014';
-import {privacyScene} from './privacy-scene.js?v=gaps-span-20261014';
-import {planLayout,sideNames,rotateFurniture} from './layout-plan.js?v=gaps-span-20261014';
-import {bindFurniture} from './furniture-controls.js?v=gaps-span-20261014';
+import {parseGaps} from './screen-pieces.js?v=controls-20261014';
+import {bindOpenings} from './wall-openings.js?v=controls-20261014';
+import {privacyScene} from './privacy-scene.js?v=controls-20261014';
+import {planLayout,sideNames,rotateFurniture} from './layout-plan.js?v=controls-20261014';
+import {bindFurniture} from './furniture-controls.js?v=controls-20261014';
 const form=document.getElementById('privacy-form'),out=document.getElementById('results'),message=document.getElementById('planner-message'),stateNote=document.getElementById('planner-state-note');
 const decimalInputs=[...form.querySelectorAll('input[inputmode="decimal"]')],rows=[...form.querySelectorAll('.boundary-row')];
 const dollars=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(v);
@@ -11,6 +11,24 @@ const checked=id=>document.getElementById(id).checked;
 const num=id=>{const s=value(id).trim();return /^(?:[0-9]+(?:[.,][0-9]+)?|[.,][0-9]+)$/.test(s)?Number(s.replace(',','.')):NaN;};
 function el(tag,text,className){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;return n;}
 let lastPlan=null,lastSignature=null;
+const quantities=new Map(),nextIds=new Map(),deletedBase=new Set(),lockedIds=new Set();
+function requests(input){
+ const kind=input.dataset.extra??input.dataset.plant,key=input.id,count=Number(input.value),ids=quantities.get(key)??[];
+ while(ids.length>count)ids.pop();
+ while(ids.length<count){const n=(nextIds.get(key)??0)+1;nextIds.set(key,n);ids.push(input.dataset.extra?(n===1?key:key+'-'+n):'plant-'+kind+'-'+n);}
+ quantities.set(key,ids);const name=form.querySelector('label[for="'+key+'"]').textContent;
+ return ids.map((id,n)=>({id,kind,sourceKey:key,label:(kind==='thuja'?'Potted thuja':kind==='leafy'?'Leafy potted plant':name)+' '+(n+1)}));
+}
+const extraRequests=()=>[...form.querySelectorAll('[data-extra]')].flatMap(requests);
+const plantRequests=()=>[...form.querySelectorAll('[data-plant]')].flatMap(requests);
+function removeObject(p,id){
+ const item=[...p.items,...p.openings].find(i=>i.id===id);if(!item||item.locked)return;
+ if(item.sourceKey){const ids=quantities.get(item.sourceKey)??[];quantities.set(item.sourceKey,ids.filter(v=>v!==id));document.getElementById(item.sourceKey).value=String(ids.filter(v=>v!==id).length);}
+ else if(item.side){document.getElementById(item.id).checked=false;syncFields();}
+ else{deletedBase.add(id);const furniture=document.getElementById('furniture');furniture.indeterminate=deletedBase.size>0&&deletedBase.size<3;if(deletedBase.size===3)furniture.checked=false;}
+ lockedIds.delete(id);p.items=p.items.filter(i=>i.id!==id);p.openings=p.openings.filter(i=>i.id!==id);p.defaultItems=p.defaultItems.filter(i=>i.id!==id);p.defaultOpenings=p.defaultOpenings.filter(i=>i.id!==id);render(p);
+}
+
 function clearErrors(){
  message.hidden=true;message.replaceChildren();
  for(const n of form.querySelectorAll('.field-error'))n.remove();
@@ -78,7 +96,8 @@ function syncFields(){
  const product=document.getElementById('product-details');
  for(const input of product.querySelectorAll('input')){input.disabled=!product.open;input.setCustomValidity('');}
 }
-form.addEventListener('change',()=>{syncFields();pending();});
+form.addEventListener('change',e=>{if(e.target.id==='furniture'){deletedBase.clear();e.target.indeterminate=false;}syncFields();pending();});
+for(const i of form.querySelectorAll('input[type=number]'))i.addEventListener('input',pending);
 document.getElementById('product-details').addEventListener('toggle',()=>{syncFields();if(ignoreProductToggle||(!document.getElementById('product-details').open&&!lastPlan)){ignoreProductToggle=false;stateNote.hidden=true;return;}pending();});
 syncFields();
 for(const input of decimalInputs)input.addEventListener('input',()=>{
@@ -87,6 +106,8 @@ for(const input of decimalInputs)input.addEventListener('input',()=>{
 });
 for(const input of form.querySelectorAll('[id$="-gaps"]'))input.addEventListener('input',pending);
 function validate(){
+ for(const input of form.querySelectorAll('input[type=number]')){if(!Number.isInteger(Number(input.value))||!input.value.trim()||Number(input.value)<0||Number(input.value)>6){notice('Enter a whole-number quantity from 0 to 6.',false,input.id);return false;}}
+
  for(const input of decimalInputs){
   input.setCustomValidity('');if(input.disabled)continue;
   if(!input.value.trim()){if(input.required)input.setCustomValidity('Enter a measurement.');continue;}
@@ -94,14 +115,14 @@ function validate(){
   if(!Number.isFinite(n))input.setCustomValidity('Use a decimal point or comma, for example 2.16 or 2,16.');
   else if(n<Number(input.dataset.min)||n>Number(input.dataset.max))input.setCustomValidity('Enter a value from '+input.dataset.min+' to '+input.dataset.max+'.');
  }
- for(const row of rows){const side=row.dataset.side;if(checked(side+'-screen')&&checked(side+'-separate')){const parsed=parseGaps(value(side+'-gaps'),value(side+'-gap-unit'));if(parsed.error){notice(parsed.error,false,side+'-gaps');return false;}}}
+ for(const row of rows){const side=row.dataset.side;if(checked(side+'-screen')&&checked(side+'-separate')){const parsed=parseGaps(value(side+'-gaps'),'in');if(parsed.error){notice(parsed.error,false,side+'-gaps');return false;}}}
  const invalid=decimalInputs.find(i=>!i.disabled&&!i.checkValidity());
  if(invalid){const label=form.querySelector('label[for="'+invalid.id+'"]');notice((label?.textContent??'Measurement')+': '+invalid.validationMessage,false,invalid.id);return false;}
  return true;
 }
 function read(){
- return {space:value('space'),patioWidth:num('patio-width'),depth:num('depth'),height:num('screen-height'),estimatePanels:document.getElementById('product-details').open,panelWidth:document.getElementById('product-details').open?num('panel-width'):3,hasRoof:checked('has-roof'),roofHeight:num('roof-height'),wallHeight:num('wall-height'),railHeight:num('rail-height'),furniture:checked('furniture')?'bistro':'none',extras:[...document.querySelectorAll('[data-extra]:checked')].map(i=>i.dataset.extra),plantCount:document.querySelectorAll('[data-plant]:checked').length,plantStyles:[...document.querySelectorAll('[data-plant]:checked')].map(i=>i.dataset.plant),plantIds:[...document.querySelectorAll('[data-plant]:checked')].map(i=>i.id),plantWidth:1.5,plantHeight:4,seatWidth:2,seatDepth:2,tableWidth:2,tableDepth:2,openings:[...document.querySelectorAll('[data-opening]:checked')].map(i=>({id:i.id,kind:i.dataset.opening,side:value(i.id+'-side')})),modulePrice:document.getElementById('product-details').open&&value('module-price').trim()?num('module-price'):null,extraCost:document.getElementById('product-details').open?num('extra-cost'):0,
- boundaries:rows.map(row=>{const side=row.dataset.side;return {side,wall:checked(side+'-wall'),rail:checked(side+'-rail'),screen:checked(side+'-screen'),wallLength:num(side+'-wall-length'),wallAt:value(side+'-wall-at'),mode:checked(side+'-rail')?value(side+'-mode'):'full',screenWidth:checked(side+'-custom-width')?num(side+'-screen-width'):null,pieceWidth:checked(side+'-separate')?num(side+'-piece-width'):null,gaps:checked(side+'-separate')?parseGaps(value(side+'-gaps'),value(side+'-gap-unit')).gaps:[0]};})};
+ return {space:value('space'),patioWidth:num('patio-width'),depth:num('depth'),height:num('screen-height'),estimatePanels:document.getElementById('product-details').open,panelWidth:document.getElementById('product-details').open?num('panel-width'):3,hasRoof:checked('has-roof'),roofHeight:num('roof-height'),wallHeight:num('wall-height'),railHeight:num('rail-height'),furniture:checked('furniture')?'bistro':'none',extraRequests:extraRequests(),plantCount:plantRequests().length,plantStyles:plantRequests().map(i=>i.kind),plantIds:plantRequests().map(i=>i.id),plantLabels:plantRequests().map(i=>i.label),plantSources:plantRequests().map(i=>i.sourceKey),deletedItems:[...deletedBase],lockedIds:[...lockedIds],plantWidth:1.5,plantHeight:4,seatWidth:2,seatDepth:2,tableWidth:2,tableDepth:2,openings:[...document.querySelectorAll('[data-opening]:checked')].map(i=>({id:i.id,kind:i.dataset.opening,side:value(i.id+'-side')})),modulePrice:document.getElementById('product-details').open&&value('module-price').trim()?num('module-price'):null,extraCost:document.getElementById('product-details').open?num('extra-cost'):0,
+ boundaries:rows.map(row=>{const side=row.dataset.side;return {side,wall:checked(side+'-wall'),rail:checked(side+'-rail'),screen:checked(side+'-screen'),wallLength:num(side+'-wall-length'),wallAt:value(side+'-wall-at'),mode:checked(side+'-rail')?value(side+'-mode'):'full',screenWidth:checked(side+'-custom-width')?num(side+'-screen-width'):null,pieceWidth:checked(side+'-separate')?num(side+'-piece-width'):null,gaps:checked(side+'-separate')?parseGaps(value(side+'-gaps'),'in').gaps:[0]};})};
 }
 const signature=o=>[o.furniture,o.seatWidth,o.seatDepth,o.tableWidth,o.tableDepth].join('|');
 const defaultPlan=planLayout({space:'patio',patioWidth:10,depth:8,height:6,panelWidth:3,estimatePanels:false,furniture:'none',boundaries:['back','right','front','left'].map(side=>({side,wall:false,rail:false,screen:side==='back',mode:'full',screenWidth:null}))});
@@ -126,26 +147,28 @@ function render(p){
   if(!active)continue;const l=el('label'),c=el('input');c.type='checkbox';c.checked=true;l.append(c,document.createTextNode(label));controls.append(l);
   c.addEventListener('change',()=>{options[key]=c.checked;redraw(scene.dataset.selectedItem);});
  }
- redraw();out.append(controls,scene);
- const allPieces=()=>[...p.items,...p.openings];
+ redraw();out.append(controls,scene,el('p','A far · B right · C near · D left · all measurements in feet'+(p.screens.some(s=>s.gapWidth>0)?' · Open gaps reduce privacy.':''),'small scene-caption'));
+ const allPieces=()=>[...p.items,...p.openings],rotatable=i=>['chair','bench','lounger','storage','side-table'].includes(i.kind)&&!i.locked;
  if(allPieces().length){
-  const tools=el('div',undefined,'item-toolbar'),selectLabel=el('label','Select a piece'),picker=el('select'),left=el('button','↶ Rotate left','button secondary'),right=el('button','Rotate right ↷','button secondary');
-  picker.id='layout-piece';selectLabel.htmlFor=picker.id;
-  for(const item of allPieces()){const option=el('option',item.label);option.value=item.id;picker.append(option);}
-  left.type=right.type='button';
-  const selected=item=>{if(!item)return;picker.value=item.id;left.disabled=right.disabled=!['chair','bench','lounger','storage','side-table'].includes(item.kind);};
-  const describe=item=>{if(item?.side){status.textContent=item.label+' on '+sideNames[item.side]+': '+item.start+' ft along side; bottom '+item.bottom+' ft.';return;}if(item)status.textContent=item.label+': '+item.x+' ft from D, '+item.y+' ft from A'+(['chair','bench','lounger','storage','side-table'].includes(item.kind)?'; facing '+(item.rotation??0)+'°.':'.');};
-  const rotate=turn=>{
-   const next=rotateFurniture(p.items,picker.value,p.patioWidth,p.depth,turn);
-   if(next.error){notice(next.error);return;}p.items=next.items;notice('');redraw(picker.value);describe(allPieces().find(i=>i.id===picker.value));
-  };
-  picker.addEventListener('change',()=>{scene.dataset.selectedItem=picker.value;redraw(picker.value);selected(allPieces().find(i=>i.id===picker.value));});
-  left.addEventListener('click',()=>rotate(-90));right.addEventListener('click',()=>rotate(90));
-  tools.append(selectLabel,picker,left,right);out.append(tools,status);
-  status.textContent='Drag a piece or use arrow keys to move it. Select a furniture piece to rotate with the buttons or R (Shift+R turns left).';
-  const reset=el('button','Reset item positions & directions','reset-button');reset.type='button';
-  reset.addEventListener('click',()=>{p.items=p.defaultItems.map(i=>({...i}));p.openings=p.defaultOpenings.map(i=>({...i}));notice('');selected(allPieces()[0]);scene.dataset.selectedItem=allPieces()[0]?.id??'';redraw(allPieces()[0]?.id);status.textContent='Items restored to their starting arrangement.';});out.append(reset);
-  selected(allPieces()[0]);scene.dataset.selectedItem=allPieces()[0].id;redraw(allPieces()[0].id);bindFurniture(scene,p,redraw,text=>notice(text),describe,selected);bindOpenings(scene,p,redraw,text=>notice(text),describe,selected);
+  const tools=el('div',undefined,'item-toolbar'),selectLabel=el('label','Rotate furniture'),picker=el('select'),left=el('button','↶ Rotate left','button secondary'),right=el('button','Rotate right ↷','button secondary'),trash=el('button','🗑','button secondary delete-object'),activeLabel=el('p',undefined,'selected-object');
+  picker.id='layout-piece';selectLabel.htmlFor=picker.id;trash.type=left.type=right.type='button';trash.setAttribute('aria-label','Remove selected object');trash.title='Remove selected object';
+  const fillPicker=()=>{picker.replaceChildren();const placeholder=el('option','Choose furniture to rotate');placeholder.value='';picker.append(placeholder);for(const item of allPieces().filter(rotatable)){const option=el('option',item.label);option.value=item.id;picker.append(option);}};
+  let activeId=null;
+  const selected=item=>{if(!item)return;activeId=item.id;picker.value=rotatable(item)?item.id:'';left.disabled=right.disabled=!rotatable(item);trash.disabled=!!item.locked;activeLabel.textContent='Selected: '+item.label+(item.locked?' · Locked':'');};
+  const describe=item=>{if(item?.side){status.textContent=item.label+' on '+sideNames[item.side]+': '+item.start+' ft along side; bottom '+item.bottom+' ft.';return;}if(item)status.textContent=item.label+': '+item.x+' ft from D, '+item.y+' ft from A'+(rotatable(item)?'; facing '+(item.rotation??0)+'°.':'.');};
+  const selectPiece=id=>{const item=allPieces().find(i=>i.id===id);if(!item)return;scene.dataset.selectedItem=id;selected(item);redraw(id);};
+  const rotate=turn=>{const next=rotateFurniture(p.items,activeId,p.patioWidth,p.depth,turn);if(next.error){notice(next.error);return;}p.items=next.items;notice('');redraw(activeId);describe(allPieces().find(i=>i.id===activeId));};
+  picker.addEventListener('change',()=>selectPiece(picker.value));left.addEventListener('click',()=>rotate(-90));right.addEventListener('click',()=>rotate(90));trash.addEventListener('click',()=>removeObject(p,activeId));
+  fillPicker();tools.append(selectLabel,picker,left,right,trash);out.append(activeLabel,tools,status);
+  status.textContent='Drag unlocked objects. Arrow keys move; R rotates furniture. Lock overlapping objects below to reach the ones behind them.';
+  const manager=el('details',undefined,'object-manager'),summary=el('summary','Objects & locks ('+allPieces().length+')'),list=el('div',undefined,'object-list');manager.append(summary,list);
+  for(const item of allPieces()){
+   const row=el('div',undefined,'object-row'),choose=el('button',item.label,'object-select'),label=el('label'),lock=el('input');choose.type='button';choose.dataset.selectId=item.id;choose.setAttribute('aria-label','Select '+item.label);choose.addEventListener('click',()=>selectPiece(item.id));lock.type='checkbox';lock.checked=!!item.locked;lock.dataset.lockId=item.id;lock.setAttribute('aria-label','Lock '+item.label);label.append(lock,document.createTextNode('Lock'));
+   lock.addEventListener('change',()=>{const current=allPieces().find(i=>i.id===item.id);current.locked=lock.checked;if(lock.checked)lockedIds.add(item.id);else lockedIds.delete(item.id);fillPicker();selected(allPieces().find(i=>i.id===activeId));redraw(activeId);status.textContent=current.label+(lock.checked?' locked. Clicks pass through it to objects behind.':' unlocked.');});row.append(choose,label);list.append(row);
+  }
+  out.append(manager);
+  const reset=el('button','Reset item positions & directions','reset-button');reset.type='button';reset.addEventListener('click',()=>{p.items=p.defaultItems.map(i=>({...i,locked:lockedIds.has(i.id)}));p.openings=p.defaultOpenings.map(i=>({...i,locked:lockedIds.has(i.id)}));render(p);});out.append(reset);
+  const first=allPieces().find(rotatable)??allPieces()[0];selected(first);scene.dataset.selectedItem=first.id;redraw(first.id);bindFurniture(scene,p,redraw,text=>notice(text),describe,selected);bindOpenings(scene,p,redraw,text=>notice(text),describe,selected);
  }
  const table=el('table',undefined,'screen-summary'),caption=el('caption','Screening on each side'),head=el('thead'),hr=el('tr');
  for(const text of ['Side','Screen span','Height above floor',...(p.estimatePanels||p.screens.some(s=>s.separate)?['Pieces','Open gaps','Last piece used / excess']:[])]){const th=el('th',text);th.scope='col';hr.append(th);}head.append(hr);table.append(caption,head);
@@ -162,11 +185,11 @@ function render(p){
  save.type=print.type='button';save.addEventListener('click',()=>download(p));print.addEventListener('click',()=>window.print());actions.append(save,print);out.append(actions);
 }
 form.addEventListener('submit',e=>{
- e.preventDefault();if(!validate())return;const raw=read(),key=signature(raw);if(lastPlan&&key===lastSignature&&!ignoreSavedPositions)raw.poses=lastPlan.items;
+ e.preventDefault();if(!validate()){message.scrollIntoView?.({behavior:'smooth',block:'center'});return;}const raw=read(),key=signature(raw);if(lastPlan&&!ignoreSavedPositions)raw.poses=lastPlan.items;
  ignoreSavedPositions=false;
  if(lastPlan&&!ignoreOpeningPositions)raw.openingPoses=lastPlan.openings;ignoreOpeningPositions=false;
  const p=planLayout(raw);
- if(p.error){notice(p.error,false,p.field,p.action);return;}
- lastPlan=p;lastSignature=key;notice('');render(p);stateNote.hidden=false;stateNote.textContent='Layout updated. The drawing matches your current settings.';
+ if(p.error){notice(p.error,false,p.field,p.action);message.scrollIntoView?.({behavior:'smooth',block:'center'});return;}
+ lastPlan=p;lastSignature=key;notice('');render(p);stateNote.hidden=false;stateNote.textContent='Layout updated. The drawing matches your current settings.';document.getElementById('layout-result').scrollIntoView?.({behavior:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
 });
-form.addEventListener('reset',()=>{lastPlan=null;lastSignature=null;ignoreSavedPositions=false;ignoreOpeningPositions=false;notice('');stateNote.hidden=true;const products=document.getElementById('product-details');if(products.open){ignoreProductToggle=true;products.open=false;}out.innerHTML=empty;for(const i of decimalInputs){i.setCustomValidity('');if(i.id.endsWith('-wall-length'))i.dataset.auto='true';}queueMicrotask(syncFields);});
+form.addEventListener('reset',()=>{quantities.clear();nextIds.clear();deletedBase.clear();lockedIds.clear();document.getElementById('furniture').indeterminate=false;lastPlan=null;lastSignature=null;ignoreSavedPositions=false;ignoreOpeningPositions=false;notice('');stateNote.hidden=true;const products=document.getElementById('product-details');if(products.open){ignoreProductToggle=true;products.open=false;}out.innerHTML=empty;for(const i of decimalInputs){i.setCustomValidity('');if(i.id.endsWith('-wall-length'))i.dataset.auto='true';}queueMicrotask(syncFields);});

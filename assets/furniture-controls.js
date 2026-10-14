@@ -1,6 +1,7 @@
-import {moveFurniture,rotateFurniture} from './layout-plan.js?v=gaps-span-20261014';
+import {projectionPixelScale} from './projection.js?v=controls-20261014';
+import {moveFurniture,rotateFurniture} from './layout-plan.js?v=controls-20261014';
 export function floorDelta(svg,dx,dy){
- const box=svg.getBoundingClientRect(),pixelScale=Math.min(box.width/960,box.height/740),scale=Number(svg.getAttribute('data-projection-scale'));
+ const pixelScale=projectionPixelScale(svg),scale=Number(svg.getAttribute('data-projection-scale'));
  if(!Number.isFinite(pixelScale)||pixelScale<=0||!Number.isFinite(scale)||scale<=0)return null;
  const difference=dx/pixelScale/scale/.8,sum=dy/pixelScale/scale/.38;
  return {x:(sum+difference)/2,y:(sum-difference)/2};
@@ -11,7 +12,7 @@ export function bindFurniture(scene,plan,render,notice,moved,selected=()=>{}){
  const commit=(id,x,y,preview=false)=>{const next=moveFurniture(plan.items,id,x,y,plan.patioWidth,plan.depth,preview);if(next.error){notice(next.error);return false;}plan.items=next.items;notice('');render(id);return true;};
  scene.addEventListener('pointerdown',e=>{
   const face=e.target.closest?.('[data-item-id]');if(!face||e.button!==0)return;
-  const id=face.getAttribute('data-item-id'),item=select(id),svg=scene.querySelector('svg');if(!item)return;
+  const id=face.getAttribute('data-item-id'),item=select(id),svg=scene.querySelector('svg');if(!item||item.locked)return;
   e.preventDefault();drag={id,x:item.x,y:item.y,clientX:e.clientX,clientY:e.clientY,svg,original:plan.items.map(i=>({...i}))};scene.setPointerCapture?.(e.pointerId);scene.classList.add('is-dragging');render(id);
  });
  scene.addEventListener('pointermove',e=>{
@@ -25,7 +26,7 @@ export function bindFurniture(scene,plan,render,notice,moved,selected=()=>{}){
  scene.addEventListener('focusin',e=>{const face=e.target.closest?.('[data-item-id]');if(face)select(face.getAttribute('data-item-id'));});
  scene.addEventListener('keydown',e=>{
   const face=e.target.closest?.('[data-item-id]');if(!face||!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','r','R'].includes(e.key))return;
-  e.preventDefault();const id=face.getAttribute('data-item-id'),item=select(id),step=e.shiftKey?1:.25;
+  e.preventDefault();const id=face.getAttribute('data-item-id'),item=select(id),step=e.shiftKey?1:.25;if(item.locked)return;
   if(e.key.toLowerCase()==='r'){
    if(!['chair','bench','lounger','storage','side-table'].includes(item.kind))return;
    const next=rotateFurniture(plan.items,id,plan.patioWidth,plan.depth,e.shiftKey?-90:90);

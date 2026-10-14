@@ -18,7 +18,7 @@ function setup(){
  return w;
 }
 function submit(w){w.document.getElementById('privacy-form').requestSubmit();}
-function check(w,id){const i=w.document.getElementById(id);i.checked=true;i.dispatchEvent(new w.Event('change',{bubbles:true}));}
+function check(w,id){const i=w.document.getElementById(id==='plant-thuja-2'?'plant-thuja-1':id);if(i.type==='number')i.value=id==='plant-thuja-2'?'2':'1';else i.checked=true;i.dispatchEvent(new w.Event('change',{bubbles:true}));}
 function panels(w){const d=w.document.getElementById('product-details');d.open=true;d.dispatchEvent(new w.Event('toggle'));}
 function cover(w,side,v){check(w,side+'-custom-width');w.document.getElementById(side+'-screen-width').value=v;}
 function furniture(w){check(w,'furniture');}
@@ -148,12 +148,12 @@ test('plants render as selectable pieces and seating rotation persists through a
  const w=setup();try{
   furniture(w);check(w,'plant-thuja-1');check(w,'plant-thuja-2');submit(w);
   assert.equal(w.document.querySelectorAll('[data-feature="plant"]').length,2);
-  assert.match(w.document.querySelector('#layout-piece').textContent,/Potted thuja 1/);
+  assert.doesNotMatch(w.document.querySelector('#layout-piece').textContent,/Potted thuja|Table/);
   [...w.document.querySelectorAll('.item-toolbar button')].find(b=>b.textContent==='Rotate right ↷').click();
   assert.match(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/facing 90 degrees/);
   submit(w);assert.match(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/facing 90 degrees/);
-  w.document.getElementById('layout-piece').value='plant-thuja-1';w.document.getElementById('layout-piece').dispatchEvent(new w.Event('change'));
-  assert.ok([...w.document.querySelectorAll('.item-toolbar button')].every(b=>b.disabled));
+  assert.ok(![...w.document.querySelectorAll('#layout-piece option')].some(o=>o.value==='plant-thuja-1'));w.document.querySelector('[data-select-id="plant-thuja-1"]').click();
+  assert.ok([...w.document.querySelectorAll('.item-toolbar button')].filter(b=>b.textContent.includes('Rotate')).every(b=>b.disabled));
  }finally{w.happyDOM.abort();}
 });
 test('R rotates focused seating and a plant moves with the same keyboard controls',()=>{
@@ -168,8 +168,8 @@ test('R rotates focused seating and a plant moves with the same keyboard control
 test('plant checkboxes add a mixed selection without count or type menus',()=>{
  const w=setup();try{
   check(w,'plant-thuja-1');check(w,'plant-thuja-2');
-  w.document.getElementById('plant-thuja-2').checked=false;check(w,'plant-leafy-1');submit(w);
-  assert.ok(w.document.querySelector('[aria-label^="Potted thuja 1"]'));assert.ok(w.document.querySelector('[aria-label^="Potted leafy plant 2"]'));assert.equal(w.document.getElementById('plant-count'),null);assert.equal(w.document.getElementById('seat-width'),null);
+  w.document.getElementById('plant-thuja-1').value='1';check(w,'plant-leafy-1');submit(w);
+  assert.ok(w.document.querySelector('[aria-label^="Potted thuja 1"]'));assert.ok(w.document.querySelector('[aria-label^="Leafy potted plant 1"]'));assert.equal(w.document.getElementById('plant-count'),null);assert.equal(w.document.getElementById('seat-width'),null);
  }finally{w.happyDOM.abort();}
 });
 test('dragging across another piece does not flash errors and invalid release restores position',()=>{
@@ -226,7 +226,7 @@ test('pointer movement carries a window along the chosen wall and up its plane',
 });
 test('uneven gap input draws pieces and catches invalid lists without losing the last drawing',()=>{
  const w=setup();try{
-  check(w,'back-separate');w.document.getElementById('back-piece-width').value='2';w.document.getElementById('back-gap-unit').value='cm';w.document.getElementById('back-gaps').value='15; 10; 20';submit(w);
+  check(w,'back-separate');w.document.getElementById('back-piece-width').value='2';w.document.getElementById('back-gaps').value='6; 4; 8';submit(w);
   assert.equal(w.document.getElementById('planner-message').hidden,true);assert.ok(w.document.querySelectorAll('[data-feature="screen"]').length>1);assert.match(w.document.querySelector('.screen-summary').textContent,/Open gaps/);
   const drawing=w.document.querySelector('.plan-sketch').outerHTML;w.document.getElementById('back-gaps').value='15; bad';submit(w);assert.equal(w.document.querySelector('.plan-sketch').outerHTML,drawing);assert.equal(w.document.getElementById('back-gaps').getAttribute('aria-invalid'),'true');
  }finally{w.happyDOM.abort();}
@@ -235,5 +235,36 @@ test('extra furniture checkboxes add distinct movable shapes and support rotatio
  const w=setup();try{
   check(w,'extra-storage');check(w,'extra-lounger');submit(w);assert.equal(w.document.getElementById('planner-message').hidden,true);assert.ok(w.document.querySelector('[data-feature="storage"]'));assert.ok(w.document.querySelector('[data-feature="lounger"]'));
   const picker=w.document.getElementById('layout-piece');picker.value='extra-lounger';picker.dispatchEvent(new w.Event('change'));assert.equal(w.document.querySelector('.item-toolbar button').disabled,false);
+ }finally{w.happyDOM.abort();}
+});
+test('quantity fields add numbered decorations and deleting a middle item survives recalculation',()=>{
+ const w=setup();try{
+  w.document.getElementById('plant-thuja-1').value='3';submit(w);assert.equal(w.document.querySelectorAll('[data-feature="plant"]').length,3);
+  w.document.querySelector('[data-select-id="plant-thuja-2"]').click();w.document.querySelector('.delete-object').click();
+  assert.equal(w.document.getElementById('plant-thuja-1').value,'2');assert.equal(w.document.querySelector('[data-item-id="plant-thuja-2"]'),null);submit(w);
+  assert.equal(w.document.querySelectorAll('[data-feature="plant"]').length,2);assert.ok(w.document.querySelector('[data-item-id="plant-thuja-3"]'));
+  w.document.getElementById('plant-thuja-1').value='3';submit(w);assert.ok(w.document.querySelector('[data-item-id="plant-thuja-4"]'));assert.equal(w.document.querySelector('[data-item-id="plant-thuja-2"]'),null);
+ }finally{w.happyDOM.abort();}
+});
+test('locked objects reject keyboard movement and clicks pass through their faces; locks persist',()=>{
+ const w=setup();try{
+  furniture(w);submit(w);const lock=w.document.querySelector('[data-lock-id="item-0"]');lock.checked=true;lock.dispatchEvent(new w.Event('change'));
+  const face=w.document.querySelector('[data-item-id="item-0"][tabindex]'),before=face.getAttribute('aria-label');assert.equal(face.getAttribute('pointer-events'),'none');assert.equal(face.getAttribute('tabindex'),'-1');
+  face.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowUp',bubbles:true}));assert.equal(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),before);submit(w);
+  assert.equal(w.document.querySelector('[data-lock-id="item-0"]').checked,true);assert.ok(![...w.document.querySelectorAll('#layout-piece option')].some(o=>o.value==='item-0'));
+ }finally{w.happyDOM.abort();}
+});
+test('removing table or opening updates the scene and does not re-add it on Show my layout',()=>{
+ const w=setup();try{
+  furniture(w);submit(w);w.document.querySelector('[data-select-id="item-1"]').click();w.document.querySelector('.delete-object').click();submit(w);assert.equal(w.document.querySelector('[data-item-id="item-1"]'),null);
+  w.document.getElementById('back-screen').checked=false;check(w,'back-wall');check(w,'door-1');submit(w);w.document.querySelector('[data-select-id="door-1"]').click();w.document.querySelector('.delete-object').click();submit(w);
+  assert.equal(w.document.getElementById('door-1').checked,false);assert.equal(w.document.querySelector('[data-opening-id="door-1"]'),null);
+ }finally{w.happyDOM.abort();}
+});
+test('US-only gap fields and successful submission scroll to the result; invalid quantities keep the drawing',()=>{
+ const w=setup();try{
+  assert.equal(w.document.getElementById('back-gap-unit'),null);assert.ok(!w.document.body.textContent.includes('Centimeters'));
+  let scrolled=false;w.document.getElementById('layout-result').scrollIntoView=()=>{scrolled=true;};submit(w);assert.equal(scrolled,true);
+  const drawing=w.document.querySelector('.plan-sketch').outerHTML;w.document.getElementById('plant-thuja-1').value='1.5';submit(w);assert.equal(w.document.querySelector('.plan-sketch').outerHTML,drawing);assert.match(w.document.getElementById('planner-message').textContent,/whole-number/);
  }finally{w.happyDOM.abort();}
 });
