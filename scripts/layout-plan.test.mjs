@@ -62,7 +62,7 @@ test('an overlapping rotation is rejected without changing the pieces',()=>{
  const items=[{id:'seat',kind:'chair',x:0,y:0,w:1,d:3,baseW:1,baseD:3,rotation:0},{id:'table',kind:'table',x:1.5,y:1,w:1,d:1}];
  const result=rotateFurniture(items,'seat',6,6);
  assert.match(result.error,/overlap/);assert.equal(items[0].rotation,0);assert.equal(items[0].w,1);
- assert.match(rotateFurniture(items,'table',6,6).error,/chair or bench/);
+ assert.match(rotateFurniture(items,'table',6,6).error,/movable piece/);
 });
 test('a wall can occupy the remainder of a screened side without a railing',()=>{
  const p=planLayout({...base,wallHeight:7,boundaries:boundaries({back:{wall:true,rail:false,wallLength:4,wallAt:'end',screenWidth:null}})});

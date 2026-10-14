@@ -1,4 +1,4 @@
-import {sideNames} from './space-features.js?v=openings-20261014';
+import {sideNames} from './space-features.js?v=gaps-20261014';
 const round=n=>Number(n.toFixed(2));
 export const openingOverlap=(a,b)=>a.side===b.side&&a.start<b.start+b.width-.001&&a.start+a.width>b.start+.001&&a.bottom<b.bottom+b.height-.001&&a.bottom+a.height>b.bottom+.001;
 export function moveOpening(openings,id,start,bottom,walls,preview=false){
