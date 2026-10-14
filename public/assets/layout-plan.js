@@ -1,6 +1,6 @@
-import {screenPieces} from './screen-pieces.js?v=gaps-20261014';
-import {wallOpenings} from './wall-openings.js?v=gaps-20261014';
-import {spaceFeatures,sideNames} from './space-features.js?v=gaps-20261014';
+import {screenPieces} from './screen-pieces.js?v=gaps-span-20261014';
+import {wallOpenings} from './wall-openings.js?v=gaps-span-20261014';
+import {spaceFeatures,sideNames} from './space-features.js?v=gaps-span-20261014';
 export {sideNames};
 const round=n=>Number(n.toFixed(2));
 export function overlaps(a,b){return a.x<b.x+b.w-.001&&a.x+a.w>b.x+.001&&a.y<b.y+b.d-.001&&a.y+a.d>b.y+.001;}

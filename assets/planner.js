@@ -1,8 +1,8 @@
-import {parseGaps} from './screen-pieces.js?v=gaps-20261014';
-import {bindOpenings} from './wall-openings.js?v=gaps-20261014';
-import {privacyScene} from './privacy-scene.js?v=gaps-20261014';
-import {planLayout,sideNames,rotateFurniture} from './layout-plan.js?v=gaps-20261014';
-import {bindFurniture} from './furniture-controls.js?v=gaps-20261014';
+import {parseGaps} from './screen-pieces.js?v=gaps-span-20261014';
+import {bindOpenings} from './wall-openings.js?v=gaps-span-20261014';
+import {privacyScene} from './privacy-scene.js?v=gaps-span-20261014';
+import {planLayout,sideNames,rotateFurniture} from './layout-plan.js?v=gaps-span-20261014';
+import {bindFurniture} from './furniture-controls.js?v=gaps-span-20261014';
 const form=document.getElementById('privacy-form'),out=document.getElementById('results'),message=document.getElementById('planner-message'),stateNote=document.getElementById('planner-state-note');
 const decimalInputs=[...form.querySelectorAll('input[inputmode="decimal"]')],rows=[...form.querySelectorAll('.boundary-row')];
 const dollars=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(v);
@@ -60,7 +60,7 @@ function syncFields(){
   toggle(row.querySelector('.screen-length'),screen&&checked(side+'-custom-width'));
   toggle(row.querySelector('.screen-piece-fields'),screen&&checked(side+'-separate'));
   const open=wall?L-num(side+'-wall-length'):L,coverage=row.querySelector('.side-coverage');
-  coverage.textContent=Number.isFinite(open)&&open>0?'Available screen section: '+Number(open.toFixed(2))+' ft. It is covered in full by default.':'Enter floor and wall lengths to determine the available section.';
+  coverage.textContent=Number.isFinite(open)&&open>0?'Available screen section: '+Number(open.toFixed(2))+' ft. '+(checked(side+'-separate')?'This span includes the pieces and their open gaps.':'It is covered in full by default.'):'Enter floor and wall lengths to determine the available section.';
   const custom=document.getElementById(side+'-screen-width');
   if(screen&&checked(side+'-custom-width')&&!custom.value.trim()&&Number.isFinite(open)&&open>0)custom.value=String(Number(open.toFixed(2)));
  }
@@ -148,7 +148,7 @@ function render(p){
   selected(allPieces()[0]);scene.dataset.selectedItem=allPieces()[0].id;redraw(allPieces()[0].id);bindFurniture(scene,p,redraw,text=>notice(text),describe,selected);bindOpenings(scene,p,redraw,text=>notice(text),describe,selected);
  }
  const table=el('table',undefined,'screen-summary'),caption=el('caption','Screening on each side'),head=el('thead'),hr=el('tr');
- for(const text of ['Side','Covered length','Height above floor',...(p.estimatePanels||p.screens.some(s=>s.separate)?['Pieces','Open gaps','Last piece used / excess']:[])]){const th=el('th',text);th.scope='col';hr.append(th);}head.append(hr);table.append(caption,head);
+ for(const text of ['Side','Screen span','Height above floor',...(p.estimatePanels||p.screens.some(s=>s.separate)?['Pieces','Open gaps','Last piece used / excess']:[])]){const th=el('th',text);th.scope='col';hr.append(th);}head.append(hr);table.append(caption,head);
  const body=el('tbody');
  for(const s of p.screens){const tr=el('tr');for(const t of [sideNames[s.side],s.width+' ft',s.base+'–'+s.height+' ft',...(p.estimatePanels||p.screens.some(s=>s.separate)?[String(s.modules),s.gapWidth+' ft',s.lastPanel+' / '+s.surplus+' ft']:[])])tr.append(el('td',t));body.append(tr);}table.append(body);if(p.screens.length)out.append(table);
  if(!p.screens.length)out.append(el('p','No privacy screens selected. Your floor, structure, and furniture are still shown.','small'));
