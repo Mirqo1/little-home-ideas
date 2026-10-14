@@ -282,3 +282,17 @@ test('view rotation preserves furniture positions, survives updates and resets s
   assert.equal(w.document.getElementById('panel-width'),null);assert.equal(w.document.querySelector('.planner-intro-actions'),null);
  }finally{w.happyDOM.abort();}
 });
+
+test('print report reflects the current layout, excludes a deleted piece, and supplies branding',()=>{
+ const w=setup();try{
+  assert.equal(w.document.getElementById('space'),null);
+  furniture(w);check(w,'extra-storage');panels(w);submit(w);
+  const header=w.document.querySelector('.planner-print-header');assert.equal(header.querySelector('img').getAttribute('src'),'/assets/wordmark.svg');assert.equal(header.querySelector('a').href,'https://littlehomeideas.com/');
+  assert.match(w.document.querySelector('.planner-print-summary').textContent,/10 × 8 ft/);
+  assert.match(w.document.querySelector('.planner-print-details').textContent,/Storage chest 1/);
+  w.document.getElementById('layout-piece').value='extra-storage';w.document.getElementById('layout-piece').dispatchEvent(new w.Event('change'));
+  w.document.querySelector('[aria-label="Remove selected object"]').click();assert.doesNotMatch(w.document.querySelector('.planner-print-details').textContent,/Storage chest 1/);
+  assert.ok(w.document.querySelector('.planner-print-footer a').href.endsWith('/tools/patio-privacy-planner/'));
+  assert.equal(w.document.getElementById('planner-message').hidden,true);
+ }finally{w.happyDOM.abort();}
+});

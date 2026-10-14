@@ -1,8 +1,8 @@
-import {parseGaps} from './screen-pieces.js?v=view-20261014';
-import {bindOpenings} from './wall-openings.js?v=view-20261014';
-import {privacyScene} from './privacy-scene.js?v=view-20261014';
-import {planLayout,sideNames,rotateFurniture} from './layout-plan.js?v=view-20261014';
-import {bindFurniture} from './furniture-controls.js?v=view-20261014';
+import {parseGaps} from './screen-pieces.js?v=print-20261014';
+import {bindOpenings} from './wall-openings.js?v=print-20261014';
+import {privacyScene} from './privacy-scene.js?v=print-20261014';
+import {planLayout,sideNames,rotateFurniture} from './layout-plan.js?v=print-20261014';
+import {bindFurniture} from './furniture-controls.js?v=print-20261014';
 const form=document.getElementById('privacy-form'),out=document.getElementById('results'),message=document.getElementById('planner-message'),stateNote=document.getElementById('planner-state-note');
 const decimalInputs=[...form.querySelectorAll('input[inputmode="decimal"]')],rows=[...form.querySelectorAll('.boundary-row')];
 const dollars=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(v);
@@ -122,7 +122,7 @@ function validate(){
  return true;
 }
 function read(){
- return {space:value('space'),patioWidth:num('patio-width'),depth:num('depth'),height:num('screen-height'),estimatePanels:document.getElementById('product-details').open,panelWidth:3,hasRoof:checked('has-roof'),roofHeight:num('roof-height'),wallHeight:num('wall-height'),railHeight:num('rail-height'),furniture:checked('furniture')?'bistro':'none',extraRequests:extraRequests(),plantCount:plantRequests().length,plantStyles:plantRequests().map(i=>i.kind),plantIds:plantRequests().map(i=>i.id),plantLabels:plantRequests().map(i=>i.label),plantSources:plantRequests().map(i=>i.sourceKey),deletedItems:[...deletedBase],lockedIds:[...lockedIds],plantWidth:1.5,plantHeight:4,seatWidth:2,seatDepth:2,tableWidth:2,tableDepth:2,openings:[...document.querySelectorAll('[data-opening]:checked')].map(i=>({id:i.id,kind:i.dataset.opening,side:value(i.id+'-side')})),modulePrice:document.getElementById('product-details').open&&value('module-price').trim()?num('module-price'):null,extraCost:document.getElementById('product-details').open?num('extra-cost'):0,
+ return {space:'patio',patioWidth:num('patio-width'),depth:num('depth'),height:num('screen-height'),estimatePanels:document.getElementById('product-details').open,panelWidth:3,hasRoof:checked('has-roof'),roofHeight:num('roof-height'),wallHeight:num('wall-height'),railHeight:num('rail-height'),furniture:checked('furniture')?'bistro':'none',extraRequests:extraRequests(),plantCount:plantRequests().length,plantStyles:plantRequests().map(i=>i.kind),plantIds:plantRequests().map(i=>i.id),plantLabels:plantRequests().map(i=>i.label),plantSources:plantRequests().map(i=>i.sourceKey),deletedItems:[...deletedBase],lockedIds:[...lockedIds],plantWidth:1.5,plantHeight:4,seatWidth:2,seatDepth:2,tableWidth:2,tableDepth:2,openings:[...document.querySelectorAll('[data-opening]:checked')].map(i=>({id:i.id,kind:i.dataset.opening,side:value(i.id+'-side')})),modulePrice:document.getElementById('product-details').open&&value('module-price').trim()?num('module-price'):null,extraCost:document.getElementById('product-details').open?num('extra-cost'):0,
  boundaries:rows.map(row=>{const side=row.dataset.side;return {side,wall:checked(side+'-wall'),rail:checked(side+'-rail'),screen:checked(side+'-screen'),wallLength:num(side+'-wall-length'),wallAt:value(side+'-wall-at'),mode:checked(side+'-rail')?value(side+'-mode'):'full',screenWidth:checked(side+'-custom-width')?num(side+'-screen-width'):null,separate:checked(side+'-separate'),pieceWidth:(checked(side+'-separate')||document.getElementById('product-details').open)?num(side+'-piece-width'):null,gaps:checked(side+'-separate')?parseGaps(value(side+'-gaps'),'in').gaps:[0]};})};
 }
 const signature=o=>[o.furniture,o.seatWidth,o.seatDepth,o.tableWidth,o.tableDepth].join('|');
@@ -130,7 +130,7 @@ const defaultPlan=planLayout({space:'patio',patioWidth:10,depth:8,height:6,panel
 document.getElementById('planner-preview').append(privacyScene(document,defaultPlan,true));
 const empty=out.innerHTML;
 function makeText(p){
- return ['LITTLE HOME IDEAS — PATIO LAYOUT','Space: '+p.space,'Floor: '+p.patioWidth+' × '+p.depth+' ft','Roof underside: '+(p.roofHeight??'none'),
+ return ['LITTLE HOME IDEAS — PATIO LAYOUT','Floor: '+p.patioWidth+' × '+p.depth+' ft','Roof underside: '+(p.roofHeight??'none'),
  '','SCREENS',...p.screens.map(s=>sideNames[s.side]+': start '+s.start+' ft along side; span '+s.width+' ft; pieces '+s.modules+' × '+s.pieceWidth+' ft; gap pattern '+s.gaps.join('; ')+' ft; open gaps '+s.gapWidth+' ft; material '+s.materialWidth+' ft; elevation '+s.base+'–'+s.height+' ft; '+(p.estimatePanels?s.modules+' estimated panels, '+s.coverage+' ft whole-panel coverage':'product count not requested')),
  '','WALLS',...p.wallSegments.map(s=>sideNames[s.side]+': '+s.start+'–'+s.end+' ft, height '+s.height+' ft'),'','RAILINGS',...p.railSegments.map(s=>sideNames[s.side]+': '+s.start+'–'+s.end+' ft, height '+s.height+' ft'),
  '','DOORS & WINDOWS',...p.openings.map(i=>i.label+' on '+sideNames[i.side]+': '+i.width+' × '+i.height+' ft; start '+i.start+' ft; bottom '+i.bottom+' ft'),
@@ -150,13 +150,15 @@ function render(p){
  }
  const viewLabel=el('span','View: '+(sceneView/90+1)+' of 4','view-label');
  for(const [label,turn]of [['↶ Rotate view',-90],['Rotate view ↷',90],['Reset view',0]]){
-  const button=el('button',label,'reset-button');button.type='button';button.setAttribute('aria-label',label.includes('↶')?'Rotate view left':label.includes('↷')?'Rotate view right':'Reset view');button.addEventListener('click',()=>{sceneView=turn?((sceneView+turn+360)%360):0;options.viewAngle=sceneView;viewLabel.textContent='View: '+(sceneView/90+1)+' of 4';redraw(scene.dataset.selectedItem);});controls.append(button);
+  const button=el('button',label,'planner-control-button');button.type='button';button.setAttribute('aria-label',label.includes('↶')?'Rotate view left':label.includes('↷')?'Rotate view right':'Reset view');button.addEventListener('click',()=>{sceneView=turn?((sceneView+turn+360)%360):0;options.viewAngle=sceneView;viewLabel.textContent='View: '+(sceneView/90+1)+' of 4';redraw(scene.dataset.selectedItem);});controls.append(button);
  }
  controls.append(viewLabel);
- redraw();out.append(controls,scene,el('p','A–D keep their original side names when the view rotates · all measurements in feet'+(p.screens.some(s=>s.gapWidth>0)?' · Open gaps reduce privacy.':''),'small scene-caption'));
+ const summary=el('div',undefined,'planner-print-summary');
+ for(const [label,text]of [['Floor',p.patioWidth+' × '+p.depth+' ft'],['Roof',p.roofHeight===null?'No roof':p.roofHeight+' ft above floor'],['Screened sides',p.screens.length? p.screens.map(s=>s.side==='back'?'A':s.side==='right'?'B':s.side==='front'?'C':'D').join(', '):'None'],['Objects',String(p.items.length)+' furniture / plants']]){const item=el('div');item.append(el('strong',label),el('span',text));summary.append(item);}
+ redraw();out.append(summary,controls,scene,el('p','A–D keep their original side names when the view rotates · all measurements in feet'+(p.screens.some(s=>s.gapWidth>0)?' · Open gaps reduce privacy.':''),'small scene-caption'));
  const allPieces=()=>[...p.items,...p.openings],rotatable=i=>['chair','bench','lounger','storage','side-table'].includes(i.kind)&&!i.locked;
  if(allPieces().length){
-  const tools=el('div',undefined,'item-toolbar'),selectLabel=el('label','Rotate furniture'),picker=el('select'),left=el('button','↶ Rotate left','button secondary'),right=el('button','Rotate right ↷','button secondary'),trash=el('button','🗑','button secondary delete-object'),activeLabel=el('p',undefined,'selected-object');
+  const tools=el('div',undefined,'item-toolbar'),selectLabel=el('label','Rotate furniture'),picker=el('select'),left=el('button','↶ Rotate left','planner-control-button'),right=el('button','Rotate right ↷','planner-control-button'),trash=el('button','🗑','planner-control-button delete-object'),activeLabel=el('p',undefined,'selected-object');
   picker.id='layout-piece';selectLabel.htmlFor=picker.id;trash.type=left.type=right.type='button';trash.setAttribute('aria-label','Remove selected object');trash.title='Remove selected object';
   const fillPicker=()=>{picker.replaceChildren();const placeholder=el('option','Choose furniture to rotate');placeholder.value='';picker.append(placeholder);for(const item of allPieces().filter(rotatable)){const option=el('option',item.label);option.value=item.id;picker.append(option);}};
   let activeId=null;
@@ -186,7 +188,15 @@ function render(p){
   for(const note of p.reviewNotes)out.append(el('p',note,'layout-review'));
  }
  if(p.total!==null)out.append(el('h3','Your entered cost estimate'),el('p',p.modules+' × '+dollars(p.modulePrice)+' + '+dollars(p.extraCost)+' = '+dollars(p.total),'plan-cost'),el('p','Arithmetic only. No live prices or installation costs are retrieved.','small'));
- out.append(el('p',p.warning,'notice'));
+ const reminder=p.warning+' For elevated spaces, confirm building permission, guard requirements, drainage, and permitted loads. Screens do not replace guards.';
+ out.append(el('p',reminder,'notice'));
+ const report=el('section',undefined,'planner-print-details');report.append(el('h3','Layout details'),el('p','Reference: A is the original far side; D is the original left side. Positions are measured from the A/D corner.','small'));
+ const reportTable=(title,headings,records)=>{if(!records.length)return;const t=el('table'),header=el('thead'),row=el('tr'),body=el('tbody');t.append(el('caption',title));for(const heading of headings){const th=el('th',heading);th.scope='col';row.append(th);}header.append(row);t.append(header,body);for(const record of records){const row=el('tr');for(const value of record)row.append(el('td',String(value)));body.append(row);}report.append(t);};
+ reportTable('Privacy screens',['Side','Span','Elevation','Pieces / gaps'],p.screens.map(s=>[sideNames[s.side],s.width+' ft',s.base+'–'+s.height+' ft',s.modules+' × '+s.pieceWidth+' ft / '+s.gapWidth+' ft open']));
+ reportTable('Walls & railings',['Side','Structure','Position along side','Height'],[...p.wallSegments.map(s=>[sideNames[s.side],'Wall',s.start+'–'+s.end+' ft',s.height+' ft']),...p.railSegments.map(s=>[sideNames[s.side],'Railing',s.start+'–'+s.end+' ft',s.height+' ft'])]);
+ reportTable('Furniture & plants',['Object','Footprint','Position (x, y)','Direction'],p.items.map(i=>[i.label,i.w+' × '+i.d+' ft',i.x+', '+i.y+' ft',i.kind==='plant'?'—':(i.rotation??0)+'°']));
+ reportTable('Doors & windows',['Opening / side','Size','Position along wall','Bottom above floor'],p.openings.map(i=>[i.label+' / '+sideNames[i.side],i.width+' × '+i.height+' ft',i.start+' ft',i.bottom+' ft']));
+ if(p.estimatePanels)report.append(el('p',p.summary,'small'));if(p.total!==null)report.append(el('p','Entered cost estimate: '+dollars(p.total)+' ('+p.modules+' panels × '+dollars(p.modulePrice)+' + '+dollars(p.extraCost)+').','small'));report.append(el('p',reminder,'small'));out.append(report);
  const actions=el('div',undefined,'plan-actions'),save=el('button','Save worksheet','button'),print=el('button','Print plan','button secondary');
  save.type=print.type='button';save.addEventListener('click',()=>download(p));print.addEventListener('click',()=>window.print());actions.append(save,print);out.append(actions);
 }
