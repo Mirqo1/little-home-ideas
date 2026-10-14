@@ -1,5 +1,5 @@
-import {projectionPixelScale} from './projection.js?v=controls-20261014';
-import {sideNames} from './space-features.js?v=controls-20261014';
+import {projectionPixelScale,viewRotation} from './projection.js?v=view-20261014';
+import {sideNames} from './space-features.js?v=view-20261014';
 const round=n=>Number(n.toFixed(2));
 export const openingOverlap=(a,b)=>a.side===b.side&&a.start<b.start+b.width-.001&&a.start+a.width>b.start+.001&&a.bottom<b.bottom+b.height-.001&&a.bottom+a.height>b.bottom+.001;
 export function moveOpening(openings,id,start,bottom,walls,preview=false){
@@ -7,7 +7,6 @@ export function moveOpening(openings,id,start,bottom,walls,preview=false){
  if(!item||!wall||![start,bottom].every(Number.isFinite))return {error:'Select an opening on an existing wall.'};
  if(item.locked)return {error:'This opening is locked. Unlock it in the object list.'};
  const next={...item,start:round(Math.max(wall.start,Math.min(start,wall.end-item.width))),bottom:item.kind==='door'?0:round(Math.max(0,Math.min(bottom,wall.height-item.height)))};
- if(!preview&&openings.some(i=>i.id!==id&&openingOverlap(next,i)))return {error:'Door and window symbols overlap. Release on a clear part of this wall.'};
  return {openings:openings.map(i=>i.id===id?next:{...i})};
 }
 export function wallOpenings(requests=[],walls=[],poses=[]){
@@ -26,9 +25,8 @@ export function wallOpenings(requests=[],walls=[],poses=[]){
    let placed=false;
    const elevations=[bottom];if(item.kind==='window')for(let z=0;z<=wall.height-height+.001;z+=.25)elevations.push(z);
    for(const z of elevations){item.bottom=round(z);for(let t=wall.start;t<=wall.end-width+.001;t+=.25){item.start=round(t);if(!openings.some(i=>openingOverlap(item,i))){placed=true;break;}}if(placed)break;}
-   if(!placed)return {error:sideNames[item.side]+': there is not enough clear wall for '+item.label+'. Choose another wall or remove an opening.',field};
+   if(!placed){item.start=wall.start;item.bottom=bottom;}
   }
-  if(openings.some(i=>openingOverlap(item,i)))return {error:'Door and window symbols overlap. Reset opening positions.',field,action:'reset-openings'};
   openings.push(item);
  }
  return {openings};
@@ -36,8 +34,9 @@ export function wallOpenings(requests=[],walls=[],poses=[]){
 export function openingDelta(svg,side,dx,dy){
  const pixelScale=projectionPixelScale(svg),scale=Number(svg.getAttribute('data-projection-scale'));
  if(!pixelScale||!scale)return null;
- const along=dx/pixelScale/scale/(side==='back'||side==='front'?.8:-.8);
- return {start:along,bottom:(.38*along-dy/pixelScale/scale)/.85};
+ const {cos,sin}=viewRotation(svg),horizontal=side==='back'||side==='front',u=horizontal?cos:-sin,v=horizontal?sin:cos;
+ const along=dx/pixelScale/scale/(.8*(u-v));
+ return {start:along,bottom:(.38*(u+v)*along-dy/pixelScale/scale)/.85};
 }
 export function bindOpenings(scene,plan,render,notice,moved,selected=()=>{}){
  let drag=null;

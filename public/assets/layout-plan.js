@@ -1,6 +1,6 @@
-import {screenPieces} from './screen-pieces.js?v=controls-20261014';
-import {wallOpenings} from './wall-openings.js?v=controls-20261014';
-import {spaceFeatures,sideNames} from './space-features.js?v=controls-20261014';
+import {screenPieces} from './screen-pieces.js?v=view-20261014';
+import {wallOpenings} from './wall-openings.js?v=view-20261014';
+import {spaceFeatures,sideNames} from './space-features.js?v=view-20261014';
 export {sideNames};
 const round=n=>Number(n.toFixed(2));
 export function overlaps(a,b){return a.x<b.x+b.w-.001&&a.x+a.w>b.x+.001&&a.y<b.y+b.d-.001&&a.y+a.d>b.y+.001;}
@@ -8,7 +8,6 @@ export function moveFurniture(items,id,x,y,W,D,allowOverlap=false){
  const index=items.findIndex(i=>i.id===id);if(index<0||![x,y,W,D].every(Number.isFinite))return {error:'Select a valid furniture position.'};
  const item=items[index];if(item.locked)return {error:'This object is locked. Unlock it in the object list.'};if(item.w>W||item.d>D)return {error:'This furniture piece does not fit the floor.'};
  const next={...item,x:Math.min(round(Math.max(0,x)),W-item.w),y:Math.min(round(Math.max(0,y)),D-item.d)};
- if(!allowOverlap&&items.some((other,i)=>i!==index&&overlaps(next,other)))return {error:'Furniture pieces overlap. Move this piece to a clear part of the floor.'};
  return {items:items.map((i,n)=>n===index?next:{...i})};
 }
 export function rotateFurniture(items,id,W,D,turn=90){
@@ -18,7 +17,6 @@ export function rotateFurniture(items,id,W,D,turn=90){
  const rotation=((item.rotation??0)+turn%360+360)%360,bw=item.baseW??item.w,bd=item.baseD??item.d,w=rotation%180?bd:bw,d=rotation%180?bw:bd;
  if(w>W||d>D)return {error:'The rotated piece does not fit this floor. Keep its current direction or change its dimensions.'};
  const next={...item,baseW:bw,baseD:bd,rotation,w,d,x:Math.min(Math.max(0,item.x+(item.w-w)/2),W-w),y:Math.min(Math.max(0,item.y+(item.d-d)/2),D-d)};
- if(items.some((other,i)=>i!==index&&overlaps(next,other)))return {error:'The rotated piece would overlap another piece. Move it to a clear area first.'};
  return {items:items.map((i,n)=>n===index?next:{...i})};
 }
 function freePosition(item,occupied,W,D){
@@ -26,7 +24,7 @@ function freePosition(item,occupied,W,D){
  const xs=[...Array(Math.floor((W-item.w)*2)+1)].map((_,n)=>n*.5),ys=[...Array(Math.floor((D-item.d)*2)+1)].map((_,n)=>n*.5);
  xs.push(W-item.w);ys.push(D-item.d);
  for(const y of ys)for(const x of xs){const placed={...item,x,y};if(!occupied.some(i=>overlaps(placed,i)))return placed;}
- return null;
+ return {...item,x:Math.max(0,(W-item.w)/2),y:Math.max(0,(D-item.d)/2)};
 }
 export function planLayout(o){
  const {patioWidth:W,depth:D,height}=o,hasScreens=Array.isArray(o.boundaries)&&o.boundaries.some(b=>b.screen),estimatePanels=o.estimatePanels!==false,panelWidth=estimatePanels?o.panelWidth:3;
@@ -37,7 +35,11 @@ export function planLayout(o){
  if(estimatePanels&&(!Number.isFinite(panelWidth)||panelWidth<.1||panelWidth>100))return fail('Enter a usable panel width of 0.1–100 ft.','panel-width');
  if(o.hasRoof&&(!Number.isFinite(o.roofHeight)||o.roofHeight<2||o.roofHeight>30))return fail('Enter the floor-to-roof distance (2–30 ft).','roof-height');
  if(o.hasRoof&&hasScreens&&height>o.roofHeight)return fail('The screen top ('+height+' ft) is higher than the roof underside ('+o.roofHeight+' ft). Lower the screen top or correct the roof measurement.','screen-height');
- const room=spaceFeatures({...o,hasRoof:false,screenSide:'back',walls:[],hasRailing:false,screenMode:'full',height:hasScreens?height:1});
+ let room=spaceFeatures({...o,hasRoof:false,screenSide:'back',walls:[],hasRailing:false,screenMode:'full',height:hasScreens?height:1});
+ if(room.error&&room.error.startsWith('This furniture arrangement needs')){
+  room=spaceFeatures({...o,patioWidth:100,depth:100,hasRoof:false,screenSide:'back',walls:[],hasRailing:false,screenMode:'full',height:hasScreens?height:1});
+  if(!room.error){for(const item of room.items){if(item.w>W||item.d>D)return fail('A furniture piece is larger than the floor. Remove it or increase the floor dimensions.','furniture','remove-furniture');item.x=Math.max(0,Math.min(W-item.w,item.x-50+W/2));item.y=Math.max(0,Math.min(D-item.d,item.y-100+D));}}
+ }
  if(room.error)return fail(room.error,'furniture','remove-furniture');
  if(!Array.isArray(o.boundaries)||o.boundaries.length!==4||new Set(o.boundaries.map(b=>b.side)).size!==4||o.boundaries.some(b=>!Object.hasOwn(sideNames,b.side)))return {error:'Provide each of the four sides once.'};
  const wallSegments=[],railSegments=[],screens=[];
@@ -64,7 +66,7 @@ export function planLayout(o){
    if(height<=base)return fail(sideNames[b.side]+': the screen top ('+height+' ft) must be above the railing ('+base+' ft). Increase the top height or cover the railing too.',b.side+'-mode','cover-rail');
    const width=b.screenWidth===null?openLength:b.screenWidth;
    if(!Number.isFinite(width)||width<=0||width>openLength+.001)return fail(sideNames[b.side]+': the available section is '+round(openLength)+' ft, but the requested screen is '+width+' ft. Use a shorter length or cover the full available section.',b.side+'-screen-width','full-section');
-   const separate=b.pieceWidth!==null&&b.pieceWidth!==undefined,unitWidth=separate?b.pieceWidth:panelWidth;
+   const separate=b.separate??(b.pieceWidth!==null&&b.pieceWidth!==undefined),unitWidth=b.pieceWidth??panelWidth;
    const pattern=screenPieces(width,unitWidth,separate?(b.gaps??[0]):[0]);if(pattern.error)return fail(sideNames[b.side]+': '+pattern.error,b.side+'-piece-width');
    screens.push({side:b.side,start,width,base,height,span:round(height-base),...pattern,separate,pieceWidth:unitWidth,gaps:separate?(b.gaps??[0]):[0],fits:!estimatePanels||pattern.coverage+pattern.gapWidth<=openLength+.001,available:round(openLength)});
   }
@@ -77,7 +79,7 @@ export function planLayout(o){
  const extraTypes={bench:{kind:'bench',label:'Compact bench',w:4,d:1.5,height:3.7},lounger:{kind:'lounger',label:'Lounge chair',w:2,d:5,height:2.5},'side-table':{kind:'side-table',label:'Side table',w:1.5,d:1.5,height:1.8},storage:{kind:'storage',label:'Storage chest',w:3,d:1.5,height:2}};
  const extraObjects=o.extraRequests??(o.extras??[]).map(kind=>({kind,id:'extra-'+kind}));
  if(!Array.isArray(extraObjects)||extraObjects.length>24||new Set(extraObjects.map(i=>i.id)).size!==extraObjects.length)return fail('Choose up to six of each extra piece.','furniture');
- for(const request of extraObjects){const kind=request.kind;if(!extraTypes[kind])return fail('Choose a valid extra piece.','furniture');const spec=extraTypes[kind],item={...spec,id:request.id,label:request.label??spec.label,sourceKey:request.sourceKey,baseW:spec.w,baseD:spec.d,rotation:0};const placed=freePosition(item,items,W,D);if(!placed)return fail('There is no clear floor space for the '+spec.label.toLowerCase()+'. Reduce its quantity or use a larger floor.',request.sourceKey??'extra-'+kind);items.push(placed);}
+ for(const request of extraObjects){const kind=request.kind;if(!extraTypes[kind])return fail('Choose a valid extra piece.','furniture');const spec=extraTypes[kind],item={...spec,id:request.id,label:request.label??spec.label,sourceKey:request.sourceKey,baseW:spec.w,baseD:spec.d,rotation:0};const placed=freePosition(item,items,W,D);if(!placed)return fail('The '+spec.label.toLowerCase()+' footprint is larger than this floor.',request.sourceKey??'extra-'+kind);items.push(placed);}
  const plantCount=o.plantCount??0,plantStyle=o.plantStyle??'thuja',plantWidth=o.plantWidth??1.5,plantHeight=o.plantHeight??4;
  if(!Number.isInteger(plantCount)||plantCount<0||plantCount>12||!['thuja','leafy'].includes(plantStyle))return fail('Choose up to twelve potted plants and a valid illustration.','plant-count');
  if(plantCount&&(!Number.isFinite(plantWidth)||plantWidth<.5||plantWidth>5||!Number.isFinite(plantHeight)||plantHeight<1||plantHeight>8))return fail('Enter a plant footprint width of 0.5–5 ft and total height of 1–8 ft.','plant-width');
@@ -87,7 +89,7 @@ export function planLayout(o){
   if(!['thuja','leafy'].includes(style))return fail('Choose a valid illustration for each plant.','plant-count');
   const item={id:o.plantIds?.[n]??'plant-'+n,kind:'plant',plantStyle:style,label:o.plantLabels?.[n]??(style==='thuja'?'Potted thuja ':'Potted leafy plant ')+(n+1),sourceKey:o.plantSources?.[n],w:plantWidth,d:plantWidth,baseW:plantWidth,baseD:plantWidth,rotation:0,height:plantHeight};
   const placed=freePosition(item,items,W,D);
-  if(!placed)return fail('There is not enough clear floor space for all these plant footprints. Use fewer or smaller plants, or change the furniture.','plant-count');
+  if(!placed)return fail('A plant footprint is larger than this floor. Use a larger floor or remove the plant.','plant-count');
   items.push(placed);
  }
  const defaultItems=items.map(i=>({...i})),customItems=o.poses??o.items;
@@ -109,7 +111,6 @@ export function planLayout(o){
     const placed=freePosition(items[n],others,W,D);if(!placed)return fail('There is no clear spot for the new piece. Remove a piece or reset item positions.','plant-count','reset-furniture');items[n]=placed;
    }
   }
-  if(items.some((a,i)=>items.some((b,j)=>j>i&&overlaps(a,b))))return fail('Item footprints overlap. Reset their positions or separate them.','furniture','reset-furniture');
  }
  for(const item of [...items,...openingPlan.openings])item.locked=(o.lockedIds??[]).includes(item.id)||(o.lockedIds===undefined&&!!item.locked);
  const modules=screens.reduce((s,i)=>s+i.modules,0),coverage=round(screens.reduce((s,i)=>s+i.coverage,0)),width=round(screens.reduce((s,i)=>s+i.width,0)),surplus=round(screens.reduce((s,i)=>s+i.surplus,0)),fits=screens.every(s=>s.fits);
