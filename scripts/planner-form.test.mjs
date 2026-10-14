@@ -3,13 +3,14 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
 import {Window} from 'happy-dom';
+import {privacyScene} from '../public/assets/privacy-scene.js';
 import {planPrivacy} from '../public/assets/privacy-plan.js';
 const page=await readFile(new URL('../src/pages/tools/patio-privacy-planner.astro',import.meta.url),'utf8');
-const source=(await readFile(new URL('../public/assets/planner.js',import.meta.url),'utf8')).replace(/^import .*;\n/,'');
+const source=(await readFile(new URL('../public/assets/planner.js',import.meta.url),'utf8')).replace(/^import .*;\n/gm,'');
 function setup(){
  const w=new Window();
  w.document.body.innerHTML=page.slice(page.indexOf('<header'),page.indexOf('<script'));
- vm.runInNewContext(source,{document:w.document,window:w,planPrivacy,Intl,URL,Blob,setTimeout});
+ vm.runInNewContext(source,{document:w.document,window:w,planPrivacy,privacyScene,Intl,URL,Blob,setTimeout,queueMicrotask});
  return w;
 }
 function submit(w){w.document.getElementById('privacy-form').requestSubmit();}
@@ -78,5 +79,36 @@ test('spatial screen geometry responds to height, while preferences preserve the
   assert.match(w.document.querySelector('.plan-sketch desc').textContent,/3.5 feet high/);
   w.document.getElementById('exposure').value='sheltered';submit(w);
   assert.match(w.document.querySelector('#results h3').textContent,/container-plant/);
+ }finally{w.happyDOM.abort();}
+});
+
+test('conditional structure inputs accept decimals and render the complete scene',()=>{
+ const w=setup();
+ try{
+  for(const id of ['has-roof','has-railing']){
+   const input=w.document.getElementById(id);input.checked=true;input.dispatchEvent(new w.Event('change',{bubbles:true}));
+  }
+  const wall=w.document.querySelector('input[name="wall-side"][value="left"]');wall.checked=true;wall.dispatchEvent(new w.Event('change',{bubbles:true}));
+  const furniture=w.document.getElementById('furniture');furniture.value='bistro';furniture.dispatchEvent(new w.Event('change',{bubbles:true}));
+  w.document.getElementById('roof-height').value='8,25';w.document.getElementById('rail-height').value='3,45';w.document.getElementById('screen-mode').value='above';
+  submit(w);
+  assert.ok(w.document.querySelector('[data-feature="roof"]'));
+  assert.ok(w.document.querySelector('[data-feature="wall-left"]'));
+  assert.equal(w.document.querySelectorAll('[data-feature="chair"]').length,2);
+  assert.match(w.document.querySelector('.plan-sketch').textContent,/3.45–6 ft/);
+  const roofToggle=w.document.querySelector('.scene-controls input');roofToggle.checked=false;roofToggle.dispatchEvent(new w.Event('change'));
+  assert.equal(w.document.querySelector('[data-feature="roof"]'),null);
+  assert.ok(w.document.querySelector('[data-feature="wall-left"]'));
+ }finally{w.happyDOM.abort();}
+});
+test('unused optional measurements do not block creation, enabled invalid ones do',()=>{
+ const w=setup();
+ try{
+  const height=w.document.getElementById('roof-height');height.value='bad';submit(w);
+  assert.ok(w.document.querySelector('.plan-sketch'));
+  const roof=w.document.getElementById('has-roof');roof.checked=true;roof.dispatchEvent(new w.Event('change',{bubbles:true}));submit(w);
+  assert.notEqual(height.validationMessage,'');
+  roof.checked=false;roof.dispatchEvent(new w.Event('change',{bubbles:true}));submit(w);
+  assert.equal(height.validationMessage,'');assert.ok(w.document.querySelector('.plan-sketch'));
  }finally{w.happyDOM.abort();}
 });

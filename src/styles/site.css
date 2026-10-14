@@ -19,3 +19,5 @@
 
 /* The planner preview uses the same measured projection as the result. */
 .plan-preview,.plan-sketch{display:block;width:100%;height:auto;margin:20px 0}.preview-key{display:flex;gap:20px;flex-wrap:wrap;margin:20px 0;font-size:12px;color:var(--muted)}.preview-key span{display:flex;align-items:center;gap:8px}.preview-key i{display:inline-block;width:14px;height:14px;border-radius:3px}.key-floor{background:#e3e8dc;border:1px solid #a1b09b}.key-screen{background:#6f9379}.planner-empty h3{font-size:27px}.planner-empty>p:not(.eyebrow):not(.small){color:var(--muted)}
+
+.side-options{display:grid;grid-template-columns:1fr 1fr;gap:0 15px}.panel .field-title{font-size:13px;font-weight:600;margin:20px 0 4px}.scene-controls{display:flex;gap:20px;flex-wrap:wrap;margin-top:20px}.scene-controls label{display:flex;align-items:center;gap:8px;font-size:13px;margin:0}.scene-controls input{width:18px;min-height:18px}.scene-container{min-width:0}.plan-preview,.plan-sketch{margin-top:16px}
