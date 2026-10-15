@@ -1,12 +1,12 @@
 # Balcony & Patio Tile Layout Planner — proposed next tool
 
-Prepared October 15, 2026. Product specification only; no public tool or installation guidance has been shipped.
+Prepared October 15, 2026. Implementation now accompanies this specification; see `docs/saved-layouts-and-tiles.md` for shipped scope, tests, and limitations. The on-page planning guide supplies the companion explanation; no additional article draft was published.
 
 ## Reader value
 
 Show where full tiles and edge cuts fall, compare a centered layout with a corner start, and estimate pieces and boxes before shopping. The visual result is the main feature. A bare area division would hide the effect of separate rows, narrow strips, and rotation.
 
-Working U.S. title: **Patio Tile Layout Planner**. Candidate URL: `/tools/patio-tile-planner/` (not yet live). This is the user's earlier balcony/terrace tile idea; the bathroom planner remains a separate later project.
+Working U.S. title: **Patio Tile Layout Planner**. Candidate URL: `/tools/patio-tile-planner/` (implemented in this release). This is the user's earlier balcony/terrace tile idea; the bathroom planner remains a separate later project.
 
 ## First version
 

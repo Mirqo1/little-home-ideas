@@ -1,3 +1,4 @@
+import {makeProject,bindProjects} from './saved-layouts.js?v=projects-20261015';
 import {parseGaps} from './screen-pieces.js?v=print-final-20261014';
 import {bindOpenings} from './wall-openings.js?v=print-final-20261014';
 import {privacyScene} from './privacy-scene.js?v=print-final-20261014';
@@ -13,7 +14,8 @@ const value=id=>document.getElementById(id).value;
 const checked=id=>document.getElementById(id).checked;
 const num=id=>{const s=value(id).trim();return /^(?:[0-9]+(?:[.,][0-9]+)?|[.,][0-9]+)$/.test(s)?Number(s.replace(',','.')):NaN;};
 function el(tag,text,className){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;return n;}
-let lastPlan=null,lastSignature=null,sceneView=0;
+let lastPlan=null,lastSignature=null,sceneView=0,lastAppliedInput=null,lastAppliedFields=null;
+const projectFields=()=>Object.fromEntries([...form.querySelectorAll('input[id],select[id]')].map(i=>[i.id,{value:i.value,checked:!!i.checked,auto:i.dataset.auto==='true'}]));
 const quantities=new Map(),nextIds=new Map(),deletedBase=new Set(),lockedIds=new Set();
 function requests(input){
  const kind=input.dataset.extra??input.dataset.plant,key=input.id,count=Number(input.value),ids=quantities.get(key)??[];
@@ -200,8 +202,9 @@ function render(p){
  reportTable('Furniture & plants',['Object','Footprint','Position (x, y)','Direction'],p.items.map(i=>[i.label,i.w+' × '+i.d+' ft',i.x+', '+i.y+' ft',i.kind==='plant'?'—':(i.rotation??0)+'°']));
  reportTable('Doors & windows',['Opening / side','Size','Position along wall','Bottom above floor'],p.openings.map(i=>[i.label+' / '+sideNames[i.side],i.width+' × '+i.height+' ft',i.start+' ft',i.bottom+' ft']));
  if(p.estimatePanels)report.append(el('p',p.summary,'small'));if(p.total!==null)report.append(el('p','Entered cost estimate: '+dollars(p.total)+' ('+p.modules+' panels × '+dollars(p.modulePrice)+' + '+dollars(p.extraCost)+').','small'));report.append(el('p',reminder,'small'));out.append(report);
- const actions=el('div',undefined,'plan-actions'),save=el('button','Save worksheet','button'),print=el('button','Print plan','button secondary');
- save.type=print.type='button';save.addEventListener('click',()=>{plannerEvent('planner_save');download(p);});print.addEventListener('click',()=>{plannerEvent('planner_print');window.print();});actions.append(save,print);out.append(actions);
+ const actions=el('div',undefined,'plan-actions'),save=el('button','Download text worksheet','button'),print=el('button','Print plan','button secondary'),image=el('button','Download drawing (SVG)','button secondary'),projects=el('a','Save or compare layouts →','reset-button');
+ projects.href='#saved-projects';image.type='button';image.addEventListener('click',()=>{const svg=privacyScene(document,p,false,{viewAngle:sceneView,showWalls:true,showRoof:true});svg.setAttribute('xmlns','http://www.w3.org/2000/svg');const label=document.createElementNS('http://www.w3.org/2000/svg','text'),height=Number(svg.getAttribute('viewBox').split(' ')[3]);label.setAttribute('x','480');label.setAttribute('y',String(height-8));label.setAttribute('text-anchor','middle');label.setAttribute('font-family','Arial,sans-serif');label.setAttribute('font-size','12');label.setAttribute('fill','#294b3c');label.textContent='Little Home Ideas · littlehomeideas.com';svg.append(label);const url=URL.createObjectURL(new Blob([new window.XMLSerializer().serializeToString(svg)],{type:'image/svg+xml'})),a=el('a');a.href=url;a.download='little-home-ideas-patio-layout.svg';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);plannerEvent('planner_save');});
+ save.type=print.type='button';save.addEventListener('click',()=>{plannerEvent('planner_save');download(p);});print.addEventListener('click',()=>{plannerEvent('planner_print');window.print();});actions.append(save,image,print,projects);out.append(actions);
 }
 form.addEventListener('submit',e=>{
  e.preventDefault();if(!validate()){message.scrollIntoView?.({behavior:'smooth',block:'center'});return;}const raw=read(),key=signature(raw);if(lastPlan&&!ignoreSavedPositions)raw.poses=lastPlan.items;
@@ -209,6 +212,41 @@ form.addEventListener('submit',e=>{
  if(lastPlan&&!ignoreOpeningPositions)raw.openingPoses=lastPlan.openings;ignoreOpeningPositions=false;
  const p=planLayout(raw);
  if(p.error){notice(p.error,false,p.field,p.action);message.scrollIntoView?.({behavior:'smooth',block:'center'});return;}
- lastPlan=p;lastSignature=key;notice('');render(p);plannerEvent('planner_complete');stateNote.hidden=false;stateNote.textContent='Layout updated. The drawing matches your current settings.';document.getElementById('layout-result').scrollIntoView?.({behavior:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+ lastPlan=p;lastAppliedInput=JSON.parse(JSON.stringify(raw));lastAppliedFields=projectFields();lastSignature=key;notice('');render(p);plannerEvent('planner_complete');stateNote.hidden=false;stateNote.textContent='Layout updated. The drawing matches your current settings.';document.getElementById('layout-result').scrollIntoView?.({behavior:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
 });
-form.addEventListener('reset',()=>{quantities.clear();nextIds.clear();deletedBase.clear();lockedIds.clear();sceneView=0;document.getElementById('furniture').indeterminate=false;lastPlan=null;lastSignature=null;ignoreSavedPositions=false;ignoreOpeningPositions=false;notice('');stateNote.hidden=true;const products=document.getElementById('product-details');if(products.open){ignoreProductToggle=true;products.open=false;}out.innerHTML=empty;for(const i of decimalInputs){i.setCustomValidity('');if(i.id.endsWith('-wall-length'))i.dataset.auto='true';}queueMicrotask(syncFields);});
+form.addEventListener('reset',()=>{quantities.clear();nextIds.clear();deletedBase.clear();lockedIds.clear();sceneView=0;document.getElementById('furniture').indeterminate=false;lastPlan=null;lastAppliedInput=null;lastAppliedFields=null;lastSignature=null;ignoreSavedPositions=false;ignoreOpeningPositions=false;notice('');stateNote.hidden=true;const products=document.getElementById('product-details');if(products.open){ignoreProductToggle=true;products.open=false;}out.innerHTML=empty;for(const i of decimalInputs){i.setCustomValidity('');if(i.id.endsWith('-wall-length'))i.dataset.auto='true';}queueMicrotask(syncFields);});
+
+function projectSnapshot(name){
+ if(!lastPlan||!lastAppliedInput)throw Error('Choose Show my layout before saving. Your last valid drawing is what gets saved.');
+ const p=lastPlan,fields=JSON.parse(JSON.stringify(lastAppliedFields)),input=JSON.parse(JSON.stringify(lastAppliedInput)),ids={};
+ for(const i of form.querySelectorAll('[data-extra],[data-plant]')){ids[i.id]=p.items.filter(a=>a.sourceKey===i.id).map(a=>a.id);fields[i.id].value=String(ids[i.id].length);}
+ fields.furniture.checked=p.items.some(i=>/^item-[012]$/.test(i.id));
+ for(const i of form.querySelectorAll('[data-opening]'))fields[i.id].checked=p.openings.some(o=>o.id===i.id);
+ input.extraRequests=p.items.filter(i=>i.sourceKey?.startsWith('extra-')).map(i=>({id:i.id,kind:i.kind,sourceKey:i.sourceKey,label:i.label}));
+ const plants=p.items.filter(i=>i.kind==='plant');input.plantCount=plants.length;input.plantIds=plants.map(i=>i.id);input.plantStyles=plants.map(i=>i.plantStyle);input.plantLabels=plants.map(i=>i.label);input.plantSources=plants.map(i=>i.sourceKey);input.openings=p.openings.map(i=>({id:i.id,kind:i.kind,side:i.side}));
+ return makeProject(name,input,fields,ids,sceneView,p);
+}
+function restoreFields(fields){
+ const controls=[...form.querySelectorAll('input[id],select[id]')];
+ if(Object.keys(fields).length!==controls.length||controls.some(i=>!Object.hasOwn(fields,i.id)))throw Error('This layout uses settings that this version cannot open.');
+ for(const i of controls){const v=fields[i.id];if(i.tagName==='SELECT')continue;i.value=v.value;i.checked=v.checked;if(i.id.endsWith('-wall-length'))i.dataset.auto='false';}
+ syncFields();
+ for(const i of controls){const v=fields[i.id];if(i.tagName==='SELECT'){if(![...i.options].some(o=>o.value===v.value)&&v.value!=='')throw Error('This layout has an unavailable wall or screen choice.');i.value=v.value;}if(i.id.endsWith('-wall-length'))i.dataset.auto=String(v.auto);}
+}
+function openProject(project){
+ const backup=projectFields(),product=document.getElementById('product-details'),wasOpen=product.open,q=[...quantities.entries()].map(([k,v])=>[k,[...v]]),n=[...nextIds.entries()],d=[...deletedBase],l=[...lockedIds];
+ try{
+  restoreFields(project.fields);ignoreProductToggle=true;product.open=!!project.input.estimatePanels;syncFields();
+  quantities.clear();nextIds.clear();for(const [key,ids]of Object.entries(project.quantityIds)){quantities.set(key,[...ids]);nextIds.set(key,Math.max(0,...ids.map(id=>Number(id.match(/-(\d+)$/)?.[1]??1))));}
+  deletedBase.clear();for(const id of project.input.deletedItems??[])deletedBase.add(id);lockedIds.clear();for(const id of project.input.lockedIds??[])lockedIds.add(id);
+  if(!validate())throw Error('The saved measurements do not make a valid layout. Your current drawing has not changed.');
+  const raw=read();raw.poses=project.input.poses;raw.openingPoses=project.input.openingPoses;const p=planLayout(raw);if(p.error)throw Error(p.error+' Your current drawing has not changed.');
+  lastPlan=p;lastAppliedInput=JSON.parse(JSON.stringify(raw));lastAppliedFields=projectFields();sceneView=project.view;clearErrors();render(p);stateNote.hidden=false;stateNote.textContent='Saved layout opened. Changes are not saved automatically.';document.getElementById('layout-result').scrollIntoView?.({behavior:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});document.getElementById('furniture').indeterminate=deletedBase.size>0&&deletedBase.size<3;
+ }catch(error){
+  restoreFields(backup);ignoreProductToggle=true;product.open=wasOpen;syncFields();quantities.clear();for(const [k,v]of q)quantities.set(k,v);nextIds.clear();for(const [k,v]of n)nextIds.set(k,v);deletedBase.clear();for(const id of d)deletedBase.add(id);lockedIds.clear();for(const id of l)lockedIds.add(id);clearErrors();throw error;
+ }
+}
+let comparisonId=0;
+bindProjects({document,window,getProject:projectSnapshot,openProject,preview:project=>{
+ const p=planLayout(project.input);if(p.error)throw Error(p.error);const box=el('div'),summary=el('p',p.patioWidth+' × '+p.depth+' ft · '+p.items.length+' objects · '+p.screens.length+' screened sides','small');const svg=privacyScene(document,p,false,{viewAngle:project.view,showWalls:true,showRoof:true}),prefix='comparison-'+(++comparisonId)+'-';for(const n of svg.querySelectorAll('[id]'))n.id=prefix+n.id;svg.setAttribute('aria-labelledby',prefix+'plan-sketch-title '+prefix+'plan-sketch-desc');svg.setAttribute('role','img');for(const n of svg.querySelectorAll('[tabindex]')){n.removeAttribute('tabindex');n.removeAttribute('role');}box.append(summary,svg);return box;
+}});

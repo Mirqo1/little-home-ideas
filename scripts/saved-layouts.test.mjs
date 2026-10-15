@@ -1,0 +1,8 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {decodeProject,makeProject,readProjects,writeProjects} from '../public/assets/saved-layouts.js';
+import {planLayout} from '../public/assets/layout-plan.js';
+const input=()=>({space:'patio',patioWidth:10,depth:8,height:6,estimatePanels:false,furniture:'none',plantCount:0,boundaries:['back','right','front','left'].map(side=>({side,wall:false,rail:false,screen:side==='back',screenWidth:null,mode:'full',gaps:[0]}))});
+const project=()=>{const i=input();return makeProject('Example',i,{}, {},0,planLayout(i));};
+test('project file round-trip recomputes geometry without trusting a saved SVG',()=>{const p=project();assert.equal(planLayout(decodeProject(JSON.stringify(p)).input).error,undefined);assert.equal(decodeProject(JSON.stringify(p)).name,'Example');});
+test('malformed, oversized, unsupported and nonfinite project data is rejected',()=>{for(const text of ['<html>','{}','x'.repeat(100001),JSON.stringify({...project(),version:2}),JSON.stringify({...project(),view:45}),JSON.stringify({...project(),input:{...input(),depth:null}})])assert.throws(()=>decodeProject(text));});
+test('storage quota failure leaves existing projects intact; eight-copy cap is enforced',()=>{let saved;const storage={getItem:()=>saved??null,setItem:(k,v)=>{saved=v;}};writeProjects(storage,[project()]);assert.equal(readProjects(storage).length,1);assert.throws(()=>writeProjects(storage,Array(9).fill(project())));assert.equal(readProjects(storage).length,1);assert.throws(()=>writeProjects({setItem(){throw Error('quota');}},[project()]));});
