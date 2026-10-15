@@ -66,7 +66,10 @@ for name in ['sitemap.xml','sitemap-0.xml','sitemap-index.xml']:
  for el in tree.findall('.//s:loc',ns):
   s=urlsplit(el.text);target=root/s.path.lstrip('/');target=target/'index.html' if s.path.endswith('/') else target
   if not target.exists():errors.append('Missing sitemap target '+el.text)
-  if s.path in ['/404/','/404.html','/contact/']:errors.append('Nonindexable URL in sitemap '+s.path)
+  target=(root / s.path.lstrip('/'))
+  if target.is_dir():target=target/'index.html'
+  page=documents.get(target.resolve())
+  if s.path in ['/404/','/404.html'] or (page and 'noindex' in page.meta.get('robots','').lower()):errors.append('Nonindexable URL in sitemap '+s.path)
 if len(list((root/'articles').glob('*/index.html')))<9:errors.append('Expected existing guide plus eight new guides')
 if 'Sitemap: https://littlehomeideas.com/sitemap-index.xml' not in (root/'robots.txt').read_text():errors.append('Robots sitemap mismatch')
 # A successful file lookup is insufficient: empty/truncated images also return HTTP 200.

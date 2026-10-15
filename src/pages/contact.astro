@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import config from '../data/contact.json';
+---
+<Base title="Contact Little Home Ideas" description="Send Little Home Ideas a question, correction, or suggestion about our home guides and planning tools." noindex={!config.enabled}>
+  <header class="container page-intro"><p class="eyebrow">Get in touch</p><h1>Contact Little Home Ideas</h1><p class="lead">Questions, corrections, and small ideas worth sharing.</p></header>
+  <section class="container section contact-layout">
+    <ContactForm/>
+    <aside><p class="eyebrow">A useful conversation</p><h2>Help us make it better.</h2><p>Tell us which guide or tool brought you here and what you would like us to know.</p><p>For corrections, a page link and a short explanation help us find the right place.</p><a href="/editorial-policy/">Read our editorial approach →</a></aside>
+  </section>
+</Base>
+<style>
+  .contact-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(230px,1fr);gap:clamp(28px,5vw,70px);padding-top:32px}
+  aside{padding-top:30px}aside h2{font-size:34px;margin-bottom:22px}aside p{color:var(--muted)}aside a{font-size:14px;font-weight:650}
+  @media(max-width:800px){.contact-layout{grid-template-columns:1fr}aside{padding-top:0;max-width:650px}}
+</style>
