@@ -10,13 +10,13 @@ Official reference: https://support.google.com/webmasters/answer/9008080
 
 ## GA4: consent-based integration enabled October 15, 2026
 
-The owner supplied web-stream ID `G-QHSQ0J8J4R` and authorized installation. `src/data/measurement.json` enables the existing consent controller. The shared layout loads only the local controller until a visitor opts in; the Google tag is not pasted unconditionally. The privacy page now explains actual analytics and local-storage behavior. Operator identification and a dedicated privacy contact are still outstanding and must be supplied by the owner; no personal details have been inferred or invented.
+The owner supplied web-stream ID `G-QHSQ0J8J4R` and authorized installation. `src/data/measurement.json` enables the existing consent controller. The shared layout loads only the local controller until a visitor opts in; the Google tag is not pasted unconditionally. The privacy page now explains actual analytics and local-storage behavior. The contact form is now live. Public operator identification and correspondence-retention details remain outstanding; no personal details have been inferred or invented.
 
 ### Remaining account-side checks
 
 1. In this stream, disable Enhanced Measurement to avoid duplicate or extra automatic interaction events. This integration sends page views and explicit article/planner events. Keep Google Signals and advertising features off. These account settings cannot be changed through this repository.
 2. Check Realtime in the owner's actual GA4 property after allowing analytics on the website. A browser request or automated test does not prove that the event appeared in the account. Account access has not been provided.
-3. Supply operator identification and a dedicated contact address to finish privacy/contact information.
+3. Supply public operator identification and agree correspondence-retention details to finish privacy information. The contact form is active.
 4. Configure internal test traffic only after checking the definition. Do not exclude all Slovak traffic indiscriminately; use a U.S. segment for audience reporting.
 
 ### Consent behavior
@@ -74,7 +74,7 @@ Proposed build: Node 24, `npm ci && npm run build`, output `dist`, production br
 - New source and generated root files are proposed in a PR. They are not on live `main` until merged.
 - Existing main/root GitHub Pages publishing remains usable through `npm run build:pages`; no hosting-mode switch is needed for the exported root files.
 - Article/category URLs and `/sitemap.xml` are preserved; new categories add URLs. No redirect is needed for existing published pages.
-- The contact page still lacks a supplied working contact channel and is deliberately `noindex`. Operator identity and final privacy details remain owner inputs.
+- The contact page is live, indexable, and uses the real owner-provided Formspree endpoint. Provider acceptance of a production test is verified; owner confirmation of Gmail receipt and account-side CAPTCHA settings remain separate checks. Operator identity and retention details remain owner inputs.
 - Mobile and desktop CSS are implemented, but local browser screenshots, Lighthouse, axe, and measured Core Web Vitals remain unverified in this environment. Build and static-document checks are not substitutes for them.
 
 ## Before merging and commercial launch

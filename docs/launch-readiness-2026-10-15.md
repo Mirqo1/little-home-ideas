@@ -23,3 +23,9 @@ Build and site audit pass: internal links, local resources, fragments, image dim
 ## Delivery verification
 
 The owner has confirmed Websupport-to-Gmail forwarding works, initially arriving in Spam. This does not itself establish that a Formspree submission has arrived. Live form appearance and submission outcomes are recorded after deployment.
+
+## Live verification after PR 39
+
+PR 39 merged as `c29585a1f247897282c57dff2603637dc18fea0e`. The production contact page visibly renders the enabled form and no coming-soon notice. Desktop appearance was inspected. A native submission from the live page, explicitly marked as a setup test with reply email `info@littlehomeideas.com`, reached `https://formspree.io/thanks?language=en` and displayed “The form was submitted successfully.” Provider acceptance is verified; Gmail receipt still requires the owner's confirmation.
+
+No CAPTCHA challenge appeared during this test. Do not claim CAPTCHA is enabled or disabled based only on that outcome. Its account-side setting remains unverified. The hidden `_gotcha` field is present; local required-field validation is not a substitute for provider protection. The owner should verify reCAPTCHA in the form's Spam protection settings and restrict the accepted domain to `littlehomeideas.com`.
