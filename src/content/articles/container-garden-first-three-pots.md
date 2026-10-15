@@ -36,7 +36,7 @@ University of Maryland Extension advises using containers with adequate drainage
 For a conventional drained pot, verify the drainage openings and make sure they will remain clear in the planned location. A self-watering planter is a different designed system; follow its reservoir and overflow instructions rather than modifying it based on generic advice.
 
 <figure class="article-inline-image">
-<img src="/assets/articles/container-garden-detail.webp" alt="A tilted terracotta pot with a visible drainage hole beside container potting mix and a trowel." width="1200" height="800" loading="lazy" decoding="async"/>
+<img src="/assets/articles/container-garden-drainage-detail.webp" alt="A tilted terracotta pot with a visible drainage hole beside container potting mix and a trowel." width="1200" height="800" loading="lazy" decoding="async"/>
 <figcaption>Check drainage openings and choose a growing medium intended for containers.</figcaption>
 </figure>
 
