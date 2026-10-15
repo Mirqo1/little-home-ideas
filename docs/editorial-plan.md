@@ -16,35 +16,35 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-“Ready” means reviewed content in this PR, pending merge. Other topics are briefs to research, not publishable claims. The initial privacy guide remains ready as a ninth article.
+The nine original guides are published. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
-| 1 | Small Spaces & Storage | Organize small kitchen drawers without buying more | Task zones + paper footprint test | Ready |
-| 2 | Small Spaces & Storage | Under-sink storage around pipes | Map obstructions + keep valves visible | Ready |
-| 3 | Small Spaces & Storage | Small entryway without a closet | Arrival routine + unobstructed routes | Ready |
-| 4 | Small Spaces & Storage | Measure a closet before buying organizers | Printable measurement worksheet | Research next |
+| 1 | Small Spaces & Storage | Organize small kitchen drawers without buying more | Task zones + paper footprint test | Published |
+| 2 | Small Spaces & Storage | Under-sink storage around pipes | Map obstructions + keep valves visible | Published |
+| 3 | Small Spaces & Storage | Small entryway without a closet | Arrival routine + unobstructed routes | Published |
+| 4 | Small Spaces & Storage | Measure a closet before buying organizers | Measurement worksheet and bin-fit example | Draft prepared |
 | 5 | Small Spaces & Storage | Narrow bathroom storage without crowding the floor | Fit check and clearance trade-offs | Research |
 | 6 | Small Spaces & Storage | Keep everyday shoes in a tiny entryway | Capacity based on actual routine | Research |
-| 7 | Garden & Patio | Plan a small patio layout before buying furniture | Real footprints in use + walking route | Ready |
-| 8 | Garden & Patio | Start a three-pot container garden | Manageable trial + drainage and climate checks | Ready |
+| 7 | Garden & Patio | Plan a small patio layout before buying furniture | Real footprints in use + walking route | Published |
+| 8 | Garden & Patio | Start a three-pot container garden | Manageable trial + drainage and climate checks | Published |
 | 9 | Garden & Patio | Choose a patio's main activity | Reading versus dining layout comparison | Research next |
-| 10 | Garden & Patio | Store outdoor cushions in a small home | Storage dimensions and care requirements | Research |
+| 10 | Garden & Patio | Store outdoor cushions in a small home | Real stack dimensions, opening checks, and product-specific care | Draft prepared |
 | 11 | Garden & Patio | Record sunlight before choosing container plants | Observation log, not universal plant promises | Research |
 | 12 | Garden & Patio | Small patio winter storage checklist | Region-dependent steps and product instructions | Research |
-| 13 | DIY & Home Updates | Reversible living room updates | Stage changes before shopping | Ready |
+| 13 | DIY & Home Updates | Reversible living room updates | Stage changes before shopping | Published |
 | 14 | DIY & Home Updates | Plan a paint project before opening a can | Surface and product checklist; safety research first | Research |
 | 15 | DIY & Home Updates | Replace cabinet pulls: measure before buying | Hole spacing, hardware compatibility, permission | Research |
 | 16 | DIY & Home Updates | Choose a rug without blocking a door | Full footprint and care check | Research next |
 | 17 | DIY & Home Updates | A one-corner room refresh | Annotated before/after schematic, no invented project | Research |
 | 18 | DIY & Home Updates | Make a realistic small-project shopping list | Materials versus optional decoration | Research |
-| 19 | Renter-Friendly Living | Removable hooks: check the wall first | Exact-product decision tree | Ready |
+| 19 | Renter-Friendly Living | Removable hooks: check the wall first | Exact-product decision tree | Published |
 | 20 | Renter-Friendly Living | Ask permission for a rental update | Practical request template, no legal conclusions | Research next |
 | 21 | Renter-Friendly Living | Document the room before reversible changes | Photo record + instruction archive | Research |
 | 22 | Renter-Friendly Living | Freestanding storage versus wall mounting | Footprint and anti-tip limits | Research |
 | 23 | Renter-Friendly Living | Evaluate a peel-and-stick product | Surface compatibility and removal uncertainty | Research |
 | 24 | Renter-Friendly Living | Plan to remove an update before installing it | Reversal checklist and material storage | Research |
-| 25 | Practical Home Solutions | Window condensation: what renters can record | Observation log + escalation rather than diagnosis | Ready |
+| 25 | Practical Home Solutions | Window condensation: what renters can record | Observation log + escalation rather than diagnosis | Published |
 | 26 | Practical Home Solutions | A small-home seasonal inspection log | Manufacturer tasks and qualified-help boundaries | Research |
 | 27 | Practical Home Solutions | Store cleaning supplies with clear labels | Label-based storage, safety review required | Research |
 | 28 | Practical Home Solutions | Measure furniture for a delivery route | Doors, turns, usable access; no guaranteed-fit claims | Research next |
@@ -79,8 +79,8 @@ Review higher-risk guides when source instructions change and at least every six
 | Container mix volume estimator | Estimate a geometric pot volume before selecting bag sizes | Internal dimensions and shape; geometry only, no load/capacity inference |
 | Delivery route worksheet | Record doors and turns for furniture shopping | Measurement checklist; no automated guarantee that a bulky item can turn |
 
-Build the drawer planner next if readers use the storage cluster. Avoid monetized product calculators until product data can be maintained and claims verified.
+The next specified tool is the user-requested balcony/patio tile layout planner; see `tile-planner-brief.md`. It will show full and cut pieces and conservative source-tile counts rather than area-only arithmetic. The drawer planner remains a candidate for the storage cluster. Avoid monetized product calculators until product data can be maintained and claims verified.
 
 ## Promotion and review
 
-Create original Pinterest graphics from article diagrams with a clear title and destination URL. Do not imply generated imagery depicts a completed real project. Track referral traffic after approved analytics setup. Review Search Console impressions, query relevance, CTR, and indexing monthly; refresh useful pages instead of increasing volume indiscriminately. No promise of rankings or revenue.
+Use original full-frame portrait imagery for Pinterest, with the title and destination in the pin metadata rather than a mandatory text overlay. Do not imply generated imagery depicts a completed real project. Account-side domain claiming was confirmed by the owner’s screenshot on October 15, 2026; posting is deferred until the owner returns to a PC. Track referral traffic after approved analytics setup. Review Search Console impressions, query relevance, CTR, and indexing monthly; refresh useful pages instead of increasing volume indiscriminately. No promise of rankings or revenue.

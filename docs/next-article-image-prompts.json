@@ -1,0 +1,31 @@
+{
+  "created": "2026-10-15",
+  "method": "Built-in ImageGen",
+  "purpose": "Original illustrative scenes for three unpublished editorial drafts.",
+  "assets": [
+    {
+      "key": "closet-measure-cover",
+      "prompt": "Use case: photorealistic-natural. Original attractive editorial home photograph for Little Home Ideas. Landscape 3:2, 1536x1024. An open reach-in closet in a modest American bedroom, blue-gray interior, wooden rod with a few shirts, one shelf, mostly empty floor and visible baseboards. Both white hinged doors fully open. Tape measure and blank notebook on a stool beside the closet. Cool morning light, rich wood and fabric textures. Wide eye-level framing includes the full closet opening and both doors. Natural believable proportions, ordinary attainable home. No person, readable text, logos, watermark, diagrams, collage or text overlays. Preserve complete main subjects within the frame. Illustrative scene, not a photographed or tested project."
+    },
+    {
+      "key": "closet-measure-detail",
+      "prompt": "Use case: photorealistic-natural. Original attractive editorial home photograph for Little Home Ideas. Landscape 3:2, 1536x1024. Close side-angle view of a complete rectangular woven fabric bin on an existing low wooden closet shelf, generous visible space above and beside it. Light sage wall, white door trim, soft afternoon side light. Entire bin and shelf edges visible. No shelf installation work. Natural believable proportions, ordinary attainable home. No person, readable text, logos, watermark, diagrams, collage or text overlays. Preserve complete main subjects within the frame. Illustrative scene, not a photographed or tested project."
+    },
+    {
+      "key": "delivery-route-cover",
+      "prompt": "Use case: photorealistic-natural. Original attractive editorial home photograph for Little Home Ideas. Landscape 3:2, 1536x1024. Looking diagonally along a modest American apartment entrance hallway toward a small living room with a rust armchair already in place. Fully open oak entrance door, complete frame, projecting handle and hallway turn clearly visible. Slim console with blank notebook and closed tape measure. Warm late-day sunlight, terracotta and ivory palette. Clear route, no boxes or moving furniture. Natural believable proportions, ordinary attainable home. No person, readable text, logos, watermark, diagrams, collage or text overlays. Preserve complete main subjects within the frame. Illustrative scene, not a photographed or tested project."
+    },
+    {
+      "key": "delivery-route-detail",
+      "prompt": "Use case: photorealistic-natural. Original attractive editorial home photograph for Little Home Ideas. Landscape 3:2, 1536x1024. Architectural interior view of a short apartment hallway leading to a staircase. Complete white doorway frame and a handrail projecting from the pale wall beside the stairs are visible. Simple wood floor, cool diffused daylight, muted olive details, natural correct perspective. No furniture being moved. Closed unbranded tape measure on a small side surface. Natural believable proportions, ordinary attainable home. No person, readable text, logos, watermark, diagrams, collage or text overlays. Preserve complete main subjects within the frame. Illustrative scene, not a photographed or tested project."
+    },
+    {
+      "key": "outdoor-cushion-storage-cover",
+      "prompt": "Use case: photorealistic-natural. Original attractive editorial home photograph for Little Home Ideas. Landscape 3:2, 1536x1024. Sunny small mudroom beside a glass patio door, autumn leaves outside. Two dry square blue-and-cream striped patio seat cushions and two plain cream back cushions on a low open wood shelf, all completely visible, loose stack with headroom. Open empty fabric storage bag on a nearby bench. Soft autumn sunlight, tactile fabric and warm wood. Achievable home, no high stacks or compressed cushions. Natural believable proportions, ordinary attainable home. No person, readable text, logos, watermark, diagrams, collage or text overlays. Preserve complete main subjects within the frame. Illustrative scene, not a photographed or tested project."
+    },
+    {
+      "key": "outdoor-cushion-storage-detail",
+      "prompt": "Use case: photorealistic-natural. Original attractive editorial home photograph for Little Home Ideas. Landscape 3:2, 1536x1024. A plain large fabric storage bag fully open and empty on a cream utility-room floor. Beside it two complete olive patio seat cushions stacked loosely and a closed unbranded tape measure. Slight overhead view, generous frame around the entire bag and cushions. Soft overcast window light, realistic material texture, not a claim of tested fit. Natural believable proportions, ordinary attainable home. No person, readable text, logos, watermark, diagrams, collage or text overlays. Preserve complete main subjects within the frame. Illustrative scene, not a photographed or tested project."
+    }
+  ]
+}
