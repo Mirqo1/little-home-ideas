@@ -8,18 +8,16 @@ After the chosen verification method succeeds, submit `https://littlehomeideas.c
 
 Official reference: https://support.google.com/webmasters/answer/9008080
 
-## GA4: implemented, disabled until real owner configuration
+## GA4: consent-based integration enabled October 15, 2026
 
-The deployment contains a consent controller and optional shared component. `src/data/measurement.json` has `analyticsEnabled: false` and empty account IDs. No Google tag, consent banner, or analytics controller is loaded into generated pages while disabled. GA4 and Search Console accounts have not been created or verified by this change. No property or token is invented.
+The owner supplied web-stream ID `G-QHSQ0J8J4R` and authorized installation. `src/data/measurement.json` enables the existing consent controller. The shared layout loads only the local controller until a visitor opts in; the Google tag is not pasted unconditionally. The privacy page now explains actual analytics and local-storage behavior. Operator identification and a dedicated privacy contact are still outstanding and must be supplied by the owner; no personal details have been inferred or invented.
 
-### Owner setup and activation
+### Remaining account-side checks
 
-1. In Google Analytics, create a separate GA4 property named Little Home Ideas and a Web data stream for `https://littlehomeideas.com`. Do not reuse a stream belonging to another business. Copy its real `G-...` measurement ID.
-2. Disable Enhanced Measurement for that stream before activation. This integration sends its own page views and explicit events; automatic form interactions/site search could otherwise collect extra fields or duplicate events. Keep Google Signals and advertising features off.
-3. Supply the public operator identity and contact information and finalize the privacy page before activating collection. Explain Google Analytics, analytics cookies, the 180-day local preference, withdrawal, and the information processed by Google. The current privacy page correctly describes the inactive deployment and must be updated for activation.
-4. Put the actual ID into `ga4MeasurementId`, explicitly set `analyticsEnabled: true`, update the privacy page, rebuild and deploy through a PR. IDs and verification tokens are public website configuration, not API keys. The build rejects activation with a malformed or missing ID.
-5. Verify reject, grant, saved choice, and withdrawal paths in a browser. Before opt-in there must be no Google analytics script/request. After opt-in confirm Realtime/DebugView events in the real property. This final live-account validation remains outstanding until an actual stream exists.
-6. Exclude the owner's test traffic using the property’s supported internal-traffic settings after checking the definition. Do not filter all Slovak traffic indiscriminately. Review U.S. traffic as a report segment.
+1. In this stream, disable Enhanced Measurement to avoid duplicate or extra automatic interaction events. This integration sends page views and explicit article/planner events. Keep Google Signals and advertising features off. These account settings cannot be changed through this repository.
+2. Check Realtime in the owner's actual GA4 property after allowing analytics on the website. A browser request or automated test does not prove that the event appeared in the account. Account access has not been provided.
+3. Supply operator identification and a dedicated contact address to finish privacy/contact information.
+4. Configure internal test traffic only after checking the definition. Do not exclude all Slovak traffic indiscriminately; use a U.S. segment for audience reporting.
 
 ### Consent behavior
 
