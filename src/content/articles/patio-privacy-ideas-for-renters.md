@@ -3,8 +3,13 @@ title: "Patio Privacy Ideas for Renters Without Drilling"
 description: "Compare removable patio privacy ideas, from seating layouts to container plants, with practical wind, weight, and rental-rule checks."
 category: garden-patio
 date: 2026-10-13
-image: /assets/patio-layout.svg
-imageAlt: "Patio diagram showing a targeted privacy area, seating, and an open path."
+image: "/assets/articles/patio-privacy-cover.webp"
+imageAlt: "A small patio seating area beside a freestanding slatted screen and potted plants."
+imageSmall: "/assets/articles/patio-privacy-cover-600.webp"
+imageWidth: 1200
+imageHeight: 800
+imageCaption: "AI-generated editorial image; not a photographed project."
+updated: "2026-10-15"
 reviewed: true
 draft: false
 sources: []
@@ -22,7 +27,7 @@ A more private patio doesn't have to mean permanent posts, drilled walls or a bi
 - Check your lease, HOA or building restrictions.
 - Note wind exposure, drainage, sunlight and where items can be stored.
 
-Try our [free patio privacy idea finder](/tools/patio-privacy-planner/) for a quick starting point.
+Try our free [Patio & Balcony Layout Planner](/tools/patio-privacy-planner/) to sketch the floor, screening, and furniture before rearranging your space.
 
 ## 1. Rearrange the seating first
 
@@ -31,6 +36,11 @@ Moving a chair or bench closer to an existing wall, planter or sheltered corner 
 ## 2. Group movable planters
 
 Planters can soften a boundary and provide partial screening. Choose plants based on local climate, sun exposure and mature size rather than relying on photos of newly planted specimens. Remember that wet soil and large containers can be heavy; check balcony load restrictions before placing them.
+
+<figure class="article-inline-image">
+<img src="/assets/articles/patio-privacy-detail.webp" alt="A seated-height view of a chair and grouped container plants on a ground-level patio." width="1200" height="800" loading="lazy" decoding="async"/>
+<figcaption>A small group of movable planters can soften one sightline without enclosing the whole patio.</figcaption>
+</figure>
 
 ## 3. Try a freestanding outdoor privacy screen
 
@@ -58,6 +68,12 @@ Start with the smallest reversible change that addresses your actual privacy pro
 
 ## Find your starting point
 
-Enter your space type, width and budget in our [Patio Privacy Planner](/tools/patio-privacy-planner/). It suggests ideas to research, not engineered installation plans or guaranteed prices.
+Open the [Patio & Balcony Layout Planner](/tools/patio-privacy-planner/) and enter your rectangular floor width and depth in feet. Add a roof if present, then choose walls, railings, and screens on sides A–D. A side can include a partial wall with screening or railing in the remaining section.
+
+For separate screening pieces, enter their width and the gaps between them. Gaps can be even or follow a custom sequence. The selected screen span includes the open gaps; it is not all covered material. Optional panel counts round up separately on each side, without assuming that offcuts can be reused around a corner. Cost estimates use only the prices you enter.
+
+Add example furniture and potted plants, then drag them into place. You can rotate furniture, lock or remove objects, add movable door/window markers on walls, and rotate the view through four perspectives. Save the worksheet or print the drawing and layout details.
+
+Treat the result as a visual sketch. The tool allows overlapping objects and does not check walking clearance, door swings, structural loads, wind resistance, or mounting. Its standard furniture and plant sizes are illustrative; measure your actual items before buying or installing anything.
 
 Editorial note: This guide provides general information, not structural engineering, building-code or legal advice. Product prices and performance vary; no product has been independently tested for this article.

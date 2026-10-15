@@ -3,8 +3,13 @@ title: "A Small Entryway Without a Closet: Build a Simple Landing Zone"
 description: "Create a compact entryway landing zone for shoes, keys, and bags while keeping the door swing and walking path clear."
 category: "small-spaces"
 date: "2026-10-13"
-image: "/assets/entryway.svg"
-imageAlt: "Entryway diagram with shoes and a key tray outside a clear walking route."
+image: "/assets/articles/entryway-cover.webp"
+imageAlt: "A compact entryway with a shallow shoe tray and a key bowl beside a clear doorway."
+imageSmall: "/assets/articles/entryway-cover-600.webp"
+imageWidth: 1200
+imageHeight: 800
+imageCaption: "AI-generated editorial image; not a photographed project."
+updated: "2026-10-15"
 reviewed: true
 draft: false
 sources: [{"title": "CPSC: Anchor It furniture safety", "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/AnchorItgov"}]
@@ -35,6 +40,11 @@ Keep heavy items low and follow the manufacturer's requirements. Furniture with 
 Use a tray or bowl for keys on an existing safe surface. Add one place for outgoing mail or items that must leave tomorrow. Keep those categories separate so that a necessary envelope does not disappear beneath everyday clutter.
 
 For a bag, a rated removable hook might work only if the wall surface, item weight, and lease permit it. See our [removable-hook planning guide](/articles/removable-hooks-rental-wall-checklist/) before choosing one. A hook that holds a coat is not automatically suitable for a heavily loaded backpack.
+
+<figure class="article-inline-image">
+<img src="/assets/articles/entryway-detail.webp" alt="A ceramic bowl of keys and a separate outgoing-mail tray on a small console." width="1200" height="800" loading="lazy" decoding="async"/>
+<figcaption>Give daily essentials separate, easy-to-reach places on a surface you already use.</figcaption>
+</figure>
 
 ## Plan for wet shoes and overflow
 

@@ -1,0 +1,80 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-15",
+  "purpose": "Original AI-generated editorial concept imagery, not photographed projects or tested installations.",
+  "constraints": "One unique cover and one unique in-article image per article. Full composition preserved during WebP export. Smaller covers are responsive derivatives, not separate editorial images.",
+  "assets": [
+    {
+      "key": "patio-privacy-cover",
+      "prompt": "A small ground-level American rental patio at late afternoon, intimate candid editorial home photography. A weathered round bistro table with two charcoal metal chairs beside a short freestanding slatted outdoor privacy screen with broad stable feet on a level surface; modest terracotta planters and soft garden background. Focus on blocking a single view rather than enclosing the patio. No attachment to railings. Warm sunlight, natural wood grain, realistic lived-in styling. Wide landscape 3:2, entire seating group and screen comfortably within frame. Photorealistic, no people, no text, no logos, no watermarks. This is an original illustrative scene, not a real tested installation."
+    },
+    {
+      "key": "patio-privacy-detail",
+      "prompt": "Photorealistic editorial garden close-up: view from the height of a seated reader on a modest ground-floor patio. A single outdoor chair beside a loosely clustered group of tall potted ornamental plants, with a low garden wall behind. The image explains targeting one sightline; foreground open paving is visible, plants on ground only. Cool fresh morning light, leafy greens and pale gray pots, shallow but believable depth of field. Landscape 3:2. Complete main pots and chair in frame, no people, writing, logos, watermarks, drawings or diagrams."
+    },
+    {
+      "key": "patio-layout-cover",
+      "prompt": "Photorealistic architectural editorial photo of a narrow but useful suburban American patio, viewed diagonally from its open sliding doorway. Two compact teal folding chairs and one small square table on simple concrete paving, a broad visibly clear route from the door on one side, one low planter far from the route. Ordinary achievable rental home, not a luxury resort. Bright overcast daylight, muted blue and pale warm concrete, clean composition with complete furniture and visible doorway. Landscape 3:2. No people, text, logos, watermarks or diagrams."
+    },
+    {
+      "key": "patio-layout-detail",
+      "prompt": "An editorial photography detail of planning compact outdoor furniture, landscape 3:2. Close diagonal view across a real small patio floor: a simple wood folding chair pulled back from a small outdoor table to demonstrate room to stand, a plain measuring tape extended on paving alongside the chair, open doorway blurred behind. Believable small-space proportions, full chair and table edges comfortably framed, natural late-day side light, reddish brick wall and honey wood distinct from cool blue patio photos. No people, legible numbers, text overlays, logos, watermarks or illustrated graphics."
+    },
+    {
+      "key": "container-garden-cover",
+      "prompt": "Photorealistic editorial gardening photograph of exactly three separate pots on a small sunny ground-level brick terrace: one healthy basil plant in a generous clay pot, one flowering annual in a cobalt glazed pot, one compact leafy edible plant in a neutral pot. Pots rest on the ground with space between, accessible from open paving. Medium-wide eye-level framing includes complete containers and plants, ordinary home backdrop. Lively late spring morning light, vivid but natural colors, rich leaf and clay textures. Landscape 3:2, no person, words, labels, logos, watermark or drawings."
+    },
+    {
+      "key": "container-garden-detail",
+      "prompt": "Photorealistic natural gardening workbench still life, photographed close overhead at a slight angle, landscape 3:2. One clean empty terracotta nursery-style pot tilted gently on its side so its single open drainage hole is visible, a small scoop of dark airy container potting mix beside it, plain gardening trowel and one young plant in an unbranded nursery pot nearby. Dry wooden potting bench under soft tree shade, tactile soil and rough clay, uncluttered, realistic drainage hole, no gravel layer. Entire main pot visible. No hands, no text, no brand packaging, watermark, diagram or collage."
+    },
+    {
+      "key": "kitchen-drawers-cover",
+      "prompt": "High-quality photorealistic editorial overhead kitchen photo, landscape 3:2. An open shallow natural oak kitchen drawer with three practical sections made from simple plain dividers: wooden spoons and silicone spatulas lengthwise, stainless measuring spoons in a small compartment, a few useful small utensils with some empty room. No exposed knives. Matte sage-green kitchen cabinetry and edge of cream counter provide setting. Bright soft window light, functional lived-in American kitchen, non-perfect but tidy, full drawer front and interior comfortably in view. No person, words, branding, watermark or diagrams."
+    },
+    {
+      "key": "kitchen-drawers-detail",
+      "prompt": "Photorealistic close editorial photo of testing kitchen drawer organizers before shopping: an empty clean white drawer pulled out of a navy kitchen cabinet, two blank brown paper rectangle templates laid flat inside, a plain tape measure along one inner edge, a modest cluster of wooden utensils on the adjacent butcher-block countertop. Side-overhead three-quarter viewpoint clearly shows internal depth and paper mockups, crisp morning light. Landscape 3:2. No visible writing or legible scale markings, hands, logos, watermarks, drawings, staged luxury props or knives."
+    },
+    {
+      "key": "entryway-cover",
+      "prompt": "Photorealistic editorial interior photograph of a genuinely small American apartment entryway with no closet. A white front door visibly has a clear swing and walkway; a shallow dark shoe tray with two everyday shoe pairs beside the wall and a small existing console holding a ceramic key bowl. Warm clay colored wall, dark tile floor, simple restrained living, morning light from adjacent room. Entire compact arrangement visible from natural standing eye height, landscape 3:2. No tall unstable furniture, no people, text, logos, watermarks or illustrations."
+    },
+    {
+      "key": "entryway-detail",
+      "prompt": "Photorealistic intimate home editorial still life focused on a tiny landing zone near an apartment entrance: a small speckled ceramic bowl with ordinary house keys, a separate shallow tray with one plain unmarked envelope, edge of one everyday canvas bag at the foot of the existing low console. Side-on close crop of console surface with doorway softly blurred behind, afternoon sunlight, pale blue wall and walnut wood, noticeably different from a clay entryway wide shot. Landscape 3:2. No readable address, writing, logos, watermark, people or diagrams."
+    },
+    {
+      "key": "under-sink-cover",
+      "prompt": "Photorealistic practical home editorial photograph looking straight into an open clean under-sink kitchen cabinet. Realistic simple white PVC P-trap below a stainless sink and two clearly accessible small metal water shutoff valves at the rear; two removable low handled bins sit to either side of plumbing on the dry cabinet floor, leaving an open center and service access. Only folded cloths and a few plain sponges in the bins, no chemicals, no attached organizers or shelving supported on pipes. Natural maple cabinet, bright realistic daylight, entire opening framed. Landscape 3:2. No people, text, logos, watermark, schematics or artistic drawings."
+    },
+    {
+      "key": "under-sink-detail",
+      "prompt": "Photorealistic macro-to-medium home maintenance photograph from low cabinet height: one simple handled translucent storage bin holding two folded cleaning cloths has been pulled halfway out of a dry white under-sink cabinet, exposing the clean cabinet floor and an accessible water shutoff valve on a pipe at back. Properly connected plain plumbing blurred in background, no water leak, no tools modifying pipes, no chemical bottles. Cool neutral daylight, white and steel tones, clear useful tactile details. Landscape 3:2, no person, writing, brand logos, watermarks, diagrams or collage."
+    },
+    {
+      "key": "removable-hooks-cover",
+      "prompt": "Photorealistic editorial close-up of one small plain white removable adhesive wall hook mounted on a smooth painted pale blue wall, holding a single very light empty linen tote. The hook and a small accessible blank removal tab are visibly above the tote strap, no screws, no heavy load. Natural window light casts a soft gentle shadow, ordinary rental hallway feel. Landscape 3:2, close but enough room around the whole hook and most of the tote, realistic material textures, no logos, writing, hands, watermarks, arrows or diagrams."
+    },
+    {
+      "key": "removable-hooks-detail",
+      "prompt": "Photorealistic product-neutral home planning flat-lay on a matte charcoal tabletop: one unbranded white removable adhesive hook, two unused plain white adhesive strips with distinct pull tabs, a light fabric pouch and a compact ordinary household scale with blank unreadable display. These are loose planning items, not an installation instruction. Crisp directional side light, restrained cream/charcoal palette, detailed plastic and linen textures, landscape 3:2. No branded packaging, labels, numbers, text overlays, person, watermark, diagram or collage."
+    },
+    {
+      "key": "living-room-cover",
+      "prompt": "Photorealistic editorial interior photo of a compact lived-in American rental living room, comfortable contemporary eclectic style. Existing cream sofa, warm rust throw, two textured cushions, one dark wood side table with a book and coaster, low flat rug with straight edges, clear walkway from the doorway, simple freestanding lighting. No tall shelving or precariously leaned art. Afternoon natural light, muted rose wall and warm oak, inviting but achievable. Landscape 3:2, full main furniture inside frame. No people, text, logos, watermark, drawings or exaggerated luxury."
+    },
+    {
+      "key": "living-room-detail",
+      "prompt": "Photorealistic interior decorating editorial detail photograph, landscape 3:2. A small dark green armchair beside an existing round side table with one ceramic mug on a coaster and an open book; a neatly folded soft cream throw on the chair arm, two fabric swatches nearby on the table, clear floor around the chair and flat rug edge. Soft rainy-day window light, deep green, walnut and oatmeal textures, intimate side perspective distinctly different from a wide pink living room. No people, text legible in book, logos, watermarks, diagrams or hanging art."
+    },
+    {
+      "key": "window-condensation-cover",
+      "prompt": "Photorealistic editorial home observation photograph of a modest bedroom window on a chilly morning. A light amount of realistic fine condensation and a few droplets on the inside lower edge of the glass, clean white frame and sill, a small unbranded humidity meter resting safely on the sill with a blank dark display, blurred autumn garden outside. Cool blue dawn light balanced by warm interior tones, detailed water droplets, no mold, no extensive damage. Landscape 3:2. No people, readable numbers or writing, logos, watermark, schematics or diagrams."
+    },
+    {
+      "key": "window-condensation-detail",
+      "prompt": "Photorealistic practical home close-up, landscape 3:2. Clean folded microfiber cloth resting on the dry part of a natural wood window sill beside a few small droplets on the room-facing lower window glass; a simple blank notepad and plain pencil on a nearby surface suggest recording observations, outdoor rainy rooftops softly blurred. Soft gray daylight, amber timber and neutral beige textile. No mold, cleaning chemicals, person or hand, no legible text, brand logo, watermark, arrows or illustrated diagram."
+    }
+  ]
+}

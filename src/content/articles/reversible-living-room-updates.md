@@ -3,8 +3,13 @@ title: "Reversible Living Room Updates: A Plan Before You Buy"
 description: "Refresh a living room with layout, textiles, and existing furnishings first. Make a reversible plan with practical checks for rentals."
 category: "diy-home"
 date: "2026-10-13"
-image: "/assets/reversible-room.svg"
-imageAlt: "Room diagram using movable textiles and furniture with an open route."
+image: "/assets/articles/living-room-cover.webp"
+imageAlt: "A compact living room with a cream sofa, rust throw, low rug, and an open walkway."
+imageSmall: "/assets/articles/living-room-cover-600.webp"
+imageWidth: 1200
+imageHeight: 800
+imageCaption: "AI-generated editorial image; not a photographed project."
+updated: "2026-10-15"
 reviewed: true
 draft: false
 sources: [{"title": "CPSC: Anchor It furniture safety", "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/AnchorItgov"}]
@@ -29,6 +34,11 @@ Move lighter pieces one at a time with appropriate help and floor protection. Do
 Choose an existing item you like as the starting color. Then compare a few fabric samples or items already in the home. A rug, throw, or cushion cover can change the visual balance without repainting, but comfort and maintenance matter as much as color.
 
 Measure the space in use before selecting a rug. Check the door movement and choose a suitable nonslip method compatible with the flooring and the rug maker's instructions. Avoid curled edges in walking routes.
+
+<figure class="article-inline-image">
+<img src="/assets/articles/living-room-detail.webp" alt="A green armchair and side table with a mug, book, throw, and fabric swatches." width="1200" height="800" loading="lazy" decoding="async"/>
+<figcaption>Try the useful surface and textile changes first, then decide what still needs buying.</figcaption>
+</figure>
 
 ## Give useful surfaces room to work
 

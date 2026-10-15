@@ -3,8 +3,13 @@ title: "How to Organize Small Kitchen Drawers Without Buying More"
 description: "Plan small kitchen drawers around daily tasks, measure before buying organizers, and use a simple reset to keep tools easy to find."
 category: "small-spaces"
 date: "2026-10-13"
-image: "/assets/drawer-zones.svg"
-imageAlt: "Drawer diagram separating daily tools, long utensils, measuring tools, and open space."
+image: "/assets/articles/kitchen-drawers-cover.webp"
+imageAlt: "An open kitchen drawer with separate zones for long utensils, measuring tools, and smaller items."
+imageSmall: "/assets/articles/kitchen-drawers-cover-600.webp"
+imageWidth: 1200
+imageHeight: 800
+imageCaption: "AI-generated editorial image; not a photographed project."
+updated: "2026-10-15"
 reviewed: true
 draft: false
 sources: [{"title": "CPSC: Anchor It furniture and television safety", "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/AnchorItgov"}]
@@ -23,6 +28,11 @@ Ask which task each item supports. A vegetable peeler belongs with the tools you
 Measure the inside width, front-to-back depth, and height below the moving drawer or cabinet above it. Check for screw heads and rails that reduce clearance. Record the measurements in inches and photograph the empty drawer beside a tape measure.
 
 Cut scrap paper to the footprint of a proposed organizer. Lay the templates inside the drawer before buying anything. A tray advertised by its outside dimensions may have much smaller compartments inside. Check both. Also leave enough room to lift items out without catching their handles under an overhanging counter.
+
+<figure class="article-inline-image">
+<img src="/assets/articles/kitchen-drawers-detail.webp" alt="Blank paper templates inside an empty drawer with a tape measure and utensils nearby." width="1200" height="800" loading="lazy" decoding="async"/>
+<figcaption>Paper templates let you check a proposed organizer before buying it.</figcaption>
+</figure>
 
 ## Build three practical zones
 
