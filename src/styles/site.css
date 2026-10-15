@@ -58,3 +58,5 @@
 }
 
 @media print{.plan-sketch text,.plan-preview text{stroke:none!important;fill:#294b3c!important}}
+
+.card-image img{object-fit:contain}.article-inline-image{margin:32px 0}.article-inline-image img{display:block;width:100%;height:auto;border-radius:12px;object-fit:contain}.article-inline-image figcaption{font-size:12px;line-height:1.6;margin-top:10px;color:var(--muted)}

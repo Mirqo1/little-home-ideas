@@ -3,8 +3,13 @@ title: "Window Condensation in a Rental: What to Check and Record"
 description: "Record recurring window condensation, check everyday moisture sources, and know when to involve your property manager. A practical observation checklist."
 category: "practical-solutions"
 date: "2026-10-13"
-image: "/assets/window-moisture.svg"
-imageAlt: "Window and humidity observation diagram."
+image: "/assets/articles/window-condensation-cover.webp"
+imageAlt: "Fine condensation near the lower inside edge of a bedroom window with a humidity meter on the sill."
+imageSmall: "/assets/articles/window-condensation-cover-600.webp"
+imageWidth: 1200
+imageHeight: 800
+imageCaption: "AI-generated editorial image; not a photographed project."
+updated: "2026-10-15"
 reviewed: true
 draft: false
 sources: [{"title": "EPA: A brief guide to mold, moisture, and your home", "url": "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home"}]
@@ -23,6 +28,11 @@ Water entering during rain is a different observation from droplets appearing af
 For several days, record the room, time, approximate outdoor conditions, and recent activities such as cooking or showering. Photograph the affected area and include a wider view that shows its location. This is useful context, not proof that one particular activity caused the problem.
 
 If you have a humidity meter, record its reading and location. Consumer meters vary, so use the result as an observation rather than a precise building assessment. Note whether readings and condensation change after ordinary ventilation or reduced moisture generation.
+
+<figure class="article-inline-image">
+<img src="/assets/articles/window-condensation-detail.webp" alt="Small droplets on window glass beside a microfiber cloth and a blank observation notepad." width="1200" height="800" loading="lazy" decoding="async"/>
+<figcaption>Record where and when moisture appears, and keep the window surface easy to inspect.</figcaption>
+</figure>
 
 ## Check everyday moisture sources
 

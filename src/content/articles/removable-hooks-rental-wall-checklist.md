@@ -3,8 +3,13 @@ title: "Removable Hooks in a Rental: Check the Wall Before You Hang"
 description: "Check wall finishes, load limits, preparation, and removal instructions before using adhesive hooks in a rental. No damage-free promises."
 category: "renter-friendly"
 date: "2026-10-13"
-image: "/assets/removable-hook.svg"
-imageAlt: "Hook diagram showing a downward removal direction for a stretch-release strip."
+image: "/assets/articles/removable-hooks-cover.webp"
+imageAlt: "A small removable adhesive hook holding a lightweight linen tote on a smooth painted wall."
+imageSmall: "/assets/articles/removable-hooks-cover-600.webp"
+imageWidth: 1200
+imageHeight: 800
+imageCaption: "AI-generated editorial image; not a photographed project."
+updated: "2026-10-15"
 reviewed: true
 draft: false
 sources: [{"title": "Command U.S.: Frequently asked questions and product instructions", "url": "https://www.command.com/3M/en_US/command/contact-us/faqs/"}, {"title": "CPSC: Anchor It furniture safety", "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/AnchorItgov"}]
@@ -29,6 +34,11 @@ Read restrictions for freshly painted surfaces on the current package. Do not ap
 Weigh the item with everything it normally carries. A bag's empty weight is not its loaded weight. Check the product's weight rating and any limits on object size, geometry, temperature, and indoor or outdoor use.
 
 Do not assume that two hooks automatically double capacity. Only distribute a load that way if the manufacturer explicitly describes and permits the configuration. Use a different system when the item's weight or shape falls outside the instructions.
+
+<figure class="article-inline-image">
+<img src="/assets/articles/removable-hooks-detail.webp" alt="An unbranded adhesive hook and pull-tab strips beside a light pouch and a household scale." width="1200" height="800" loading="lazy" decoding="async"/>
+<figcaption>Check the exact product, surface, and loaded item weight before choosing a hook.</figcaption>
+</figure>
 
 ## Follow the full installation sequence
 

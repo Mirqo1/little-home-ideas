@@ -1,0 +1,191 @@
+[
+  {
+    "path": "public/assets/articles/patio-privacy-cover.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 227806,
+    "sha256": "2511a9c5f641f0c9ab5169d7587a3d6008d19a4ae0d89d9b3bd30d9613154bb1"
+  },
+  {
+    "path": "public/assets/articles/patio-privacy-cover-600.webp",
+    "width": 600,
+    "height": 400,
+    "bytes": 75330,
+    "sha256": "5e0c560f1dbfe1f6f0e9096f345279cdf1a618df1aa1c0ade16e3336581a2a05"
+  },
+  {
+    "path": "public/assets/articles/patio-privacy-detail.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 255292,
+    "sha256": "86c1dc3899fbd394ddd103889fedcb464b4ce4228a0ed89b7b6812413aa4b09e"
+  },
+  {
+    "path": "public/assets/articles/patio-layout-cover.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 108786,
+    "sha256": "e00445f081ea75129d4087b88f7dbe843e02c94b70649425d86a1d2fc2e713f0"
+  },
+  {
+    "path": "public/assets/articles/patio-layout-cover-600.webp",
+    "width": 600,
+    "height": 400,
+    "bytes": 36598,
+    "sha256": "ed5c6d9bd7d4cb9f30e614f476301e63cb9b28c26ba9aacc68b8edda732af8a8"
+  },
+  {
+    "path": "public/assets/articles/patio-layout-detail.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 159598,
+    "sha256": "5108fa543a29fbc6cdc6be31b40a9cd7d61d451c20b7eb0298a47b4bdc95b394"
+  },
+  {
+    "path": "public/assets/articles/container-garden-cover.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 205098,
+    "sha256": "b04a9320c995a9a21c4cdffa2e6ea35141a249d5556fa7ed50951f25cf63ea83"
+  },
+  {
+    "path": "public/assets/articles/container-garden-cover-600.webp",
+    "width": 600,
+    "height": 400,
+    "bytes": 71046,
+    "sha256": "dacc3c0dece1ad602a3c1f92e27307f99f15ec910ada60239f94f0a2db273ec3"
+  },
+  {
+    "path": "public/assets/articles/container-garden-detail.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 154084,
+    "sha256": "a2a2f915c0808dfa7b36eb59183205994b4fafd7c69dd95a3898a7b71b8dddfd"
+  },
+  {
+    "path": "public/assets/articles/kitchen-drawers-cover.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 84172,
+    "sha256": "568e413bf5efd1f9f741362d11602b45e7dfeeff410c15841d79c9c7c97b9bfc"
+  },
+  {
+    "path": "public/assets/articles/kitchen-drawers-cover-600.webp",
+    "width": 600,
+    "height": 400,
+    "bytes": 29396,
+    "sha256": "0aae95f28b04ffafe814c341dac0f1d9b886d87ff62b1bf8c5c01b68e992baca"
+  },
+  {
+    "path": "public/assets/articles/kitchen-drawers-detail.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 85918,
+    "sha256": "8944990ed8663f81fa24b53e26fa6e5bfcb6dd8f763c107f03eba07baaf55c9f"
+  },
+  {
+    "path": "public/assets/articles/entryway-cover.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 67882,
+    "sha256": "8de783f9f9592eede0090d436ebe604ed406a11a4fcc94366d9b63f9d61b93a3"
+  },
+  {
+    "path": "public/assets/articles/entryway-cover-600.webp",
+    "width": 600,
+    "height": 400,
+    "bytes": 21744,
+    "sha256": "641334c5e52e152b13ffde86427ac334fe846ded6e2e3192da7aff4e157dd20f"
+  },
+  {
+    "path": "public/assets/articles/entryway-detail.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 78076,
+    "sha256": "caa767d96de01495857f492dd6e238519283cc40ba0184214a5262bc5f0ccf02"
+  },
+  {
+    "path": "public/assets/articles/under-sink-cover.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 55780,
+    "sha256": "f8b946f99ab784940c9c059dc02e3d9c05223fc78b60bbf250d2ef101d84981b"
+  },
+  {
+    "path": "public/assets/articles/under-sink-cover-600.webp",
+    "width": 600,
+    "height": 400,
+    "bytes": 18718,
+    "sha256": "a02e3ed73dd4234db472c758b6052910747cfcdbf3327b38e01d0394e84afb2a"
+  },
+  {
+    "path": "public/assets/articles/under-sink-detail.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 71284,
+    "sha256": "751a21f7a865de5fc53d9d3ebb43f730c6ee1df7231dda16250f941f31dcfe5a"
+  },
+  {
+    "path": "public/assets/articles/removable-hooks-cover.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 33904,
+    "sha256": "df577b728458bfe1d24bfca07cd4b0d629f9ed2412f9883947ac657bc3ba0edd"
+  },
+  {
+    "path": "public/assets/articles/removable-hooks-cover-600.webp",
+    "width": 600,
+    "height": 400,
+    "bytes": 11086,
+    "sha256": "5682643c6dd6fa7c525f67fbd51831588e3fa496e909993f15754b6bad6f0c74"
+  },
+  {
+    "path": "public/assets/articles/removable-hooks-detail.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 106850,
+    "sha256": "36d30562f6096c000f9ab5f62673c3a442c6c7d7b7f861a9baf0cafb5bcf77be"
+  },
+  {
+    "path": "public/assets/articles/living-room-cover.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 135882,
+    "sha256": "cbaeadfcc00ccbdc30c4df342de97045588e6477dcc4128be777a11912294905"
+  },
+  {
+    "path": "public/assets/articles/living-room-cover-600.webp",
+    "width": 600,
+    "height": 400,
+    "bytes": 41382,
+    "sha256": "6da91be5b1d94d96aedd7f7de9c6de869b8bf619551cc7710813435dd20bb6ae"
+  },
+  {
+    "path": "public/assets/articles/living-room-detail.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 156228,
+    "sha256": "8584d040f8d772266cb9b46574ec56eb487516ce7739515d5fc5d614fd28280d"
+  },
+  {
+    "path": "public/assets/articles/window-condensation-cover.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 94156,
+    "sha256": "e956c87f6bac3fb93a1cdff64eef44c0d84f184a534172cedbbaf4cf74b85b5d"
+  },
+  {
+    "path": "public/assets/articles/window-condensation-cover-600.webp",
+    "width": 600,
+    "height": 400,
+    "bytes": 32174,
+    "sha256": "686f2e82f5419e1b315b6a65c6065a84960cf231d7702abe370ce88eb3e09e2b"
+  },
+  {
+    "path": "public/assets/articles/window-condensation-detail.webp",
+    "width": 1200,
+    "height": 800,
+    "bytes": 96334,
+    "sha256": "51aeca0e10631b077ecc3cea0f127aeced62df8be5df2d0800237371b5894e86"
+  }
+]

@@ -3,8 +3,13 @@ title: "How to Plan a Small Patio Layout Before Buying Furniture"
 description: "Map your patio doors, seating, and walking routes before shopping. Use paper footprints to test a compact outdoor layout."
 category: "garden-patio"
 date: "2026-10-13"
-image: "/assets/patio-layout.svg"
-imageAlt: "Patio diagram showing seating, plants, and a clear route."
+image: "/assets/articles/patio-layout-cover.webp"
+imageAlt: "Compact outdoor chairs and a table beside a clear route from a sliding door."
+imageSmall: "/assets/articles/patio-layout-cover-600.webp"
+imageWidth: 1200
+imageHeight: 800
+imageCaption: "AI-generated editorial image; not a photographed project."
+updated: "2026-10-15"
 reviewed: true
 draft: false
 sources: []
@@ -30,11 +35,18 @@ Measure a chair with someone using it, not just the empty frame. For dining furn
 
 Try one compact arrangement, then walk the route in real life. Open the door and carry a tray through. If you must move a chair every time, reduce the furniture footprint or change the purpose of that corner.
 
+<figure class="article-inline-image">
+<img src="/assets/articles/patio-layout-detail.webp" alt="An outdoor chair pulled back from a small table with a measuring tape on the paving." width="1200" height="800" loading="lazy" decoding="async"/>
+<figcaption>Check the space a chair needs when pulled back, not only its empty footprint.</figcaption>
+</figure>
+
 ## Solve privacy at the seating position
 
 Sit at the proposed chair location and identify the sightline that bothers you. Screening one angle may be more practical than enclosing the whole patio. A different chair orientation or a sheltered corner is worth trying before buying a screen.
 
-Our [renter-friendly patio privacy guide](/articles/patio-privacy-ideas-for-renters/) compares options and limitations. Use the [Patio Privacy Planner](/tools/patio-privacy-planner/) to explore starting ideas. Neither determines structural capacity or guarantees that an item will be safe in wind.
+Our [renter-friendly patio privacy guide](/articles/patio-privacy-ideas-for-renters/) compares options and limitations. Use the [Patio & Balcony Layout Planner](/tools/patio-privacy-planner/) to draw a rectangular floor, add existing walls, railings, or a roof, and drag example furniture and plants into place. Add door/window markers on walls, rotate furniture, or lock a piece while you move another. Rotate the view to inspect all four sides, then print the layout for reference.
+
+The planner permits overlapping objects, so a successful drawing is not a clearance check. Its standard footprints do not replace your own measurements, and door markers do not show door swings. Neither the planner nor this guide determines structural capacity or guarantees that an item will be safe in wind.
 
 ## Add plants after the circulation works
 

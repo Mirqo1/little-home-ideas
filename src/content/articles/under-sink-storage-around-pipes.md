@@ -3,8 +3,13 @@ title: "Under-Sink Storage Around Pipes: A Measure-First Plan"
 description: "Organize a small under-sink cabinet around plumbing, keep shutoffs accessible, and choose removable bins that make leaks easier to spot."
 category: "small-spaces"
 date: "2026-10-13"
-image: "/assets/under-sink.svg"
-imageAlt: "Cabinet diagram keeping lift-out storage away from plumbing and access points."
+image: "/assets/articles/under-sink-cover.webp"
+imageAlt: "Removable bins in an open under-sink cabinet with clear access to the drain and shutoff valves."
+imageSmall: "/assets/articles/under-sink-cover-600.webp"
+imageWidth: 1200
+imageHeight: 800
+imageCaption: "AI-generated editorial image; not a photographed project."
+updated: "2026-10-15"
 reviewed: true
 draft: false
 sources: [{"title": "EPA: A brief guide to mold, moisture, and your home", "url": "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home"}]
@@ -29,6 +34,11 @@ Make paper footprints for candidate bins. Place them on the cabinet floor and ch
 A small handled bin for the supplies used together can be easier to manage than a complicated sliding mechanism. Keep taller bottles on the side with sufficient clearance and reserve the area directly under plumbing for smaller, easy-to-remove items.
 
 Do not rest shelves on pipes, attach organizers to plumbing, or modify lines to create room. An adjustable shelf must stand independently and meet the maker's installation requirements. Follow any cabinet-door organizer's load and attachment instructions as well.
+
+<figure class="article-inline-image">
+<img src="/assets/articles/under-sink-detail.webp" alt="A handled storage bin pulled forward to reveal the dry cabinet floor and access to plumbing." width="1200" height="800" loading="lazy" decoding="async"/>
+<figcaption>Lift-out storage keeps the cabinet floor visible and makes service access easier.</figcaption>
+</figure>
 
 ## Store cleaning products deliberately
 
