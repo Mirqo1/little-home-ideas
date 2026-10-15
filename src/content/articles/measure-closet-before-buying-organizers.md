@@ -10,7 +10,7 @@ imageWidth: 1200
 imageHeight: 800
 imageCaption: ""
 imageProvenance: "generated"
-reviewed: false
+reviewed: true
 draft: true
 sources:
   - title: "Valet Custom Cabinets & Closets: How to Measure Your Closet Guide (PDF)"

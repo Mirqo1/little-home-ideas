@@ -1,6 +1,6 @@
 # Next editorial batch — October 15, 2026
 
-Status: three complete American-English drafts, not scheduled or published. They are stored in the normal Astro article collection with `draft: true` so the publication filter excludes them from pages, cards, related links, and sitemap. `date` currently records draft preparation; set it to the actual publication date when each article is released. Do not backdate or set an invented future release date.
+Status: three complete, editorially reviewed American-English drafts, not scheduled or published. They are stored in the normal Astro article collection with `draft: true` so the publication filter excludes them from pages, cards, related links, and sitemap. `date` currently records draft preparation; set it to the actual publication date when each article is released. Do not backdate or set an invented future release date.
 
 ## Prehľad po slovensky
 
@@ -34,3 +34,10 @@ Each draft links to at least two existing relevant articles. The delivery and cu
 Recommended editorial order: cushion storage while seasonally relevant to some U.S. regions, closet measuring, then delivery route. This is a proposed order, not an automatic schedule. Retain actual publication dates. When releasing a draft, update its publication date, check current sources and source notes, ensure image/alt coverage, set `reviewed: true` and `draft: false`, and run the standard build/site checks. Add inbound contextual links from existing guides as part of that release; do not place dead draft links on public pages now.
 
 Next tool: see `tile-planner-brief.md`. The tile planner is specified but not implemented. Bathroom planning remains a separate backlog idea.
+
+## Validation completed
+
+- Temporarily rendered all three drafts through the existing Article template: 27-page build and full site audit passed, including links, image integrity/dimensions, metadata, schema, and sitemap. Confirmed each draft has both figures and a table. Restored all `draft: true` flags afterward.
+- Final public build: 24 pages; all three draft URLs absent from output and sitemap. Generated root export refreshed for CI parity.
+- All nine optimized WebP files fully decoded; six unique source scenes, three responsive cover derivatives; total 913,478 bytes. An empty export caught by the integrity audit was replaced before the successful rerun.
+- Existing 84 automated tests pass. No new browser/mobile layout or Core Web Vitals measurements were performed for this content-only draft batch.

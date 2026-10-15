@@ -1,0 +1,88 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-15",
+  "conversion": "Whole-frame resize, WebP quality 84; no crop.",
+  "assets": [
+    {
+      "key": "closet-measure-cover",
+      "path": "/assets/articles/closet-measure-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 94340,
+      "sha256": "6f9d6e5083cebfe9becb94811a09c2343dc076b4a6bc6d253692236e88843ddd",
+      "sourceSha256": "567a2d44ac807353df2d1b7ffcdaa6540a4b814e5a139f4700adaa4d83618dcb"
+    },
+    {
+      "key": "closet-measure-cover",
+      "path": "/assets/articles/closet-measure-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 31004,
+      "sha256": "097190222d439d460727998d36271c06ec076ca44af8b1b161d18193c7dc9d59",
+      "sourceSha256": "567a2d44ac807353df2d1b7ffcdaa6540a4b814e5a139f4700adaa4d83618dcb"
+    },
+    {
+      "key": "closet-measure-detail",
+      "path": "/assets/articles/closet-measure-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 155490,
+      "sha256": "c40e61913cb7e79d97b70b3439cd73369037c3db808274840df4fe808d6074cc",
+      "sourceSha256": "a65e2cf5716aa717fca46303aff12b3fa03ce785bfc65e5c635718e607ba962f"
+    },
+    {
+      "key": "delivery-route-detail",
+      "path": "/assets/articles/delivery-route-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 93394,
+      "sha256": "04fe3f6bdfae49cf23d306a3eb8b8dd20f80ead553799ed50a001ff43edb5c86",
+      "sourceSha256": "6c026b2530d33a46ccdfc1133bc2cb2639c8bb71e77a28af871f8a36947ae1e7"
+    },
+    {
+      "key": "delivery-route-cover",
+      "path": "/assets/articles/delivery-route-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 153090,
+      "sha256": "a13c4a665baa0ad7f8e6a1de2c3627dd318ddbc7a05d83f7e4745512d1f1dd6d",
+      "sourceSha256": "333c35fcafe996203a789458f4c38c0ec339d67438b09442ca09d7156f0d7521"
+    },
+    {
+      "key": "delivery-route-cover",
+      "path": "/assets/articles/delivery-route-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 47136,
+      "sha256": "38fb581b96f8f515eebb5883e7f6be0f1f900b27e0e532ed1be3eac64f2c8ee8",
+      "sourceSha256": "333c35fcafe996203a789458f4c38c0ec339d67438b09442ca09d7156f0d7521"
+    },
+    {
+      "key": "outdoor-cushion-storage-detail",
+      "path": "/assets/articles/outdoor-cushion-storage-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 117544,
+      "sha256": "2eabaa2139966efae157fbcfa7cd7fb2ce737512b50518b724eda3454a760738",
+      "sourceSha256": "e5cc98d84ae40efab738efd6c4a979bf7e1ddfa2a52a5f6529fe198367266a46"
+    },
+    {
+      "key": "outdoor-cushion-storage-cover",
+      "path": "/assets/articles/outdoor-cushion-storage-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 166306,
+      "sha256": "09642b22b6b47502f4add08afa92f104255ac94aa229c8f099e807c296a319f8",
+      "sourceSha256": "4a76bdcd3b2e1ac8ebb21554f6bc9d5542bff1329d156d56eb73a494825c643c"
+    },
+    {
+      "key": "outdoor-cushion-storage-cover",
+      "path": "/assets/articles/outdoor-cushion-storage-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 55174,
+      "sha256": "a7a8e503057157bc3ee91a1e9ca029b035b1449fb00a5177f482d4cbdba281c6",
+      "sourceSha256": "4a76bdcd3b2e1ac8ebb21554f6bc9d5542bff1329d156d56eb73a494825c643c"
+    }
+  ]
+}
