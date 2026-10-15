@@ -329,3 +329,16 @@ test('saving uses last applied measurements, keeps deletions, and compares witho
   w.document.getElementById('project-name').value='My patio';w.document.getElementById('project-save').click();assert.match(w.document.getElementById('project-status').textContent,/already exists/);
  }finally{w.happyDOM.abort();}
 });
+
+test('downloaded project import opens locally; invalid moved positions preserve current inputs and drawing',async()=>{
+ const w=setup();try{
+  furniture(w);check(w,'plant-leafy-1');submit(w);w.document.getElementById('project-save').click();const p=JSON.parse(w.localStorage.getItem(layoutStorageKey))[0];
+  const fileInput=w.document.getElementById('project-file');
+  const load=async data=>{const text=JSON.stringify(data);Object.defineProperty(fileInput,'files',{configurable:true,value:[{size:text.length,text:async()=>text}]});fileInput.dispatchEvent(new w.Event('change'));await new Promise(resolve=>setImmediate(resolve));};
+  w.document.getElementById('privacy-form').reset();await Promise.resolve();await load(p);
+  assert.equal(w.document.querySelectorAll('#results [data-feature="plant"]').length,1);assert.equal(w.document.getElementById('furniture').checked,true);assert.match(w.document.getElementById('project-status').textContent,/Opened.*from a file/);
+  const before=w.document.querySelector('#results .plan-sketch').outerHTML,fields=[...w.document.querySelectorAll('#privacy-form input')].map(i=>[i.id,i.value,i.checked]);
+  p.input.poses[0].x=999;await load(p);
+  assert.match(w.document.getElementById('project-status').textContent,/no longer fits/);assert.equal(w.document.querySelector('#results .plan-sketch').outerHTML,before);assert.deepEqual([...w.document.querySelectorAll('#privacy-form input')].map(i=>[i.id,i.value,i.checked]),fields);
+ }finally{w.happyDOM.abort();}
+});
