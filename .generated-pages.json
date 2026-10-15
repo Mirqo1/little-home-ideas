@@ -2,7 +2,7 @@
   ".nojekyll",
   "404.html",
   "CNAME",
-  "_astro/Base.QWb1nYKK.css",
+  "_astro/Base.zKzPJXie.css",
   "about/index.html",
   "articles/container-garden-first-three-pots/index.html",
   "articles/organize-small-kitchen-drawers/index.html",
@@ -85,8 +85,12 @@
   "assets/removable-hook.svg",
   "assets/reversible-room.png",
   "assets/reversible-room.svg",
+  "assets/saved-layouts.js",
   "assets/screen-pieces.js",
   "assets/space-features.js",
+  "assets/tile-layout.js",
+  "assets/tile-planner-example.svg",
+  "assets/tile-planner.js",
   "assets/under-sink.png",
   "assets/under-sink.svg",
   "assets/wall-openings.js",
@@ -110,5 +114,6 @@
   "sitemap.xml",
   "small-spaces/index.html",
   "tools/index.html",
-  "tools/patio-privacy-planner/index.html"
+  "tools/patio-privacy-planner/index.html",
+  "tools/patio-tile-planner/index.html"
 ]

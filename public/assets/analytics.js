@@ -49,7 +49,7 @@
  window.addEventListener('storage',e=>{if(e.key!==storageKey)return;const next=state();if(next)apply(next);else{if(loaded){window['ga-disable-'+id]=true;window.location.reload();}else{choice=null;panel.hidden=false;close.hidden=true;}}});
  if(choice)apply(choice);else panel.hidden=false;
  const plannerEvents=new Set(['planner_start','planner_complete','planner_save','planner_print']);
- document.addEventListener('lhi:analytics',e=>{if(plannerEvents.has(e.detail?.name))send(e.detail.name,{tool_name:'patio_balcony_layout'});});
+ document.addEventListener('lhi:analytics',e=>{if(plannerEvents.has(e.detail?.name))send(e.detail.name,{tool_name:e.detail?.tool==='patio_tile_layout'?'patio_tile_layout':'patio_balcony_layout'});});
  document.addEventListener('click',e=>{
   const saved=e.target.closest?.('[data-save]');
   if(saved&&saved.getAttribute('aria-pressed')==='true'&&/^[a-z0-9-]+$/.test(saved.dataset.save))send('save_article',{article_slug:saved.dataset.save});

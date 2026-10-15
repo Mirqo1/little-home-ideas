@@ -1,3 +1,4 @@
+import {makeProject,bindProjects,decodeProject,layoutStorageKey} from '../public/assets/saved-layouts.js';
 import {parseGaps} from '../public/assets/screen-pieces.js';
 import {bindOpenings} from '../public/assets/wall-openings.js';
 import test from 'node:test';
@@ -14,7 +15,7 @@ function setup(){
  const w=new Window();
  w.SVGElement.prototype.getBoundingClientRect=function(){const view=this.getAttribute('viewBox')?.split(' ').map(Number);return {left:0,top:0,width:960,height:view?.[3]??740};};
  w.document.body.innerHTML=page.slice(page.indexOf('<header'),page.indexOf('<script'));
- vm.runInNewContext(source,{document:w.document,window:w,parseGaps,planLayout,sideNames,rotateFurniture,privacyScene,bindFurniture,bindOpenings,Intl,URL,Blob,setTimeout,queueMicrotask});
+ vm.runInNewContext(source,{document:w.document,window:w,makeProject,bindProjects,parseGaps,planLayout,sideNames,rotateFurniture,privacyScene,bindFurniture,bindOpenings,Intl,URL,Blob,setTimeout,queueMicrotask});
  return w;
 }
 function submit(w){w.document.getElementById('privacy-form').requestSubmit();}
@@ -303,5 +304,41 @@ test('planner analytics hooks count successful layouts, omit invalid ones, and c
   furniture(w);check(w,'plant-thuja-1');submit(w);assert.equal(events.filter(e=>e.name==='planner_start').length,1);assert.equal(events.filter(e=>e.name==='planner_complete').length,1);
   w.document.getElementById('plant-thuja-1').value='1.5';submit(w);assert.equal(events.filter(e=>e.name==='planner_complete').length,1);
   assert.ok(events.every(e=>Object.keys(e).join(',')==='name'));
+ }finally{w.happyDOM.abort();}
+});
+
+test('named project restores moved chair, window, lock, view and mixed plants after reset',()=>{
+ const w=setup();try{
+  furniture(w);w.document.getElementById('back-screen').checked=false;check(w,'back-wall');check(w,'window-1');check(w,'plant-thuja-1');check(w,'plant-leafy-1');submit(w);
+  const chair=w.document.querySelector('[data-item-id="item-0"][tabindex]');chair.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowUp',bubbles:true}));
+  const win=w.document.querySelector('[data-opening-id="window-1"][tabindex]');win.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowUp',bubbles:true}));
+  const lock=w.document.querySelector('[data-lock-id="item-0"]');lock.checked=true;lock.dispatchEvent(new w.Event('change'));
+  w.document.querySelector('[aria-label="Rotate view right"]').click();
+  w.document.getElementById('project-save').click();const saved=JSON.parse(w.localStorage.getItem(layoutStorageKey));assert.equal(saved.length,1);assert.equal(saved[0].view,90);assert.equal(saved[0].input.poses.find(i=>i.id==='item-0').y,5.75);
+  w.document.getElementById('privacy-form').reset();w.document.querySelector('[aria-label="Open My patio"]').click();
+  assert.equal(w.document.querySelector('.plan-sketch').getAttribute('data-view-angle'),'90');assert.match(w.document.querySelector('[data-item-id="item-0"][tabindex]').getAttribute('aria-label'),/1.5, 5.75 ft/);assert.equal(w.document.querySelector('[data-lock-id="item-0"]').checked,true);assert.match(w.document.querySelector('[data-opening-id="window-1"][tabindex]').getAttribute('aria-label'),/3.25 ft/);assert.equal(w.document.querySelectorAll('[data-feature="plant"]').length,2);
+ }finally{w.happyDOM.abort();}
+});
+test('saving uses last applied measurements, keeps deletions, and compares without replacing drawing',()=>{
+ const w=setup();try{
+  furniture(w);check(w,'extra-storage');submit(w);w.document.querySelector('[data-select-id="item-1"]').click();w.document.querySelector('.delete-object').click();
+  w.document.getElementById('depth').value='bad';w.document.getElementById('project-save').click();let p=JSON.parse(w.localStorage.getItem(layoutStorageKey))[0];assert.equal(p.input.depth,8);assert.ok(!p.input.poses.some(i=>i.id==='item-1'));
+  w.document.getElementById('project-name').value='Another idea';w.document.getElementById('project-save').click();assert.equal(JSON.parse(w.localStorage.getItem(layoutStorageKey)).length,2);
+  w.document.querySelector('[aria-label="Open My patio"]').click();submit(w);assert.equal(w.document.querySelector('[data-item-id="item-1"]'),null);
+  const drawing=w.document.querySelector('#results .plan-sketch').outerHTML;for(const i of w.document.querySelectorAll('[data-compare]'))i.checked=true;w.document.getElementById('project-compare').click();assert.equal(w.document.querySelectorAll('#project-comparison section').length,2);assert.equal(w.document.querySelector('#results .plan-sketch').outerHTML,drawing);
+  w.document.getElementById('project-name').value='My patio';w.document.getElementById('project-save').click();assert.match(w.document.getElementById('project-status').textContent,/already exists/);
+ }finally{w.happyDOM.abort();}
+});
+
+test('downloaded project import opens locally; invalid moved positions preserve current inputs and drawing',async()=>{
+ const w=setup();try{
+  furniture(w);check(w,'plant-leafy-1');submit(w);w.document.getElementById('project-save').click();const p=JSON.parse(w.localStorage.getItem(layoutStorageKey))[0];
+  const fileInput=w.document.getElementById('project-file');
+  const load=async data=>{const text=JSON.stringify(data);Object.defineProperty(fileInput,'files',{configurable:true,value:[{size:text.length,text:async()=>text}]});fileInput.dispatchEvent(new w.Event('change'));await new Promise(resolve=>setImmediate(resolve));};
+  w.document.getElementById('privacy-form').reset();await Promise.resolve();await load(p);
+  assert.equal(w.document.querySelectorAll('#results [data-feature="plant"]').length,1);assert.equal(w.document.getElementById('furniture').checked,true);assert.match(w.document.getElementById('project-status').textContent,/Opened.*from a file/);
+  const before=w.document.querySelector('#results .plan-sketch').outerHTML,fields=[...w.document.querySelectorAll('#privacy-form input')].map(i=>[i.id,i.value,i.checked]);
+  p.input.poses[0].x=999;await load(p);
+  assert.match(w.document.getElementById('project-status').textContent,/no longer fits/);assert.equal(w.document.querySelector('#results .plan-sketch').outerHTML,before);assert.deepEqual([...w.document.querySelectorAll('#privacy-form input')].map(i=>[i.id,i.value,i.checked]),fields);
  }finally{w.happyDOM.abort();}
 });
