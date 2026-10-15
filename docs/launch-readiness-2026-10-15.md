@@ -26,6 +26,30 @@ The owner has confirmed Websupport-to-Gmail forwarding works, initially arriving
 
 ## Live verification after PR 39
 
-PR 39 merged as `c29585a1f247897282c57dff2603637dc18fea0e`. The production contact page visibly renders the enabled form and no coming-soon notice. Desktop appearance was inspected. A native submission from the live page, explicitly marked as a setup test with reply email `info@littlehomeideas.com`, reached `https://formspree.io/thanks?language=en` and displayed “The form was submitted successfully.” Provider acceptance is verified; Gmail receipt still requires the owner's confirmation.
+PR 39 merged as `c29585a1f247897282c57dff2603637dc18fea0e`. The production contact page visibly renders the enabled form and no coming-soon notice. Desktop appearance was inspected. A native submission from the live page, explicitly marked as a setup test with reply email `info@littlehomeideas.com`, reached `https://formspree.io/thanks?language=en` and displayed “The form was submitted successfully.” Provider acceptance is verified. The owner subsequently confirmed that the contact-form test arrived in the normal Gmail inbox, not Spam.
 
 No CAPTCHA challenge appeared during this test. Do not claim CAPTCHA is enabled or disabled based only on that outcome. Its account-side setting remains unverified. The hidden `_gotcha` field is present; local required-field validation is not a substitute for provider protection. The owner should verify reCAPTCHA in the form's Spam protection settings and restrict the accepted domain to `littlehomeideas.com`.
+
+## Owner follow-up recorded October 15, 2026
+
+The owner explicitly asked to retain the unfinished launch work for a later session. Keep these open until separately verified:
+
+- [ ] Confirm the public operator identification and publish it in Privacy.
+- [ ] Agree the correspondence-retention period and deletion routine; update Privacy to match actual handling.
+- [ ] Verify Formspree CAPTCHA and accepted-domain settings in the owner's account.
+- [ ] Complete Search Console ownership verification, sitemap submission, and inspect indexing; Bing remains optional.
+- [ ] Run measured performance/accessibility checks and address material findings.
+- [ ] Inspect the previously listed GA4 account-side settings.
+- [ ] Resolve hosting suitability before monetization; no DNS, hosting, or paid changes without explicit owner approval.
+- [x] Real contact form deployed and provider acceptance tested.
+- [x] Owner confirmed contact test reached the normal Gmail inbox.
+
+### Formspree free-plan overflow
+
+Checked official documentation October 15, 2026. The current monthly allowance is 50 submissions per account. New submissions above the allowance are held in the form's Over Limit folder, without notification delivery, until manually reprocessed when quota is available. Reprocessing consumes the then-current quota. Over-limit messages follow the same retention rules as other submissions; the free plan stores 30 days of history. Formspree documents usage notices at 50%, 75%, 90%, and overflow. Do not interpret visitor success as guaranteed immediate notification delivery. This is unrelated to direct email received through Websupport forwarding.
+
+Sources:
+- https://help.formspree.io/articles/form-and-project-settings/over-limit-submissions (updated September 30, 2026)
+- https://help.formspree.io/articles/account-management/account-limits
+
+No paid upgrade is authorized. Review usage notices and the Over Limit folder if the allowance is approached.
