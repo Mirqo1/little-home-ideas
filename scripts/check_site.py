@@ -69,6 +69,13 @@ for name in ['sitemap.xml','sitemap-0.xml','sitemap-index.xml']:
   if s.path in ['/404/','/404.html','/contact/']:errors.append('Nonindexable URL in sitemap '+s.path)
 if len(list((root/'articles').glob('*/index.html')))<9:errors.append('Expected existing guide plus eight new guides')
 if 'Sitemap: https://littlehomeideas.com/sitemap-index.xml' not in (root/'robots.txt').read_text():errors.append('Robots sitemap mismatch')
+# A successful file lookup is insufficient: empty/truncated images also return HTTP 200.
+for image in root.rglob('*'):
+ if not image.is_file() or image.suffix.lower() not in {'.webp','.png','.jpg','.jpeg','.gif','.svg','.avif','.ico'}:continue
+ data=image.read_bytes();rel=image.relative_to(root).as_posix()
+ if not data:errors.append(f'{rel}: empty image file');continue
+ if image.suffix.lower()=='.webp' and (len(data)<20 or data[:4]!=b'RIFF' or data[8:12]!=b'WEBP' or int.from_bytes(data[4:8],'little')+8!=len(data)):
+  errors.append(f'{rel}: invalid or truncated WebP image')
 if errors:print('\n'.join(sorted(set(errors))));sys.exit(1)
-print(f'PASS: {len(documents)} pages; local links, fragments, image dimensions, canonicals, social metadata, Article schema, and 3 sitemap files checked.')
+print(f'PASS: {len(documents)} pages; local links, fragments, image dimensions and file integrity, canonicals, social metadata, Article schema, and 3 sitemap files checked.')
 print('Browser layout, accessibility scoring, and Core Web Vitals are not measured by this check.')
