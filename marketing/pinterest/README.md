@@ -2,9 +2,11 @@
 
 ## Ready to use
 
-18 image-only JPEG Pins, two per existing article, each showing a different complete scene. The current sources are landscape 1200 × 800; the exports retain those dimensions and the full composition. There are no borders, wordmarks, text overlays, or artificial empty areas. Pin titles, descriptions, destination URLs, boards, and alt text are separate fields in `pin-copy.csv` and `pin-copy.json`. This CSV is a copy sheet, not a claimed Pinterest bulk-import format. `suggested_day` is a relative editorial plan, not a scheduled post. No Pins or account have been published or created by this preparation.
+18 portrait image-only JPEG Pins, **1000 × 1500 pixels (2:3)**, two distinct scenes per existing article. Each scene was created directly as a full portrait composition, not cropped from a landscape source. There are no borders, wordmarks, text overlays, or artificial empty panels. Pin titles, descriptions, destination URLs, boards, and alt text are separate fields in `pin-copy.csv` and `pin-copy.json`. This CSV is a manual copy sheet, not a claimed Pinterest bulk-import format. No Pins or account have been published or created by this preparation.
 
-Reproduce the exports with `python marketing/pinterest/render-pins.py OUTPUT_DIRECTORY` (Pillow required). The JPEG conversion changes format/compression only. The contact sheet is for review, not publication. Future portrait imagery should be composed as a full portrait scene at creation rather than placing a landscape photo inside a tall text card.
+All images were produced with the built-in image_gen tool. The complete prompt set, including a targeted drain-connection correction for one scene, is in `portrait-prompts.json`. `portrait-assets.json` records dimensions, file sizes, and hashes. These scenes are editorial imagery, not evidence of independently tested projects.
+
+Reproduce exports with `python marketing/pinterest/render-pins.py SOURCE_DIRECTORY OUTPUT_DIRECTORY` (Pillow required). SOURCE_DIRECTORY can contain the original portrait PNGs or the JPEGs from the saved launch ZIP. The exporter rejects landscape input and resizes the entire portrait without cropping or padding. The contact sheet is for review, not publication.
 
 ## Profile copy (American English)
 
@@ -32,7 +34,7 @@ Start with one Pin per day in the suggested order. Publish variant two after the
 
 1. Vytvor bezplatný firemný Pinterest účet pre Little Home Ideas; prihlasovacie údaje a súhlas s podmienkami vybav vo svojom účte. Reklamnú kampaň ani platený nástroj nepotrebujeme.
 2. Nastav názov, anglický profilový text, web a logo. Použi vlastné skutočné údaje pri registrácii.
-3. V nastaveniach nájdi **Link to Pinterest → Websites → Claim** a vyber **Add HTML tag**. Rozhranie môže byť lokalizované.
+3. Otvor malú šípku pri profilovej ikonke úplne vpravo hore a vyber **Settings**. Na dodanom screenshote bolo rozbalené hlavné firemné menu vľavo, nie nastavenia účtu. V skutočných nastaveniach pokračuj vľavo cez **Link to Pinterest → Websites → Claim → Add HTML tag**. Rozhranie môže byť lokalizované.
 4. Pošli overovaciu značku `<meta name="p:domain_verify" content="...">`. Nie je to heslo. Web má pripravené centrálne pole `pinterestSiteVerification` v `src/data/measurement.json`; po vložení skutočnej hodnoty sa značka objaví v hlavičke. Značka dodaná vlastníkom bola vložená 15. októbra 2026; overenie v účte Pinterest zatiaľ nie je potvrdené. DNS sa nemení.
 5. V okne s HTML značkou klikni **Pokračovať / Continue**. V nasledujúcom kroku zadaj `https://littlehomeideas.com` a klikni **Overiť / Verify**. Ak si okno zatvoril, otvor **Nastavenia → Odkaz na Pinterest → Webové lokality → Nárokovať → Pridať značku HTML → Pokračovať**. Značku znova nevkladaj, už je nasadená. Ak je doména už medzi nárokovanými webmi, ďalšie overenie netreba. Potom vytvor nástenky a publikuj piny s údajmi z tabuľky. Súbor contact-sheet.jpg nepublikuj.
 6. Na pripravených obrázkoch a v textoch pinov nie sú ručne pridané AI popisky. Pinterest môže nezávisle pridať vlastné označenie pôvodu; tento balík neodstraňuje ani neobchádza označenia platformy. Ilustračné scény neprezentuj ako fotky otestovaných realizácií.
