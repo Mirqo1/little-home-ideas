@@ -1,10 +1,14 @@
 # Contact form and domain email — preparation, October 15, 2026
 
-## Current state
+## Current state — updated October 15, 2026
 
-The contact form is implemented but disabled in `src/data/contact.json`. This work must remain on a preparation branch until the real submission service and destination mailbox are configured and tested. No account, mailbox, forwarding rule, DNS record, paid service, or Gmail setting has been created or changed by this preparation. No test emails have been sent.
+The owner supplied the real public Formspree endpoint `https://formspree.io/f/mwlvalyq`. The contact form is now enabled in source, with a native HTTPS POST, hosted spam-check workflow, and a hidden honeypot. No private recipient address is embedded in the page or repository. Final deployment and provider acceptance checks are recorded in `docs/launch-readiness-2026-10-15.md`.
 
-The owner's personal forwarding destination was supplied in conversation. Keep that address in account-side settings only; do not add it to public repository files, form HTML, JavaScript, or screenshots. The intended public identity is `info@littlehomeideas.com`, but the contact page does not display a recipient address or a mailto link.
+Free Websupport domain catch-all forwarding was saved successfully. Existing MX records already point to `mx10.websupport.sk` and `mx20.websupport.sk`; no DNS change or purchase was needed. The owner confirmed receipt in Gmail, initially in Spam. The owner explicitly chose to reply from their personal Gmail instead of purchasing a mailbox or setting up SMTP Send as. No outgoing identity or new mailbox password is needed.
+
+The owner's private forwarding destination remains in account-side settings only. Do not add it to public repository files, form HTML, JavaScript, or public documentation. The public contact destination is `info@littlehomeideas.com`; the website provides a form rather than displaying that address.
+
+The setup alternatives below are background guidance from the initial preparation. They are not instructions to purchase or create an SMTP mailbox; the owner has explicitly rejected paid email services.
 
 ## Form architecture
 
@@ -76,4 +80,4 @@ Longer-term alternatives:
 
 Both disabled and temporarily enabled builds passed the full site audit. Verified the native HTTPS action, disabled fields when unconfigured, one H1, absence of mailto links, the active privacy anchor, conditional robots/sitemap behavior, and a failing build when enabled without a form ID. All 84 existing tests pass. Dummy configuration was restored; no form was submitted. Provider-side CAPTCHA and actual email delivery are still untested until account setup.
 
-Visual browser preview has not been completed. The Websupport administration redirects to a sign-in page; account-side services remain unverified. No claim of active CAPTCHA or delivered mail is made.
+The owner has verified domain forwarding by receiving a test message. Contact-form provider acceptance, CAPTCHA, and live appearance are separate checks; see the launch-readiness record.

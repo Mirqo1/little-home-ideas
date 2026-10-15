@@ -14,6 +14,8 @@ const endpoint = ready ? `https://formspree.io/f/${config.formspreeFormId}` : un
     <fieldset disabled={!ready}>
       <legend class="sr-only">Your contact details and message</legend>
       <input type="hidden" name="subject" value="Little Home Ideas: website message"/>
+      <input type="hidden" name="_language" value="en"/>
+      <input type="text" name="_gotcha" class="spam-trap" tabindex="-1" autocomplete="off" aria-hidden="true"/>
       <div class="contact-field-pair">
         <div><label for="contact-name">Name <span>(optional)</span></label><input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100"/></div>
         <div><label for="contact-email">Email address <span>(required)</span></label><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required/></div>
@@ -26,6 +28,7 @@ const endpoint = ready ? `https://formspree.io/f/${config.formspreeFormId}` : un
   </form>
 </div>
 <style>
+  .spam-trap{display:none}
   .contact-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(24px,4vw,48px)}
   h2{font-size:32px;margin-bottom:18px}.contact-card>p{color:var(--muted);max-width:660px}
   fieldset{border:0;padding:0;margin:0;min-width:0}.contact-field-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
