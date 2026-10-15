@@ -1,6 +1,6 @@
 # Next editorial batch — October 15, 2026
 
-Status: three complete, editorially reviewed American-English drafts, not scheduled or published. They are stored in the normal Astro article collection with `draft: true` so the publication filter excludes them from pages, cards, related links, and sitemap. `date` currently records draft preparation; set it to the actual publication date when each article is released. Do not backdate or set an invented future release date.
+Current status: the outdoor cushion storage guide was released October 15, 2026 at the owner’s request. The closet and furniture-delivery guides remain reviewed drafts (`draft: true`), excluded from public routes, cards, related links, and sitemaps. They have no automatic release schedule. Their dates currently record draft preparation; set each to its actual publication date on release. Do not backdate or invent release dates.
 
 ## Prehľad po slovensky
 
@@ -41,3 +41,7 @@ Next tool: see `tile-planner-brief.md`. The tile planner is specified but not im
 - Final public build: 24 pages; all three draft URLs absent from output and sitemap. Generated root export refreshed for CI parity.
 - All nine optimized WebP files fully decoded; six unique source scenes, three responsive cover derivatives; total 913,478 bytes. An empty export caught by the integrity audit was replaced before the successful rerun.
 - Existing 84 automated tests pass. No new browser/mobile layout or Core Web Vitals measurements were performed for this content-only draft batch.
+
+## First release — October 15, 2026
+
+Published `store-outdoor-cushions-small-home` with the actual publication date October 15, 2026. Added a contextual inbound link from the existing patio layout guide. Replaced the homepage’s fixed three-article selection with the three newest published articles. Collection queries include the new article on the homepage, archive, category page, related cards, and sitemap. The other two drafts remain unpublished and unscheduled. The earlier validation section records the pre-release draft state.

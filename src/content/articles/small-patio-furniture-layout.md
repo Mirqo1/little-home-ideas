@@ -57,6 +57,6 @@ Keep containers away from routes where they can become trip hazards. Follow plan
 
 ## Make a short buying list
 
-Once the layout works, record the maximum usable footprints, required weather suitability, and available storage for cushions or foldable items. These are buying constraints, not decoration preferences. Compare products against them before choosing a color or finish.
+Once the layout works, record the maximum usable footprints, required weather suitability, and available storage for cushions or foldable items. For the off-season, our [outdoor cushion storage guide](/articles/store-outdoor-cushions-small-home/) helps you measure the set and compare storage options. These are buying constraints, not decoration preferences. Compare products against them before choosing a color or finish.
 
 Begin with the minimum furniture for the main activity. Use the patio and adjust. A practical layout usually benefits more from a clear route and a comfortable seat than from an additional piece squeezed into the remaining corner.
