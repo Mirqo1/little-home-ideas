@@ -2,9 +2,9 @@
 
 ## Ready to use
 
-18 portrait JPEG Pins, 1000 × 1500 (2:3), two per existing article. Each uses a different original AI-generated article image, kept complete rather than cropped. Headlines, short copy, destination URLs, boards, and alt text are in `pin-copy.csv` and `pin-copy.json`. This CSV is a copy sheet, not a claimed Pinterest bulk-import format. `suggested_day` is a relative editorial plan, not a scheduled post. No Pins or account have been published or created by this preparation.
+18 image-only JPEG Pins, two per existing article, each showing a different complete scene. The current sources are landscape 1200 × 800; the exports retain those dimensions and the full composition. There are no borders, wordmarks, text overlays, or artificial empty areas. Pin titles, descriptions, destination URLs, boards, and alt text are separate fields in `pin-copy.csv` and `pin-copy.json`. This CSV is a copy sheet, not a claimed Pinterest bulk-import format. `suggested_day` is a relative editorial plan, not a scheduled post. No Pins or account have been published or created by this preparation.
 
-Reproduce the artwork with `python marketing/pinterest/render-pins.py OUTPUT_DIRECTORY` (Pillow and Inkscape required). These are precise vector typography layouts around existing images, not newly generated photos. The user-facing launch bundle contains ready-to-upload JPEGs. The contact sheet is for review, not publication.
+Reproduce the exports with `python marketing/pinterest/render-pins.py OUTPUT_DIRECTORY` (Pillow required). The JPEG conversion changes format/compression only. The contact sheet is for review, not publication. Future portrait imagery should be composed as a full portrait scene at creation rather than placing a landscape photo inside a tall text card.
 
 ## Profile copy (American English)
 
@@ -34,7 +34,7 @@ Start with one Pin per day in the suggested order. Publish variant two after the
 2. Nastav názov, anglický profilový text, web a logo. Použi vlastné skutočné údaje pri registrácii.
 3. V nastaveniach nájdi **Link to Pinterest → Websites → Claim** a vyber **Add HTML tag**. Rozhranie môže byť lokalizované.
 4. Pošli overovaciu značku `<meta name="p:domain_verify" content="...">`. Nie je to heslo. Web má pripravené centrálne pole `pinterestSiteVerification` v `src/data/measurement.json`; po vložení skutočnej hodnoty sa značka objaví v hlavičke. Značka dodaná vlastníkom bola vložená 15. októbra 2026; overenie v účte Pinterest zatiaľ nie je potvrdené. DNS sa nemení.
-5. Po nasadení značky dokonči **Verify** v Pintereste. Potom vytvor nástenky a publikuj pripravené piny s príslušnými odkazmi z tabuľky. Súbor contact-sheet.jpg nepublikuj.
+5. V okne s HTML značkou klikni **Pokračovať / Continue**. V nasledujúcom kroku zadaj `https://littlehomeideas.com` a klikni **Overiť / Verify**. Ak si okno zatvoril, otvor **Nastavenia → Odkaz na Pinterest → Webové lokality → Nárokovať → Pridať značku HTML → Pokračovať**. Značku znova nevkladaj, už je nasadená. Ak je doména už medzi nárokovanými webmi, ďalšie overenie netreba. Potom vytvor nástenky a publikuj piny s údajmi z tabuľky. Súbor contact-sheet.jpg nepublikuj.
 6. Na pripravených obrázkoch a v textoch pinov nie sú ručne pridané AI popisky. Pinterest môže nezávisle pridať vlastné označenie pôvodu; tento balík neodstraňuje ani neobchádza označenia platformy. Ilustračné scény neprezentuj ako fotky otestovaných realizácií.
 
 ## Website and measurement
