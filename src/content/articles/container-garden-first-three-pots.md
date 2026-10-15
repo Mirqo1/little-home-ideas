@@ -8,7 +8,7 @@ imageAlt: "Three separate containers with an herb, flowers, and a leafy edible p
 imageSmall: "/assets/articles/container-garden-cover-600.webp"
 imageWidth: 1200
 imageHeight: 800
-imageCaption: "AI-generated editorial image; not a photographed project."
+imageCaption: "AI-generated illustration."
 updated: "2026-10-15"
 reviewed: true
 draft: false

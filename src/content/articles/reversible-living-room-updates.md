@@ -8,7 +8,7 @@ imageAlt: "A compact living room with a cream sofa, rust throw, low rug, and an 
 imageSmall: "/assets/articles/living-room-cover-600.webp"
 imageWidth: 1200
 imageHeight: 800
-imageCaption: "AI-generated editorial image; not a photographed project."
+imageCaption: "AI-generated illustration."
 updated: "2026-10-15"
 reviewed: true
 draft: false

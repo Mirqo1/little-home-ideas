@@ -8,7 +8,7 @@ imageAlt: "Fine condensation near the lower inside edge of a bedroom window with
 imageSmall: "/assets/articles/window-condensation-cover-600.webp"
 imageWidth: 1200
 imageHeight: 800
-imageCaption: "AI-generated editorial image; not a photographed project."
+imageCaption: "AI-generated illustration."
 updated: "2026-10-15"
 reviewed: true
 draft: false
