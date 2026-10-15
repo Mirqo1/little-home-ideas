@@ -217,6 +217,7 @@ form.addEventListener('submit',e=>{
 form.addEventListener('reset',()=>{quantities.clear();nextIds.clear();deletedBase.clear();lockedIds.clear();sceneView=0;document.getElementById('furniture').indeterminate=false;lastPlan=null;lastAppliedInput=null;lastAppliedFields=null;lastSignature=null;ignoreSavedPositions=false;ignoreOpeningPositions=false;notice('');stateNote.hidden=true;const products=document.getElementById('product-details');if(products.open){ignoreProductToggle=true;products.open=false;}out.innerHTML=empty;for(const i of decimalInputs){i.setCustomValidity('');if(i.id.endsWith('-wall-length'))i.dataset.auto='true';}queueMicrotask(syncFields);});
 
 function projectSnapshot(name){
+ if(typeof name!=='string'||!name.trim()||name.trim().length>60)throw Error('Give this layout a name of 1–60 characters.');
  if(!lastPlan||!lastAppliedInput)throw Error('Choose Show my layout before saving. Your last valid drawing is what gets saved.');
  const p=lastPlan,fields=JSON.parse(JSON.stringify(lastAppliedFields)),input=JSON.parse(JSON.stringify(lastAppliedInput)),ids={};
  for(const i of form.querySelectorAll('[data-extra],[data-plant]')){ids[i.id]=p.items.filter(a=>a.sourceKey===i.id).map(a=>a.id);fields[i.id].value=String(ids[i.id].length);}
