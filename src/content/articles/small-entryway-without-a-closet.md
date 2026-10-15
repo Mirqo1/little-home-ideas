@@ -8,11 +8,12 @@ imageAlt: "A compact entryway with a shallow shoe tray and a key bowl beside a c
 imageSmall: "/assets/articles/entryway-cover-600.webp"
 imageWidth: 1200
 imageHeight: 800
-imageCaption: "AI-generated illustration."
+imageCaption: ""
+imageProvenance: "generated"
 updated: "2026-10-15"
 reviewed: true
 draft: false
-sources: [{"title": "CPSC: Anchor It furniture safety", "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/AnchorItgov"}]
+sources: [{"title": "CPSC: Get On Top of It Before They Do! — furniture anchoring guide (PDF)", "url": "https://www.cpsc.gov/s3fs-public/GetOnTopofItBeforeTheyDoPub250_05-2019en.pdf", "note": "Anchor furniture using suitable anti-tip hardware and the maker's directions."}]
 ---
 
 A small entryway does not need to hold everything you own. It needs to handle what arrives and leaves each day. Start with shoes, keys, and one everyday bag, then give the overflow a different home.

@@ -8,7 +8,8 @@ imageAlt: "Compact outdoor chairs and a table beside a clear route from a slidin
 imageSmall: "/assets/articles/patio-layout-cover-600.webp"
 imageWidth: 1200
 imageHeight: 800
-imageCaption: "AI-generated illustration."
+imageCaption: ""
+imageProvenance: "generated"
 updated: "2026-10-15"
 reviewed: true
 draft: false

@@ -8,11 +8,12 @@ imageAlt: "An open kitchen drawer with separate zones for long utensils, measuri
 imageSmall: "/assets/articles/kitchen-drawers-cover-600.webp"
 imageWidth: 1200
 imageHeight: 800
-imageCaption: "AI-generated illustration."
+imageCaption: ""
+imageProvenance: "generated"
 updated: "2026-10-15"
 reviewed: true
 draft: false
-sources: [{"title": "CPSC: Anchor It furniture and television safety", "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/AnchorItgov"}]
+sources: [{"title": "CPSC: Get On Top of It Before They Do! — furniture anchoring guide (PDF)", "url": "https://www.cpsc.gov/s3fs-public/GetOnTopofItBeforeTheyDoPub250_05-2019en.pdf", "note": "Furniture anchoring if a separate storage unit is added; not evidence for the proposed drawer layout."}]
 ---
 
 A crowded drawer is often a sorting problem before it is a shopping problem. Start with the utensils you reach for most often and build the layout around those. The goal is to make cooking easier, not to fill every inch with matching bins.

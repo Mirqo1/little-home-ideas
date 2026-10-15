@@ -47,7 +47,7 @@ for slug,board,titles,notes in rows:
    svg+=f'<rect x="40" y="150" width="920" height="614" fill="#fffdf8"/><image xlink:href="{data}" x="40" y="150" width="920" height="614" preserveAspectRatio="xMidYMid meet"/>'
    svg+=text_lines(titles[v],60,880,width=24,size=67)
    svg+=text_lines(notes[v],60,1150,width=43,size=34,font='DejaVu Sans')
-  svg+='<rect x="60" y="1290" width="400" height="76" rx="6" fill="#294b3c"/><text x="90" y="1339" font-family="DejaVu Sans" font-size="28" fill="white">READ THE GUIDE →</text><text x="60" y="1437" font-family="DejaVu Sans" font-size="26" fill="#294b3c">littlehomeideas.com</text><text x="940" y="1437" text-anchor="end" font-family="DejaVu Sans" font-size="20" fill="#62715f">AI-generated illustration</text></svg>'
+  svg+='<rect x="60" y="1290" width="400" height="76" rx="6" fill="#294b3c"/><text x="90" y="1339" font-family="DejaVu Sans" font-size="28" fill="white">READ THE GUIDE →</text><text x="60" y="1437" font-family="DejaVu Sans" font-size="26" fill="#294b3c">littlehomeideas.com</text></svg>'
   name=f'{slug}-{v+1:02d}'
   temp=out/f'{name}.svg';temp.write_text(svg)
   png=out/f'{name}.png'
@@ -56,7 +56,7 @@ for slug,board,titles,notes in rows:
    assert im.size==(1000,1500)
    im.convert('RGB').save(out/f'{name}.jpg',quality=90,optimize=True,exif=Image.Exif())
   png.unlink();temp.unlink()
-  manifest.append(dict(pin_id=name,image_file=f'{name}.jpg',title=titles[v],description=f'{notes[v]} {desc} Read the full guide at Little Home Ideas. Image: AI-generated illustration; not a photographed project.',link=f'https://littlehomeideas.com/articles/{slug}/',board=board,alt_text=f'{cover_alt if v==0 else detail_alt} AI-generated illustration. Text: {titles[v]}'))
+  manifest.append(dict(pin_id=name,image_file=f'{name}.jpg',title=titles[v],description=f'{notes[v]} {desc} Read the full guide at Little Home Ideas.',link=f'https://littlehomeideas.com/articles/{slug}/',board=board,alt_text=f'{cover_alt if v==0 else detail_alt} Text: {titles[v]}'))
 # Alternate topics across the first nine days; the second variant follows later.
 manifest=manifest[::2]+manifest[1::2]
 for i,row in enumerate(manifest):row['suggested_day']=i+1

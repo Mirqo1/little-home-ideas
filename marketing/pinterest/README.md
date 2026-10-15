@@ -33,13 +33,13 @@ Start with one Pin per day in the suggested order. Publish variant two after the
 1. Vytvor bezplatný firemný Pinterest účet pre Little Home Ideas; prihlasovacie údaje a súhlas s podmienkami vybav vo svojom účte. Reklamnú kampaň ani platený nástroj nepotrebujeme.
 2. Nastav názov, anglický profilový text, web a logo. Použi vlastné skutočné údaje pri registrácii.
 3. V nastaveniach nájdi **Link to Pinterest → Websites → Claim** a vyber **Add HTML tag**. Rozhranie môže byť lokalizované.
-4. Pošli overovaciu značku `<meta name="p:domain_verify" content="...">`. Nie je to heslo. Web má pripravené centrálne pole `pinterestSiteVerification` v `src/data/measurement.json`; po vložení skutočnej hodnoty sa značka objaví v hlavičke. Teraz je pole prázdne a overenie nie je dokončené. DNS sa nemení.
+4. Pošli overovaciu značku `<meta name="p:domain_verify" content="...">`. Nie je to heslo. Web má pripravené centrálne pole `pinterestSiteVerification` v `src/data/measurement.json`; po vložení skutočnej hodnoty sa značka objaví v hlavičke. Značka dodaná vlastníkom bola vložená 15. októbra 2026; overenie v účte Pinterest zatiaľ nie je potvrdené. DNS sa nemení.
 5. Po nasadení značky dokonči **Verify** v Pintereste. Potom vytvor nástenky a publikuj pripravené piny s príslušnými odkazmi z tabuľky. Súbor contact-sheet.jpg nepublikuj.
-6. Pri AI obrázkoch používaj dostupné označenie pôvodu. Pinterest môže pridať vlastné označenie AI; neodstraňuj ho ani sa ho nesnaž obísť. Ide o ilustrácie, nie fotky otestovaných realizácií.
+6. Na pripravených obrázkoch a v textoch pinov nie sú ručne pridané AI popisky. Pinterest môže nezávisle pridať vlastné označenie pôvodu; tento balík neodstraňuje ani neobchádza označenia platformy. Ilustračné scény neprezentuj ako fotky otestovaných realizácií.
 
 ## Website and measurement
 
-The article pages contain Article schema and Open Graph article metadata. This supplies article data used by rich Pins; it is not proof that Pinterest has crawled or accepted the site. No Pinterest tag, pixel, advertising script, or third-party widget was installed. Verification requires the owner's real token. GA4 remains subject to each visitor's consent. Pin links are plain canonical article URLs; Pinterest's own outbound-click analytics and GA4 referral reports can be reviewed after traffic exists. No Pinterest account analytics, audience, or performance is invented.
+The article pages contain Article schema and Open Graph article metadata. This supplies article data used by rich Pins; it is not proof that Pinterest has crawled or accepted the site. No Pinterest tag, pixel, advertising script, or third-party widget was installed. The owner-supplied verification tag is deployed; the owner still needs to click Verify in Pinterest. GA4 remains subject to each visitor's consent. Pin links are plain canonical article URLs; Pinterest's own outbound-click analytics and GA4 referral reports can be reviewed after traffic exists. No Pinterest account analytics, audience, or performance is invented.
 
 ## Official references, checked October 15, 2026
 

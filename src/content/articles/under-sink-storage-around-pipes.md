@@ -8,11 +8,12 @@ imageAlt: "Removable bins in an open under-sink cabinet with clear access to the
 imageSmall: "/assets/articles/under-sink-cover-600.webp"
 imageWidth: 1200
 imageHeight: 800
-imageCaption: "AI-generated illustration."
+imageCaption: ""
+imageProvenance: "generated"
 updated: "2026-10-15"
 reviewed: true
 draft: false
-sources: [{"title": "EPA: A brief guide to mold, moisture, and your home", "url": "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home"}]
+sources: [{"title": "EPA: A brief guide to mold, moisture, and your home", "url": "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home", "note": "Fix moisture sources rather than hiding dampness or recurring damage."}, {"title": "EPA: Household Hazardous Waste — safe handling and storage", "url": "https://www.epa.gov/hw/household-hazardous-waste-hhw", "note": "Keep hazardous products in their original labeled containers and do not mix leftovers."}]
 ---
 
 The most useful under-sink organizer is the one you can remove quickly. Plumbing, shutoff valves, and the underside of the basin make this cabinet different from an ordinary shelf. Start by mapping those obstacles, then decide what actually belongs here.

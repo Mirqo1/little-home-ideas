@@ -8,11 +8,12 @@ imageAlt: "A small removable adhesive hook holding a lightweight linen tote on a
 imageSmall: "/assets/articles/removable-hooks-cover-600.webp"
 imageWidth: 1200
 imageHeight: 800
-imageCaption: "AI-generated illustration."
+imageCaption: ""
+imageProvenance: "generated"
 updated: "2026-10-15"
 reviewed: true
 draft: false
-sources: [{"title": "Command U.S.: Frequently asked questions and product instructions", "url": "https://www.command.com/3M/en_US/command/contact-us/faqs/"}, {"title": "CPSC: Anchor It furniture safety", "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/AnchorItgov"}]
+sources: [{"title": "Command U.S.: Frequently asked questions and product instructions", "url": "https://www.command.com/3M/en_US/command/contact-us/faqs/", "note": "Surface suitability, product weight limits, preparation, and downward stretch-release removal."}, {"title": "CPSC: Get On Top of It Before They Do! — furniture anchoring guide (PDF)", "url": "https://www.cpsc.gov/s3fs-public/GetOnTopofItBeforeTheyDoPub250_05-2019en.pdf", "note": "Furniture anti-tip hardware; adhesive hooks are not presented as a substitute for a required anchor."}]
 ---
 
 A removable hook is a product with specific instructions, not a universal alternative to drilling. Its suitability depends on the surface, the item, and how it is installed and removed. Start with those checks before planning a wall display.

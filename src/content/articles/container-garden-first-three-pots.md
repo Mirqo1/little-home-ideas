@@ -8,11 +8,12 @@ imageAlt: "Three separate containers with an herb, flowers, and a leafy edible p
 imageSmall: "/assets/articles/container-garden-cover-600.webp"
 imageWidth: 1200
 imageHeight: 800
-imageCaption: "AI-generated illustration."
+imageCaption: ""
+imageProvenance: "generated"
 updated: "2026-10-15"
 reviewed: true
 draft: false
-sources: [{"title": "University of Maryland Extension: Growing vegetables in containers and salad tables", "url": "https://extension.umd.edu/resource/growing-vegetables-containers-and-salad-tables"}]
+sources: [{"title": "University of Maryland Extension: Growing vegetables in containers and salad tables", "url": "https://extension.umd.edu/resource/growing-vegetables-containers-and-salad-tables", "note": "Container drainage, growing media, container weight, and matching plants to conditions."}]
 ---
 
 Three pots can be a manageable starting experiment, but the number is an editorial suggestion rather than a gardening rule. The useful starting point is a space you can observe, water, and maintain. Choose the plants after you understand that space.

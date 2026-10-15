@@ -8,11 +8,12 @@ imageAlt: "A compact living room with a cream sofa, rust throw, low rug, and an 
 imageSmall: "/assets/articles/living-room-cover-600.webp"
 imageWidth: 1200
 imageHeight: 800
-imageCaption: "AI-generated illustration."
+imageCaption: ""
+imageProvenance: "generated"
 updated: "2026-10-15"
 reviewed: true
 draft: false
-sources: [{"title": "CPSC: Anchor It furniture safety", "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/AnchorItgov"}]
+sources: [{"title": "CPSC: Get On Top of It Before They Do! — furniture anchoring guide (PDF)", "url": "https://www.cpsc.gov/s3fs-public/GetOnTopofItBeforeTheyDoPub250_05-2019en.pdf", "note": "Follow the particular anti-tip device and furniture manufacturer instructions."}]
 ---
 
 A living room refresh can begin with how the room works rather than what it lacks. Move one piece, simplify one surface, and notice the difference. A reversible update is most useful when it improves a real everyday problem.

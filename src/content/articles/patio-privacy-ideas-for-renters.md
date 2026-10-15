@@ -8,7 +8,8 @@ imageAlt: "A small patio seating area beside a freestanding slatted screen and p
 imageSmall: "/assets/articles/patio-privacy-cover-600.webp"
 imageWidth: 1200
 imageHeight: 800
-imageCaption: "AI-generated illustration."
+imageCaption: ""
+imageProvenance: "generated"
 updated: "2026-10-15"
 reviewed: true
 draft: false
