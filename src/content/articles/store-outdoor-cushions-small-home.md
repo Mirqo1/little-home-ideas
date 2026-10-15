@@ -11,7 +11,7 @@ imageHeight: 800
 imageCaption: ""
 imageProvenance: "generated"
 reviewed: true
-draft: true
+draft: false
 sources:
   - title: "Sunbrella: How to Clean Sunbrella Upholstery Fabric"
     url: "https://www.sunbrella.com/clean-sunbrella-upholstery"

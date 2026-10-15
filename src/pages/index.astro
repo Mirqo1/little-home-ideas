@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import Card from '../components/Card.astro';
 import {publishedArticles} from '../data/articles';
 const articles=await publishedArticles();
-const featured=['organize-small-kitchen-drawers','small-patio-furniture-layout','reversible-living-room-updates'].map(id=>articles.find(a=>a.id===id)).filter(Boolean);
+const featured=articles.slice(0,3);
 const topics=[
  {href:'/small-spaces/',label:'Small spaces',text:'Less clutter. More room to live.',image:'/assets/editorial-kitchen.webp',alt:'Illustrative neatly organized wooden kitchen drawer.'},
  {href:'/garden-patio/',label:'Garden & patio',text:'Make your little outdoors feel bigger.',image:'/assets/editorial-patio.webp',alt:'Illustrative garden patio with two chairs and leafy plants.'},
