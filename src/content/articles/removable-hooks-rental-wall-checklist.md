@@ -8,7 +8,7 @@ imageAlt: "A small removable adhesive hook holding a lightweight linen tote on a
 imageSmall: "/assets/articles/removable-hooks-cover-600.webp"
 imageWidth: 1200
 imageHeight: 800
-imageCaption: "AI-generated editorial image; not a photographed project."
+imageCaption: "AI-generated illustration."
 updated: "2026-10-15"
 reviewed: true
 draft: false
