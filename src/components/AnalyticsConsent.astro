@@ -1,0 +1,9 @@
+---
+const {measurementId}=Astro.props;
+---
+<section id="analytics-consent" class="analytics-consent" data-measurement-id={measurementId} aria-labelledby="analytics-consent-title" hidden>
+  <div><h2 id="analytics-consent-title">Your analytics choice</h2><p>May we use Google Analytics cookies to understand which guides and tools are useful? Analytics is optional. Your planner measurements and search text are not included in our custom events. <a href="/privacy/">Privacy information</a></p></div>
+  <div class="analytics-consent-actions"><button type="button" data-analytics-choice="granted">Allow analytics</button><button type="button" data-analytics-choice="denied">Reject analytics</button><button type="button" data-analytics-close hidden>Keep current choice</button></div>
+</section>
+<p id="analytics-consent-status" class="sr-only" role="status" aria-live="polite"></p>
+<script is:inline defer src="/assets/analytics.js?v=20261015"></script>

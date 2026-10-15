@@ -4,6 +4,9 @@ import {privacyScene} from './privacy-scene.js?v=print-final-20261014';
 import {planLayout,sideNames,rotateFurniture} from './layout-plan.js?v=print-final-20261014';
 import {bindFurniture} from './furniture-controls.js?v=print-final-20261014';
 const form=document.getElementById('privacy-form'),out=document.getElementById('results'),message=document.getElementById('planner-message'),stateNote=document.getElementById('planner-state-note');
+const plannerEvent=name=>document.dispatchEvent(new window.CustomEvent('lhi:analytics',{detail:{name}}));
+let plannerStarted=false;const markPlannerStarted=()=>{if(!plannerStarted){plannerStarted=true;plannerEvent('planner_start');}};
+form.addEventListener('input',markPlannerStarted);form.addEventListener('change',markPlannerStarted);
 const decimalInputs=[...form.querySelectorAll('input[inputmode="decimal"]')],rows=[...form.querySelectorAll('.boundary-row')];
 const dollars=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(v);
 const value=id=>document.getElementById(id).value;
@@ -198,7 +201,7 @@ function render(p){
  reportTable('Doors & windows',['Opening / side','Size','Position along wall','Bottom above floor'],p.openings.map(i=>[i.label+' / '+sideNames[i.side],i.width+' × '+i.height+' ft',i.start+' ft',i.bottom+' ft']));
  if(p.estimatePanels)report.append(el('p',p.summary,'small'));if(p.total!==null)report.append(el('p','Entered cost estimate: '+dollars(p.total)+' ('+p.modules+' panels × '+dollars(p.modulePrice)+' + '+dollars(p.extraCost)+').','small'));report.append(el('p',reminder,'small'));out.append(report);
  const actions=el('div',undefined,'plan-actions'),save=el('button','Save worksheet','button'),print=el('button','Print plan','button secondary');
- save.type=print.type='button';save.addEventListener('click',()=>download(p));print.addEventListener('click',()=>window.print());actions.append(save,print);out.append(actions);
+ save.type=print.type='button';save.addEventListener('click',()=>{plannerEvent('planner_save');download(p);});print.addEventListener('click',()=>{plannerEvent('planner_print');window.print();});actions.append(save,print);out.append(actions);
 }
 form.addEventListener('submit',e=>{
  e.preventDefault();if(!validate()){message.scrollIntoView?.({behavior:'smooth',block:'center'});return;}const raw=read(),key=signature(raw);if(lastPlan&&!ignoreSavedPositions)raw.poses=lastPlan.items;
@@ -206,6 +209,6 @@ form.addEventListener('submit',e=>{
  if(lastPlan&&!ignoreOpeningPositions)raw.openingPoses=lastPlan.openings;ignoreOpeningPositions=false;
  const p=planLayout(raw);
  if(p.error){notice(p.error,false,p.field,p.action);message.scrollIntoView?.({behavior:'smooth',block:'center'});return;}
- lastPlan=p;lastSignature=key;notice('');render(p);stateNote.hidden=false;stateNote.textContent='Layout updated. The drawing matches your current settings.';document.getElementById('layout-result').scrollIntoView?.({behavior:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+ lastPlan=p;lastSignature=key;notice('');render(p);plannerEvent('planner_complete');stateNote.hidden=false;stateNote.textContent='Layout updated. The drawing matches your current settings.';document.getElementById('layout-result').scrollIntoView?.({behavior:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
 });
 form.addEventListener('reset',()=>{quantities.clear();nextIds.clear();deletedBase.clear();lockedIds.clear();sceneView=0;document.getElementById('furniture').indeterminate=false;lastPlan=null;lastSignature=null;ignoreSavedPositions=false;ignoreOpeningPositions=false;notice('');stateNote.hidden=true;const products=document.getElementById('product-details');if(products.open){ignoreProductToggle=true;products.open=false;}out.innerHTML=empty;for(const i of decimalInputs){i.setCustomValidity('');if(i.id.endsWith('-wall-length'))i.dataset.auto='true';}queueMicrotask(syncFields);});

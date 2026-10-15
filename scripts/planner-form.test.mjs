@@ -296,3 +296,12 @@ test('print report reflects the current layout, excludes a deleted piece, and su
   assert.equal(w.document.getElementById('planner-message').hidden,true);
  }finally{w.happyDOM.abort();}
 });
+
+test('planner analytics hooks count successful layouts, omit invalid ones, and carry no answers',()=>{
+ const w=setup();try{
+  const events=[];w.document.addEventListener('lhi:analytics',e=>events.push(e.detail));
+  furniture(w);check(w,'plant-thuja-1');submit(w);assert.equal(events.filter(e=>e.name==='planner_start').length,1);assert.equal(events.filter(e=>e.name==='planner_complete').length,1);
+  w.document.getElementById('plant-thuja-1').value='1.5';submit(w);assert.equal(events.filter(e=>e.name==='planner_complete').length,1);
+  assert.ok(events.every(e=>Object.keys(e).join(',')==='name'));
+ }finally{w.happyDOM.abort();}
+});

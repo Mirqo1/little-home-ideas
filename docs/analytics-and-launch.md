@@ -8,32 +8,54 @@ After the chosen verification method succeeds, submit `https://littlehomeideas.c
 
 Official reference: https://support.google.com/webmasters/answer/9008080
 
-## GA4: integration design, disabled
+## GA4: implemented, disabled until real owner configuration
 
-No GA4, GTM, advertising, consent-management, or third-party tracking script is inserted. An account/stream and actual measurement ID have not been supplied. Preparation in this PR is a concrete integration and measurement plan, not an activated or implemented tracker.
+The deployment contains a consent controller and optional shared component. `src/data/measurement.json` has `analyticsEnabled: false` and empty account IDs. No Google tag, consent banner, or analytics controller is loaded into generated pages while disabled. GA4 and Search Console accounts have not been created or verified by this change. No property or token is invented.
 
-Before activation:
-1. Supply the operator identity, working contact channel, final privacy notice, and the actual GA4 web-stream ID.
-2. Select and configure an appropriate consent solution and explicitly approve activation.
-3. Implement basic consent mode: do not request the Google tag before analytics consent. Initialize analytics and advertising consent states as denied; allow analytics only after the visitor's applicable choice. Keep ad storage, ad user data, and ad personalization denied for an analytics-only configuration.
-4. Provide a persistent, accessible way to change and withdraw consent. Consent mode itself does not store visitor choices.
-5. Validate both denied and granted paths in the browser network panel, consent tooling, and GA4 DebugView. Check that refusing consent causes no analytics requests or analytics cookies under the chosen basic implementation.
-6. Keep configuration in one shared component. Do not distribute snippets across articles or add an unconfigured container.
+### Owner setup and activation
 
-Official reference: https://developers.google.com/tag-platform/security/guides/consent
+1. In Google Analytics, create a separate GA4 property named Little Home Ideas and a Web data stream for `https://littlehomeideas.com`. Do not reuse a stream belonging to another business. Copy its real `G-...` measurement ID.
+2. Disable Enhanced Measurement for that stream before activation. This integration sends its own page views and explicit events; automatic form interactions/site search could otherwise collect extra fields or duplicate events. Keep Google Signals and advertising features off.
+3. Supply the public operator identity and contact information and finalize the privacy page before activating collection. Explain Google Analytics, analytics cookies, the 180-day local preference, withdrawal, and the information processed by Google. The current privacy page correctly describes the inactive deployment and must be updated for activation.
+4. Put the actual ID into `ga4MeasurementId`, explicitly set `analyticsEnabled: true`, update the privacy page, rebuild and deploy through a PR. IDs and verification tokens are public website configuration, not API keys. The build rejects activation with a malformed or missing ID.
+5. Verify reject, grant, saved choice, and withdrawal paths in a browser. Before opt-in there must be no Google analytics script/request. After opt-in confirm Realtime/DebugView events in the real property. This final live-account validation remains outstanding until an actual stream exists.
+6. Exclude the owner's test traffic using the property’s supported internal-traffic settings after checking the definition. Do not filter all Slovak traffic indiscriminately. Review U.S. traffic as a report segment.
 
-## Measurement specification
+### Consent behavior
 
-| Measure | Source / proposed event | What to include |
+- Both allow and reject are visible; footer **Analytics choices** reopens the controls.
+- Basic consent mode blocks the Google library until opt-in. Advertising storage, advertising user data, and advertising personalization remain denied.
+- The visitor's choice is stored locally with a 180-day expiry. Blocked storage is handled without breaking the site; the preference then lasts only for the current page.
+- Withdrawing consent disables GA4, removes accessible `_ga` cookies, and reloads the page to unload the previously allowed Google script and timers. Another tab’s changed choice is handled too.
+- Custom events are dropped before consent; old planner interactions are not replayed after a later grant.
+- Our event payloads exclude planner answers, search text, email addresses, and page URL query strings/fragments. Configure the real stream as described above; this is not a claim that Google processes no technical identifiers after consent.
+- This lightweight consent interface is for the current analytics-only setup. Advertising/CMP requirements must be assessed before introducing an ad network; no advertising approval or certified-CMP claim is made here.
+
+Official implementation reference: https://developers.google.com/tag-platform/security/guides/consent?consentmode=basic
+
+## Search engines
+
+Existing `GSC_VERIFICATION` environment support is retained. Prefer the reproducible `googleSiteVerification` field in `src/data/measurement.json` for this repository’s generated-root publishing workflow. The optional `bingSiteVerification` field inserts Bing's `msvalidate.01` meta tag when supplied.
+
+For Search Console, create a URL-prefix property for exactly `https://littlehomeideas.com/`, select HTML-tag verification, and provide only the `content` token from the actual Google tag. Deploy it, then complete verification in the owner's account and submit `https://littlehomeideas.com/sitemap-index.xml`. This path does not change DNS. Verification is independent of visitor analytics consent.
+
+Bing Webmaster Tools is an optional next step after Google setup. No Bing account has been created or verified. Sitemap generation and robots declarations are already active.
+
+## Implemented measurement specification
+
+| Measure | Event / source | Data |
 |---|---|---|
-| Discovery | Search Console | Impressions, clicks, CTR, query and page; U.S. segment |
-| Article consumption | GA4 page_view / configured scroll | Page path, article category; no personal or form data |
-| Tool interest | `planner_start` | Tool name only; first deliberate interaction |
-| Tool completion | `planner_complete` | Tool name and success; no submitted answers |
-| Next useful step | `related_article_click` | Source and destination article paths |
-| Affiliate interest, later | `affiliate_click` | Approved partner and destination host; disclosed links |
+| Discovery | Search Console | Impressions, clicks, CTR, query and page; use a U.S. segment |
+| Page visit | `page_view` | Title and canonical-style origin/path, once per consented page |
+| Article progress | `article_scroll` | 50 or 90 percent; not proof the article was read |
+| Open guide | `select_content` | Destination article path |
+| Save guide | `save_article` | Published article slug |
+| Start tool | `planner_start` | First input/change; tool name only |
+| Complete layout | `planner_complete` | Successful submission only; tool name only |
+| Save worksheet | `planner_save` | Save action, not confirmation of a finished download |
+| Print layout | `planner_print` | Print-dialog action, not proof of physical printing |
 
-Do not interpret scroll as reading or affiliate clicks as sales. Measure actual commission reports separately if a program is activated. Evaluate articles after enough time for indexing and meaningful data; compare 28-day periods and note seasonal differences. Use Search Console without adding a website tracking script while GA4 remains disabled.
+Mark `planner_complete` as a key event in the actual property if tool completion is the primary goal. Use the event reports for save/print actions, and compare article landing pages with planner engagement. No purchase or affiliate conversion is fabricated. Counts cover measurable, consenting visits and may differ from all traffic. Evaluate 28-day periods after enough real data, accounting for indexing and seasonality.
 
 ## Hosting assessment
 
