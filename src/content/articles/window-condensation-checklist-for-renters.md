@@ -8,11 +8,12 @@ imageAlt: "Fine condensation near the lower inside edge of a bedroom window with
 imageSmall: "/assets/articles/window-condensation-cover-600.webp"
 imageWidth: 1200
 imageHeight: 800
-imageCaption: "AI-generated illustration."
+imageCaption: ""
+imageProvenance: "generated"
 updated: "2026-10-15"
 reviewed: true
 draft: false
-sources: [{"title": "EPA: A brief guide to mold, moisture, and your home", "url": "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home"}]
+sources: [{"title": "EPA: A brief guide to mold, moisture, and your home", "url": "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home", "note": "Condensation, moisture control, and the stated general relative-humidity guidance."}]
 ---
 
 Water on the inside of a window deserves attention, but a single photograph cannot identify every cause. Start by noting where and when the moisture appears. In a rental, that record can help your property manager investigate a recurring issue.
