@@ -51,6 +51,8 @@ For a bag, a rated removable hook might work only if the wall surface, item weig
 
 Choose a tray that is easy to lift and clean, and protect the floor in a way compatible with its finish. Let wet items dry appropriately rather than hiding them in a closed decorative box. Follow care instructions for mats and flooring.
 
+If a nearby closet will hold the overflow, [measure its shelves and door opening before buying organizers](/articles/measure-closet-before-buying-organizers/). Check that the containers can be removed easily with the closet in normal use.
+
 Give the household a practical limit, such as the daily pairs that fit on the chosen tray. Treat the limit as an organizing agreement, not a universal rule. If the zone is consistently too small, move occasional-use items before expanding into the exit route.
 
 ## Check the system after a week
