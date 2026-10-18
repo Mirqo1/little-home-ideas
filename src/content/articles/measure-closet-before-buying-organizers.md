@@ -2,7 +2,7 @@
 title: "How to Measure a Closet Before Buying Organizers"
 description: "Measure closet space, door access, and shelf openings before buying bins or organizers. Use a simple worksheet and a practical fit example."
 category: "small-spaces"
-date: "2026-10-15"
+date: "2026-10-18"
 image: "/assets/articles/closet-measure-cover.webp"
 imageSmall: "/assets/articles/closet-measure-cover-600.webp"
 imageAlt: "An open reach-in closet with a clothes rod, shelf, visible baseboards, and a notebook beside the doors."
@@ -11,7 +11,7 @@ imageHeight: 800
 imageCaption: ""
 imageProvenance: "generated"
 reviewed: true
-draft: true
+draft: false
 sources:
   - title: "Valet Custom Cabinets & Closets: How to Measure Your Closet Guide (PDF)"
     url: "https://www.valetcustom.com/hubfs/Campaigns/How%20to%20Measure%20Your%20Closet_SEO%20Handout_564269154.pdf"

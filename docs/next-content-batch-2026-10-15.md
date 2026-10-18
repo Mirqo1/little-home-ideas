@@ -1,6 +1,6 @@
 # Next editorial batch — October 15, 2026
 
-Current status: the outdoor cushion storage guide was released October 15, 2026 at the owner’s request. The closet and furniture-delivery guides remain reviewed drafts (`draft: true`), excluded from public routes, cards, related links, and sitemaps. They have no automatic release schedule. Their dates currently record draft preparation; set each to its actual publication date on release. Do not backdate or invent release dates.
+Current status (October 18, 2026): the outdoor cushion storage guide was released October 15, and the closet measurement guide is released October 18 at the owner's request. The furniture-delivery guide remains a reviewed, unscheduled draft, excluded from public routes and sitemaps. Use actual publication dates; do not backdate.
 
 ## Prehľad po slovensky
 
@@ -33,7 +33,7 @@ Each draft links to at least two existing relevant articles. The delivery and cu
 
 Recommended editorial order: cushion storage while seasonally relevant to some U.S. regions, closet measuring, then delivery route. This is a proposed order, not an automatic schedule. Retain actual publication dates. When releasing a draft, update its publication date, check current sources and source notes, ensure image/alt coverage, set `reviewed: true` and `draft: false`, and run the standard build/site checks. Add inbound contextual links from existing guides as part of that release; do not place dead draft links on public pages now.
 
-Next tool: see `tile-planner-brief.md`. The tile planner is specified but not implemented. Bathroom planning remains a separate backlog idea.
+Next tool: see `tile-planner-brief.md`. The tile planner is implemented at `/tools/patio-tile-planner/`; see `saved-layouts-and-tiles.md`. Bathroom planning remains a separate backlog idea.
 
 ## Validation completed
 
@@ -45,3 +45,9 @@ Next tool: see `tile-planner-brief.md`. The tile planner is specified but not im
 ## First release — October 15, 2026
 
 Published `store-outdoor-cushions-small-home` with the actual publication date October 15, 2026. Added a contextual inbound link from the existing patio layout guide. Replaced the homepage’s fixed three-article selection with the three newest published articles. Collection queries include the new article on the homepage, archive, category page, related cards, and sitemap. The other two drafts remain unpublished and unscheduled. The earlier validation section records the pre-release draft state.
+
+## Closet measurement release — October 18, 2026
+
+Published one article: `measure-closet-before-buying-organizers`, with actual publication date October 18. Reopened the Valet Custom measurement PDF, IKEA U.S. PAX planning page, and CPSC anchoring PDF; the cited guidance remains available. Inspected the two original optimized scenes. Added a contextual incoming link from the entryway guide. The delivery-route draft remains unpublished.
+
+Release checks: production build and full site audit; verify the newly published route, October 18 Article metadata, home/category listings, image files, sitemap inclusion, and continued absence of the delivery draft. No DNS, hosting, analytics, paid services, or unrelated article releases.
