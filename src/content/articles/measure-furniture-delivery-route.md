@@ -2,7 +2,7 @@
 title: "Will Furniture Fit Through the Door? Measure the Whole Route"
 description: "Check doors, hallway turns, stairs, and elevators before ordering furniture. Build a route record and know what to ask the delivery team."
 category: "practical-solutions"
-date: "2026-10-15"
+date: "2026-10-19"
 image: "/assets/articles/delivery-route-cover.webp"
 imageSmall: "/assets/articles/delivery-route-cover-600.webp"
 imageAlt: "An open apartment entrance door and clear hallway leading toward a living room with a rust-colored chair."
@@ -11,7 +11,7 @@ imageHeight: 800
 imageCaption: ""
 imageProvenance: "generated"
 reviewed: true
-draft: true
+draft: false
 sources:
   - title: "Room & Board: Measuring for Furniture Delivery"
     url: "https://www.roomandboard.com/customer-service/measuring-for-delivery"
