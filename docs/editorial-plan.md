@@ -16,14 +16,14 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Ten guides are published, including the outdoor cushion storage article released October 15, 2026. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Thirteen guides are published as of October 20, 2026, including the entryway rug door-clearance guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
 | 1 | Small Spaces & Storage | Organize small kitchen drawers without buying more | Task zones + paper footprint test | Published |
 | 2 | Small Spaces & Storage | Under-sink storage around pipes | Map obstructions + keep valves visible | Published |
 | 3 | Small Spaces & Storage | Small entryway without a closet | Arrival routine + unobstructed routes | Published |
-| 4 | Small Spaces & Storage | Measure a closet before buying organizers | Measurement worksheet and bin-fit example | Draft prepared |
+| 4 | Small Spaces & Storage | Measure a closet before buying organizers | Measurement worksheet and bin-fit example | Published |
 | 5 | Small Spaces & Storage | Narrow bathroom storage without crowding the floor | Fit check and clearance trade-offs | Research |
 | 6 | Small Spaces & Storage | Keep everyday shoes in a tiny entryway | Capacity based on actual routine | Research |
 | 7 | Garden & Patio | Plan a small patio layout before buying furniture | Real footprints in use + walking route | Published |
@@ -35,7 +35,7 @@ Ten guides are published, including the outdoor cushion storage article released
 | 13 | DIY & Home Updates | Reversible living room updates | Stage changes before shopping | Published |
 | 14 | DIY & Home Updates | Plan a paint project before opening a can | Surface and product checklist; safety research first | Research |
 | 15 | DIY & Home Updates | Replace cabinet pulls: measure before buying | Hole spacing, hardware compatibility, permission | Research |
-| 16 | DIY & Home Updates | Choose a rug without blocking a door | Full footprint and care check | Research next |
+| 16 | DIY & Home Updates | Choose a rug without blocking a door | Full footprint and care check | Published October 20, 2026 |
 | 17 | DIY & Home Updates | A one-corner room refresh | Annotated before/after schematic, no invented project | Research |
 | 18 | DIY & Home Updates | Make a realistic small-project shopping list | Materials versus optional decoration | Research |
 | 19 | Renter-Friendly Living | Removable hooks: check the wall first | Exact-product decision tree | Published |
@@ -47,7 +47,7 @@ Ten guides are published, including the outdoor cushion storage article released
 | 25 | Practical Home Solutions | Window condensation: what renters can record | Observation log + escalation rather than diagnosis | Published |
 | 26 | Practical Home Solutions | A small-home seasonal inspection log | Manufacturer tasks and qualified-help boundaries | Research |
 | 27 | Practical Home Solutions | Store cleaning supplies with clear labels | Label-based storage, safety review required | Research |
-| 28 | Practical Home Solutions | Measure furniture for a delivery route | Doors, turns, usable access; no guaranteed-fit claims | Research next |
+| 28 | Practical Home Solutions | Measure furniture for a delivery route | Doors, turns, usable access; no guaranteed-fit claims | Published |
 | 29 | Practical Home Solutions | Keep a home-product instruction folder | Model identification and update workflow | Research |
 | 30 | Practical Home Solutions | Compare repair, replacement, and waiting | Decision worksheet without invented cost figures | Research |
 
