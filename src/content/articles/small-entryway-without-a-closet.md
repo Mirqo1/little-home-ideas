@@ -10,7 +10,7 @@ imageWidth: 1200
 imageHeight: 800
 imageCaption: ""
 imageProvenance: "generated"
-updated: "2026-10-15"
+updated: "2026-10-20"
 reviewed: true
 draft: false
 sources: [{"title": "CPSC: Get On Top of It Before They Do! — furniture anchoring guide (PDF)", "url": "https://www.cpsc.gov/s3fs-public/GetOnTopofItBeforeTheyDoPub250_05-2019en.pdf", "note": "Anchor furniture using suitable anti-tip hardware and the maker's directions."}]
@@ -49,7 +49,7 @@ For a bag, a rated removable hook might work only if the wall surface, item weig
 
 ## Plan for wet shoes and overflow
 
-Choose a tray that is easy to lift and clean, and protect the floor in a way compatible with its finish. Let wet items dry appropriately rather than hiding them in a closed decorative box. Follow care instructions for mats and flooring.
+Choose a tray that is easy to lift and clean, and protect the floor in a way compatible with its finish. Let wet items dry appropriately rather than hiding them in a closed decorative box. Follow care instructions for mats and flooring. If you are adding a mat or runner, [check its footprint and combined rug-and-pad thickness against the door swing](/articles/entryway-rug-door-clearance/) before buying.
 
 If a nearby closet will hold the overflow, [measure its shelves and door opening before buying organizers](/articles/measure-closet-before-buying-organizers/). Check that the containers can be removed easily with the closet in normal use.
 

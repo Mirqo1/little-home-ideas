@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-20",
+  "conversion": "Whole-frame resize, WebP quality 84; no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/entryway-rug-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 100936,
+      "sha256": "116a4dc7c615d1f99fd8c409a832571c0fa42654dc2db7c46fbb65633bcd2455",
+      "sourceSha256": "607a11adfc97211022ee4437c41c6cbca7ce519c6002121c4ec4d5ab68b84f10"
+    },
+    {
+      "path": "/assets/articles/entryway-rug-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 33146,
+      "sha256": "f3105f03028b5b9206699972974c1319fc5ca14ded279238aab47b85f01dc741",
+      "sourceSha256": "607a11adfc97211022ee4437c41c6cbca7ce519c6002121c4ec4d5ab68b84f10"
+    },
+    {
+      "path": "/assets/articles/entryway-rug-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 147282,
+      "sha256": "21134e6e8e90c52c6fab8f4ff9533fd8a6990ba3758c7e36df900192658c9a0d",
+      "sourceSha256": "465e2a58a2ab001e152447569803f136c19f4287eed5137ff23f7ed618f9c527"
+    }
+  ]
+}

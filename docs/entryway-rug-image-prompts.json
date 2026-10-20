@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-20",
+  "method": "Built-in ImageGen",
+  "purpose": "Original illustrative entryway scenes; not a photographed or tested project.",
+  "assets": [
+    {
+      "key": "entryway-rug-cover",
+      "prompt": "Use case: photorealistic-natural. Asset type: original editorial website article cover, landscape 3:2. A realistic small American apartment entryway with warm white walls, pale oak plank floor, a muted rust and cream flatwoven rectangular runner lying completely flat with no fringe, positioned beyond the swing of a white entry door open inward at 80 degrees. Slim oak bench against the side wall with one canvas bag, simple ceramic key bowl on a narrow wall shelf. The floor around the door is clear; door stops before rug edge. Eye-level oblique wide view, soft autumn daylight, restrained warm earthy color palette, authentic woven texture, attractive lived-in home magazine photography. Physically coherent single door and frame. No people, no text, no branding, no watermark, no diagram. Not a luxury mansion. Show full rug outline and open door within frame."
+    },
+    {
+      "key": "entryway-rug-detail",
+      "prompt": "Use case: photorealistic-natural. Asset type: original inline editorial article image, landscape 3:2. Floor-level close-up of a small entryway rug: cream and muted rust flatwoven rug lying flat on pale oak floor, one near corner gently lifted to reveal a single thin gray felt rug pad inset beneath the rug. White interior door open in the distant background, not overlapping the lifted corner. Focus on bound rug edge, separate gray underlay and natural textile texture. Soft natural daylight, realistic proportions, clean but lived-in home, restrained composition. No measurement markings, no ruler, no people, no text, no branding, no watermark. This is a textile detail, not an instructional scale drawing."
+    }
+  ]
+}
