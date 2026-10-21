@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-21",
+  "conversion": "Whole-frame resize, WebP quality 84; no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/cabinet-pulls-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 61346,
+      "sha256": "93911ed590dedd8ec34b204162ad3629814b78d23b0e8c0380da104364ef9d8d",
+      "sourceSha256": "70437ce9a05e46e176a18b60efa71e0adb93c63f86b5b2df847339648f20a0df"
+    },
+    {
+      "path": "/assets/articles/cabinet-pulls-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 21970,
+      "sha256": "75d7826537b7a4ee1700d871086dc1a22e2d5bfa0ecb611b045b4ec91f503a32",
+      "sourceSha256": "70437ce9a05e46e176a18b60efa71e0adb93c63f86b5b2df847339648f20a0df"
+    },
+    {
+      "path": "/assets/articles/cabinet-pulls-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 129964,
+      "sha256": "574cb2210b539dcd4b922ea431bb2a8d74fd36cfb228e4e7f454c6b867438185",
+      "sourceSha256": "8bf94dae33450c8eb94475fc005b0c8546846d4280425c31ba8c71574c06ae8a"
+    }
+  ]
+}

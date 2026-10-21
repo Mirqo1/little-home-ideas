@@ -56,3 +56,5 @@ A useful success check is simple: can you find the tool you need without lifting
 ## What to try next
 
 If the problem extends beyond drawers, use the same measure-first approach in our [under-sink storage guide](/articles/under-sink-storage-around-pipes/). For a broader room reset, start with [reversible home updates](/articles/reversible-living-room-updates/). If you add storage furniture, follow the safety guidance in the CPSC's Anchor It resources; a rental agreement does not remove a tip-over risk.
+
+If worn or awkward handles are part of the problem, [measure cabinet pull hole spacing and mounting thickness before choosing replacements](/articles/measure-cabinet-pulls-before-replacing/). Try one compatible sample before ordering a complete set.
