@@ -1,0 +1,16 @@
+{
+  "created": "2026-10-21",
+  "method": "Built-in ImageGen",
+  "purpose": "Original illustrative cabinet hardware scenes; no product testing.",
+  "assets": [
+    {
+      "key": "cabinet-pulls-cover",
+      "prompt": "Use case: photorealistic-natural. Asset type: original home magazine article cover for Little Home Ideas, landscape 3:2. An attainable small American kitchen corner, sage green shaker base cabinets with simple brushed brass cabinet bar pulls, warm ivory wall, light natural oak countertop, cream ceramic pitcher and a folded linen towel. Tight editorial composition focusing on a coherent bank of two drawers and two cabinet doors; only one straight horizontal brass pull centered on each drawer, vertical brass pulls properly placed on cabinet door stiles. Correct cabinet construction, realistic metal and painted wood texture. Soft morning side light, calm warm neutral colors. No people, no text, no logos, no watermark, no collage, no before/after split, no power tools. Full cabinet handles visible in frame. Illustrative scene, not a product test or completed real renovation."
+    },
+    {
+      "key": "cabinet-pulls-detail",
+      "prompt": "Use case: photorealistic-natural. Asset type: original inline editorial article image, landscape 3:2. Close overhead oblique still-life on a pale natural oak kitchen worktop: TWO different simple cabinet bar pulls, one brushed brass and one dark bronze, laid parallel with the undersides facing upward so that each clearly has exactly two solid mounting posts with a centered threaded hole in each post. Four short matching machine screws laid neatly beside them and one manual screwdriver with a wooden handle. The two pulls have visibly different overall body lengths, but similar mounting-post spacing, no ruler or scale or printed measurements. A folded cream cloth beneath part of the hardware. Sharp realistic macro metal texture, restrained quiet composition, soft diffused daylight. Mechanically plausible cabinet hardware, no extra mounting posts, no people, no text, no logo, no watermark. This is illustrative hardware, not a diagram or exact-size product rendering."
+    }
+  ],
+  "detailEdit": "Edit this illustrative hardware still-life by removing ONLY the four loose small threaded fasteners from the cloth. Fill their former positions naturally with matching cream linen texture. Keep both cabinet pulls, their exactly two mounting posts each, the visible threaded holes in those posts, the screwdriver, oak surface, lighting, camera angle, 3:2 composition and all other objects unchanged. No new fasteners, no new objects, no text or marks."
+}

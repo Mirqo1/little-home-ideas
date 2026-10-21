@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Thirteen guides are published as of October 20, 2026, including the entryway rug door-clearance guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Fourteen guides are published as of October 21, 2026, including the cabinet-pull measurement guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -34,7 +34,7 @@ Thirteen guides are published as of October 20, 2026, including the entryway rug
 | 12 | Garden & Patio | Small patio winter storage checklist | Region-dependent steps and product instructions | Research |
 | 13 | DIY & Home Updates | Reversible living room updates | Stage changes before shopping | Published |
 | 14 | DIY & Home Updates | Plan a paint project before opening a can | Surface and product checklist; safety research first | Research |
-| 15 | DIY & Home Updates | Replace cabinet pulls: measure before buying | Hole spacing, hardware compatibility, permission | Research |
+| 15 | DIY & Home Updates | Replace cabinet pulls: measure before buying | Hole spacing, hardware compatibility, permission | Published October 21, 2026 |
 | 16 | DIY & Home Updates | Choose a rug without blocking a door | Full footprint and care check | Published October 20, 2026 |
 | 17 | DIY & Home Updates | A one-corner room refresh | Annotated before/after schematic, no invented project | Research |
 | 18 | DIY & Home Updates | Make a realistic small-project shopping list | Materials versus optional decoration | Research |
