@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Fourteen guides are published as of October 21, 2026, including the cabinet-pull measurement guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Fifteen guides are published as of October 21, 2026, including the cabinet-pull measurement and indoor window-light guides. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -50,6 +50,8 @@ Fourteen guides are published as of October 21, 2026, including the cabinet-pull
 | 28 | Practical Home Solutions | Measure furniture for a delivery route | Doors, turns, usable access; no guaranteed-fit claims | Published |
 | 29 | Practical Home Solutions | Keep a home-product instruction folder | Model identification and update workflow | Research |
 | 30 | Practical Home Solutions | Compare repair, replacement, and waiting | Decision worksheet without invented cost figures | Research |
+
+Additional published guide: “Find the Right Spot for a Houseplant Before You Buy It” (October 21, 2026). This indoor light-log article supports the garden cluster; the outdoor container sunlight observation brief remains separate.
 
 ## Publishing pace
 

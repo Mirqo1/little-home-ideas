@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-21",
+  "conversion": "Whole-frame resize, WebP quality 84; no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/houseplant-light-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 141856,
+      "sha256": "01023ffd6fa218192500526dcae17022263e9b41374c4670921dee1061b327d7",
+      "sourceSha256": "9771b5160dd6223dea09667434d4011dc74172af43f081770af32ea2734b61b4"
+    },
+    {
+      "path": "/assets/articles/houseplant-light-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 44838,
+      "sha256": "9fe8effd13986041fb54b019f674d68be0a914844d421ff031363796dd62d381",
+      "sourceSha256": "9771b5160dd6223dea09667434d4011dc74172af43f081770af32ea2734b61b4"
+    },
+    {
+      "path": "/assets/articles/houseplant-light-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 97796,
+      "sha256": "ef7bea9eb351d94c33f6854c68e56bae573f4b183bb8b025e1c907044d093bb2",
+      "sourceSha256": "1e9d7d83058b186fea76b34ecb8ace67e61db3be9cd74361fde2d5945891577a"
+    }
+  ]
+}

@@ -58,3 +58,5 @@ Use fertilizers or pest treatments only according to their labels and the needs 
 At the end of the growing season, ask which pot was easiest to care for and which location suited your routine. Expand only where the space and maintenance burden still make sense. You do not need a dense wall of greenery to have a worthwhile container garden.
 
 See [small patio layout planning](/articles/small-patio-furniture-layout/) before adding furniture around the plants. You can also place illustrative potted plants alongside furniture in the [Patio & Balcony Layout Planner](/tools/patio-privacy-planner/). Its fixed example plants help explore positions; they do not predict growth, mature size, or plant suitability. For screening ideas, compare [removable patio privacy options](/articles/patio-privacy-ideas-for-renters/) and keep the load, wind, and maintenance limitations in mind.
+
+Planning greenery indoors instead? [Check light at the exact window-side spot before buying a houseplant](/articles/check-window-light-before-buying-houseplants/). Indoor exposure needs its own observations rather than being inferred from the outdoor garden.

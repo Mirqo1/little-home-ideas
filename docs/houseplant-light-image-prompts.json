@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-21",
+  "method": "Built-in ImageGen",
+  "purpose": "Original illustrative indoor plant-location scenes.",
+  "assets": [
+    {
+      "key": "houseplant-light-cover",
+      "prompt": "Use case: photorealistic-natural. Original editorial home magazine cover for Little Home Ideas, landscape 3:2. A modest beautifully calm small apartment living room window corner, warm off-white walls, pale oak floor, a large complete white-framed window on the left with a sheer curtain drawn aside. A small potted parlor palm with realistic fine arching fronds on a low wide oak side table near but not touching the window; cream ceramic planter sitting on a matching protective saucer. A second empty low wooden stool farther into the room suggests another possible plant location. Soft autumn morning daylight and a clearly visible patch of sunlight on an unoccupied section of floor, plant itself in soft diffuse light. Partial muted sage armchair and a closed notebook on the table, restrained attainable styling, natural believable architecture and botanical anatomy. Full plant and pot visible. No people, no labels, no text, no logos, no watermarks, no artificial grow lights, no collage, no diagram. Illustrative planning scene, not evidence of a horticultural experiment."
+    },
+    {
+      "key": "houseplant-light-detail",
+      "prompt": "Use case: photorealistic-natural. Original editorial inline image, landscape 3:2. Close natural side-angle view of an unoccupied deep white-painted apartment window ledge and part of a pale oak side table beside it. Soft off-white sheer curtain at left edge, diagonal afternoon sunlight makes a distinct bright patch and soft shadows across the empty ledge and part of the table. On the table safely away from the edge are a completely blank open cream notebook and a plain graphite pencil, with a small empty terracotta pot on its saucer at the far end. Outside the glass a neighboring brick building and leafy tree partially interrupt the sky view. Quiet real-home textures, light ivory and warm wood palette, architectural lines correct, fresh airy home magazine photography. No people, no plants in pot, no numbers or readable writing, no text, no brand, no measuring instrument, no diagram, no collage, no watermark. A separate original scene, not a duplicate of the cover."
+    }
+  ]
+}
