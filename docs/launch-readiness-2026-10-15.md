@@ -53,3 +53,19 @@ Sources:
 - https://help.formspree.io/articles/account-management/account-limits
 
 No paid upgrade is authorized. Review usage notices and the Over Limit folder if the allowance is approached.
+
+
+## Owner-confirmed follow-up — October 22, 2026
+
+This dated update supersedes the corresponding open items above; other historical statements retain their original dates.
+
+- Owner supplied sole-trader name, business address, IČO, district office and trade-register number, then authorized use of all necessary supplied details. The exact public identification was presented before publication. No private billing data or forwarding Gmail address is included.
+- Owner agreed to deletion of ordinary correspondence within 12 months after resolution, with limited exceptions for legal duties/claims. This includes the inbox as well as provider copies. This is a manual owner responsibility, not an implemented Gmail deletion automation. Practical routine: review resolved enquiry threads monthly and delete expired copies; track resolution dates and any justified exception. Formspree archive expiry does not clear Gmail.
+- Screenshots confirm Formspree form enabled, Formshield enabled and CAPTCHA Enabled. Owner subsequently confirmed saving the project restriction to littlehomeideas.com. A new post-change delivery test has not been performed.
+- Owner confirmed Search Console Domain-property DNS verification. Screenshot confirms sitemap index successfully processed; discovered-page count was still zero. Homepage inspection shows indexed and HTTPS. Latest patio-winter article was unknown to Google; owner confirmed the subsequent live test passed. The indexing-request acceptance and eventual article indexing have not been independently confirmed.
+- GA4 screenshots confirm correct stream/measurement ID, recent collection, Enhanced Measurement off, email redaction on, Google Signals off, and user-provided data collection off. Detailed location/device collection was enabled and left enabled.
+- Owner confirmed setting event and user retention to two months and disabling reset on new activity. Owner confirmed disabling Analytics ads personalization in all regions.
+- Internal Traffic exclusion filter remains Testing. Initially no internal-traffic rule existed; owner confirmed saving an exact-IP rule with traffic_type internal. Matching test data has not yet been validated, and filter is not Active. Do not claim own visits are excluded. Allow processing time and verify the Test data filter name dimension before activation; consider changing/shared IP limitations.
+- Owner confirmed linking Search Console to the Little Home Ideas Analytics stream. Account-side linkage was not independently inspected after saving.
+- Local tests/build/site audit passed on October 22 (32 HTML pages). A PageSpeed Insights run was started earlier, but no scores were extracted. Performance and accessibility measurements remain open.
+- Hosting suitability before monetization remains open; no hosting/DNS or paid-service change is part of this privacy release.
