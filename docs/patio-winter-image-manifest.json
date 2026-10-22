@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-22",
+  "conversion": "Whole-frame resize, WebP quality 84; no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/patio-winter-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 217922,
+      "sha256": "88cae1b80d05d5be5bf1cc461992f6955002f38343bb177dfadcdf811219c642",
+      "sourceSha256": "73a3548d891ef312056f75433b284d0f03402de1b546d1ee35eb55a7449cf2b0"
+    },
+    {
+      "path": "/assets/articles/patio-winter-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 73974,
+      "sha256": "0fd53e4be6d77f47bb0662e2c033b75767b923665b55837b453c1f7bdb337033",
+      "sourceSha256": "73a3548d891ef312056f75433b284d0f03402de1b546d1ee35eb55a7449cf2b0"
+    },
+    {
+      "path": "/assets/articles/patio-winter-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 148348,
+      "sha256": "17d911616603864d9de9d37ec74dff4148e022bbec88bdebb677a0946c016553",
+      "sourceSha256": "51021522353c3f3232dc4cd23227c8c80b42db2d5808ac0c0200e987168d2368"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-22",
+  "method": "Built-in ImageGen",
+  "purpose": "Original illustrative seasonal patio preparation scenes.",
+  "assets": [
+    {
+      "key": "patio-winter-cover",
+      "prompt": "Use case: photorealistic-natural. Original editorial cover photograph for a small-home garden magazine article about planning winter furniture storage. Landscape 3:2. Modest American ground-level courtyard patio in late October: pale stone paving, cream stucco wall, open doorway to a bright interior in background, two simple sage-green powder-coated metal bistro chairs and a small round metal table, no cushions on chairs. On the table a neatly folded taupe outdoor furniture cover and a plain closed notebook, all dry. A few copper autumn leaves collected neatly near a terracotta planter with seasonal foliage. Keep the whole doorway clear and furniture safely away from it. Cool clear autumn daylight with a gentle warm accent, realistic natural textures and correct chair/table structure, attractive attainable clean modern style. Full chairs and tabletop in frame, no people, no lettering, no brands, no watermark, no snow, no collage, no diagram. This is an illustrative planning scene, not proof of suitability for winter outdoor storage."
+    },
+    {
+      "key": "patio-winter-detail",
+      "prompt": "Use case: photorealistic-natural. Original landscape 3:2 editorial detail photograph for a small patio winter storage planning guide. Close angled overhead view of a dry pale wood workbench in a simple utility room: a neatly folded taupe outdoor furniture cover with a small sewn ventilation panel visible on its fold, an unbranded closed tape measure, two closed plain instruction booklets without any printed text, and a small clear resealable bag holding a few ordinary solid furniture bolts. Restrained beige, gray, oak palette, soft cool daylight, tactile woven cover fabric. All items fully on the tabletop, calm uncluttered composition, realistically formed solid bolts with ordinary solid heads. No people, no readable text, no numbers, no logos, no watermark, no montage, no diagram, no rulers or numeric scale. Illustrative preparation still life, no product compatibility claim."
+    }
+  ]
+}

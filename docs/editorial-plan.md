@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Fifteen guides are published as of October 21, 2026, including the cabinet-pull measurement and indoor window-light guides. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Sixteen guides are published as of October 22, 2026, including the small patio winter storage plan. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -31,7 +31,7 @@ Fifteen guides are published as of October 21, 2026, including the cabinet-pull 
 | 9 | Garden & Patio | Choose a patio's main activity | Reading versus dining layout comparison | Research next |
 | 10 | Garden & Patio | Store outdoor cushions in a small home | Real stack dimensions, opening checks, and product-specific care | Published October 15, 2026 |
 | 11 | Garden & Patio | Record sunlight before choosing container plants | Observation log, not universal plant promises | Research |
-| 12 | Garden & Patio | Small patio winter storage checklist | Region-dependent steps and product instructions | Research |
+| 12 | Garden & Patio | Small patio winter storage checklist | Region-dependent steps and product instructions | Published October 22, 2026 |
 | 13 | DIY & Home Updates | Reversible living room updates | Stage changes before shopping | Published |
 | 14 | DIY & Home Updates | Plan a paint project before opening a can | Surface and product checklist; safety research first | Research |
 | 15 | DIY & Home Updates | Replace cabinet pulls: measure before buying | Hole spacing, hardware compatibility, permission | Published October 21, 2026 |
