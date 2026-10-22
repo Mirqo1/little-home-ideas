@@ -10,7 +10,7 @@ Official reference: https://support.google.com/webmasters/answer/9008080
 
 ## GA4: consent-based integration enabled October 15, 2026
 
-The owner supplied web-stream ID `G-QHSQ0J8J4R` and authorized installation. `src/data/measurement.json` enables the existing consent controller. The shared layout loads only the local controller until a visitor opts in; the Google tag is not pasted unconditionally. The privacy page now explains actual analytics and local-storage behavior. The contact form is now live. The owner explicitly supplied and authorized the public sole-trader identification on October 22, 2026, and agreed to deletion of ordinary resolved correspondence within 12 months. See the dated launch checklist update for verified account settings and the manual mailbox routine.
+The owner supplied web-stream ID `G-QHSQ0J8J4R` and authorized installation. `src/data/measurement.json` enables the existing consent controller. The shared layout loads only the local controller until a visitor opts in; the Google tag is not pasted unconditionally. The privacy page now explains actual analytics and local-storage behavior. The contact form is now live. The owner explicitly supplied and authorized the public sole-trader identification on October 22, 2026, and authorized a purpose-based correspondence-retention policy with at least annual review and deletion/anonymization when messages are no longer needed (replacing the earlier 12-month proposal). See the dated launch checklist update for verified account settings and the manual mailbox routine.
 
 ### Remaining account-side checks
 
