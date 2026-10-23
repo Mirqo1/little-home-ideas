@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-23",
+  "method": "Built-in ImageGen",
+  "purpose": "Original fictional rental-update planning illustrations; not tested work.",
+  "assets": [
+    {
+      "key": "rental-permission-cover",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape editorial website cover, 1536x1024. An honest quiet planning scene in a modest American rental kitchen: pale oak table in foreground with one simple brass cabinet pull and a manual screwdriver resting unused beside a closed notebook and a small plain envelope; white cabinets with existing plain silver pulls in the background. No work in progress, no removed parts, no drilled holes. Soft morning window light, warm neutral palette, realistic ordinary materials and proportions, polished editorial interior photography, no people, no text, no labels, no logos, no watermarks. This is a fictional illustrative scene about planning a rental update, not a before/after or product demonstration."
+    },
+    {
+      "key": "rental-permission-detail",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape inline editorial photograph, 1536x1024. Close overhead still life on a modest pale wood home desk: two small transparent zip bags each containing a silver cabinet pull and a pair of matching screws, a plain tan archival box with lid open nearby, a compact smartphone lying face down and a pencil beside a blank cream index card. The hardware is laid out neatly for keeping original parts together before a future rental update. Distinct close crop, softly lit by overcast daylight, realistic metal fasteners, natural texture, warm restrained colors. No hands or people, no text or labels, no logos, no watermarks. Fictional illustration, not proof of a real installation."
+    }
+  ]
+}

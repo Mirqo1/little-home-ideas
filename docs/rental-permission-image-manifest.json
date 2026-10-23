@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-23",
+  "conversion": "Whole-frame resize, WebP quality 84; no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/rental-permission-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 107598,
+      "sha256": "0513a06bd22b71e3dde63b6311bcace4a5bc54bc2eaf944ba0742092ca857960",
+      "sourceSha256": "5b410d97bdce0b04b3c3d1c62499c80842cddd5312f06eda7c55765b483a5ef3"
+    },
+    {
+      "path": "/assets/articles/rental-permission-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 36690,
+      "sha256": "0b828c63d053646da08d8f2c726409caa52cacf035849ad5a2a5a6f6fc36144e",
+      "sourceSha256": "5b410d97bdce0b04b3c3d1c62499c80842cddd5312f06eda7c55765b483a5ef3"
+    },
+    {
+      "path": "/assets/articles/rental-permission-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 112876,
+      "sha256": "ab1e88ab92d90c788a710c315fd7e703b3be1530ec4e2045c7b472e634038402",
+      "sourceSha256": "520f259914922cb6600405f4e9735968a1deb9ca908f77321938e94c1353a2f8"
+    }
+  ]
+}

@@ -20,7 +20,7 @@ A removable hook is a product with specific instructions, not a universal altern
 
 ## Confirm that the change is allowed
 
-Read your lease and ask management about adhesive products if the rules are unclear. A product described as removable does not override a rental restriction. Keep the permission alongside the product instructions if the installation requires approval.
+Read your lease and ask management about adhesive products if the rules are unclear. A product described as removable does not override a rental restriction. Keep the permission alongside the product instructions if the installation requires approval. For a specific request and a record of any conditions, use our [rental update permission template](/articles/ask-landlord-permission-rental-update/).
 
 Think about the consequence of a failure. A lightweight cloth bag is a different project from a glass object above a bed. Avoid hanging anything where a fall could cause injury. Do not use adhesive hooks for furniture anchoring, safety restraints, or other structural purposes.
 
