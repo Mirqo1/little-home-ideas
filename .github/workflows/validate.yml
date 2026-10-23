@@ -27,3 +27,13 @@ jobs:
           name: little-home-ideas-static-site
           path: dist/
           include-hidden-files: true
+      - name: Temporary article visual review
+        run: |
+          python3 -m http.server 8765 --directory dist &
+          mkdir -p /tmp/article-review
+          google-chrome --headless --no-sandbox --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=4000 --screenshot=/tmp/article-review/desktop.png --window-size=1365,10000 http://127.0.0.1:8765/articles/ask-landlord-permission-rental-update/
+          google-chrome --headless --no-sandbox --disable-dev-shm-usage --hide-scrollbars --virtual-time-budget=4000 --screenshot=/tmp/article-review/mobile.png --window-size=390,16000 http://127.0.0.1:8765/articles/ask-landlord-permission-rental-update/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: article-visual-review
+          path: /tmp/article-review/
