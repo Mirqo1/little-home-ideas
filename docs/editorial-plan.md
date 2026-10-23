@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Sixteen guides are published as of October 22, 2026, including the small patio winter storage plan. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Seventeen guides are published as of October 23, 2026, including the rental update permission guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -39,7 +39,7 @@ Sixteen guides are published as of October 22, 2026, including the small patio w
 | 17 | DIY & Home Updates | A one-corner room refresh | Annotated before/after schematic, no invented project | Research |
 | 18 | DIY & Home Updates | Make a realistic small-project shopping list | Materials versus optional decoration | Research |
 | 19 | Renter-Friendly Living | Removable hooks: check the wall first | Exact-product decision tree | Published |
-| 20 | Renter-Friendly Living | Ask permission for a rental update | Practical request template, no legal conclusions | Research next |
+| 20 | Renter-Friendly Living | Ask permission for a rental update | Practical request template, no legal conclusions | Published October 23, 2026 |
 | 21 | Renter-Friendly Living | Document the room before reversible changes | Photo record + instruction archive | Research |
 | 22 | Renter-Friendly Living | Freestanding storage versus wall mounting | Footprint and anti-tip limits | Research |
 | 23 | Renter-Friendly Living | Evaluate a peel-and-stick product | Surface compatibility and removal uncertainty | Research |
@@ -86,3 +86,7 @@ The next specified tool is the user-requested balcony/patio tile layout planner;
 ## Promotion and review
 
 Use original full-frame portrait imagery for Pinterest, with the title and destination in the pin metadata rather than a mandatory text overlay. Do not imply generated imagery depicts a completed real project. Account-side domain claiming was confirmed by the owner’s screenshot on October 15, 2026; posting is deferred until the owner returns to a PC. Track referral traffic after approved analytics setup. Review Search Console impressions, query relevance, CTR, and indexing monthly; refresh useful pages instead of increasing volume indiscriminately. No promise of rankings or revenue.
+
+## Daily publication record
+
+- October 23, 2026 (Europe/Bratislava): “How to Ask Your Landlord About a Small Rental Update” — `/articles/ask-landlord-permission-rental-update/`. Renter-friendly cluster; request template, hypothetical six-pull example, approval/restoration worksheet; two original ImageGen illustrations. Review: `rental-permission-editorial-review-2026-10-23.md`. Next rotation: small-spaces or practical-solutions; avoid another permissions or hardware guide.
