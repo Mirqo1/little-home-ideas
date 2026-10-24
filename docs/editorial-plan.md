@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Seventeen guides are published as of October 23, 2026, including the rental update permission guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Eighteen guides are published as of October 24, 2026, including the home product manual folder guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -48,7 +48,7 @@ Seventeen guides are published as of October 23, 2026, including the rental upda
 | 26 | Practical Home Solutions | A small-home seasonal inspection log | Manufacturer tasks and qualified-help boundaries | Research |
 | 27 | Practical Home Solutions | Store cleaning supplies with clear labels | Label-based storage, safety review required | Research |
 | 28 | Practical Home Solutions | Measure furniture for a delivery route | Doors, turns, usable access; no guaranteed-fit claims | Published |
-| 29 | Practical Home Solutions | Keep a home-product instruction folder | Model identification and update workflow | Research |
+| 29 | Practical Home Solutions | Keep a home-product instruction folder | Model identification and update workflow | Published October 24, 2026 |
 | 30 | Practical Home Solutions | Compare repair, replacement, and waiting | Decision worksheet without invented cost figures | Research |
 
 Additional published guide: “Find the Right Spot for a Houseplant Before You Buy It” (October 21, 2026). This indoor light-log article supports the garden cluster; the outdoor container sunlight observation brief remains separate.
@@ -90,3 +90,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 ## Daily publication record
 
 - October 23, 2026 (Europe/Bratislava): “How to Ask Your Landlord About a Small Rental Update” — `/articles/ask-landlord-permission-rental-update/`. Renter-friendly cluster; request template, hypothetical six-pull example, approval/restoration worksheet; two original ImageGen illustrations. Review: `rental-permission-editorial-review-2026-10-23.md`. Next rotation: small-spaces or practical-solutions; avoid another permissions or hardware guide.
+
+- October 24, 2026 (Europe/Bratislava): “How to Organize Home Product Manuals So You Can Find the Right One” — `/articles/organize-home-product-manuals/`. Practical-solutions cluster; three-product pilot, exact-model worksheet, official source/retrieval checks, separate recall record; two original ImageGen illustrations. Review: `home-manuals-editorial-review-2026-10-24.md`. Next rotation: small-spaces (narrow bathroom or everyday shoes); avoid another paperwork or permission guide.

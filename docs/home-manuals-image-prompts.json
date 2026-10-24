@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-24",
+  "method": "Built-in ImageGen",
+  "purpose": "Original illustrative home manual filing scenes; no real project or product documents depicted.",
+  "assets": [
+    {
+      "key": "home-manuals-cover",
+      "prompt": "Use case: photorealistic-natural. Asset type: original landscape 3:2 editorial website cover. Scene: a modest attractive American apartment living room with a small pale oak desk against a warm white wall, linen curtains and soft daylight. Subject: one sage green document box standing on the desk, several cream tabbed folders inside it, two thin plain instruction booklets stacked alongside a closed laptop. A comfortable chair and a small leafy plant make the corner feel lived-in, organized but attainable. Camera: eye-level three-quarter wide composition, whole document box and desk visible, realistic everyday scale, natural material textures, sophisticated clean interior editorial photography. No readable lettering or print, no logos, no brands, no people, no watermarks, no technical diagrams, no collage. Fictional illustrative planning scene for a guide about organizing home product manuals, not a tested real home project."
+    },
+    {
+      "key": "home-manuals-detail",
+      "prompt": "Use case: photorealistic-natural. Asset type: original landscape 3:2 inline editorial photograph. Close overhead still life on a light neutral home tabletop: an open cream paper folder with two simple thin instruction booklets, a clear archival document sleeve holding a small plain receipt-like slip, a smartphone lying face down, pencil, and three neatly arranged blank tab dividers in soft sage and sand. Camera tight on the paper filing materials; tactile paper fibers, realistic folder folds, uncluttered composition, soft overcast daylight, restrained warm palette. All paper faces blank without readable lettering, barcodes, serial numbers, brands, logos or watermarks. No people, no tools, no staged repair. Distinct from a wide room photo. A fictional illustration of grouping a product's documents, not actual evidence of an appliance or warranty."
+    }
+  ]
+}

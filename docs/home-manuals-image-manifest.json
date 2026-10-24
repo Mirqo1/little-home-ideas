@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-24",
+  "conversion": "Whole-frame resize, WebP quality 84; no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/home-manuals-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 86754,
+      "sha256": "514f7a03151d9fb40d9cf639f39486f2febffbb40694c6e64dee10c11ece3fa8",
+      "sourceSha256": "091ce93bda1f4cb5cf6808351be320a59f1cc0df131287bebf674ccc986a91ff"
+    },
+    {
+      "path": "/assets/articles/home-manuals-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 30330,
+      "sha256": "5fe6f99eddeb59db1c795a5a3f40d29941943d202ef10ebc096735200a6f12bd",
+      "sourceSha256": "091ce93bda1f4cb5cf6808351be320a59f1cc0df131287bebf674ccc986a91ff"
+    },
+    {
+      "path": "/assets/articles/home-manuals-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 76942,
+      "sha256": "4da744b58bb1e019644b308b592b802eff15bea8b246f830f78cf596dd226548",
+      "sourceSha256": "6fc676baed23952e994fd6dba009e54c3360e0a86073e50f299e1f6bcdb3b032"
+    }
+  ]
+}
