@@ -84,7 +84,7 @@ Avoid choosing a much larger cover simply to gather unrelated pieces underneath 
 
 ## Leave a record for winter checks and spring
 
-Photograph the finished arrangement and make one short record for each item: model, location, date stored, care completed, and any unresolved issue. Keep instructions where you can retrieve them without unpacking everything.
+Photograph the finished arrangement and make one short record for each item: model, location, date stored, care completed, and any unresolved issue. Keep instructions where you can retrieve them without unpacking everything. Our [home product manual folder guide](/articles/organize-home-product-manuals/) shows how to connect those files to the exact model and keep unresolved questions visible.
 
 Plan checks appropriate to the products and local weather rather than assuming the job ends when the cover goes on. Look for a shifted cover, accumulating water, damp storage, or blocked access, and respond according to the relevant instructions. For example, the IKEA table care guidance above explicitly calls for attention after rain or snow; that requirement belongs in the plan if you own that product.
 
