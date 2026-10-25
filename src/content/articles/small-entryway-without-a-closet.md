@@ -32,7 +32,7 @@ Local requirements and the needs of household members vary. Keep exits, required
 
 ## Choose one floor-level storage item
 
-A shallow shoe tray or a low rack can contain daily shoes without adding a large cabinet. Select it by the number of pairs you actually need nearby and the space left when shoes are on it. A rack's frame dimensions are not necessarily its full footprint in use.
+A shallow shoe tray or a low rack can contain daily shoes without adding a large cabinet. Select it by the number of pairs you actually need nearby and the space left when shoes are on it. A rack's frame dimensions are not necessarily its full footprint in use. Our [everyday shoe storage guide](/articles/everyday-shoe-storage-small-entryway/) includes a pair-by-pair worksheet and a capacity example to help you check that fit.
 
 Keep heavy items low and follow the manufacturer's requirements. Furniture with drawers, doors, or shelves may need an anti-tip attachment. Check the CPSC's Anchor It guidance and obtain approval for a suitable installation in a rental; do not substitute adhesive hooks for a required furniture anchor.
 

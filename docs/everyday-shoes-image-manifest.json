@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-25",
+  "conversion": "Whole-frame resize, WebP quality 84; no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/everyday-shoes-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 79862,
+      "sha256": "3e85614c19ee9591892e95d6044a8b2ad92666a511ff2dec251d33163c849795",
+      "sourceSha256": "b01c36d4db1171bebcc3221fe0d6acba55a37010040ea2addb2913e8e0b63b13"
+    },
+    {
+      "path": "/assets/articles/everyday-shoes-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 28318,
+      "sha256": "bc4329e5c45b08d1475714609c3d6ec8ef21cb7b573845a000552605688bf367",
+      "sourceSha256": "b01c36d4db1171bebcc3221fe0d6acba55a37010040ea2addb2913e8e0b63b13"
+    },
+    {
+      "path": "/assets/articles/everyday-shoes-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 111074,
+      "sha256": "ce090e298960ba5a73d8574e2705ddf9f932acab08d1f7bb68d859a73b447563",
+      "sourceSha256": "01f0037a33f20c544671b08b1c58cf58dc89fdea588a09586423a00032bb7bbe"
+    }
+  ]
+}
