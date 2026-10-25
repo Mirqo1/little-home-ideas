@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-25",
+  "method": "Built-in ImageGen",
+  "purpose": "Original illustrative everyday footwear planning scenes; not a tested storage installation.",
+  "assets": [
+    {
+      "key": "everyday-shoes-cover",
+      "prompt": "Use case: photorealistic-natural. Asset type: original editorial website cover, landscape 3:2. A modest American apartment entryway in soft autumn morning light: warm off-white walls, terracotta square floor tile, white entrance door at the far right standing partly open into a completely clear landing area. Along the left wall, one short low charcoal-metal open two-tier shoe rack, ordinary gray and cream adult sneakers neatly paired on its shelves. A separate shallow dark boot tray with one pair of tan ankle boots sits at the left end outside the clear walking route. Three believable pairs total, no spare shoes scattered on the floor. A simple muted green coat on an existing wall peg in the background. Eye-level three-quarter interior editorial photography, attainable practical home, natural materials, realistic shoe and rack geometry, quiet warm neutral palette. No people, no text, no logos, no watermark, no before/after collage, no measurements. Fictional illustrative shoe-storage scene; not an actual tested project or certified route clearance."
+    },
+    {
+      "key": "everyday-shoes-detail",
+      "prompt": "Use case: photorealistic-natural. Asset type: original landscape 3:2 inline editorial photograph. Overhead close view of two actual pairs of shoes arranged separately on a dry pale neutral floor for a storage planning exercise: one pair of cream adult low-top sneakers placed neatly side by side on a plain large sheet of kraft paper, and one pair of brown adult ankle boots placed side by side on a second separate sheet. One closed plain notebook and a pencil at the edge of the frame. Paper sheets have no drawings, no text, no dimensions. Both pairs fully visible, ordinary believable construction and accurate paired shoes, gentle daylight and tactile leather, canvas and paper, editorial still-life photography, no people or hands, no logos, no ruler scales, no collage, no watermark. The two pairs have visibly different shapes and occupy different footprints; no claims of exact measured fit. Different composition from a wide hallway photo."
+    }
+  ]
+}
