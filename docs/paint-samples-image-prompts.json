@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-26",
+  "method": "Built-in ImageGen",
+  "purpose": "Original illustrative sample-board scenes; no actual color test, named commercial color or before/after project depicted.",
+  "assets": [
+    {
+      "key": "paint-samples-cover",
+      "prompt": "Use case: photorealistic-natural. Asset type: original editorial website cover, landscape 3:2. A compact attainable American living room: oatmeal linen sofa, pale oak floor, warm white wall with simple baseboard and a large window just out of frame admitting soft daylight. Three separate large rectangular paint sample boards, each around poster-board size, resting safely upright against the wall at floor level beside the sofa: one warm off-white, one muted gray-green, one light warm taupe. Each board has a clean uniform dry matte-like painted surface and a thin visible white edge; do not paint patches on the wall. The arrangement is for comparing colors to the existing sofa and floor, no renovation in progress. An ordinary side table with a closed notebook, gentle lived-in texture, tasteful unpretentious interior photography, realistic geometry and materials, full boards visible. No people, no text, no labels, no paint cans, no brushes, no brand logos or watermark, no before-and-after collage. Fictional illustration, not a documented real paint test, and colors do not represent named commercial paint colors."
+    },
+    {
+      "key": "paint-samples-detail",
+      "prompt": "Use case: photorealistic-natural. Asset type: original landscape 3:2 inline editorial photograph. Close interior detail at dusk in a small American living room: a single dry pale gray-green paint sample board propped securely against a warm white wall directly beside a white-painted baseboard and the side of an oatmeal upholstered sofa. A small table lamp with a simple cream fabric shade glows on an oak side table nearby, with a darkening window softly visible in the background. Focus on how the physical sample sits beside existing trim and fabric, warm realistic household lighting, tactile paper-board edge and linen texture. Different closer composition and evening mood from a wide daylight scene. No people, no lettering or readable notes, no brands, no paint cans or wet paint, no color charts, no split-screen, no watermark. Illustrative fictional scene, not an actual measured light comparison or a named paint color."
+    }
+  ]
+}
