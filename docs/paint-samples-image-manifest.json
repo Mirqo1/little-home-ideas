@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-26",
+  "conversion": "Whole-frame resize, WebP quality 84; no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/paint-samples-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 94364,
+      "sha256": "8519e51e81fe7d2084b63c21ec49e96c77e32089e1158d1b3b61d7c5f41883a2",
+      "sourceSha256": "5ccfe0eef0aa3bad7e028b3854f5dc04ccfccf7964ab558fc6e3662d889c03c5"
+    },
+    {
+      "path": "/assets/articles/paint-samples-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 31120,
+      "sha256": "dabf1e357706c2a9263f42afc574e4248b62b643de44e596e4e3702bb8f692d0",
+      "sourceSha256": "5ccfe0eef0aa3bad7e028b3854f5dc04ccfccf7964ab558fc6e3662d889c03c5"
+    },
+    {
+      "path": "/assets/articles/paint-samples-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 107328,
+      "sha256": "1da0e043a81172dcb14bb92a30622834c8ffcbd7429b644d030b620424d60118",
+      "sourceSha256": "c7952b8c04a281a3f23a2faeb4571e1cc75abe92b5d6611887b5c11ef9d935c5"
+    }
+  ]
+}

@@ -51,7 +51,7 @@ If a storage unit is needed, account for its doors or drawers when open. Follow 
 
 Art may be leaned only where the item and location allow safe, stable placement. A heavy frame balanced on a narrow surface is not a reliable substitute for mounting. For adhesive products, use our [removable-hook checklist](/articles/removable-hooks-rental-wall-checklist/) and the exact manufacturer's instructions.
 
-Treat peel-and-stick finishes as a separate decision, not an automatic rental-safe option. Compatibility and removal vary by finish and product. Check permission and official instructions, and do not assume a small sample guarantees no damage across an entire wall.
+Treat peel-and-stick finishes as a separate decision, not an automatic rental-safe option. Compatibility and removal vary by finish and product. Check permission and official instructions, and do not assume a small sample guarantees no damage across an entire wall. If repainting is still part of the plan, use our [small-room paint color sampling guide](/articles/test-paint-colors-small-room/) to compare physical samples beside the furnishings you are keeping before buying the room quantity.
 
 ## Make a staged shopping list
 
