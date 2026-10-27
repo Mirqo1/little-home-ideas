@@ -22,6 +22,8 @@ Three pots can be a manageable starting experiment, but the number is an editori
 
 Record when direct sun reaches your intended location over a typical day. Trees, neighboring buildings, and the season change that pattern. Use the information alongside plant labels and advice from your local extension office; a generic list of patio plants cannot account for every U.S. climate.
 
+For a repeatable record, use our [patio sunlight worksheet](/articles/record-patio-sunlight-before-buying-plants/) to compare two possible pot locations and keep unobserved periods visible.
+
 Note wind, reflected heat, and access to water. A corner that looks attractive in a photo may be awkward to reach with a watering can. On a balcony, obtain building approval for loads and drainage before placing containers.
 
 ## Give each pot a job

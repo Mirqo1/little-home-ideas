@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-27",
+  "conversion": "Whole-frame resize, WebP quality 84; no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/patio-sunlight-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 189948,
+      "sha256": "d41721c4c1b1cb3c396ab82d69f540eda53410e8ac81cfe178ed36b32c862472",
+      "sourceSha256": "c07a149237b7d211766d29a384dd2b52cbd1b0529868ecff5c75e69721146ed3"
+    },
+    {
+      "path": "/assets/articles/patio-sunlight-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 60092,
+      "sha256": "67dbd6f709841e2e4616064426079aa05d6f13a28fab84435cff6a2840956af2",
+      "sourceSha256": "c07a149237b7d211766d29a384dd2b52cbd1b0529868ecff5c75e69721146ed3"
+    },
+    {
+      "path": "/assets/articles/patio-sunlight-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 125810,
+      "sha256": "558fbe6cd3cbdbd1a25c8a0aabe264d1af09e271c97d2423c6d8753322a733dd",
+      "sourceSha256": "074136abdd3d48a3f459915c512f42765c5ab62bb668700ef889d80bf081bb3a"
+    }
+  ]
+}

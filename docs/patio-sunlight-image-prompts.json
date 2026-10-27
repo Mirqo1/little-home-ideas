@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-27",
+  "method": "Built-in ImageGen",
+  "purpose": "Original fictional outdoor planning illustrations; not a measured sunlight study or a real garden test.",
+  "assets": [
+    {
+      "key": "patio-sunlight-cover",
+      "prompt": "Use case: photorealistic-natural. Asset type: original editorial website cover, landscape 3:2. A modest small ground-level American townhouse patio with pale brick pavers, a plain wood privacy fence and a shallow house roof overhang. Two empty terracotta planters sit on the ground in different light zones, one in direct morning sunlight near the open edge and one in shade beside the house. A single simple outdoor chair tucked away; clear walking route. Strong believable shadow boundary from the building across pavers, natural textures, quiet attainable everyday garden planning rather than luxury styling. Wide eye-level composition. No plants in the empty pots, no people, no text, no labels, no graphics, no logos or watermark. A fictional planning illustration, not a real measured sunlight study."
+    },
+    {
+      "key": "patio-sunlight-detail",
+      "prompt": "Use case: photorealistic-natural. Asset type: original landscape 3:2 inline editorial image. Close oblique overhead view of a weathered small outdoor wooden table at the edge of a compact brick patio. An open plain notebook with blank cream pages and a graphite pencil on the table, an empty small terracotta planter on the ground beside it. In the background a distinct diagonal boundary separates sunlit pavers from cool building shade. The light boundary and pot location are the important subject; notebook is a planning prop, not a readable chart. Natural early afternoon light, true material texture, attainable American home garden setting. Different tight detail composition from a wide patio scene. No people or hands, no text or numbers, no plants, no branded products, no diagram, no split screen, no watermark. Fictional illustration; not a documented sunlight measurement or actual garden test."
+    }
+  ]
+}

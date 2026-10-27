@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Twenty guides are published as of October 26, 2026, including the small-room paint color sampling guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Twenty-one guides are published as of October 27, 2026, including the outdoor patio sunlight observation guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -30,7 +30,7 @@ Twenty guides are published as of October 26, 2026, including the small-room pai
 | 8 | Garden & Patio | Start a three-pot container garden | Manageable trial + drainage and climate checks | Published |
 | 9 | Garden & Patio | Choose a patio's main activity | Reading versus dining layout comparison | Research next |
 | 10 | Garden & Patio | Store outdoor cushions in a small home | Real stack dimensions, opening checks, and product-specific care | Published October 15, 2026 |
-| 11 | Garden & Patio | Record sunlight before choosing container plants | Observation log, not universal plant promises | Research |
+| 11 | Garden & Patio | Record sunlight before choosing container plants | Observation log, not universal plant promises | Published October 27, 2026 |
 | 12 | Garden & Patio | Small patio winter storage checklist | Region-dependent steps and product instructions | Published October 22, 2026 |
 | 13 | DIY & Home Updates | Reversible living room updates | Stage changes before shopping | Published |
 | 14 | DIY & Home Updates | Plan a paint project before opening a can | Surface and product checklist; safety research first | Color-sampling guide published October 26, 2026; surface-preparation brief remains research |
@@ -96,3 +96,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - October 25, 2026 (Europe/Bratislava): “Everyday Shoe Storage for a Small Entryway: Count Pairs Before Buying” — `/articles/everyday-shoe-storage-small-entryway/`. Small-spaces cluster; daily rotation, stored pair footprints, four-pair usable-width example, wet-weather demand and shopping worksheet; two original ImageGen illustrations. Review: `everyday-shoes-editorial-review-2026-10-25.md`. Next rotation: DIY-home or garden-patio; avoid another entryway or paperwork guide.
 
 - October 26, 2026 (Europe/Bratislava): “Test Paint Colors in a Small Room Before Buying Gallons” — `/articles/test-paint-colors-small-room/`. DIY-home cluster; movable samples, repeated-location/light log, hypothetical two-color decision and exact final-product record; two original ImageGen illustrations. Review: `paint-samples-editorial-review-2026-10-26.md`. Next rotation: garden-patio (outdoor sunlight observation or a focused main-activity decision); avoid another indoor color, entryway or paperwork guide.
+
+- October 27, 2026 (Europe/Bratislava): “Record Patio Sunlight Before Buying Container Plants” — `/articles/record-patio-sunlight-before-buying-plants/`. Garden-patio cluster; two-location log, honest observation gaps, hypothetical comparison and seasonal recheck before choosing a plant. Two original ImageGen illustrations. Review: `patio-sunlight-editorial-review-2026-10-27.md`. Next rotation: renter-friendly (documenting a room before reversible changes) or practical-solutions (repair/replacement decision); avoid another plant-light, paint or entryway guide.
