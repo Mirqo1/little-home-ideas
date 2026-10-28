@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-28",
+  "conversion": "Whole-frame resize, WebP quality 84; no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/rental-room-record-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 86892,
+      "sha256": "308828c037d3da95a27c6aa1dd82133c96a9fb44c5e6296c218764308532c35e",
+      "sourceSha256": "6e757e1c993fae93981c931d299499f61acbe48d8790531edf6005e19c9a2bcc"
+    },
+    {
+      "path": "/assets/articles/rental-room-record-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 27410,
+      "sha256": "11a6404a49bcf3989f3be5dc6ad124321cefdc72f33860b09147dc45cba51c5c",
+      "sourceSha256": "6e757e1c993fae93981c931d299499f61acbe48d8790531edf6005e19c9a2bcc"
+    },
+    {
+      "path": "/assets/articles/rental-room-record-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 69272,
+      "sha256": "98978017144a3816f39edc4a7958501ffcfe8bb5926a039a39a265044d5d61fa",
+      "sourceSha256": "026eb9f6a25d61f29d5e8daed8f9afb1063ed61ab597195bcbb8c8e79e20efe1"
+    }
+  ]
+}
