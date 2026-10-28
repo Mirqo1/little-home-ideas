@@ -99,7 +99,7 @@ Copy this worksheet into your household notes:
 | Restoration | Who does what, when, and agreed costs | Record the actual agreement, not an assumption |
 | Completion | Photos and any requested follow-up | Photograph approved finished scope and retained parts |
 
-Keep this record somewhere you can access during a move. Photograph the area before work and after completion, using similar framing so the locations are recognizable. Photos help describe condition; they do not guarantee how a future disagreement will be resolved.
+Keep this record somewhere you can access during a move. Photograph the area before work and after completion, using similar framing so the locations are recognizable. Photos help describe condition; they do not guarantee how a future disagreement will be resolved. For a repeatable wide-view and detail sequence, use our [guide to documenting a rental room before decorating](/articles/document-rental-room-before-decorating/).
 
 ## If the answer is no, solve the original problem another way
 

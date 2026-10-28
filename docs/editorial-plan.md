@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Twenty-one guides are published as of October 27, 2026, including the outdoor patio sunlight observation guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Twenty-two guides are published as of October 28, 2026, including the pre-project rental room documentation guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -40,7 +40,7 @@ Twenty-one guides are published as of October 27, 2026, including the outdoor pa
 | 18 | DIY & Home Updates | Make a realistic small-project shopping list | Materials versus optional decoration | Research |
 | 19 | Renter-Friendly Living | Removable hooks: check the wall first | Exact-product decision tree | Published |
 | 20 | Renter-Friendly Living | Ask permission for a rental update | Practical request template, no legal conclusions | Published October 23, 2026 |
-| 21 | Renter-Friendly Living | Document the room before reversible changes | Photo record + instruction archive | Research |
+| 21 | Renter-Friendly Living | Document the room before reversible changes | Photo record + instruction archive | Published October 28, 2026 |
 | 22 | Renter-Friendly Living | Freestanding storage versus wall mounting | Footprint and anti-tip limits | Research |
 | 23 | Renter-Friendly Living | Evaluate a peel-and-stick product | Surface compatibility and removal uncertainty | Research |
 | 24 | Renter-Friendly Living | Plan to remove an update before installing it | Reversal checklist and material storage | Research |
@@ -98,3 +98,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - October 26, 2026 (Europe/Bratislava): “Test Paint Colors in a Small Room Before Buying Gallons” — `/articles/test-paint-colors-small-room/`. DIY-home cluster; movable samples, repeated-location/light log, hypothetical two-color decision and exact final-product record; two original ImageGen illustrations. Review: `paint-samples-editorial-review-2026-10-26.md`. Next rotation: garden-patio (outdoor sunlight observation or a focused main-activity decision); avoid another indoor color, entryway or paperwork guide.
 
 - October 27, 2026 (Europe/Bratislava): “Record Patio Sunlight Before Buying Container Plants” — `/articles/record-patio-sunlight-before-buying-plants/`. Garden-patio cluster; two-location log, honest observation gaps, hypothetical comparison and seasonal recheck before choosing a plant. Two original ImageGen illustrations. Review: `patio-sunlight-editorial-review-2026-10-27.md`. Next rotation: renter-friendly (documenting a room before reversible changes) or practical-solutions (repair/replacement decision); avoid another plant-light, paint or entryway guide.
+
+- October 28, 2026 (Europe/Bratislava): “Document a Rental Room Before You Start Decorating” — `/articles/document-rental-room-before-decorating/`. Renter-friendly cluster; wide/location/detail photo sequence, honest date and condition notes, hypothetical reading-corner example, filenames and project worksheet. Two original ImageGen illustrations. Review: `rental-room-record-editorial-review-2026-10-28.md`. Next rotation: practical-solutions (repair/replacement decision) or small-spaces (narrow bathroom); avoid another rental paperwork, plant-light or paint guide.

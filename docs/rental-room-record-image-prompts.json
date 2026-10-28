@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-28",
+  "method": "Built-in ImageGen",
+  "purpose": "Original fictional room-condition planning illustrations; not actual rental evidence or tested work.",
+  "assets": [
+    {
+      "key": "rental-room-record-cover",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 editorial website cover. Modest American rental living room before a small decorating update: plain warm off-white wall with one subtle existing gray scuff near the baseboard, small neutral sofa to the side, low oak coffee table holding a smartphone face down and a blank notebook. Wall and baseboard clearly visible and unobstructed; no tools, no wall attachments, no work started. Natural window light, attainable tidy interior, realistic textures and proportions, professional calm editorial photography, eye-level wide view. No people, no readable text, no logos, no watermark, no before-and-after collage. Fictional illustration about recording current room condition, not a real project or photographic evidence."
+    },
+    {
+      "key": "rental-room-record-detail",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 inline editorial illustration. Tight oblique close view of a modest rental room's cream painted wall meeting a white baseboard and oak floor. A small existing gray scuff on the wall above the baseboard, clearly visible but not exaggerated. On the floor nearby an open blank notebook, plain pencil and smartphone lying face down. The perspective shows where the scuff is relative to the room corner. Soft side daylight and honest realistic texture. Different close composition from a wide living room. No people, hands, readable text, measurement marks, tools, installed products, logos, watermark or collage. Fictional illustration of observing a surface before decorating; not a real condition record or tested project."
+    }
+  ]
+}
