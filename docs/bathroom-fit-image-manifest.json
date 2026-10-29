@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-29",
+  "conversion": "Whole-frame resize, WebP quality 84; no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/bathroom-fit-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 59340,
+      "sha256": "79aac4818207cf2fca3bc758fcd0fe8c873a8a4781349a21d41613bb07b6b1f4",
+      "sourceSha256": "6c71b7acfc77810d44a68f8d33a8d3313de83b68cdfbeca941852520b4f7b5e8"
+    },
+    {
+      "path": "/assets/articles/bathroom-fit-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 19354,
+      "sha256": "ec2842a9282a8f563503ef1b682e88976fc3fbe34b458006649f6cb940c9447b",
+      "sourceSha256": "6c71b7acfc77810d44a68f8d33a8d3313de83b68cdfbeca941852520b4f7b5e8"
+    },
+    {
+      "path": "/assets/articles/bathroom-fit-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 60038,
+      "sha256": "699f9fc28c8a9c55dd29ca7d3f0e3aa0f3b4d49f423784e5820f057f9963c29c",
+      "sourceSha256": "d6fbdaccc7de31b35af846b012a23a50d0d807942362cbebff69853009be0e7a"
+    }
+  ]
+}

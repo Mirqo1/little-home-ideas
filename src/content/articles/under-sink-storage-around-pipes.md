@@ -53,6 +53,8 @@ Choose removable, cleanable containers and leave a way to inspect the cabinet fl
 
 EPA guidance emphasizes fixing the source of moisture, rather than simply hiding wet materials. If you find recurring water damage or visible mold, follow the agency's guidance and contact the appropriate property professional; this article is a storage plan, not a remediation procedure.
 
+If the cabinet cannot hold your daily items, compare a separate unit with our [narrow bathroom storage fit check](/articles/narrow-bathroom-storage-fit-check/) before using the floor beside the vanity. It checks door movement as well as the footprint.
+
 ## Use a quick final check
 
 Open the door and answer three questions: can you see the plumbing, reach the shutoffs, and lift out the daily supplies? If not, remove a tier or reduce the number of containers. Leave the cabinet easy to service.

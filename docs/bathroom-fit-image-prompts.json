@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-29",
+  "method": "Built-in ImageGen",
+  "purpose": "Fictional bathroom fit-planning scenes; not tested projects, verified layouts or branded product depictions.",
+  "assets": [
+    {
+      "key": "bathroom-fit-cover",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 editorial website cover. A modest small American bathroom, warm white walls, pale ceramic tile floor, simple white vanity with closed drawers. At the side of the vanity, a very narrow low white three-tier freestanding cart holding only two folded hand towels and two plain closed toiletry bottles. View from the open bathroom doorway, doorway and open floor clearly visible, spacious enough for normal movement, no storage near toilet, no crowded styling. Soft natural daylight, attainable lived-in interior, realistic materials and physically plausible furniture. No people, no readable text, no logos, no watermark, no collage. Fictional illustrative scene for measuring bathroom storage before purchase, not an actual tested project. 1536x1024 composition."
+    },
+    {
+      "key": "bathroom-fit-detail",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 inline editorial photograph. Close oblique view of a clean dry pale tile bathroom floor beside a white vanity and cream wall with projecting white baseboard. A single flat rectangular piece of plain brown kraft paper lies on the floor in a narrow gap beside the vanity, representing the footprint of a candidate storage cart. Folded tape measure and blank notebook with pencil rest on the vanity countertop above. No cart, no people or hands, no adhesive tape on surfaces, no numerical measurement claims or readable markings. Doorway edge visible at one side, keep floor walkway unobstructed. Natural side daylight, realistic proportions and texture, editorial photography. No logos, watermark, text, collage. Fictional planning illustration, not a demonstrated or tested project. 1536x1024 composition."
+    }
+  ]
+}
