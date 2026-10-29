@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Twenty-two guides are published as of October 28, 2026, including the pre-project rental room documentation guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Twenty-three guides are published as of October 29, 2026, including the pre-project rental room documentation guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -24,7 +24,7 @@ Twenty-two guides are published as of October 28, 2026, including the pre-projec
 | 2 | Small Spaces & Storage | Under-sink storage around pipes | Map obstructions + keep valves visible | Published |
 | 3 | Small Spaces & Storage | Small entryway without a closet | Arrival routine + unobstructed routes | Published |
 | 4 | Small Spaces & Storage | Measure a closet before buying organizers | Measurement worksheet and bin-fit example | Published |
-| 5 | Small Spaces & Storage | Narrow bathroom storage without crowding the floor | Fit check and clearance trade-offs | Research |
+| 5 | Small Spaces & Storage | Narrow bathroom storage without crowding the floor | Fit check and clearance trade-offs | Published October 29, 2026 |
 | 6 | Small Spaces & Storage | Keep everyday shoes in a tiny entryway | Capacity based on actual routine | Published October 25, 2026 |
 | 7 | Garden & Patio | Plan a small patio layout before buying furniture | Real footprints in use + walking route | Published |
 | 8 | Garden & Patio | Start a three-pot container garden | Manageable trial + drainage and climate checks | Published |
@@ -100,3 +100,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - October 27, 2026 (Europe/Bratislava): “Record Patio Sunlight Before Buying Container Plants” — `/articles/record-patio-sunlight-before-buying-plants/`. Garden-patio cluster; two-location log, honest observation gaps, hypothetical comparison and seasonal recheck before choosing a plant. Two original ImageGen illustrations. Review: `patio-sunlight-editorial-review-2026-10-27.md`. Next rotation: renter-friendly (documenting a room before reversible changes) or practical-solutions (repair/replacement decision); avoid another plant-light, paint or entryway guide.
 
 - October 28, 2026 (Europe/Bratislava): “Document a Rental Room Before You Start Decorating” — `/articles/document-rental-room-before-decorating/`. Renter-friendly cluster; wide/location/detail photo sequence, honest date and condition notes, hypothetical reading-corner example, filenames and project worksheet. Two original ImageGen illustrations. Review: `rental-room-record-editorial-review-2026-10-28.md`. Next rotation: practical-solutions (repair/replacement decision) or small-spaces (narrow bathroom); avoid another rental paperwork, plant-light or paint guide.
+
+- October 29, 2026 (Europe/Bratislava): “Narrow Bathroom Storage: Check the Door Swing Before Buying” — `/articles/narrow-bathroom-storage-fit-check/`. Small-spaces cluster; three-dimensional fit, daily shelf access, door-sweep rejection example and original shopping worksheet. Two original ImageGen illustrations. Review: `bathroom-fit-editorial-review-2026-10-29.md`. Next rotation: practical-solutions (repair/replacement decision) or DIY-home (small-project shopping list); avoid another bathroom, paperwork or measuring-only shopping guide.
