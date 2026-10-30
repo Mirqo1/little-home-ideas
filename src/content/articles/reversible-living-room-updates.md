@@ -47,6 +47,8 @@ A side table is useful only if you can reach it comfortably and still move aroun
 
 If a storage unit is needed, account for its doors or drawers when open. Follow anti-tip instructions and review CPSC guidance for furniture with doors, drawers, or shelves. Obtain approval for a suitable anchor in a rental. Do not leave required anchoring out of the plan to make a change appear reversible.
 
+If a side table is worn or damaged, use our [repair-versus-replacement comparison](/articles/repair-or-replace-side-table/) before treating a new one as part of the refresh. It separates the work you need from optional refinishing and includes transport in the comparison.
+
 ## Add wall changes carefully
 
 Art may be leaned only where the item and location allow safe, stable placement. A heavy frame balanced on a narrow surface is not a reliable substitute for mounting. For adhesive products, use our [removable-hook checklist](/articles/removable-hooks-rental-wall-checklist/) and the exact manufacturer's instructions.

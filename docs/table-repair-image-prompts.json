@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-30",
+  "method": "Built-in ImageGen",
+  "purpose": "Original fictional furniture decision illustrations, not tested projects, damage assessments or repair results.",
+  "assets": [
+    {
+      "key": "table-repair-cover",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 editorial website cover, 1536x1024 composition. A small attainable American living room in soft morning daylight. One plain wooden side table beside a neutral fabric armchair, table top empty with a few light cosmetic scratches and a subtle worn finish, all legs intact and visibly ordinary, no dramatic damage. An open blank notebook and closed laptop on a separate low coffee table in the foreground suggest comparing repair estimates. Calm honest editorial interior photography, warm cream and natural oak, realistic joinery and proportions. No people, readable text, logos, watermarks, tools, active repair, before-after collage, luxury styling. Fictional illustration for deciding whether to request repair or replacement, not a tested project, not proof of structural safety."
+    },
+    {
+      "key": "table-repair-detail",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 inline editorial photograph, 1536x1024 composition. Tight oblique close view of the corner of an ordinary wooden side table showing a lightly scratched satin-finish top and a small superficial worn patch at the edge, intact rounded corner and leg. In the background on a separate desk, a blank notebook with a pencil and a smartphone face down softly out of focus. No repair underway, no glue, clamps, screws or tools, no loose structural joints or hazards. Gentle window side light reveals natural wood texture and surface wear. Photorealistic modest home editorial photography, different close composition from a full living-room view. No people, hands, readable text, numbers, logos, watermark or collage. Fictional illustration of recording an observable condition for a repair estimate; no diagnosis or tested-result claim."
+    }
+  ]
+}

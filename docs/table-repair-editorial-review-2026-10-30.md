@@ -1,0 +1,19 @@
+# Side-table repair decision — October 30, 2026
+
+## Topic and research
+
+Fetched current origin/main 7b4fac2; read PUBLISHING.md, full editorial plan, existing article inventory and related living-room/manual guides. No October 30 article existed. Practical-solutions rotates after small-spaces. Current U.S. search results include furniture-repair price ranges, referral pages and percentage-based replace-versus-repair rules. Contribution: comparable finished outcomes, explicit missing charges, transport/usable-date checks and a practical side-table decision worksheet without fabricated market rates or universal cost ratios. Competitor pages inform intent only, not technical claims.
+
+Primary sources inspected October 30: FTC Consumer Advice Warranties for receipt/warranty records and coverage/service-cost questions (under 100 derived words; no interpretation of coverage or legal rights); CPSC Recalls & Product Safety Warnings for identity matching and notice-specific remedies (under 150 derived words; no-match is not certification); EPA What You Can Do About Climate Change — Waste for considering furniture repair, avoiding unnecessary purchases and checking local acceptance (under 100 derived words). EPA's older reducing-and-reusing URL returned 404 and was excluded; the current waste page was opened successfully. No unsupported prices, savings, emissions figures or useful-life claims.
+
+## Editorial review completed
+
+American English, one household decision. Distinguishes observed condition, qualified assessment and cosmetic preference. Stops unsafe use; no loading/rocking demonstration, repair procedure, sanding, chemical treatment, electrical work or material diagnosis. Brand/model and recall match do not depend on visual similarity. Warranty outcome left to actual terms/provider response. Source-backed claims linked in context and frontmatter. Worksheet treats unknown as unknown and avoids duplicate credited fees/deposits. Hypothetical example explicitly assumes a professional inspection; no implied real project or actual quoted prices. Waiting applies only to an optional cosmetic change with continued-use suitability established; unresolved safety means out of use. Donation acceptance and local waste arrangements checked before replacement; no promised pickup, recycling or donation eligibility. Incoming contextual link from the living-room guide; four relevant outgoing internal links. Logo and shared design unchanged.
+
+Two built-in ImageGen scenes visually inspected: attainable living room with lightly worn wooden side table, then a distinct close-up of tabletop scratches/worn edge and intact corner. No repair underway, fake labels, numerical claims or unsafe setup. Images are fictional illustrations, not evidence of diagnosis or tested work. Exact prompts and source/output SHA-256 hashes retained in adjacent JSON manifests. Whole-frame WebP 1200x800 plus 600x400 cover variant, quality 84. Alt text matches the actual compositions.
+
+Publication date October 30, 2026 Europe/Bratislava. Reviewed/draft flags changed only after this review. Validation and CI results will be recorded after execution; no deployment claim made at this stage.
+
+## Local validation and visual review
+
+99/99 tests passed. Astro build passed with 40 pages; site audit passed local links/fragments, image dimensions/integrity, canonical/social metadata, Article schema and three sitemap files. Pages export produced 167 generated files; whitespace check passed. Managed static preview of the built dist was reviewed at a 1363px viewport: title/date/cover and comparison table readable, table widths 740px, page scroll width 1348px (no horizontal overflow), both new images loaded. A static copy was used because the existing Astro dev preview rejects the managed hostname; no application configuration changes. Mobile emulation was not performed. GitHub CI remains the premerge gate; live checks follow deployment.

@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-30",
+  "conversion": "Whole-frame resize to 1200x800 plus 600x400 cover variant; WebP quality 84, no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/table-repair-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 112866,
+      "sha256": "7a4d1cabeb792aec15310ebceda7effec1f642183d08b5d7adb661fb22a53648",
+      "sourceSha256": "072cc7b42a44219b7a3195923023e93a0662677311ef7d2a6cb55cf61204ad57"
+    },
+    {
+      "path": "/assets/articles/table-repair-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 35032,
+      "sha256": "e7cb82e1eb9de9d28a5c82ab597a9ffa8f4bd20304a3ba1be3723033e0fb3688",
+      "sourceSha256": "072cc7b42a44219b7a3195923023e93a0662677311ef7d2a6cb55cf61204ad57"
+    },
+    {
+      "path": "/assets/articles/table-repair-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 93052,
+      "sha256": "1b812a5db285ee6401d4c72c3f65b84b5e1acc89a2569b2793725134c5d08ae2",
+      "sourceSha256": "71ce62c92f4bc4eb6d63182ac0f065b2e8760113799d51e8b45ac26e5479b4ef"
+    }
+  ]
+}
