@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Twenty-three guides are published as of October 29, 2026, including the pre-project rental room documentation guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Twenty-four guides are published as of October 30, 2026, including the side-table repair decision guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -49,7 +49,7 @@ Twenty-three guides are published as of October 29, 2026, including the pre-proj
 | 27 | Practical Home Solutions | Store cleaning supplies with clear labels | Label-based storage, safety review required | Research |
 | 28 | Practical Home Solutions | Measure furniture for a delivery route | Doors, turns, usable access; no guaranteed-fit claims | Published |
 | 29 | Practical Home Solutions | Keep a home-product instruction folder | Model identification and update workflow | Published October 24, 2026 |
-| 30 | Practical Home Solutions | Compare repair, replacement, and waiting | Decision worksheet without invented cost figures | Research |
+| 30 | Practical Home Solutions | Compare repair, replacement, and waiting | Decision worksheet without invented cost figures | Published October 30, 2026: focused side-table comparison |
 
 Additional published guide: “Find the Right Spot for a Houseplant Before You Buy It” (October 21, 2026). This indoor light-log article supports the garden cluster; the outdoor container sunlight observation brief remains separate.
 
@@ -102,3 +102,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - October 28, 2026 (Europe/Bratislava): “Document a Rental Room Before You Start Decorating” — `/articles/document-rental-room-before-decorating/`. Renter-friendly cluster; wide/location/detail photo sequence, honest date and condition notes, hypothetical reading-corner example, filenames and project worksheet. Two original ImageGen illustrations. Review: `rental-room-record-editorial-review-2026-10-28.md`. Next rotation: practical-solutions (repair/replacement decision) or small-spaces (narrow bathroom); avoid another rental paperwork, plant-light or paint guide.
 
 - October 29, 2026 (Europe/Bratislava): “Narrow Bathroom Storage: Check the Door Swing Before Buying” — `/articles/narrow-bathroom-storage-fit-check/`. Small-spaces cluster; three-dimensional fit, daily shelf access, door-sweep rejection example and original shopping worksheet. Two original ImageGen illustrations. Review: `bathroom-fit-editorial-review-2026-10-29.md`. Next rotation: practical-solutions (repair/replacement decision) or DIY-home (small-project shopping list); avoid another bathroom, paperwork or measuring-only shopping guide.
+
+- October 30, 2026 (Europe/Bratislava): “Repair or Replace a Side Table? Compare the Whole Job” — `/articles/repair-or-replace-side-table/`. Practical-solutions cluster; comparable scope, actual all-in offers, transport/timing unknowns, three-option hypothetical example without invented prices and original decision worksheet. Two original ImageGen illustrations. Review: `table-repair-editorial-review-2026-10-30.md`. Next rotation: DIY-home (small-project shopping list or one-corner refresh) or garden-patio (main-activity decision); avoid another paperwork, furniture-fit or repair-cost guide.
