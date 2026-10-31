@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-10-31",
+  "conversion": "Whole-frame resize; WebP quality 84, 1200x800 plus 600x400 cover; no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/patio-main-use-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 196308,
+      "sha256": "b392eff2f8e378afe701f5eb323101109e0e876cf877160eb3fba22fe534ff24",
+      "sourceSha256": "db5e639f1cdf1ccb38fdef29838e5f39b513d7fcd972c17ae9c148bccd6bb9ed"
+    },
+    {
+      "path": "/assets/articles/patio-main-use-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 69616,
+      "sha256": "f89d292652af7c22d70882b2b90f2b29dd320becf51c9245a634319b7f30c443",
+      "sourceSha256": "db5e639f1cdf1ccb38fdef29838e5f39b513d7fcd972c17ae9c148bccd6bb9ed"
+    },
+    {
+      "path": "/assets/articles/patio-main-use-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 144236,
+      "sha256": "bb95910217266956b9fc3a9e8e1ad9abb0b584f1c734e061049e832ed379421a",
+      "sourceSha256": "1a5db40221b8bf7c527b1598442d25a4b49db444797210d2d954d55f57bf4a65"
+    }
+  ]
+}

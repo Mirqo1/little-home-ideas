@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Twenty-four guides are published as of October 30, 2026, including the side-table repair decision guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Twenty-five guides are published as of October 31, 2026, including the patio main-use decision guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -28,7 +28,7 @@ Twenty-four guides are published as of October 30, 2026, including the side-tabl
 | 6 | Small Spaces & Storage | Keep everyday shoes in a tiny entryway | Capacity based on actual routine | Published October 25, 2026 |
 | 7 | Garden & Patio | Plan a small patio layout before buying furniture | Real footprints in use + walking route | Published |
 | 8 | Garden & Patio | Start a three-pot container garden | Manageable trial + drainage and climate checks | Published |
-| 9 | Garden & Patio | Choose a patio's main activity | Reading versus dining layout comparison | Research next |
+| 9 | Garden & Patio | Choose a patio's main activity | Reading versus dining use, switching and storage comparison | Published October 31, 2026 |
 | 10 | Garden & Patio | Store outdoor cushions in a small home | Real stack dimensions, opening checks, and product-specific care | Published October 15, 2026 |
 | 11 | Garden & Patio | Record sunlight before choosing container plants | Observation log, not universal plant promises | Published October 27, 2026 |
 | 12 | Garden & Patio | Small patio winter storage checklist | Region-dependent steps and product instructions | Published October 22, 2026 |
@@ -104,3 +104,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - October 29, 2026 (Europe/Bratislava): “Narrow Bathroom Storage: Check the Door Swing Before Buying” — `/articles/narrow-bathroom-storage-fit-check/`. Small-spaces cluster; three-dimensional fit, daily shelf access, door-sweep rejection example and original shopping worksheet. Two original ImageGen illustrations. Review: `bathroom-fit-editorial-review-2026-10-29.md`. Next rotation: practical-solutions (repair/replacement decision) or DIY-home (small-project shopping list); avoid another bathroom, paperwork or measuring-only shopping guide.
 
 - October 30, 2026 (Europe/Bratislava): “Repair or Replace a Side Table? Compare the Whole Job” — `/articles/repair-or-replace-side-table/`. Practical-solutions cluster; comparable scope, actual all-in offers, transport/timing unknowns, three-option hypothetical example without invented prices and original decision worksheet. Two original ImageGen illustrations. Review: `table-repair-editorial-review-2026-10-30.md`. Next rotation: DIY-home (small-project shopping list or one-corner refresh) or garden-patio (main-activity decision); avoid another paperwork, furniture-fit or repair-cost guide.
+
+- October 31, 2026 (Europe/Bratislava): “Small Patio: Dining or Reading? Choose One Main Use” — `/articles/small-patio-dining-or-reading/`. Garden-patio cluster; ready-state decision, real meal surface, honest switching/storage requirements, hypothetical six-to-one activity comparison that does not override shared needs, and original two-option worksheet. Two original ImageGen illustrations. Review: `patio-main-use-editorial-review-2026-10-31.md`. Next rotation: DIY-home (small-project shopping list or one-corner refresh) or renter-friendly (removal plan); avoid another patio layout, furniture-fit, repair or paperwork topic.
