@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-31",
+  "method": "Built-in ImageGen",
+  "purpose": "Original fictional patio activity concepts; not measured layouts, actual projects or tested products. Separate scenes, not a before-and-after pair.",
+  "assets": [
+    {
+      "key": "patio-main-use-cover",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 editorial website cover, 1536x1024 composition. A modest ground-level American backyard patio beside a cream house wall and sliding glass door, small simple paved area. One comfortable outdoor wooden lounge chair with a plain pale sage cushion and a compact separate side table holding a closed book and plain mug. A single modest potted plant at the far edge, no screen or umbrella, open uncluttered route from door. Calm soft autumn daylight, attainable lived-in outdoor setting, subtle fallen leaves beyond paving, natural materials and plausible proportions. Wide eye-level composition showing the chair and its relationship to doorway. No people, readable text, logos, watermark, collage, fire equipment, installations or luxury staging. Fictional reading-focused patio concept, not a tested or measured layout."
+    },
+    {
+      "key": "patio-main-use-detail",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 inline editorial photography, 1536x1024 composition. An attainable small ground-level patio dining arrangement, one simple compact square wooden outdoor table with two plain upright outdoor chairs facing each other, a cream house wall in background and pale pavers. Close three-quarter composition focused on the tabletop with two ordinary ceramic plates, two glasses and folded cloth napkins; enough tabletop visible to understand what a meal needs, chairs and open paving visible around it. Gentle natural daylight, realistic wood, ceramics and textiles, restrained cream and muted green colors. No people, no text, numerical marks, logos, watermark, collage, elaborate entertaining props, sharp knives or heat sources. A fictional alternative dining concept, not the same measured patio as another image and not a real project or tested fit."
+    }
+  ]
+}

@@ -22,6 +22,8 @@ A furniture set can fit within a patio's dimensions and still make the space dif
 
 Choose a main purpose: morning coffee, reading, dinner for two, or occasional gathering. You can support more than one activity, but a small patio is easier to plan when one leads. A dining table might be unnecessary if you mainly read outdoors.
 
+If you are torn between a meal setup and a comfortable reading seat, our [dining-or-reading decision guide](/articles/small-patio-dining-or-reading/) compares the everyday routine, tabletop job, and storage needed for each before you choose products.
+
 Write down how many people usually use the space. Plan for typical use, then consider whether occasional extra seating can be stored elsewhere. Do not crowd every day around a gathering that happens twice a year.
 
 ## Map the fixed features
