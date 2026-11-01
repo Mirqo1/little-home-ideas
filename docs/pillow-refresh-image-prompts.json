@@ -1,0 +1,15 @@
+{
+  "created": "2026-11-01",
+  "method": "Built-in ImageGen",
+  "purpose": "Original fictional indoor pillow refresh illustrations; not real projects, measured product examples or tested pairings.",
+  "assets": [
+    {
+      "key": "pillow-refresh-cover",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 editorial website cover, 1536x1024 composition. A modest American living room with a light cream fabric sofa, two simple decorative throw pillows one muted sage and one warm ivory textured cotton, with a folded rust-colored empty pillow cover resting over the sofa arm. On a small nearby oak coffee table a blank notebook and a plain white square pillow insert, intact closed fabric casing with no loose filling. Attainable tidy home, soft natural window daylight, realistic textile weave, seams and proportions, calm editorial interior photography. No people, hands, readable text, labels, logos, watermark, scissors, needles, tools or before/after collage. Fictional illustration of planning a pillow-cover refresh using existing inserts, not a tested or completed real project."
+    },
+    {
+      "key": "pillow-refresh-detail",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 inline editorial photograph, 1536x1024 composition. Close overhead-oblique tabletop view on a clean pale oak table: one empty sage cotton square throw pillow cover laid flat with a short open concealed zipper visible along one edge, beside one separate intact white square pillow insert in its closed casing. A soft tailor measuring tape loosely coiled nearby and a plain pencil, no readable measurements or numerals. Side daylight reveals textile texture and seams, realistic domestic proportions. Distinct close composition from a living room cover. No people, hands, open insert casing, loose stuffing, cutting or sewing, text, brand labels, logos, watermark or collage. Fictional planning illustration about checking removable covers and existing inserts; no claimed measured dimensions or tested fit."
+    }
+  ]
+}
