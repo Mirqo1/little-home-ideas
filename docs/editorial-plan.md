@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Twenty-five guides are published as of October 31, 2026, including the patio main-use decision guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Twenty-six guides are published as of November 1, 2026, including the throw pillow cover refresh guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -37,7 +37,7 @@ Twenty-five guides are published as of October 31, 2026, including the patio mai
 | 15 | DIY & Home Updates | Replace cabinet pulls: measure before buying | Hole spacing, hardware compatibility, permission | Published October 21, 2026 |
 | 16 | DIY & Home Updates | Choose a rug without blocking a door | Full footprint and care check | Published October 20, 2026 |
 | 17 | DIY & Home Updates | A one-corner room refresh | Annotated before/after schematic, no invented project | Research |
-| 18 | DIY & Home Updates | Make a realistic small-project shopping list | Materials versus optional decoration | Research |
+| 18 | DIY & Home Updates | Make a realistic small-project shopping list | Materials versus optional decoration | Focused pillow-cover shopping example published November 1, 2026; broader brief remains research |
 | 19 | Renter-Friendly Living | Removable hooks: check the wall first | Exact-product decision tree | Published |
 | 20 | Renter-Friendly Living | Ask permission for a rental update | Practical request template, no legal conclusions | Published October 23, 2026 |
 | 21 | Renter-Friendly Living | Document the room before reversible changes | Photo record + instruction archive | Published October 28, 2026 |
@@ -106,3 +106,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - October 30, 2026 (Europe/Bratislava): “Repair or Replace a Side Table? Compare the Whole Job” — `/articles/repair-or-replace-side-table/`. Practical-solutions cluster; comparable scope, actual all-in offers, transport/timing unknowns, three-option hypothetical example without invented prices and original decision worksheet. Two original ImageGen illustrations. Review: `table-repair-editorial-review-2026-10-30.md`. Next rotation: DIY-home (small-project shopping list or one-corner refresh) or garden-patio (main-activity decision); avoid another paperwork, furniture-fit or repair-cost guide.
 
 - October 31, 2026 (Europe/Bratislava): “Small Patio: Dining or Reading? Choose One Main Use” — `/articles/small-patio-dining-or-reading/`. Garden-patio cluster; ready-state decision, real meal surface, honest switching/storage requirements, hypothetical six-to-one activity comparison that does not override shared needs, and original two-option worksheet. Two original ImageGen illustrations. Review: `patio-main-use-editorial-review-2026-10-31.md`. Next rotation: DIY-home (small-project shopping list or one-corner refresh) or renter-friendly (removal plan); avoid another patio layout, furniture-fit, repair or paperwork topic.
+
+- November 1, 2026 (Europe/Bratislava): “Refresh Throw Pillow Covers Using the Inserts You Own” — `/articles/refresh-throw-pillow-covers-existing-inserts/`. DIY-home cluster; separate cover/insert records, empty-cover measurements, product-specific pairing and care, needed/optional/unresolved purchase list, and hypothetical three-pillow one-cover starting order. Two original ImageGen illustrations. Review: `pillow-refresh-editorial-review-2026-11-01.md`. Next rotation: renter-friendly (removal planning) or practical-solutions (seasonal inspection log); avoid another textile sizing, furniture shopping or patio-use guide.

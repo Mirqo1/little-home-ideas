@@ -34,6 +34,8 @@ Move lighter pieces one at a time with appropriate help and floor protection. Do
 
 Choose an existing item you like as the starting color. Then compare a few fabric samples or items already in the home. A rug, throw, or cushion cover can change the visual balance without repainting, but comfort and maintenance matter as much as color.
 
+For a focused textile change, our [throw pillow cover refresh guide](/articles/refresh-throw-pillow-covers-existing-inserts/) starts with the inserts you already own and checks sizing and care before buying a matching set.
+
 Measure the space in use before selecting a rug. Check the door movement and choose a suitable nonslip method compatible with the flooring and the rug maker's instructions. Avoid curled edges in walking routes.
 
 <figure class="article-inline-image">

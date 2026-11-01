@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-01",
+  "conversion": "Whole-frame resize; WebP quality 84, 1200x800 plus 600x400 cover; no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/pillow-refresh-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 154416,
+      "sha256": "c6d83d46852467e724788641efdaf9b705b87a1314084cd254bf7ed30a7db78d",
+      "sourceSha256": "5eeb5f95e30a13770ac6b5cb3903658c66a51bf22d5176c84bcd5785a68600a7"
+    },
+    {
+      "path": "/assets/articles/pillow-refresh-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 42104,
+      "sha256": "55b6b339a1fab54972c2a3ded37bc8d7b8d4ca17b6967b5758a532e90d43cbd6",
+      "sourceSha256": "5eeb5f95e30a13770ac6b5cb3903658c66a51bf22d5176c84bcd5785a68600a7"
+    },
+    {
+      "path": "/assets/articles/pillow-refresh-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 137502,
+      "sha256": "3c14017051a96b523573be9a5836b4ba96093a34ca2a3f75cfb3665566ff0489",
+      "sourceSha256": "a37d24468131408e534c302d20da6c9eefc1a821c9ecffac50211c10e4ef39c8"
+    }
+  ]
+}
