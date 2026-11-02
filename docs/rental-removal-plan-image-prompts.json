@@ -1,0 +1,15 @@
+{
+  "created": "2026-11-02",
+  "method": "Built-in ImageGen",
+  "purpose": "Original fictional rental-update planning illustrations, not actual installations or tested hardware sets.",
+  "assets": [
+    {
+      "key": "rental-removal-plan-cover",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 editorial website cover, 1536x1024 composition. A modest American rental apartment kitchen with pale cream cabinets, simple original brushed nickel cabinet pulls installed on doors, an oak dining table in foreground holding a shallow open white storage box. Inside the box are two alternate black cabinet pulls and a small transparent resealable bag with matching screws, separated neatly, plus blank kraft paper tags. A closed plain notebook and pencil beside it. Natural window light, attainable home, realistic cabinet geometry and hardware. The scene illustrates planning a reversible small update before installation, no work in progress. No people, hands, readable words, brands, logos, watermarks, drilling tools, adhesive on surfaces or collage. Fictional editorial illustration, not a completed tested project."
+    },
+    {
+      "key": "rental-removal-plan-detail",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 inline editorial photograph, 1536x1024 composition. Close overhead still life on a pale oak table showing a small rental-project parts kit: two brushed nickel cabinet bar pulls, four matching short machine screws contained together inside one transparent resealable bag, one blank kraft hang tag tucked inside the bag, a small plain closed cardboard storage box beside it, a slim closed instruction booklet with entirely blank cover and an unmarked pencil. Carefully separated coherent hardware, believable clean screw geometry and real metal texture. Soft side daylight, natural editorial domestic photography, restrained warm neutral palette. Tight composition completely distinct from wide kitchen interior. No people, hands, text, numerals, logos, watermark, drilling tools, adhesives, wall attachment, loose piles of many screws or collage. Fictional illustration of keeping original parts together for a future reversal, not a product test."
+    }
+  ]
+}

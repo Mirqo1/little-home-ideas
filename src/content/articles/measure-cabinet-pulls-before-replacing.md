@@ -87,6 +87,6 @@ Keep packaging and check return conditions before opening a bulk order. Try one 
 
 Open the door or drawer slowly through normal use. Check that the pull seats correctly, remains secure, feels comfortable, and does not collide with anything nearby. If the screws resist, the pull rocks, or the existing holes do not align, stop and resolve the mismatch. Do not pull the holes into alignment with extra force.
 
-Once the sample works, order from your inventory and keep a record of the exact model, finish, mounting dimension, and required fasteners. Store the original hardware by location if you may need to reverse the change.
+Once the sample works, order from your inventory and keep a record of the exact model, finish, mounting dimension, and required fasteners. Store the original hardware by location if you may need to reverse the change. Use our [rental update removal plan](/articles/plan-rental-update-removal-before-installing/) to connect each parts kit to its storage spot, removal instructions, and agreed end state.
 
 For another kitchen improvement before buying more accessories, try our [small kitchen drawer organization guide](/articles/organize-small-kitchen-drawers/). If the hardware is one part of a wider refresh, use the staged shopping approach in [reversible living room updates](/articles/reversible-living-room-updates/) to separate useful changes from optional decoration.

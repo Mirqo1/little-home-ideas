@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-02",
+  "conversion": "Whole-frame resize; WebP quality 84, 1200x800 plus 600x400 cover; no crop.",
+  "assets": [
+    {
+      "path": "/assets/articles/rental-removal-plan-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 109192,
+      "sha256": "4e7b24a8f63c8816778c6d8e05eaf6efb44872bdd7655c7e6c3cfe269c07b0d5",
+      "sourceSha256": "e9b003a3a12696f453867307c5ae701dd18c0443b87180eb6a1ad57972d13767"
+    },
+    {
+      "path": "/assets/articles/rental-removal-plan-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 37002,
+      "sha256": "5ff217bce6637ddac6dc554b8b43a733f50d401b16b3cb2c684e356bba92e2d5",
+      "sourceSha256": "e9b003a3a12696f453867307c5ae701dd18c0443b87180eb6a1ad57972d13767"
+    },
+    {
+      "path": "/assets/articles/rental-removal-plan-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 107308,
+      "sha256": "54755ff219b7c89e8006dd4b6e721c914e3a430de2554371a4469fd087162955",
+      "sourceSha256": "4053ff9e1b16213273c65990df7ee9900972cb448f73611f38adc11cd055752b"
+    }
+  ]
+}
