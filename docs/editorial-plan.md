@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Twenty-six guides are published as of November 1, 2026, including the throw pillow cover refresh guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Twenty-seven guides are published as of November 2, 2026, including the rental update removal plan. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -43,7 +43,7 @@ Twenty-six guides are published as of November 1, 2026, including the throw pill
 | 21 | Renter-Friendly Living | Document the room before reversible changes | Photo record + instruction archive | Published October 28, 2026 |
 | 22 | Renter-Friendly Living | Freestanding storage versus wall mounting | Footprint and anti-tip limits | Research |
 | 23 | Renter-Friendly Living | Evaluate a peel-and-stick product | Surface compatibility and removal uncertainty | Research |
-| 24 | Renter-Friendly Living | Plan to remove an update before installing it | Reversal checklist and material storage | Research |
+| 24 | Renter-Friendly Living | Plan to remove an update before installing it | Removal access, original-parts kit and project card | Published November 2, 2026 |
 | 25 | Practical Home Solutions | Window condensation: what renters can record | Observation log + escalation rather than diagnosis | Published |
 | 26 | Practical Home Solutions | A small-home seasonal inspection log | Manufacturer tasks and qualified-help boundaries | Research |
 | 27 | Practical Home Solutions | Store cleaning supplies with clear labels | Label-based storage, safety review required | Research |
@@ -108,3 +108,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - October 31, 2026 (Europe/Bratislava): “Small Patio: Dining or Reading? Choose One Main Use” — `/articles/small-patio-dining-or-reading/`. Garden-patio cluster; ready-state decision, real meal surface, honest switching/storage requirements, hypothetical six-to-one activity comparison that does not override shared needs, and original two-option worksheet. Two original ImageGen illustrations. Review: `patio-main-use-editorial-review-2026-10-31.md`. Next rotation: DIY-home (small-project shopping list or one-corner refresh) or renter-friendly (removal plan); avoid another patio layout, furniture-fit, repair or paperwork topic.
 
 - November 1, 2026 (Europe/Bratislava): “Refresh Throw Pillow Covers Using the Inserts You Own” — `/articles/refresh-throw-pillow-covers-existing-inserts/`. DIY-home cluster; separate cover/insert records, empty-cover measurements, product-specific pairing and care, needed/optional/unresolved purchase list, and hypothetical three-pillow one-cover starting order. Two original ImageGen illustrations. Review: `pillow-refresh-editorial-review-2026-11-01.md`. Next rotation: renter-friendly (removal planning) or practical-solutions (seasonal inspection log); avoid another textile sizing, furniture shopping or patio-use guide.
+
+- November 2, 2026 (Europe/Bratislava): “Plan How to Remove a Rental Update Before You Install It” — `/articles/plan-rental-update-removal-before-installing/`. Renter-friendly cluster; original removal-plan card, access before attachment, location-specific original-parts kit, consumables versus reusable components, and hypothetical two-pull example. Two original ImageGen illustrations. Review: `rental-removal-plan-editorial-review-2026-11-02.md`. Next rotation: practical-solutions (focused seasonal inspection log) or small-spaces (non-purchase daily organization); avoid another rental documentation, hardware, textile or patio-use guide.
