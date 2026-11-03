@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-03",
+  "conversion": "Whole-frame resize, no crop; WebP quality 84, 1200x800 and 600x400 cover.",
+  "assets": [
+    {
+      "path": "/assets/articles/charging-spot-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 86640,
+      "sha256": "35021de3501849f44810affb95431342893ea7cbf90739f60fd5a8da1f9068b8",
+      "sourceSha256": "ce12d8adfe08549e3723a2843aa60eed907eb178756972b3e2dce5b396b6a0c6"
+    },
+    {
+      "path": "/assets/articles/charging-spot-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 26874,
+      "sha256": "2092a1b661808bdda0b8b03eef9dd5f4607967661ac9d0a82dadd8e0b4330f8b",
+      "sourceSha256": "ce12d8adfe08549e3723a2843aa60eed907eb178756972b3e2dce5b396b6a0c6"
+    },
+    {
+      "path": "/assets/articles/charging-spot-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 151114,
+      "sha256": "8215467aaaa8ca97ca3f6a6496311fec0841d81f0f0bcd0cf526d16b72524821",
+      "sourceSha256": "65ccc39fe8d22547eb2dcf548acc46ed0aeaaa9d758834a5df05013dffed5c4f"
+    }
+  ]
+}
