@@ -1,0 +1,15 @@
+{
+  "created": "2026-11-03",
+  "method": "Built-in ImageGen",
+  "purpose": "Original fictional planning and disconnected-cable sorting illustrations, not tested installations.",
+  "assets": [
+    {
+      "key": "charging-spot-cover",
+      "prompt": "Use case: photorealistic-natural. Landscape 3:2 editorial photograph for a small-home charging-area planning guide. A modest American apartment living room, small pale oak desk against cream wall, one unbranded dark-screen smartphone resting flat on the bare hard desktop with a white charging cable lying disconnected beside it, an empty clear patch of tabletop, closed notebook and pencil to the side. A readily visible unobstructed wall outlet above desk height, nothing plugged into it. Wide enough to show clear floor walking space beside desk. Soft morning daylight, realistic restrained attainable interior. Planning scene, not an active charging demonstration. No cable boxes, baskets, powered electronics inside containers, extension cords, cable across floor, textiles on desktop, people, logos, text, watermarks or collage. Fictional illustration, no tested installation implied."
+    },
+    {
+      "key": "charging-spot-detail",
+      "prompt": "Use case: photorealistic-natural. Landscape 3:2 close overhead editorial still life on a pale oak tabletop. Exactly three separate unplugged charging cables loosely looped with generous curves, each secured with a reusable plain soft cable tie, laid in a row beside a small empty open cardboard box and blank paper tags. One slim closed plain notebook at edge. Clearly recognizable realistic USB cable ends, no exposed wires, no damage. Natural diffuse side daylight, restrained warm cream palette, crisp believable materials. A storage sorting scene only: no phone, powered charger, power strip, outlet, active electricity, text, numbers, brands, people, watermarks or collage. Fictional illustrative photograph, not a product test."
+    }
+  ]
+}

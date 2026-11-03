@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Twenty-seven guides are published as of November 2, 2026, including the rental update removal plan. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Twenty-eight guides are published as of November 3, 2026, including the small-home charging-spot guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -110,3 +110,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 1, 2026 (Europe/Bratislava): “Refresh Throw Pillow Covers Using the Inserts You Own” — `/articles/refresh-throw-pillow-covers-existing-inserts/`. DIY-home cluster; separate cover/insert records, empty-cover measurements, product-specific pairing and care, needed/optional/unresolved purchase list, and hypothetical three-pillow one-cover starting order. Two original ImageGen illustrations. Review: `pillow-refresh-editorial-review-2026-11-01.md`. Next rotation: renter-friendly (removal planning) or practical-solutions (seasonal inspection log); avoid another textile sizing, furniture shopping or patio-use guide.
 
 - November 2, 2026 (Europe/Bratislava): “Plan How to Remove a Rental Update Before You Install It” — `/articles/plan-rental-update-removal-before-installing/`. Renter-friendly cluster; original removal-plan card, access before attachment, location-specific original-parts kit, consumables versus reusable components, and hypothetical two-pull example. Two original ImageGen illustrations. Review: `rental-removal-plan-editorial-review-2026-11-02.md`. Next rotation: practical-solutions (focused seasonal inspection log) or small-spaces (non-purchase daily organization); avoid another rental documentation, hardware, textile or patio-use guide.
+
+- November 3, 2026 (Europe/Bratislava): “Plan a Small-Home Charging Spot Without Hiding the Chargers” — `/articles/plan-small-home-charging-spot/`. Practical-solutions cluster; device/routine worksheet, open location and disconnected cable-route rehearsal, separate spare storage, and hypothetical console-versus-desk decision. Two original ImageGen illustrations. Review: `charging-spot-editorial-review-2026-11-03.md`. Next rotation: small-spaces (non-purchase daily organization) or garden-patio (focused seasonal task); avoid another electronics, paperwork or rental-restoration guide.

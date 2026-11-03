@@ -114,3 +114,5 @@ Before discarding paper instructions, confirm that you have a complete, readable
 During seasonal planning, use the folder to find the manufacturer's actual care requirements rather than inventing a universal schedule. Our [small patio winter storage guide](/articles/small-patio-winter-storage-plan/) shows why different products can need different arrangements. For approved changes in a rental, keep permission and restoration details with the relevant product record using our [rental update request guide](/articles/ask-landlord-permission-rental-update/).
 
 If manuals currently fill a kitchen drawer, first finish one verified product folder. Then use our [small kitchen drawer organization plan](/articles/organize-small-kitchen-drawers/) to give the freed space a specific job. A small collection you can use is more valuable than a large archive you cannot search.
+
+For everyday electronics, connect the manual record with a named location and the correct equipment. Our [small-home charging-spot guide](/articles/plan-small-home-charging-spot/) provides a device worksheet and an unplugged cable-route rehearsal before assigning the space.
