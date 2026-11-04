@@ -1,0 +1,15 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-04",
+  "purpose": "Fictional empty-container organization scenes, not verified product combinations or tested seals.",
+  "assets": [
+    {
+      "key": "container-pairs-cover",
+      "prompt": "Use case: photorealistic-natural. Landscape 3:2 editorial photograph, 1536x1024. A modest American apartment kitchen with pale cream cabinets and oak counter, one broad open lower drawer. In the drawer four empty clear food storage containers sit separately in a single layer, two round and two rectangular, and their plain pale blue lids stand upright loosely in a simple open white divider at the side. Comfortable spacing, coherent realistic rims and matching geometries, no precarious stack. Clean dry objects, soft natural window light, attainable home interior. View at a gentle downward angle showing the drawer and counter, no kitchen sink or food. Fictional organizing illustration, not a tested product set. No hands, people, text, logos, watermark, giant collection, collage or readable brands."
+    },
+    {
+      "key": "container-pairs-detail",
+      "prompt": "Use case: photorealistic-natural. Landscape 3:2 close overhead editorial photograph, 1536x1024. Pale oak kitchen table with exactly two empty clean dry clear rectangular food storage containers side by side, each with its own matching plain pale blue lid laid flat directly below it, one smaller matched pair and one larger matched pair. Four separate physical objects total plus a small blank open notebook and pencil at the edge. Realistic thick glass rims, simple solid plastic lids, generous spacing, calm warm natural daylight. A coherent pairing inventory illustration, not a product test. No text, letters, numerals, food, brand, people, hands, sink, heat source, damage, watermark, collage or unpaired extra pieces. Composition distinct from a wide kitchen drawer."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-04",
+  "conversion": "Whole-frame resize without crop; WebP quality 84; 1200x800 and 600x400 cover.",
+  "assets": [
+    {
+      "path": "/assets/articles/container-pairs-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 108450,
+      "sha256": "6487324e73e52205ce02358965b7a7e80b5bf488d98c2497def4012108c3e868",
+      "sourceSha256": "a22527035ab1746726dfe40291832c096b55de71ee1ef6c89e4aab18bf1e171d"
+    },
+    {
+      "path": "/assets/articles/container-pairs-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 37212,
+      "sha256": "57fadf45275e22890b1a72528a642175596462a3fa5430d59b38c8a7d8ddb6fa",
+      "sourceSha256": "a22527035ab1746726dfe40291832c096b55de71ee1ef6c89e4aab18bf1e171d"
+    },
+    {
+      "path": "/assets/articles/container-pairs-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 134954,
+      "sha256": "feed13714f5a0cde8c19f3098a29c39d71ba09d7277bfeccdd1f91abc7ad4055",
+      "sourceSha256": "1ab6b03fd6712553e6ed48a659169699e15b1371628afc43468b3a47f75bdd76"
+    }
+  ]
+}
