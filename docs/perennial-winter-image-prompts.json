@@ -1,0 +1,15 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-05",
+  "purpose": "Fictional patio and shed planning scenes; no tested winter outcome.",
+  "assets": [
+    {
+      "key": "perennial-winter-cover",
+      "prompt": "Photorealistic natural editorial landscape 3:2 photograph of modest ground-level US apartment patio in late fall, two different-sized plant containers on paving beside a sheltered brick wall, one with sparse dormant perennial stems and one with low muted green foliage, clear unobstructed walkway and dry fallen leaves, soft overcast daylight, realistic materials. No snow, people, labels, text, brands, overlays, balconies or heaters. Fictional planning scene."
+    },
+    {
+      "key": "perennial-winter-detail",
+      "prompt": "Photorealistic natural editorial landscape 3:2 close photograph in an unheated garden shed, one small nursery pot with dormant perennial stems on a low sturdy wooden bench, visible potting mix, a simple unmarked blank plant tag, and a plain notebook nearby, diffuse cool window daylight, muted earthy colors. No heater, people, text, numbers, branded products, water pooling or overlays. Fictional observational illustration, distinct from patio view."
+    }
+  ]
+}

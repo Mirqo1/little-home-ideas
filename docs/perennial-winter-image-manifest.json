@@ -1,0 +1,31 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-05",
+  "conversion": "Whole-frame WebP quality 84; 1200x800 plus 600x400 cover.",
+  "assets": [
+    {
+      "path": "/assets/articles/perennial-winter-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 263390,
+      "sha256": "e45a37efffec322695d2e4ae588761bcd2f1130149d364d8ab6b434a1d30dbcd",
+      "sourceSha256": "78bef772745dbbfe8b5341ea3ee86e4f5c60d7485ab6fbb737f17cc29c03eb76"
+    },
+    {
+      "path": "/assets/articles/perennial-winter-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 72518,
+      "sha256": "a236964ad719cc1cf5fb74a9cf8257be221c5fd6536a7fdce72b4e7e7716862c",
+      "sourceSha256": "78bef772745dbbfe8b5341ea3ee86e4f5c60d7485ab6fbb737f17cc29c03eb76"
+    },
+    {
+      "path": "/assets/articles/perennial-winter-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 145452,
+      "sha256": "74b3b806e1bf3faa7f2d7feed7f690b86d3d31666de590f383e72181f58f7304",
+      "sourceSha256": "520ae3f983d54c0d248c41e94ac6064f91af6d4b89f4892d06e462c6291430b0"
+    }
+  ]
+}
