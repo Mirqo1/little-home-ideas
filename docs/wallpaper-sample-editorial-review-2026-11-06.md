@@ -1,0 +1,5 @@
+# Editorial review — November 6, 2026
+
+Checked current main d9cffc9, article inventory, publishing instructions, editorial plan, and the related living-room guide. Current search results focus on installation and selecting a product; this guide separates a no-adhesive preview from a permitted compatibility test. Tempaper and Spoonflower primary directions support the product-specific finish, paint curing, and test decisions. No universal wait, repair procedure, guaranteed removal, or claimed test. The hypothetical freshly painted wall stops before adhesive until compatibility and permission are resolved. Checked American English, worksheet, three outbound internal links and contextual incoming link.
+
+Visually inspected the generated landscape room view, separate overhead swatches, and portrait swatches on a table. No applied wallpaper, labels or measured results implied. Exact prompts and source/output hashes are preserved. Facebook JPEG derives from the cover; Pinterest is a separate 2:3 scene. No social posting or scheduling.
