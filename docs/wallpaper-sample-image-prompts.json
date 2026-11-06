@@ -1,0 +1,18 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-06",
+  "assets": [
+    {
+      "key": "cover",
+      "prompt": "Photorealistic natural editorial landscape 3:2 photograph: modest American rental living room, plain warm white painted wall above a low oak side table, two small loose peel-and-stick wallpaper samples lying on the tabletop with backings intact, one muted olive botanical and one subtle cream stripe, daylight from side, neutral linen chair just in frame, no installed wallpaper, no text, people, logos or overlays. Fictional planning illustration."
+    },
+    {
+      "key": "detail",
+      "prompt": "Photorealistic natural editorial landscape 3:2 close overhead photo: one small olive botanical wallpaper swatch with loose white release liner visibly separate on a clean oak table, a blank notebook, a pencil and a plain cream striped swatch beside it, clear material detail, soft window daylight, no brand, readable marks, hands, tools, or tested result. Distinct from room view."
+    },
+    {
+      "key": "pinterest",
+      "prompt": "Portrait 2:3 photorealistic editorial home decor photograph for Pinterest, a warm white apartment wall and slim oak side table, close eye-level view of two loose small wallpaper samples, cream stripe and soft olive botanical, beside a blank notebook, linen chair edge and gentle window light. Wallpaper is not installed, the focus is on sampling before purchase. No text, overlays, brand, hands or collage."
+    }
+  ]
+}

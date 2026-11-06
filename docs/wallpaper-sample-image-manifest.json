@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-06",
+  "conversion": "Whole-frame WebP article images and JPEG social assets; Facebook derives from cover; Pinterest is separately generated.",
+  "assets": [
+    {
+      "path": "/assets/articles/wallpaper-sample-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 77964,
+      "sha256": "5ecb1459726e17783faa3d8bc3f9a9ea15a4d4b9c6352a4b2166f1f9bf614b23",
+      "sourceSha256": "0ac4c04aaec37f872b9f605a96924341520621d1271bb6cdbc31372c2a8d67f2"
+    },
+    {
+      "path": "/assets/articles/wallpaper-sample-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 23642,
+      "sha256": "833266bac828dc827c5dbca596914beac94ccf5ffb2b4e091c77c280ef6ec4d4",
+      "sourceSha256": "0ac4c04aaec37f872b9f605a96924341520621d1271bb6cdbc31372c2a8d67f2"
+    },
+    {
+      "path": "/assets/social/wallpaper-sample-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 150622,
+      "sha256": "4ae204dc7b93d076cde2003e067a2b27e0cb92aca993cc3ade999accab6436f9",
+      "sourceSha256": "0ac4c04aaec37f872b9f605a96924341520621d1271bb6cdbc31372c2a8d67f2"
+    },
+    {
+      "path": "/assets/articles/wallpaper-sample-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 156122,
+      "sha256": "ad0a6b10fe5d9c19e375c1a3981aff73fa95d6ecb94e8383e82d2b81f81fe513",
+      "sourceSha256": "ca9c31a666ece732274af71cae22fe2d7dc48770d6c79d99f6a40248183d1d9f"
+    },
+    {
+      "path": "/assets/social/wallpaper-sample-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 270324,
+      "sha256": "67891b397402aab445245367e942189f6dc569a641746ea78afde51edeb2ed3b",
+      "sourceSha256": "45acd69241dc17cb39964d8f9f1b4cafd429ecceae21491c8fe2aa845fb1b332"
+    }
+  ]
+}

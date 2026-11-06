@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Thirty guides are published as of November 5, 2026, including the potted perennial winter guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Thirty-one guides are published as of November 6, 2026, including the peel-and-stick wallpaper sample guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -42,7 +42,7 @@ Thirty guides are published as of November 5, 2026, including the potted perenni
 | 20 | Renter-Friendly Living | Ask permission for a rental update | Practical request template, no legal conclusions | Published October 23, 2026 |
 | 21 | Renter-Friendly Living | Document the room before reversible changes | Photo record + instruction archive | Published October 28, 2026 |
 | 22 | Renter-Friendly Living | Freestanding storage versus wall mounting | Footprint and anti-tip limits | Research |
-| 23 | Renter-Friendly Living | Evaluate a peel-and-stick product | Surface compatibility and removal uncertainty | Research |
+| 23 | Renter-Friendly Living | Evaluate a peel-and-stick product | Surface compatibility and removal uncertainty | Published November 6, 2026 |
 | 24 | Renter-Friendly Living | Plan to remove an update before installing it | Removal access, original-parts kit and project card | Published November 2, 2026 |
 | 25 | Practical Home Solutions | Window condensation: what renters can record | Observation log + escalation rather than diagnosis | Published |
 | 26 | Practical Home Solutions | A small-home seasonal inspection log | Manufacturer tasks and qualified-help boundaries | Research |
@@ -116,3 +116,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 4, 2026 (Europe/Bratislava): “Organize Food Containers by Matching the Lids First” — `/articles/organize-food-containers-match-lids/`. Small-spaces cluster; exact-pair inventory, honest in-use and unresolved counts, comparison of paired versus separated storage, four-row worksheet and hypothetical seven-base/eight-lid example. Two original ImageGen illustrations. Review: `container-pairs-editorial-review-2026-11-04.md`. Next rotation: garden-patio (focused seasonal task) or DIY-home (one-corner refresh); avoid another kitchen sorting, electronics or paperwork guide.
 
 - November 5, 2026 (Europe/Bratislava): “How to Overwinter Potted Perennials on a Small Patio” — `/articles/overwinter-potted-perennials-small-patio/`. Garden-patio cluster; plant and pot identification, outdoor versus shelter checks, three-pot worksheet and two original ImageGen illustrations. Review: `perennial-winter-editorial-review-2026-11-05.md`. Next rotation: DIY-home or renter-friendly; avoid another overwintering guide.
+
+- November 6, 2026 (Europe/Bratislava): “Test a Peel-and-Stick Wallpaper Sample Before Buying Rolls” — `/articles/test-peel-and-stick-wallpaper-sample/`. Renter-friendly cluster; pattern preview, wall and paint checks, permitted sample test, and original decision record. Two article illustrations and a separate portrait social asset. Next rotation: DIY-home or small-spaces.
