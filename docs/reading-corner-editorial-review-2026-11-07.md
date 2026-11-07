@@ -1,0 +1,9 @@
+# Reading corner review — November 7, 2026
+
+Verified main cd8f351, PUBLISHING.md, complete editorial plan and article title/date inventory. No November 7 article existed. DIY-home rotates after renter-friendly. Read the living-room refresh guide; this supporting page focuses on a three-session occupied-chair comparison rather than repeating the whole-room overview. Search intent results emphasize cozy setups and furniture suggestions; original value is a record of one adjustment per session and an explicit rejection of a location that cannot support the light's cable route.
+
+Opened U.S. Department of Energy FEMP Office Energy Checklist on November 7. The only technical lighting claim derived is the general task-lighting principle, explicitly distinguished from a home reading prescription. No brightness thresholds, medical or ergonomic outcomes, product ranking, prices or tested savings. Under 200 derived words including source note. Household movement, reach and trial structure are original editorial suggestions. Safety clearances and lamp operation remain tied to actual instructions, with no electrical alteration, cords across routes or anchoring workaround recommended. Hypothetical example labeled; American English and true date. Three useful internal destinations plus a contextual incoming link from the living-room overview. Logo and shared design unchanged.
+
+New fictional photo illustrations and separate portrait social scene are generated using built-in ImageGen, with exact prompts and source/output hashes saved. No measured furniture or tested project implied. Reviewed/draft flags changed only after content and image review. Social assets are for manual use; no network posting or scheduling.
+
+Validation: 99 tests pass; Astro build and 48-page site audit pass; export produces 203 generated files and whitespace diff check passes. Photo assets visually inspected. Browser/mobile layout not measured in this run.

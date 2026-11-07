@@ -1,0 +1,19 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-07",
+  "purpose": "Fictional reading-layout illustrations; no furniture testing or measured ergonomics.",
+  "assets": [
+    {
+      "key": "cover",
+      "prompt": "Use case photorealistic-natural. Landscape 3:2 editorial photo of a modest American apartment reading corner with a comfortable olive green upholstered armchair, small stable oak side table with a closed plain book and empty ceramic mug, a freestanding unlit reading lamp behind the table beside a visible wall outlet, generous clear wood floor route in front of chair. Warm white wall, soft side daylight, attainable furnishings, realistic proportions. No cord across floor, wall art, shelves, people, readable text, brands, watermark or collage. Fictional planning scene, not tested furniture."
+    },
+    {
+      "key": "detail",
+      "prompt": "Use case photorealistic-natural. Landscape 3:2 close side-view editorial still life: arm of an olive upholstered chair adjacent to a small stable oak side table, closed unbranded paperback book and reading glasses on the table with generous empty surface, clear floor below, soft natural light, detailed fabrics and wood. No readable text, people, hands, lamp, cords, products, watermark or collage. A fictional illustration of checking table access, not a measured ergonomic recommendation."
+    },
+    {
+      "key": "pinterest",
+      "prompt": "Use case photorealistic-natural. Portrait 2:3 editorial photo for Pinterest: modest warm neutral apartment reading nook, olive green upholstered armchair, small oak side table holding one closed plain book and ceramic cup, simple reading lamp behind table, cream wall and bright window daylight. Clear floor and practical attainable layout, natural materials. No wall shelving, cord across walkway, readable text, overlay, people, logo or watermark. Fictional illustration, no test claims."
+    }
+  ]
+}
