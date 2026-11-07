@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-07",
+  "conversion": "Whole-frame resize, no crop; WebP 84 for article, JPEG 88 social. Facebook uses cover, Pinterest is separate portrait.",
+  "assets": [
+    {
+      "path": "/assets/articles/reading-corner-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 98696,
+      "sha256": "5d577e18cd686313eff18457d0c33f707e6b98937ea50af2afedaf3b8598ea30",
+      "sourceSha256": "fa0d58043e374fb4a3c39df357cc3b7f7cbb630b116d658426ae1f83e8f9b7e1"
+    },
+    {
+      "path": "/assets/articles/reading-corner-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 29062,
+      "sha256": "fd2de1b6d47ba2001ab74fde2371df51103e40e2d19686cbeb46c526dd062ba4",
+      "sourceSha256": "fa0d58043e374fb4a3c39df357cc3b7f7cbb630b116d658426ae1f83e8f9b7e1"
+    },
+    {
+      "path": "/assets/social/reading-corner-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 168320,
+      "sha256": "ee9079c88125e70c29e0f65813c4f384aeb99839b59fd442f959806687a502b0",
+      "sourceSha256": "fa0d58043e374fb4a3c39df357cc3b7f7cbb630b116d658426ae1f83e8f9b7e1"
+    },
+    {
+      "path": "/assets/articles/reading-corner-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 146540,
+      "sha256": "2c2b092a8193385c2bbfaeb89c513e6f42691c62b2d57624e69f4425afdbc78f",
+      "sourceSha256": "7a5ebe41e11592f18b0ea022b7ce6f31f56b49651450fd4eca298d3fabb1f6e6"
+    },
+    {
+      "path": "/assets/social/reading-corner-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 301610,
+      "sha256": "da573066c2ad7fc9ed6228b81a4dd5a02e529409ae2255ded789c875e952c2c6",
+      "sourceSha256": "cc8f7cf2f4ef953ceefc6c8088576e9ea3f534cf8e461dbc932919691aa5cda3"
+    }
+  ]
+}

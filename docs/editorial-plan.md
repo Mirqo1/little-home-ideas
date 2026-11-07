@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Thirty-one guides are published as of November 6, 2026, including the peel-and-stick wallpaper sample guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Thirty-two guides are published as of November 7, 2026, including the existing-chair reading corner guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -36,7 +36,7 @@ Thirty-one guides are published as of November 6, 2026, including the peel-and-s
 | 14 | DIY & Home Updates | Plan a paint project before opening a can | Surface and product checklist; safety research first | Color-sampling guide published October 26, 2026; surface-preparation brief remains research |
 | 15 | DIY & Home Updates | Replace cabinet pulls: measure before buying | Hole spacing, hardware compatibility, permission | Published October 21, 2026 |
 | 16 | DIY & Home Updates | Choose a rug without blocking a door | Full footprint and care check | Published October 20, 2026 |
-| 17 | DIY & Home Updates | A one-corner room refresh | Annotated before/after schematic, no invented project | Research |
+| 17 | DIY & Home Updates | A one-corner room refresh | Focused existing-chair reading trial and comparison log | Published November 7, 2026 |
 | 18 | DIY & Home Updates | Make a realistic small-project shopping list | Materials versus optional decoration | Focused pillow-cover shopping example published November 1, 2026; broader brief remains research |
 | 19 | Renter-Friendly Living | Removable hooks: check the wall first | Exact-product decision tree | Published |
 | 20 | Renter-Friendly Living | Ask permission for a rental update | Practical request template, no legal conclusions | Published October 23, 2026 |
@@ -118,3 +118,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 5, 2026 (Europe/Bratislava): “How to Overwinter Potted Perennials on a Small Patio” — `/articles/overwinter-potted-perennials-small-patio/`. Garden-patio cluster; plant and pot identification, outdoor versus shelter checks, three-pot worksheet and two original ImageGen illustrations. Review: `perennial-winter-editorial-review-2026-11-05.md`. Next rotation: DIY-home or renter-friendly; avoid another overwintering guide.
 
 - November 6, 2026 (Europe/Bratislava): “Test a Peel-and-Stick Wallpaper Sample Before Buying Rolls” — `/articles/test-peel-and-stick-wallpaper-sample/`. Renter-friendly cluster; pattern preview, wall and paint checks, permitted sample test, and original decision record. Two article illustrations and a separate portrait social asset. Next rotation: DIY-home or small-spaces.
+
+- November 7, 2026 (Europe/Bratislava): “Test a Reading Corner With the Chair You Already Own” — `/articles/test-reading-corner-existing-chair/`. DIY-home cluster; occupied-seat access, page lighting, table reach and three-session comparison. Two original article images plus separate 2:3 Pinterest image; Facebook derives from the cover. Review: `reading-corner-editorial-review-2026-11-07.md`. Next rotation: small-spaces or practical-solutions; avoid another seating, wallpaper or patio-winter guide.

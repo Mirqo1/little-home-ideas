@@ -64,3 +64,5 @@ Separate your list into changes you can make with existing items, a small purcha
 Record measurements, care requirements, and return conditions for anything you still need. Before ordering a bulky piece, [measure the whole furniture delivery route](/articles/measure-furniture-delivery-route/), including doors, hallway turns, stairs, and elevators. Avoid buying a complete coordinated set before you know how one piece works in the room.
 
 For an adjoining space, create a [small entryway landing zone](/articles/small-entryway-without-a-closet/). If clutter is concentrated in the kitchen, begin with [one drawer](/articles/organize-small-kitchen-drawers/) instead of treating it as a whole-home makeover.
+
+For a focused first change, [test a reading corner with an existing chair](/articles/test-reading-corner-existing-chair/). The three-session worksheet checks the occupied seat, useful light, table reach, and shared route before adding furniture.
