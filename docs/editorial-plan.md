@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Thirty-two guides are published as of November 7, 2026, including the existing-chair reading corner guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Thirty-three guides are published as of November 8, 2026, including the label-first cleaning product storage guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -46,7 +46,7 @@ Thirty-two guides are published as of November 7, 2026, including the existing-c
 | 24 | Renter-Friendly Living | Plan to remove an update before installing it | Removal access, original-parts kit and project card | Published November 2, 2026 |
 | 25 | Practical Home Solutions | Window condensation: what renters can record | Observation log + escalation rather than diagnosis | Published |
 | 26 | Practical Home Solutions | A small-home seasonal inspection log | Manufacturer tasks and qualified-help boundaries | Research |
-| 27 | Practical Home Solutions | Store cleaning supplies with clear labels | Label-based storage, safety review required | Research |
+| 27 | Practical Home Solutions | Store cleaning supplies with clear labels | Label-based location record, secure access and original packaging | Published November 8, 2026 |
 | 28 | Practical Home Solutions | Measure furniture for a delivery route | Doors, turns, usable access; no guaranteed-fit claims | Published |
 | 29 | Practical Home Solutions | Keep a home-product instruction folder | Model identification and update workflow | Published October 24, 2026 |
 | 30 | Practical Home Solutions | Compare repair, replacement, and waiting | Decision worksheet without invented cost figures | Published October 30, 2026: focused side-table comparison |
@@ -120,3 +120,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 6, 2026 (Europe/Bratislava): “Test a Peel-and-Stick Wallpaper Sample Before Buying Rolls” — `/articles/test-peel-and-stick-wallpaper-sample/`. Renter-friendly cluster; pattern preview, wall and paint checks, permitted sample test, and original decision record. Two article illustrations and a separate portrait social asset. Next rotation: DIY-home or small-spaces.
 
 - November 7, 2026 (Europe/Bratislava): “Test a Reading Corner With the Chair You Already Own” — `/articles/test-reading-corner-existing-chair/`. DIY-home cluster; occupied-seat access, page lighting, table reach and three-session comparison. Two original article images plus separate 2:3 Pinterest image; Facebook derives from the cover. Review: `reading-corner-editorial-review-2026-11-07.md`. Next rotation: small-spaces or practical-solutions; avoid another seating, wallpaper or patio-winter guide.
+
+- November 8, 2026 (Europe/Bratislava): “Plan Cleaning Product Storage From the Labels First” — `/articles/plan-cleaning-product-storage-labels/`. Practical-solutions cluster; product-by-product storage record, original packaging, locked access, fit and return workflow, and hypothetical caddy decision. Two article illustrations and separate portrait social image. Review: `cleaner-storage-editorial-review-2026-11-08.md`. Next rotation: small-spaces or garden-patio; avoid another chemicals, paperwork or reading-corner guide.
