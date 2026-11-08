@@ -1,0 +1,19 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-08",
+  "purpose": "Fictional planning images; no chemical compatibility or cabinet safety certification implied.",
+  "assets": [
+    {
+      "key": "cover",
+      "prompt": "Use case photorealistic-natural. Landscape 3:2 editorial photo of a modest American apartment utility nook, a closed cream built-in wall cabinet with a clearly visible simple lock cylinder and no key inserted, below it clear pale countertop with a folded plain cloth and closed blank notebook, warm natural side light, neat attainable interior, no chemicals visible, no product bottles, food, medicine, people, readable text, logos or overlay. Fictional planning illustration, not proof of a compliant installation."
+    },
+    {
+      "key": "detail",
+      "prompt": "Use case photorealistic-natural. Landscape 3:2 close overhead editorial photograph of an empty small plain white rigid organizer tray, a blank notebook, pencil and closed tape measure on pale oak tabletop. Focus on usable tray opening and clear empty space, soft window daylight, real materials. No bottles, chemicals, labels, text, numeric marks, food, people, logos, hands, watermarks or collage. Fictional storage planning scene, does not demonstrate chemical compatibility."
+    },
+    {
+      "key": "pinterest",
+      "prompt": "Use case photorealistic-natural. Portrait 2:3 editorial photo for Pinterest of a clean modest apartment utility area with closed cream built-in cabinet, visible small keyed lock with no key inserted, open clear counter below containing only a blank notebook and neatly folded cloth. Soft daylight and warm neutral wood details. No chemical containers, food, medicine, children, people, text, logos, overlay or collage. Fictional home organization illustration, not a product test."
+    }
+  ]
+}

@@ -60,3 +60,5 @@ If the cabinet cannot hold your daily items, compare a separate unit with our [n
 Open the door and answer three questions: can you see the plumbing, reach the shutoffs, and lift out the daily supplies? If not, remove a tier or reduce the number of containers. Leave the cabinet easy to service.
 
 Continue with [small kitchen drawer organization](/articles/organize-small-kitchen-drawers/) or our [window condensation checklist](/articles/window-condensation-checklist-for-renters/) if moisture is the main issue. Solve the cause before adding more storage.
+
+Before assigning cleaners to a bin, use our [label-first cleaning product storage plan](/articles/plan-cleaning-product-storage-labels/) to record product requirements, locked access, package fit, and unresolved questions. Cabinet dimensions alone do not establish a suitable chemical-storage location.
