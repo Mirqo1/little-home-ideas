@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-09",
+  "conversion": "Whole-frame resize, no crop; WebP 84 article; JPEG 88 social. Facebook uses cover; Pinterest separate portrait.",
+  "assets": [
+    {
+      "path": "/assets/articles/sheet-storage-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 52734,
+      "sha256": "ab2160b58ed53d39341f7b9071ecce24d16f264acd192c7502f5f64c0e150dee",
+      "sourceSha256": "e678538c7971f8ae3d74b4c7c9a5f37ed95788d998d4950a2919dba03d741740"
+    },
+    {
+      "path": "/assets/articles/sheet-storage-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 19350,
+      "sha256": "68458baca28eb5829c78cb764c4ed9ec6e66b06118ac15102d1db1453f5afc77",
+      "sourceSha256": "e678538c7971f8ae3d74b4c7c9a5f37ed95788d998d4950a2919dba03d741740"
+    },
+    {
+      "path": "/assets/articles/sheet-storage-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 104730,
+      "sha256": "331e854cc054d4d1051462305ebf396949eb3009d0a9170d8b55e1cc9efae602",
+      "sourceSha256": "29b4c737f31130aeb475badaaf380c729dfa6d35bffa902d25d3d77ef21a65ff"
+    },
+    {
+      "path": "/assets/social/sheet-storage-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 126796,
+      "sha256": "0ec7494b1fb25d533d3be17b28ab4da88f2a3ecc898d1037fc7e4ac6fcd69cfe",
+      "sourceSha256": "e678538c7971f8ae3d74b4c7c9a5f37ed95788d998d4950a2919dba03d741740"
+    },
+    {
+      "path": "/assets/social/sheet-storage-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 211133,
+      "sha256": "46fd35bade7b113f0998c261c784ff44e80e7e12c03fd5fac8105170333d3645",
+      "sourceSha256": "3e8745a9079780ce75825ee47a89f0a775ef3b5f220b62630f1e305dec678dc3"
+    }
+  ]
+}
