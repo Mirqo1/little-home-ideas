@@ -34,6 +34,8 @@ Choose one problem to solve: folded sweaters falling over, everyday shoes gettin
 
 Try writing a shopping sentence: "I need two removable bins for winter accessories on the lower shelf." That gives you a location, a quantity, and a reason the bins must come out easily. Compare that with "I need more closet storage," which could lead to almost any purchase.
 
+For a linen shelf, first [assign sheet sets to the beds they actually fit](/articles/store-sheet-sets-by-bed/). An empty return spot for a set in the laundry is different from unused space that needs another organizer.
+
 ## Make a simple record of the space
 
 Use a tape measure, a pencil, and a sketch. Write measurements in inches and label each one; an unlabeled list becomes hard to interpret later. Include a straight-on photo and a second photo with the doors fully open.

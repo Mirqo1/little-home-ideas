@@ -1,0 +1,18 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-09",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Photorealistic editorial home photograph, landscape 3:2. A modest American apartment linen cupboard, waist-height natural wood shelves, two small separate groups of neatly folded cotton bed sheets in warm white and muted sage, each group has folded pillowcases with it. Plenty of unoccupied shelf space, simple everyday imperfect folds, daylight from side, realistic cotton texture. Wider composition showing the open cupboard and a small empty fabric basket on lower shelf, no toiletries or cleaning products. Calm useful storage idea, not luxury showroom. No people, no text, no labels, no lettering, no logos, no collage. Illustrative scene, high photographic quality."
+    },
+    {
+      "role": "detail",
+      "prompt": "Photorealistic editorial home photograph, landscape 3:2. Close overhead three-quarter view of a modest light wooden table beside a bed in a small American bedroom. A neatly folded muted blue cotton flat sheet and fitted sheet are partially tucked into one matching open pillowcase, a second matching pillowcase folded alongside the bundle, visible soft gathered edge of the fitted sheet. Single practical sheet-set bundle with realistic layers and fabric seams, simple unstyled room background, natural window light, warm neutral palette. Clearly distinct close-up from a linen cupboard photograph. No person, no text, no labels, no branding, no lettering, no collage. High quality photographic illustrative scene."
+    },
+    {
+      "role": "pinterest",
+      "prompt": "Photorealistic editorial home photograph in vertical 2:3 aspect ratio. An open narrow linen cupboard in a modest American apartment, three visible light wood shelves. Middle shelf contains two small separated stacks of folded cotton sheets, one ivory and one muted sage, matching pillowcases folded with each stack. Upper shelf has a few folded towels, lower shelf a simple open breathable cotton basket. Comfortable empty space around the sheet bundles so they can be lifted out. Natural side daylight, realistic slightly imperfect folds, warm everyday home, calm attractive composition from eye level, believable cupboard depth, no excessive decorations. No people, no text overlay, no lettering, no labels, no logo, no collage. Photorealistic illustrative storage scene."
+    }
+  ]
+}
