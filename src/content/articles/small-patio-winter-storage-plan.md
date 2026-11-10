@@ -65,6 +65,8 @@ If furniture must pass through doors, turns, or stairs, [measure the complete mo
 
 Choose a dry-weather window for the work when possible. Read the product's cleaning and drying directions before gathering supplies. A cleaner, pressure setting, coating, or treatment suitable for one finish can be inappropriate for another, so do not turn a generic storage checklist into a universal cleaning recipe.
 
+Small garden tools need their own return routine. Our [patio hand-tool storage guide](/articles/small-patio-hand-tool-storage/) separates debris removal, protected drying, and the final dry storage spot before choosing a tray or bag.
+
 Inspect the furniture while it is accessible. Note loose fittings, a damaged finish, or parts that need attention, then follow the maker's maintenance directions. Store pieces and textiles in the condition those directions require, including drying after cleaning. Do not rush damp items into a closed storage arrangement to finish the job faster.
 
 Fold or disassemble furniture only as its instructions allow. If permitted disassembly produces loose hardware, keep it in a labeled bag with the relevant assembly instructions. A photo before taking anything apart can make the spring restart easier.
