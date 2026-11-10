@@ -1,0 +1,18 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-10",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Use case: photorealistic-natural. Asset: editorial article cover, landscape 3:2. A modest American apartment utility nook beside a patio door in autumn daylight. A freestanding low wooden shelf has one shallow rigid olive plastic tray on its middle shelf holding a clean small stainless garden trowel and a three-tine hand cultivator with wooden handles, both lying flat, fully contained with no sharp parts projecting. A pair of dry gray gardening gloves lies separately beside the tray, not on blades. Sparse realistic everyday storage, no food, no chemicals, no battery tools, no pruning shears, no hooks, no loose soil indoors. Door and walking route open and unobstructed, floor clear, no children or pets. Soft natural light, warm neutral palette, detailed metal and wood, high-quality editorial photography. No text, labels, branding, watermark, collage. Illustration not an actual tested project."
+    },
+    {
+      "role": "detail",
+      "prompt": "Use case: photorealistic-natural. Asset: article detail photograph, landscape 3:2. Close overhead three-quarter view of a small outdoor patio work surface with a shallow gray washable tray. On the tray a clean stainless hand trowel and three-tine hand fork with wooden handles lie flat and separated, handles dry and intact; a small stiff cleaning brush beside the tray, no liquid pooling. A terracotta pot and muted autumn patio background softly blurred, realistic wear on metal, natural diffuse daylight, ordinary useful workspace. Show room around the tools for air and handling, not a packed storage box. No pruning shears, powered tools, chemicals, oil bottles, hands or people. No text overlay, lettering, logos, collage, watermark. High quality photorealistic illustrative scene."
+    },
+    {
+      "role": "pinterest",
+      "prompt": "Use case: photorealistic-natural. Asset: Pinterest editorial photograph, vertical 2:3. A compact American home utility nook adjacent to a glass patio door, clear walking space and dry pale floor. Simple small freestanding wooden shelf, central shelf holds one shallow olive rigid tray with a clean garden trowel and a short three-tine hand fork lying flat and fully contained, with smooth wooden handles. Gray gardening gloves neatly beside the tray in a separate spot. Upper shelf almost empty, glimpse of terracotta pots on the patio through glass. Practical modest everyday home, natural autumn daylight, realistic slightly worn surfaces, beautiful calm composition. No soil mess indoors, no chemicals or food, no electric tools, no pruning shears, no dangerous protruding blades, no people. No lettering, labels, text overlay, logos, watermark or collage. Photorealistic illustrative scene."
+    }
+  ]
+}

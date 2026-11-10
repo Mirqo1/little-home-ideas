@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-10",
+  "conversion": "Whole-frame resize, no crop; WebP 84 article; JPEG 88 social. Facebook uses cover; Pinterest separate portrait.",
+  "assets": [
+    {
+      "path": "/assets/articles/patio-tools-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 142086,
+      "sha256": "8b40145fff5800580e0f071beab4229adc6e88966bf00cdbfbed9c09f833a879",
+      "sourceSha256": "b34dbeeb05426cfefbdfa5aeb1612003e6778b22020491e603fc4cc6eba0d665"
+    },
+    {
+      "path": "/assets/articles/patio-tools-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 44198,
+      "sha256": "c628b444560fbc7997f23e5870c85dba9ed65e067514e59f1c7ee8eb68e31d29",
+      "sourceSha256": "b34dbeeb05426cfefbdfa5aeb1612003e6778b22020491e603fc4cc6eba0d665"
+    },
+    {
+      "path": "/assets/articles/patio-tools-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 153104,
+      "sha256": "f9d016693a9bb6da7ec95624a4ca331a887d222ddefa97fb67babcc72e9981f8",
+      "sourceSha256": "c3008287ca1baffcc06634def519b21c0b854ac176a3f2394b43d288fdbb4e0c"
+    },
+    {
+      "path": "/assets/social/patio-tools-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 230296,
+      "sha256": "29237265ab1497d6f25358b102a325c5b28f0260c07b4c7cdcf27fb131a4c9a9",
+      "sourceSha256": "b34dbeeb05426cfefbdfa5aeb1612003e6778b22020491e603fc4cc6eba0d665"
+    },
+    {
+      "path": "/assets/social/patio-tools-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 290241,
+      "sha256": "36d45926489a3d2fac763ed3f23ab893c5414b7a87d0146db7ad1aab6ce76314",
+      "sourceSha256": "16144d132ad9c57c6bd02be1fc37688f828b81cd02517a5d4b5bdae6f18ef1f5"
+    }
+  ]
+}
