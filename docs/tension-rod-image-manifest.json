@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-11",
+  "conversion": "Whole-frame resize, no crop. WebP 84 for article, JPEG 88 for social. Facebook uses cover, Pinterest uses a separate portrait.",
+  "assets": [
+    {
+      "path": "/assets/articles/tension-rod-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 71646,
+      "sha256": "5697228ad65804a9f3e659be060628e99467c8065aa97b9ac7e87ef4cff54724",
+      "sourceSha256": "a603f288c8e3a057351b371d90bcd801ea62d218a47b8b768cbef19494a96523"
+    },
+    {
+      "path": "/assets/articles/tension-rod-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 26984,
+      "sha256": "a3891c03daac0191447754315e649fdd96ff46371d7f1600dab71ffcacd7489b",
+      "sourceSha256": "a603f288c8e3a057351b371d90bcd801ea62d218a47b8b768cbef19494a96523"
+    },
+    {
+      "path": "/assets/articles/tension-rod-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 92250,
+      "sha256": "4e40b2f00f11cc4eed2c8ec04ddee2507f6331f4fc4d74edcd71251a11e11ee8",
+      "sourceSha256": "416bd4ab9f44802b98b574844d572d63ba6cde79323c6508244c3780a1e09058"
+    },
+    {
+      "path": "/assets/social/tension-rod-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 150885,
+      "sha256": "504127eed0c89b80f99a6ac2f08f7e5bf02c09b87c9ec413eb9136069404ffcd",
+      "sourceSha256": "a603f288c8e3a057351b371d90bcd801ea62d218a47b8b768cbef19494a96523"
+    },
+    {
+      "path": "/assets/social/tension-rod-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 252566,
+      "sha256": "bfbcaf38073a8d322c9bea92ebb033931b70b676caf9c40278c33544fd531737",
+      "sourceSha256": "0e6d4a307a65e212e61dde89ba90f8b2286ee605793d6a675ed3b33ffb3b47a8"
+    }
+  ]
+}

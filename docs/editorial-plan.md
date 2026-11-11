@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Thirty-five guides are published as of November 10, 2026, including the patio hand-tool storage guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Thirty-six guides are published as of November 11, 2026, including the rental window tension rod guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -126,3 +126,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 9, 2026 (Europe/Bratislava): “Store Sheet Sets by Bed So the Right Size Is Easy to Find” — `/articles/store-sheet-sets-by-bed/`. Small-spaces cluster; bed assignments, readiness versus laundry status, pillowcase bundles, original two-bed example and return worksheet. Two article illustrations and separate 2:3 portrait social image. Review: `sheet-storage-editorial-review-2026-11-09.md`. Next rotation: garden-patio or renter-friendly; avoid another textile sorting, cleaning product or reading-corner guide.
 
 - November 10, 2026 (Europe/Bratislava): “Small Patio Tool Storage: Make Room for Cleaning and Drying” — `/articles/small-patio-hand-tool-storage/`. Garden-patio cluster; debris removal, protected drying, dry storage and access, original tray example and four-row return worksheet. Two article illustrations and separate 2:3 portrait social image. Review: `patio-tools-editorial-review-2026-11-10.md`. Next rotation: renter-friendly or DIY-home; avoid another textile organization, tool storage or seasonal patio guide.
+
+- November 11, 2026 (Europe/Bratislava): “Will a Tension Curtain Rod Fit Your Rental Window?” — `/articles/will-tension-curtain-rod-fit-rental-window/`. Renter-friendly cluster. Opening span, end-pad contact, hanging weight, window operation and permission worksheet. Original hypothetical example, two article illustrations and separate 2:3 portrait. Review: `tension-rod-editorial-review-2026-11-11.md`. Next rotation: practical-solutions or DIY-home.
