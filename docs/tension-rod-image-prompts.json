@@ -1,0 +1,18 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-11",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Photorealistic editorial home photograph, landscape 3:2. Modest American rental living room with a deep rectangular white-painted wood window recess and a window in soft fall daylight. A slim matte ivory tension curtain rod spans exactly between the two flat inward-facing side jambs within the recess, rubber end pads pressed against the jambs, both pads visible, absolutely no brackets, no hardware outside the recess. Two lightweight warm ivory rod-pocket caf\u00e9 curtain panels gathered slightly away from the ends, partially parted, showing the window. The horizontal rod is mounted partway up the window for a caf\u00e9 curtain. Modest warm natural wood and soft white tones, window is main subject, crisp believable geometry. No cords, no children, no furniture directly under window, no visible heaters, no text or watermark."
+    },
+    {
+      "role": "detail",
+      "prompt": "Photorealistic landscape 3:2 editorial detail photo for a rental window measurement guide. Close oblique view of a white wooden window recess and painted sill in natural daylight. A short unmounted ivory telescoping curtain tension rod end section with a round cream rubber pad rests diagonally on the sill beside a compact retracted tape measure and an unmarked cream folded curtain panel. The flat inner jamb and step in the trim are visible in the same focus. Ordinary subtly imperfect paint, realistic materials, practical clean scene. All props are at rest and fully supported, no hands, no printed digits, no legible labels, no brackets, no cords, no graphics, no watermark."
+    },
+    {
+      "role": "pinterest",
+      "prompt": "Vertical 2:3 photorealistic editorial home photograph for Pinterest. A deep white rental apartment window recess with a thin matte white tension rod seated horizontally between two inward-facing flat side jambs, round end pads touching jambs, no external brackets. One pair of lightweight sage green rod-pocket caf\u00e9 curtains partially drawn at mid-window, warm daylight and muted fall foliage outside. View from a slight angle so the painted depth and left contact pad are apparent, calm lived-in home, beautiful realistic cotton folds, no cords or heater, no people, no text overlay, no logos, no watermark."
+    }
+  ]
+}

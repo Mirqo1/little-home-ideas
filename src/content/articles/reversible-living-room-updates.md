@@ -36,6 +36,8 @@ Choose an existing item you like as the starting color. Then compare a few fabri
 
 For a focused textile change, our [throw pillow cover refresh guide](/articles/refresh-throw-pillow-covers-existing-inserts/) starts with the inserts you already own and checks sizing and care before buying a matching set.
 
+If the room needs curtains, [check whether a tension rod fits the rental window](/articles/will-tension-curtain-rod-fit-rental-window/) before choosing panels. Measure where the end pads would sit and leave space to reach the window hardware.
+
 Measure the space in use before selecting a rug. Check the door movement and choose a suitable nonslip method compatible with the flooring and the rug maker's instructions. Avoid curled edges in walking routes.
 
 <figure class="article-inline-image">
