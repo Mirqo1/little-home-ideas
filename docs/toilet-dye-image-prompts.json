@@ -1,0 +1,18 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-12",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Photorealistic editorial photograph, horizontal 3:2, modest clean American apartment bathroom in soft window daylight. A modern conventional two-piece white gravity toilet with a separate porcelain tank and the tank lid and seat lid both closed, visible small side flush lever, located beside a simple oak vanity with a pale stone counter. On the vanity a small unbranded capped food-coloring dropper bottle, a small plain timer and a blank paper notebook. Restrained warm white palette with muted slate blue ceramic tile, natural lived-in but uncluttered look, real textures. Frame the toilet tank and supplies clearly. No liquid, no opened plumbing, no humans, no readable words, no logos, no watermarks."
+    },
+    {
+      "role": "detail",
+      "prompt": "Photorealistic close editorial photograph in landscape 3:2. Top-down oblique close-up of a small apartment bathroom vanity countertop and adjacent conventional white toilet, showing a capped plain tiny squeeze bottle of food coloring, simple kitchen timer with screen facing away, and a folded clean towel, beside a white porcelain toilet tank lid that is still on the tank. Focus on preparation supplies, edges of the counter and closed tank, ordinary materials, diffuse natural daylight. Unbranded and without readable text. No hands, no water, no colored stains, no internal plumbing, no text overlay or graphics."
+    },
+    {
+      "role": "pinterest",
+      "prompt": "Vertical 2:3 photorealistic interior editorial photo. Modest clean compact American bathroom, white conventional two-piece toilet with tank lid and seat lid closed, next to pale oak vanity and restrained muted sage tile. On the nearby vanity countertop a tiny capped neutral food-coloring bottle and an unmarked folded notebook. Soft fall daylight, natural photographic textures, warm modern calm composition, toilet and tank fully readable as the main subject. No people, no open plumbing, no dye stains, no visible labels, no printed text or overlay, no logos, no watermark."
+    }
+  ]
+}

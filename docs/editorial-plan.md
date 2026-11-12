@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Thirty-six guides are published as of November 11, 2026, including the rental window tension rod guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Thirty-seven guides are published as of November 12, 2026, including the toilet dye test guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -128,3 +128,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 10, 2026 (Europe/Bratislava): “Small Patio Tool Storage: Make Room for Cleaning and Drying” — `/articles/small-patio-hand-tool-storage/`. Garden-patio cluster; debris removal, protected drying, dry storage and access, original tray example and four-row return worksheet. Two article illustrations and separate 2:3 portrait social image. Review: `patio-tools-editorial-review-2026-11-10.md`. Next rotation: renter-friendly or DIY-home; avoid another textile organization, tool storage or seasonal patio guide.
 
 - November 11, 2026 (Europe/Bratislava): “Will a Tension Curtain Rod Fit Your Rental Window?” — `/articles/will-tension-curtain-rod-fit-rental-window/`. Renter-friendly cluster. Opening span, end-pad contact, hanging weight, window operation and permission worksheet. Original hypothetical example, two article illustrations and separate 2:3 portrait. Review: `tension-rod-editorial-review-2026-11-11.md`. Next rotation: practical-solutions or DIY-home.
+
+- November 12, 2026 (Europe/Bratislava): “Is Your Toilet Leaking Into the Bowl? Try a 10-Minute Dye Test” — `/articles/toilet-tank-leak-dye-test/`. Practical-solutions cluster. EPA timed test, observation worksheet, hypothetical maintenance report, two article illustrations and a separate 2:3 portrait. Review: `toilet-dye-editorial-review-2026-11-12.md`. Next rotation: DIY-home or small-spaces.
