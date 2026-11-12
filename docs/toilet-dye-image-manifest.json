@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-12",
+  "conversion": "Whole-frame resize without cropping. WebP 84 for article, JPEG 88 for social. Facebook uses the cover, Pinterest uses a separate portrait.",
+  "assets": [
+    {
+      "path": "/assets/articles/toilet-dye-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 85102,
+      "sha256": "11ea422e9d5f2a7ea77e351b454091681e5ea87ed086a873f9d5e92e78caffe5",
+      "sourceSha256": "33717423f6af1cee18817f62ea69b96f405504d8933452181695003f8dac49a7"
+    },
+    {
+      "path": "/assets/articles/toilet-dye-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 26338,
+      "sha256": "bac968d0d989c456db781ac36520acaa2a8db3749427abaa52685cc0b31aaadd",
+      "sourceSha256": "33717423f6af1cee18817f62ea69b96f405504d8933452181695003f8dac49a7"
+    },
+    {
+      "path": "/assets/articles/toilet-dye-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 78566,
+      "sha256": "b6bb581fa3df2c15404c11d958cfa5f2a3941b38b6c29c7af74dcbc6af7dcbcd",
+      "sourceSha256": "fadd5c28dd8c5f1b7123e33948f641a5e3360292a13a19967e5e58bbf3f3574b"
+    },
+    {
+      "path": "/assets/social/toilet-dye-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 158254,
+      "sha256": "df02ea5d1eb06ba8fcfc1d9d43397a50d4cffe03ef7c0637d15f423bca2cd356",
+      "sourceSha256": "33717423f6af1cee18817f62ea69b96f405504d8933452181695003f8dac49a7"
+    },
+    {
+      "path": "/assets/social/toilet-dye-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 209892,
+      "sha256": "140240455ef7d7ad95321f7c30589fa4aacb18ab49a902f6581b1d670aa3fed6",
+      "sourceSha256": "45b368bf79a8b46d0bb687d9156d4837c9b5352486d0422b39bfbcab13492bbf"
+    }
+  ]
+}

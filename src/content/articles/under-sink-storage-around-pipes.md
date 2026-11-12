@@ -22,6 +22,8 @@ The most useful under-sink organizer is the one you can remove quickly. Plumbing
 
 Empty the cabinet and look for damp patches, swelling, discoloration, or an active drip. Do not cover a suspected leak with a liner or a bin. In a rental, report the problem to your property manager; persistent moisture needs attention before a storage makeover.
 
+If you hear the toilet refill between uses, our [toilet dye test](/articles/toilet-tank-leak-dye-test/) explains how to check for water moving from the tank into the bowl and record the observation for maintenance.
+
 Identify the water shutoff valves without turning or forcing them. You should be able to reach them without dismantling your organizer. Leave room to see pipe joints and remove stored items for maintenance. If you are unsure what a fitting does, ask a qualified plumber or building manager rather than experimenting.
 
 ## Draw the obstacles on paper
