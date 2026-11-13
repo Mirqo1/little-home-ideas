@@ -1,0 +1,18 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-13",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Landscape 3:2 photorealistic editorial photograph of modest American living room side table. One unlit ceramic table lamp with a fitted cream linen drum shade and a small brass finial centered at top. Warm terracotta ceramic base, compact oak table with two books, partial olive chair at side, soft overcast daylight. Lamp centered with room around the full shade and visible tabletop. Natural proportion, realistic textures, no visible bulb through shade, no dangling cords or text. No branding, no watermark."
+    },
+    {
+      "role": "detail",
+      "prompt": "Landscape 3:2 photorealistic editorial close-up of a cream linen drum lampshade resting upside down securely on a clean oak tabletop. Looking inside through the wide lower opening: three thin brass-colored spokes from the smaller top rim meet at one flat round central washer with a round hole, a standard spider fitter. Spokes intact, straight and symmetrical. Next to it on table a single detached U-shaped brass lamp harp with threaded stud at top and a small separate round finial, all resting flat. Soft natural window light, accurate realistic geometry, no wiring, no bulb, no person, no text, no branding."
+    },
+    {
+      "role": "pinterest",
+      "prompt": "Vertical 2:3 photorealistic editorial home photo. Compact American reading corner, one unlit terracotta ceramic table lamp with a neatly fitted white linen drum shade, small brass finial visible centered above the shade, oak side table with a closed book and soft sage chair edge. Soft autumn daylight, realistic proportions, warm relaxed room, clear silhouette of entire shade, no visible bulb, no people, no text or branding. Natural magazine photograph."
+    }
+  ]
+}
