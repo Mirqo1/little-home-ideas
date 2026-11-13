@@ -46,6 +46,8 @@ The [U.S. Department of Energy's office checklist](https://www.energy.gov/cmei/f
 
 Keep lamps stable and their controls reachable. Follow the lamp's bulb and operating instructions, and choose a location with a suitable reachable outlet and cable route. Do not solve placement by running a cord across a walkway or altering electrical equipment. If the existing location cannot support the lamp properly, leave lighting as an unresolved requirement before shopping.
 
+If the lamp already suits the corner but needs a new shade, [measure the replacement shade and check its attachment](/articles/measure-replacement-table-lamp-shade/) before ordering. The fitter position affects where the lower rim sits in your line of sight.
+
 ## Give the side table one job
 
 Clear a stable table you already own, then place only the things the reading session uses on it: the current book, glasses, or a cup if you want one. Try setting the book down and picking it up while seated. Move the table if you need an awkward twist or have to lean past another object. Keep drinks away from electrical equipment.

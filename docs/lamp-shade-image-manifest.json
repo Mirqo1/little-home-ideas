@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-13",
+  "conversion": "Whole-frame resize. WebP 84 for articles and JPEG 88 for social. Facebook uses the cover and Pinterest uses a separate portrait.",
+  "assets": [
+    {
+      "path": "/assets/articles/lamp-shade-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 92206,
+      "sha256": "b4586e31b2f578359c922306afb61fb67ec2e31453ad666d4289648548558211",
+      "sourceSha256": "4823637c267303e1ca48d06466b06bbc5df39434538e1ac20cea54384cc9bfdc"
+    },
+    {
+      "path": "/assets/articles/lamp-shade-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 23526,
+      "sha256": "98e8703acf6fd686466205cb15bbf4a06b09e4fd522e4b56d2d4a5405836c24e",
+      "sourceSha256": "4823637c267303e1ca48d06466b06bbc5df39434538e1ac20cea54384cc9bfdc"
+    },
+    {
+      "path": "/assets/articles/lamp-shade-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 126070,
+      "sha256": "639b5bf263ba7ee27292ce6806f691618b96ab891070b4afc9199aba0a5a8abd",
+      "sourceSha256": "22c19b9b25b65ba7c9279cc15a93b3b742412ff107d7a664f2a1f45259bcfab2"
+    },
+    {
+      "path": "/assets/social/lamp-shade-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 163209,
+      "sha256": "ba2dc702de3beedd789e7416cb72c78db32b39d31ecaad2d0bc49a18236e566e",
+      "sourceSha256": "4823637c267303e1ca48d06466b06bbc5df39434538e1ac20cea54384cc9bfdc"
+    },
+    {
+      "path": "/assets/social/lamp-shade-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 269048,
+      "sha256": "8cc1bac879a019a9317cf3b9f35c1e5d795a6152d332b31c7b2aadaf193d23e2",
+      "sourceSha256": "5fd43936fdf1a1fd16b7348bf07f7e34ae2495516874f7da8cd2bd1d4b14c128"
+    }
+  ]
+}
