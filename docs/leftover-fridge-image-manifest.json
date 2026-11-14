@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-14",
+  "conversion": "Whole-frame resize. WebP 84 for articles and JPEG 88 for social. Facebook uses the cover. Pinterest uses a separate portrait.",
+  "assets": [
+    {
+      "path": "/assets/articles/leftover-fridge-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 71152,
+      "sha256": "4fd45e005d31c37988c6e1b794fc225bbcb3f4f649def7a3d9b272d3ed574b32",
+      "sourceSha256": "f25ab5f98209755c8d79b793ff22296365e0f90beb50ae110e718b2b537b97b6"
+    },
+    {
+      "path": "/assets/articles/leftover-fridge-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 25860,
+      "sha256": "99b9fc22789f2ce89e1949c11dd42b8a6c705943a4c78512435c2c7255299296",
+      "sourceSha256": "f25ab5f98209755c8d79b793ff22296365e0f90beb50ae110e718b2b537b97b6"
+    },
+    {
+      "path": "/assets/articles/leftover-fridge-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 98036,
+      "sha256": "62e103592b4cccba6e74c57822f8a6411e175db0340c19dc55c81c52173f2daa",
+      "sourceSha256": "946e678abe4188149ae37e390048a84f4a4b025333e26e1ba844f7d5f6ca8c2e"
+    },
+    {
+      "path": "/assets/social/leftover-fridge-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 153014,
+      "sha256": "c51342cbdf3e5956b67665c496a854abe91afa14b28ef32dcb7f33a1e61e79d5",
+      "sourceSha256": "f25ab5f98209755c8d79b793ff22296365e0f90beb50ae110e718b2b537b97b6"
+    },
+    {
+      "path": "/assets/social/leftover-fridge-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 171013,
+      "sha256": "06f4473b8258d50db24e2f0c771caf096af259c912e0f03bc59c75bd8ac9bf4a",
+      "sourceSha256": "15ee72405512e3e8d70c49be4ccc9f27211b7ccca07b85fe12d62af32540d549"
+    }
+  ]
+}
