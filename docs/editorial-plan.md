@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Thirty-eight guides are published as of November 13, 2026, including the table lamp shade guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Thirty-nine guides are published as of November 14, 2026, including the Thanksgiving leftover storage guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -132,3 +132,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 12, 2026 (Europe/Bratislava): “Is Your Toilet Leaking Into the Bowl? Try a 10-Minute Dye Test” — `/articles/toilet-tank-leak-dye-test/`. Practical-solutions cluster. EPA timed test, observation worksheet, hypothetical maintenance report, two article illustrations and a separate 2:3 portrait. Review: `toilet-dye-editorial-review-2026-11-12.md`. Next rotation: DIY-home or small-spaces.
 
 - November 13, 2026 (Europe/Bratislava): “How to Measure a Replacement Shade for a Table Lamp” — `/articles/measure-replacement-table-lamp-shade/`. DIY-home cluster. Fitter identification, original rim-height and wall clearance example, worksheet, two article illustrations and a 2:3 portrait. Review: `lamp-shade-editorial-review-2026-11-13.md`. Next rotation: small-spaces or garden-patio.
+
+- November 14, 2026 (Europe/Bratislava): “Make Room for Thanksgiving Leftovers in a Small Fridge” — `/articles/make-fridge-room-for-thanksgiving-leftovers/`. Small-spaces cluster. Empty-container rehearsal, original shelf-width example, refrigerator and freezer worksheet, two article illustrations and a separate 2:3 portrait. Review: `leftover-fridge-editorial-review-2026-11-14.md`. Next rotation: garden-patio or renter-friendly.

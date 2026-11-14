@@ -93,6 +93,8 @@ The unresolved list now has a concrete task: check the two base models and ask a
 
 Try the arrangement through normal washing and packing routines. Notice whether a returning lid has an obvious place and whether another household member can find a complete set without asking you.
 
+Before a holiday meal, take the matched sets one step further and [rehearse where Thanksgiving leftovers will fit in the fridge and freezer](/articles/make-fridge-room-for-thanksgiving-leftovers/) while the containers are still empty.
+
 If lids repeatedly land on the counter, change the return location or reduce the number of unrelated items sharing that zone. Do not buy a bigger organizer until you know which problem it would solve. A rack cannot identify a mystery lid for you.
 
 Revisit the inventory when a piece is replaced, damaged, or no longer used. If you also need space for cleaning products, keep that a separate project with its own storage requirements; the [under-sink planning guide](/articles/under-sink-storage-around-pipes/) covers access and obstructions there. The food-container collection should remain a place to find intended pairs, not the new home for everything that no longer fits elsewhere.

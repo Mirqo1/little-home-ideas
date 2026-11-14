@@ -1,0 +1,18 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-14",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Photorealistic horizontal 3:2 editorial photo for a U.S. small kitchen organization article. Open refrigerator with a clear middle shelf, two clean shallow empty rectangular food storage containers with their pale sage lids fitted, spaced apart as a dry fit, shelf mostly empty. Other shelves hold a few ordinary closed jars and a carton, no identifiable labels, no raw meat, no cooked food, no thermometer numbers. Natural warm daylight from the modest oak-and-cream kitchen, realistic appliance geometry, no people, no text overlays or logos."
+    },
+    {
+      "role": "detail",
+      "prompt": "Photorealistic editorial landscape 3:2 close overhead view of three empty shallow rectangular glass food containers with fitted light sage lids laid separately on a warm butcher-block kitchen counter, with a blank paper planning sheet and pencil, clean and ordinary. One large and two small containers arranged plainly with visible rims and lid tabs. Soft daylight, realistic glass, no food, no labels, no clutter, no hands, no words or overlay."
+    },
+    {
+      "role": "pinterest",
+      "prompt": "Photorealistic vertical 2:3 editorial photo of a small U.S. kitchen, straight-on view of an open white refrigerator with a modest clear shelf holding three empty, covered, shallow rectangular containers, pale sage lids, in one layer with visible space between containers. Above and below only a few neatly spaced closed jars, no raw food or prepared food. Warm natural light, pale wood cabinet partly visible, credible domestic scale, no people, no logos, no added text or typography."
+    }
+  ]
+}
