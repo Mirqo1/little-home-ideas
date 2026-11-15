@@ -1,0 +1,18 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-15",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Landscape 3:2 photorealistic editorial home garden photograph. One small low straight-sided clear glass bowl on an oak console near a softly lit apartment window. Smooth gray and tan pebbles anchor exactly three visible tan paperwhite narcissus bulbs at the surface, bulb shoulders above pebbles, white fine roots visible among stones. Slender upright green strap leaves and three stems of small white six-petaled paperwhite narcissus flowers with a tiny white cup, several blossoms per stem. No daisy petals, no yellow centers. Natural early winter daylight, quiet cream wall, believable plant scale and real materials. No people, pets, text, logos or watermark."
+    },
+    {
+      "role": "detail",
+      "prompt": "Landscape 3:2 photorealistic macro editorial gardening image. A low clear flat-bottom glass bowl on natural wood, three unbloomed intact pointed tan paperwhite narcissus bulbs set upright in a layer of smooth river pebbles. Upper halves of bulbs clearly visible, tiny green tips but no developed stems. Water is visible among the lower stones only, below the base of the bulbs, no immersed bulbs. Close side view at bowl height, soft natural window light, simple crisp composition, no tools, no hands, no text, no logos."
+    },
+    {
+      "role": "pinterest",
+      "prompt": "Vertical 2:3 photorealistic editorial indoor garden photo. On a modest wood console near a winter apartment window, a compact low clear glass bowl with smooth river stones and three paperwhite narcissus bulbs above the stones, green upright leaves, clusters of white six-petaled miniature narcissus flowers with tiny white cups. Roots visible among stones. Center single arrangement in full view from bowl to upper flowers, soft overcast daylight, cream room, high-quality natural composition, no people, animals, printed words, logos, watermarks or overlays."
+    }
+  ]
+}
