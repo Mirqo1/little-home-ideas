@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Thirty-nine guides are published as of November 14, 2026, including the Thanksgiving leftover storage guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Forty guides are published as of November 15, 2026, including the indoor paperwhite guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -134,3 +134,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 13, 2026 (Europe/Bratislava): “How to Measure a Replacement Shade for a Table Lamp” — `/articles/measure-replacement-table-lamp-shade/`. DIY-home cluster. Fitter identification, original rim-height and wall clearance example, worksheet, two article illustrations and a 2:3 portrait. Review: `lamp-shade-editorial-review-2026-11-13.md`. Next rotation: small-spaces or garden-patio.
 
 - November 14, 2026 (Europe/Bratislava): “Make Room for Thanksgiving Leftovers in a Small Fridge” — `/articles/make-fridge-room-for-thanksgiving-leftovers/`. Small-spaces cluster. Empty-container rehearsal, original shelf-width example, refrigerator and freezer worksheet, two article illustrations and a separate 2:3 portrait. Review: `leftover-fridge-editorial-review-2026-11-14.md`. Next rotation: garden-patio or renter-friendly.
+
+- November 15, 2026 (Europe/Bratislava): “How to Grow Paperwhites Indoors in a Bowl of Pebbles” — `/articles/grow-paperwhites-in-pebbles-indoors/`. Garden-patio cluster. Bulb fit, pebble support, waterline, rooting and a bloom log. Two article illustrations and a separate 2:3 portrait. Review: `paperwhites-editorial-review-2026-11-15.md`. Next rotation: renter-friendly or practical-solutions.

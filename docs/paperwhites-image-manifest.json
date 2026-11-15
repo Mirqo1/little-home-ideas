@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-15",
+  "conversion": "Whole-frame resize. WebP 84 for articles, JPEG 88 for social. Facebook uses cover and Pinterest uses a separate portrait.",
+  "assets": [
+    {
+      "path": "/assets/articles/paperwhites-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 93816,
+      "sha256": "ae95aef9e8e95eb2696cb6bd7748d3be4a401ba55c2cdbe22809f28fcfbbef47",
+      "sourceSha256": "56f16a6af6c11367080d7c8ccd8dcdabc5ea30f26170faf44eadac34c14c230a"
+    },
+    {
+      "path": "/assets/articles/paperwhites-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 33796,
+      "sha256": "d7fdd1200ca2696e8788306d82cff78aa6006460e1bcea7e7464f2194b291016",
+      "sourceSha256": "56f16a6af6c11367080d7c8ccd8dcdabc5ea30f26170faf44eadac34c14c230a"
+    },
+    {
+      "path": "/assets/articles/paperwhites-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 116106,
+      "sha256": "e234cc6fee99bfb39b43948bd5029cfb6242d7761d26ca9ad2289dd9caf1e3b6",
+      "sourceSha256": "9f4018534ef8094c4709d949328ca92be7ffbfb0d18ac8f2b873bb3d2a89095f"
+    },
+    {
+      "path": "/assets/social/paperwhites-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 171584,
+      "sha256": "2c1f56d7febe5dd049d0aa8cee6a257a57786862b7d836e91bb0e4017b401056",
+      "sourceSha256": "56f16a6af6c11367080d7c8ccd8dcdabc5ea30f26170faf44eadac34c14c230a"
+    },
+    {
+      "path": "/assets/social/paperwhites-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 262190,
+      "sha256": "bb32c0de6b9bc8f173bfa1875efe343386e53755793f13868db37bbc662b7588",
+      "sourceSha256": "69fd4c164284ccdd22631f11ebab60d6edc13959cbd33835ba818da63d0fd193"
+    }
+  ]
+}
