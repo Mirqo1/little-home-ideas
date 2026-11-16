@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Forty guides are published as of November 15, 2026, including the indoor paperwhite guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Forty-one guides are published as of November 16, 2026, including the rental entry door draft check. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -136,3 +136,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 14, 2026 (Europe/Bratislava): “Make Room for Thanksgiving Leftovers in a Small Fridge” — `/articles/make-fridge-room-for-thanksgiving-leftovers/`. Small-spaces cluster. Empty-container rehearsal, original shelf-width example, refrigerator and freezer worksheet, two article illustrations and a separate 2:3 portrait. Review: `leftover-fridge-editorial-review-2026-11-14.md`. Next rotation: garden-patio or renter-friendly.
 
 - November 15, 2026 (Europe/Bratislava): “How to Grow Paperwhites Indoors in a Bowl of Pebbles” — `/articles/grow-paperwhites-in-pebbles-indoors/`. Garden-patio cluster. Bulb fit, pebble support, waterline, rooting and a bloom log. Two article illustrations and a separate 2:3 portrait. Review: `paperwhites-editorial-review-2026-11-15.md`. Next rotation: renter-friendly or practical-solutions.
+
+- November 16, 2026 (Europe/Bratislava): “How to Check a Drafty Entry Door in a Rental” — `/articles/check-drafty-rental-entry-door/`. Renter-friendly cluster. Door perimeter observations, paper-strip comparison, maintenance note and worksheet. Two article illustrations and a separate 2:3 portrait. Review: `entry-door-draft-editorial-review-2026-11-16.md`. Next rotation: practical-solutions or DIY-home.
