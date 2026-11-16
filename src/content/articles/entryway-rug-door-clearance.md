@@ -99,4 +99,6 @@ Follow the seller's unpacking and settling instructions, keeping return conditio
 
 If the door rubs, catches, or moves the rug, stop using that arrangement. Try a position beyond the swing or choose a different compatible assembly. Do not trim a door, remove its sweep, or alter a shared-building entrance to accommodate a rug. In a rental, raise any door problem with the property manager.
 
+If the floor still feels cold with the rug out of the swing, [check where the entry door feels drafty](/articles/check-drafty-rental-entry-door/). A note about the threshold or latch side gives maintenance a specific place to look.
+
 Finally, use the entry as you normally would: arrive, put down your bag, reach for shoes, and open the closet. A good result is an entrance that remains easy to use after the styling is finished. For changes farther into the room, see our [reversible living room updates](/articles/reversible-living-room-updates/).

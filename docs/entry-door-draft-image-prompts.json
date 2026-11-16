@@ -1,0 +1,18 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-16",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Horizontal 3:2 photorealistic editorial home maintenance photograph. Interior of a modest American rental entry in cool autumn morning, a closed painted sage solid exterior door with normal handle and latch framed by off-white trim, plain metal threshold and clear oak floor. On a small side console off the walking path sit a blank notebook and white paper strips. Focus on entire closed door and threshold. Believable restrained architecture, no holes, no sealing products, no visible writing, no people, no branding."
+    },
+    {
+      "role": "detail",
+      "prompt": "Horizontal 3:2 photorealistic close editorial photograph from floor level beside the interior bottom latch-side corner of a closed painted sage exterior door, showing solid door, white jamb and normal aluminum threshold with clear floor. A short clean white paper strip and small blank notepad lie on the wood floor beside the threshold, not inserted into the door. Natural light, realistic joinery and materials, no excessive gaps, no equipment, text, numbers, hands, or labels. Illustrative detail of what to observe."
+    },
+    {
+      "role": "pinterest",
+      "prompt": "Vertical 2:3 photorealistic editorial photograph of a closed muted blue exterior entry door seen from inside a compact American rental, cream surround and clear light oak floor. Window light from outside the frame, a tiny oak console to one side with a blank notebook and a few plain paper strips. Lower door and threshold are visible, open walking path, ordinary realistic finishes, no people, no decorations hanging on door, no text overlay, logo or watermark."
+    }
+  ]
+}

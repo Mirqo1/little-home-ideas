@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-16",
+  "conversion": "Whole-frame resize. WebP 84 for articles and JPEG 88 for social. Facebook uses the cover. Pinterest uses a separate portrait.",
+  "assets": [
+    {
+      "path": "/assets/articles/entry-door-draft-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 69946,
+      "sha256": "354c7c27013e5909f1bdbf13783ce29c520c1c15d3cb512a7eddd835fe9ebdb5",
+      "sourceSha256": "b65906912b93af6f2643d05bc197307c8b79984bd7529f1613219fa09b201e33"
+    },
+    {
+      "path": "/assets/articles/entry-door-draft-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 22810,
+      "sha256": "d3efc1fc4febead55c8e8748c8c3c86d91e2f63eed44d9befae8020ba01bfcdd",
+      "sourceSha256": "b65906912b93af6f2643d05bc197307c8b79984bd7529f1613219fa09b201e33"
+    },
+    {
+      "path": "/assets/articles/entry-door-draft-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 70114,
+      "sha256": "f51c1b54f82dd4f7eeaf289aa18dc797d6fc1f12b6030ad17ed811869b975e7d",
+      "sourceSha256": "de636b8c9956c803aca284332ac0a646108df511b690250817c813afbf56688e"
+    },
+    {
+      "path": "/assets/social/entry-door-draft-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 142586,
+      "sha256": "87b55b2f4b7b9649c5beb8d580ec8ce2fa80ffef3d10d7cb3e6577c3b98d37cb",
+      "sourceSha256": "b65906912b93af6f2643d05bc197307c8b79984bd7529f1613219fa09b201e33"
+    },
+    {
+      "path": "/assets/social/entry-door-draft-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 197067,
+      "sha256": "3b61cc043d0be5366fe027e3dbab2b23bfde765393c2ba76d3f230779f259b52",
+      "sourceSha256": "369c7afd2a41972d697a5c40741192eb44d9d601bbbe48e5dc31ea907b0e830f"
+    }
+  ]
+}
