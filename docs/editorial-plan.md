@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Forty-one guides are published as of November 16, 2026, including the rental entry door draft check. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Forty-two guides are published as of November 17, 2026, including the HVAC replacement filter sizing guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -138,3 +138,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 15, 2026 (Europe/Bratislava): “How to Grow Paperwhites Indoors in a Bowl of Pebbles” — `/articles/grow-paperwhites-in-pebbles-indoors/`. Garden-patio cluster. Bulb fit, pebble support, waterline, rooting and a bloom log. Two article illustrations and a separate 2:3 portrait. Review: `paperwhites-editorial-review-2026-11-15.md`. Next rotation: renter-friendly or practical-solutions.
 
 - November 16, 2026 (Europe/Bratislava): “How to Check a Drafty Entry Door in a Rental” — `/articles/check-drafty-rental-entry-door/`. Renter-friendly cluster. Door perimeter observations, paper-strip comparison, maintenance note and worksheet. Two article illustrations and a separate 2:3 portrait. Review: `entry-door-draft-editorial-review-2026-11-16.md`. Next rotation: practical-solutions or DIY-home.
+
+- November 17, 2026 (Europe/Bratislava): “How to Match the Size of a Replacement HVAC Filter” — `/articles/match-replacement-hvac-filter-size/`. Practical-solutions cluster. Equipment requirements, nominal versus actual dimensions, hypothetical half-inch mismatch and a five-row purchase worksheet. Two article illustrations and a separate 2:3 portrait. Review: `hvac-filter-fit-editorial-review-2026-11-17.md`. Next rotation: DIY-home or small-spaces.

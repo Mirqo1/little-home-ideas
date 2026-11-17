@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-17",
+  "conversion": "Whole-frame WebP article images and JPEG social assets. Facebook derives from the cover. Pinterest is separately generated.",
+  "assets": [
+    {
+      "path": "/assets/articles/hvac-filter-fit-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 120092,
+      "sha256": "dc4673b4e73f91bc4f90dd41ef455eb6d0259ed838ab2f86e1ca271b236d4a7f",
+      "sourceSha256": "6886c7011d833564ff0ef4ee7ef18f305d45647c91248ef48b7a833a95ebaac6"
+    },
+    {
+      "path": "/assets/articles/hvac-filter-fit-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 39936,
+      "sha256": "eea134d03aa615fc53cb48ed1ec1eb6663adbbca08dbf3046f0274483edfdc46",
+      "sourceSha256": "6886c7011d833564ff0ef4ee7ef18f305d45647c91248ef48b7a833a95ebaac6"
+    },
+    {
+      "path": "/assets/articles/hvac-filter-fit-detail.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 116228,
+      "sha256": "a0112e2309278398950e812dfc6268ac534e37f30a905df9af9cebfccbe65f83",
+      "sourceSha256": "7e24ca73a8aaddc38a5612259cd3ab364952641e09f486dd6dcfc7c09aa82629"
+    },
+    {
+      "path": "/assets/social/hvac-filter-fit-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 202630,
+      "sha256": "4cdc57955b8201cbcbd8e4491e8933c1b5798ca365d5b0369dceac37c612e8b1",
+      "sourceSha256": "6886c7011d833564ff0ef4ee7ef18f305d45647c91248ef48b7a833a95ebaac6"
+    },
+    {
+      "path": "/assets/social/hvac-filter-fit-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 288365,
+      "sha256": "a333efed8dffbdf3aa02078e08474f0547444093d741b003f1a45a391f37ff03",
+      "sourceSha256": "4f965211e65136bf302eb51d809fafbf531c5ac000081ab68934dd0e817f8309"
+    }
+  ]
+}

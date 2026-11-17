@@ -1,0 +1,18 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-17",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Horizontal 3:2 editorial photorealistic home maintenance still life. Two clean rectangular white pleated HVAC air filters with unprinted kraft cardboard rims on a walnut utility bench in a modest American home, one resting flat and one propped securely against the wall, with closed notebook and tape measure nearby. Diffuse morning daylight, detailed realistic accordion pleats and paper edges, quiet blue-gray wall, no furnace, no installation, no hands, no digits or labels on the filters, no overlay or logo."
+    },
+    {
+      "role": "detail",
+      "prompt": "Landscape 3:2 photorealistic close overhead oblique editorial detail of two similarly sized clean pleated rectangular air filters lying side by side on a light oak worktop, one cardboard frame noticeably thicker than the other, a closed tape measure and blank notebook beside them, full frame edges visible. Unbranded plain Kraft cardboard, clean white pleats. Warm natural side light, realistic perspective and materials, no people, no printed text or legible numbers, no arrows, no diagrams, no branding."
+    },
+    {
+      "role": "pinterest",
+      "prompt": "Vertical 2:3 photorealistic magazine photograph of a clean rectangular white pleated HVAC air filter with a plain brown cardboard border leaning securely against a muted sage wall above a natural wood utility countertop, a closed tape measure and cream notebook in foreground. Filter fully recognizable with fine parallel folded white pleats. Simple lived-in U.S. home maintenance aesthetic, warm daylight, no installation, people, letters, logos, watermark, or text overlay."
+    }
+  ]
+}
