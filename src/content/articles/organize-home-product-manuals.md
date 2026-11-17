@@ -95,6 +95,8 @@ This batch is useful even with two unresolved entries. It prevents an uncertain 
 
 Once the files are saved, close them and start from the index. Can another household member find the dishwasher's exact model and open its instructions without asking where you put them? Check a saved digital file while offline if offline access is part of your plan. A bookmark alone will not provide that access.
 
+For a ducted heating or cooling system, save the filter holder information with the equipment manual. Our [HVAC filter sizing guide](/articles/match-replacement-hvac-filter-size/) shows which dimensions and part details to keep for your next replacement.
+
 Keep a backup in a place you already use and protect. Give appropriate household members access to the practical instructions while keeping receipts, addresses, and private identification records out of public links.
 
 ## Add a separate safety-check record
