@@ -1,0 +1,14 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-18",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Horizontal 3:2 photorealistic editorial interior photograph for a DIY home guide. Modest warm American living room, cream painted wall above a low wooden sideboard. Exactly three plain kraft paper rectangular full-size picture-frame templates temporarily attached with small pale tape pieces at upper corners, carefully spaced in a simple row. Templates are blank brown paper, not frames. Sideboard holds closed notebook and pencil, no clutter, no objects leaning on wall. Natural afternoon window light, oak textures, realistic proportions, relaxed attractive home. No people, text, numbers, logos or overlays."
+    },
+    {
+      "role": "detail and Pinterest",
+      "prompt": "Vertical 2:3 photorealistic editorial close photograph for a DIY gallery wall planning guide. Overhead oblique view of an oak dining table with two small wooden picture frames lying flat, their art is simple original abstract beige and sage geometric shapes. Beside them lie two neatly cut blank kraft-paper rectangles, a closed tape measure, pencil and a closed cream notebook. Distinct paper edges, believable frame construction, tidy workspace in modest home, warm diffuse daylight. No people, hands, readable text, logos, watermarks or overlays."
+    }
+  ]
+}

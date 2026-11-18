@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-18",
+  "conversion": "Whole-frame WebP article images and JPEG social assets. Facebook derives from the landscape cover. Pinterest derives from the independently generated portrait detail.",
+  "assets": [
+    {
+      "path": "/assets/articles/gallery-templates-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 90738,
+      "sha256": "56aed8b9132a89921874eb616f394ec34aff3bcdc19abb30dfbbd362ce26fc95",
+      "sourceSha256": "5c1dcb8ae344db98de68d7049d7439890ee90a37b961234c0b1bb5bd5f676e3a"
+    },
+    {
+      "path": "/assets/articles/gallery-templates-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 25192,
+      "sha256": "49f6c2d48ef90e431bb45c06074f7fa6d0149fa9b254091e9ceaf5fc266a7f9b",
+      "sourceSha256": "5c1dcb8ae344db98de68d7049d7439890ee90a37b961234c0b1bb5bd5f676e3a"
+    },
+    {
+      "path": "/assets/articles/gallery-templates-detail.webp",
+      "width": 800,
+      "height": 1200,
+      "bytes": 156404,
+      "sha256": "63ab441cdb9079e4cada4681123740d016b8d6e2428f3f2848d5285a4272f3f5",
+      "sourceSha256": "3c06c9b876b78b1dc2bcdc988d9aaa08d31cfae8509ad6da6b79bc444ee76795"
+    },
+    {
+      "path": "/assets/social/gallery-templates-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 139835,
+      "sha256": "21c0d2cdb96f4d69ce420c7236801a16b7c0b3df836d0d966e1baa59ad2bbfb3",
+      "sourceSha256": "5c1dcb8ae344db98de68d7049d7439890ee90a37b961234c0b1bb5bd5f676e3a"
+    },
+    {
+      "path": "/assets/social/gallery-templates-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 291680,
+      "sha256": "90002ecdc9b1b99a4cf0c300cb2de796d6d1de96912322b0cf697acde5839718",
+      "sourceSha256": "3c06c9b876b78b1dc2bcdc988d9aaa08d31cfae8509ad6da6b79bc444ee76795"
+    }
+  ]
+}
