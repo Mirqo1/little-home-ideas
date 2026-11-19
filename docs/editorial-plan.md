@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Forty-three guides are published as of November 18, 2026, including the paper-template gallery wall guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Forty-four guides are published as of November 19, 2026, including the pack-away gift-wrapping kit guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -142,3 +142,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 17, 2026 (Europe/Bratislava): “How to Match the Size of a Replacement HVAC Filter” — `/articles/match-replacement-hvac-filter-size/`. Practical-solutions cluster. Equipment requirements, nominal versus actual dimensions, hypothetical half-inch mismatch and a five-row purchase worksheet. Two article illustrations and a separate 2:3 portrait. Review: `hvac-filter-fit-editorial-review-2026-11-17.md`. Next rotation: DIY-home or small-spaces.
 
 - November 18, 2026 (Europe/Bratislava): “Plan a Small Gallery Wall With Paper Templates” — `/articles/plan-gallery-wall-paper-templates/`. DIY-home cluster. Outside frame templates, two-layout viewing comparison, hypothetical width arithmetic and an original record table. Two original ImageGen illustrations, including a portrait used for Pinterest. Review: `gallery-templates-editorial-review-2026-11-18.md`. Next rotation: small-spaces or garden-patio.
+
+- November 19, 2026 (Europe/Bratislava): “Make a Gift-Wrapping Kit That Packs Away After Each Session” — `/articles/pack-away-gift-wrapping-kit/`. Small-spaces cluster. Seasonal supplies inventory, tabletop workflow, hypothetical five-gift example, return worksheet and storage reset. Two original ImageGen illustrations, including a portrait used for Pinterest. Review: `gift-wrap-kit-editorial-review-2026-11-19.md`. Next rotation: garden-patio or renter-friendly.
