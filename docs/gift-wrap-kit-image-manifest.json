@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-19",
+  "conversion": "Whole-frame WebP article images and JPEG social assets. Facebook derives from the landscape cover. Pinterest derives from the independently generated portrait detail.",
+  "assets": [
+    {
+      "path": "/assets/articles/gift-wrap-kit-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 117030,
+      "sha256": "f1d4e0b90206f3db6ead4250d30f23594fe9b5cb3b120be0d3d182cd7a293d55",
+      "sourceSha256": "b475158434297cc2ba63067119748dc0ed53f17782b235917d189ef25df1766f"
+    },
+    {
+      "path": "/assets/articles/gift-wrap-kit-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 39080,
+      "sha256": "ce394ff371ff9ecea4232254755f9d6b27b0e6f4697160100c76b8150380fda5",
+      "sourceSha256": "b475158434297cc2ba63067119748dc0ed53f17782b235917d189ef25df1766f"
+    },
+    {
+      "path": "/assets/articles/gift-wrap-kit-detail.webp",
+      "width": 800,
+      "height": 1200,
+      "bytes": 123328,
+      "sha256": "4fc68cc12d6df66618c2bdb0ae80a4e275b7deb7494511c72412e8fe676373ce",
+      "sourceSha256": "353294b147d394320833610085a0b915f9cd86c7f5987d4c863b403bd2d13b7a"
+    },
+    {
+      "path": "/assets/social/gift-wrap-kit-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 168682,
+      "sha256": "485bc314c41c67a3727374ea72febb2f6da0fb55ff1ab63430dcf2bd7f64dba9",
+      "sourceSha256": "b475158434297cc2ba63067119748dc0ed53f17782b235917d189ef25df1766f"
+    },
+    {
+      "path": "/assets/social/gift-wrap-kit-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 263450,
+      "sha256": "ae1ae0b40ac62bf384ab85fb5ae5c097b0660f964ff8ecf465ccfa46a261f48b",
+      "sourceSha256": "353294b147d394320833610085a0b915f9cd86c7f5987d4c863b403bd2d13b7a"
+    }
+  ]
+}

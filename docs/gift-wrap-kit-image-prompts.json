@@ -1,0 +1,14 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-19",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Horizontal 3:2 photorealistic editorial lifestyle photograph for a small-home organization guide. A compact oak dining table in a modest sunlit American apartment is being used for gift wrapping, no people. One small plain rectangular gift box rests centered on an uncut sheet of matte sage wrapping paper, a low open kraft storage box sits to one side holding a few folded sheets, cream tissue paper, blank tags, a tape dispenser and closed scissors. A simple empty tray at the other side is reserved for a finished gift. No long rolls, busy decorations or Christmas tree. Warm natural light, realistic materials, uncluttered usable tabletop, comfortable neutral interior. No text, logos, watermark, or overlay."
+    },
+    {
+      "role": "detail and Pinterest",
+      "prompt": "Vertical 2:3 photorealistic editorial overhead-oblique close photograph of a compact pack-away gift wrapping kit on a light oak table. One shallow rectangular kraft cardboard storage box contains neatly folded matte sage and brown wrapping paper, folded cream tissue, a small gift bag lying flat, blank tags in a little envelope and a small separate compartment with closed scissors and tape dispenser. Box lid lies flat beside it, with a small neatly wrapped kraft gift and simple cream ribbon nearby. Modest lived-in home, warm diffuse window light, detailed paper and cardboard textures, physically realistic objects, no people, no long paper rolls, printed words, branding, watermark or text overlay."
+    }
+  ]
+}

@@ -60,3 +60,5 @@ If the problem extends beyond drawers, use the same measure-first approach in ou
 If worn or awkward handles are part of the problem, [measure cabinet pull hole spacing and mounting thickness before choosing replacements](/articles/measure-cabinet-pulls-before-replacing/). Try one compatible sample before ordering a complete set.
 
 If the drawer holds food containers, [match the intended lids and count complete sets before choosing a layout](/articles/organize-food-containers-match-lids/). Keep unidentified pieces separate so a new organizer does not simply hide the same pairing problem.
+
+If gift-wrapping tools keep landing in the kitchen drawer, [build a kit that packs away after each wrapping session](/articles/pack-away-gift-wrapping-kit/). Keep its scissors, tape, and tags together in their own assigned storage spot.
