@@ -1,0 +1,14 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-20",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Horizontal 3:2 photorealistic editorial houseplant photograph. A healthy small red poinsettia with realistically layered red bracts and green leaves in a plain dark green plastic nursery pot on an empty cream saucer, placed on a protected light oak side table near a bright curtained window in a modest American home. An empty cream ceramic outer pot stands separately next to it. Dry surfaces and no water in saucer or outer pot, simple natural materials, no holiday ornaments, soft diffuse daylight. Entire plant and both containers visible. No people, text, logos, watermark or overlay."
+    },
+    {
+      "role": "detail and Pinterest",
+      "prompt": "Vertical 2:3 photorealistic editorial close still life in a modest home kitchen. A compact healthy red poinsettia with realistic red bracts and green leaves in a dark plain plastic nursery pot standing on a clean dry white draining tray beside a stainless steel sink. An empty cream ceramic decorative outer pot sits beside the nursery pot with its open empty interior clearly visible. A small plain watering can and closed blank notebook nearby. Soft window light, realistic materials, clean uncluttered counter, no running tap, no water pooled in containers, no foil. No people, lettering, logos, watermark or text overlay."
+    }
+  ]
+}

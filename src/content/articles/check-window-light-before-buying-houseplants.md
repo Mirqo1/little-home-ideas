@@ -90,3 +90,5 @@ Once you choose the location, make space to inspect the plant and handle waterin
 For an outdoor planting project, use our [three-pot container garden guide](/articles/container-garden-first-three-pots/). Outdoor sun, weather, and container conditions need their own assessment; this indoor light log does not establish whether a plant can move outside.
 
 For a winter flowering project indoors, [start paperwhite bulbs in a bowl of pebbles](/articles/grow-paperwhites-in-pebbles-indoors/). Plan a place for rooting first, then use this light log to find a sunny spot for the rooted bowl.
+
+For a holiday poinsettia, [check the growing pot and drainage before setting a watering routine](/articles/water-poinsettia-without-standing-water/). Make sure the display location lets you lift the inner pot out of its decorative cover for watering.

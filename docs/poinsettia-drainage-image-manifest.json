@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-20",
+  "conversion": "Whole-frame WebP article images and JPEG social assets. Facebook derives from the landscape cover. Pinterest derives from the independently generated portrait detail.",
+  "assets": [
+    {
+      "path": "/assets/articles/poinsettia-drainage-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 102224,
+      "sha256": "00e5bcf2ffee6ab948c77f5c88545cc075c1a4e1b09531114fdf37f5d39fdb9e",
+      "sourceSha256": "0128303f5097cc94671d4623f12d197144edb9f6505fc11e36abf822ceece9b1"
+    },
+    {
+      "path": "/assets/articles/poinsettia-drainage-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 32318,
+      "sha256": "2353f59f7c48c2e432286a706a72dacfc297918d67902350ac50b0544a950df7",
+      "sourceSha256": "0128303f5097cc94671d4623f12d197144edb9f6505fc11e36abf822ceece9b1"
+    },
+    {
+      "path": "/assets/articles/poinsettia-drainage-detail.webp",
+      "width": 800,
+      "height": 1200,
+      "bytes": 98846,
+      "sha256": "04e929501d422999913fb5ccfd0e0e3ebd1d6ace4a0f15ebfbea98544f4a1db7",
+      "sourceSha256": "8d35cb1fcfb9daaac93965b02a936b0ff073a097527c0c92ced574ecc563296f"
+    },
+    {
+      "path": "/assets/social/poinsettia-drainage-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 152485,
+      "sha256": "52d331dcdb005add36df219d3c60ae7028853855aaa8832838ffeb34550709a0",
+      "sourceSha256": "0128303f5097cc94671d4623f12d197144edb9f6505fc11e36abf822ceece9b1"
+    },
+    {
+      "path": "/assets/social/poinsettia-drainage-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 217482,
+      "sha256": "f3ba396ed7f28745769dc54eb2b0e61b5f1ceb9c3e027da22a4466a6d60f3ca0",
+      "sourceSha256": "8d35cb1fcfb9daaac93965b02a936b0ff073a097527c0c92ced574ecc563296f"
+    }
+  ]
+}
