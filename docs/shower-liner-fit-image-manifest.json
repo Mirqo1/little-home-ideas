@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-21",
+  "conversion": "Whole-frame WebP article images and JPEG social assets. Facebook derives from the landscape cover. Pinterest derives from the independently generated portrait detail.",
+  "assets": [
+    {
+      "path": "/assets/articles/shower-liner-fit-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 52532,
+      "sha256": "13df20623e0441c3c524074c2399abb9daeabf30361a6099d655e3c6461571a9",
+      "sourceSha256": "0a7a8e844ec70c4965a7bcb45bdb54f3ed58f7876d1e77a0739b0253ef169519"
+    },
+    {
+      "path": "/assets/articles/shower-liner-fit-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 15622,
+      "sha256": "0e3ea10bad79b36a2e826ea09eebb3b4109339ff05e93a4aa4f99a31b0b61cae",
+      "sourceSha256": "0a7a8e844ec70c4965a7bcb45bdb54f3ed58f7876d1e77a0739b0253ef169519"
+    },
+    {
+      "path": "/assets/articles/shower-liner-fit-detail.webp",
+      "width": 800,
+      "height": 1200,
+      "bytes": 92986,
+      "sha256": "12d9e416160f28b2ce6327f06a7cb5545c1e56bbbb2c5de872e6bda3ec9e0412",
+      "sourceSha256": "175dbd469b3fa30d6ad8dbfb16144a54810c4065448d58623f3c6f2767ee1488"
+    },
+    {
+      "path": "/assets/social/shower-liner-fit-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 103613,
+      "sha256": "c77fca1e46aa2e19b833f928d4a8961527b1c354f38611d6cac774c662ae858b",
+      "sourceSha256": "0a7a8e844ec70c4965a7bcb45bdb54f3ed58f7876d1e77a0739b0253ef169519"
+    },
+    {
+      "path": "/assets/social/shower-liner-fit-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 213072,
+      "sha256": "f94aa3d11454b9c3966470c0f1c3dfa4dc274a15cfac5f9a68b42505a82261cc",
+      "sourceSha256": "175dbd469b3fa30d6ad8dbfb16144a54810c4065448d58623f3c6f2767ee1488"
+    }
+  ]
+}

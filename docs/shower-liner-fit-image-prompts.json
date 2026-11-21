@@ -1,0 +1,14 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-21",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Horizontal 3:2 photorealistic editorial interior photograph for a rental bathroom planning guide. Compact modest American bathroom with white bathtub alcove, simple white square wall tiles, straight chrome curtain rod and evenly spaced plain rings. Semi-transparent plain shower liner hangs inside the bathtub, a cream decorative fabric curtain gathered neatly to the left outside the tub. Lower liner hem is clearly inside tub and hangs above the tub bottom without pooling. Water off, dry clean floor, safe uncluttered space, no extra rods, no luxury fixtures, soft daylight. No people, writing, labels, logos or text overlay."
+    },
+    {
+      "role": "detail and Pinterest",
+      "prompt": "Vertical 2:3 photorealistic editorial overhead oblique photograph of shower liner replacement planning supplies. A clean plain translucent shower liner folded neatly on a dry light oak table, its reinforced top edge with a row of realistic circular hanging holes clearly visible. Beside it are several separate simple chrome shower rings, a closed tape measure and blank cream notebook. Soft diffuse daylight, realistic plastic translucency and folded texture, restrained warm neutrals, no people, installation, lettering, numbers, branding, watermark or overlay."
+    }
+  ]
+}

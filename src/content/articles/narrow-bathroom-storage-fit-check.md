@@ -108,3 +108,5 @@ If the chosen furniture requires an attachment your rental does not currently al
 Follow product-specific cleaning, loading, and placement directions. Keep access to plumbing and ventilation unobstructed, and leave the floor inspectable. Reject a unit that only works by trapping it permanently between fixtures.
 
 The purchase decision is ready when you can identify what the unit holds, show where it sits, open the room's moving parts, retrieve the contents, and meet its installation requirements. If one of those checks fails, reduce the storage job or use existing space before adding furniture.
+
+For a smaller bathroom refresh, [check a replacement shower liner against your existing rod and rings](/articles/replacement-shower-liner-existing-rod/). Compare coverage, hanging drop, and care directions before choosing a different size.
