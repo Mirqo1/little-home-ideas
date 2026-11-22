@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-22",
+  "conversion": "Whole-frame WebP article images and JPEG social assets. Facebook derives from the landscape cover. Pinterest derives from the independently generated portrait detail.",
+  "assets": [
+    {
+      "path": "/assets/articles/fridge-temperature-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 67772,
+      "sha256": "62ca9785386af8c1cfb655ec0c976d84e6057dba75bb007aae0c0b5cb15b7534",
+      "sourceSha256": "3c46218d72ca8511c4b498ccbf8527f869bf2dfd25000b0070ca590bbc63c37b"
+    },
+    {
+      "path": "/assets/articles/fridge-temperature-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 25174,
+      "sha256": "6245be6ed9b41bd02fb498234ec48528dcc5735f432561c4d4496a65aed98b6e",
+      "sourceSha256": "3c46218d72ca8511c4b498ccbf8527f869bf2dfd25000b0070ca590bbc63c37b"
+    },
+    {
+      "path": "/assets/articles/fridge-temperature-detail.webp",
+      "width": 800,
+      "height": 1200,
+      "bytes": 74622,
+      "sha256": "7d0f79886f3cbc2732ea71c0f9dd11cf96b8603e3ee0c716fa2ea3a599656e1b",
+      "sourceSha256": "9fb7ab6f0a49c6f958b4a9439d203f8daa1936394cfb296ffb01000016936173"
+    },
+    {
+      "path": "/assets/social/fridge-temperature-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 126618,
+      "sha256": "a301044d6e39ad18c2186c180e8f7585cbcfd6c496ba2e666eead3e027e90908",
+      "sourceSha256": "3c46218d72ca8511c4b498ccbf8527f869bf2dfd25000b0070ca590bbc63c37b"
+    },
+    {
+      "path": "/assets/social/fridge-temperature-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 183601,
+      "sha256": "0bdb04a7322d6255fdcb9382dbda4b32c860553741c87a37a55a661aa685e4d9",
+      "sourceSha256": "9fb7ab6f0a49c6f958b4a9439d203f8daa1936394cfb296ffb01000016936173"
+    }
+  ]
+}

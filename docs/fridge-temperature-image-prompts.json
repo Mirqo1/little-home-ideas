@@ -1,0 +1,14 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-22",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Horizontal 3:2 photorealistic editorial home kitchen photograph. Interior of a clean modest American refrigerator with several sealed food containers spaced apart on glass shelves, a plain freestanding round stainless refrigerator appliance thermometer placed visibly in the middle of the center shelf. Refrigerator door open only for photograph, natural kitchen light, practical ordinary home, no crowded piles or raw food. Thermometer dial angled slightly away so its numbers and reading cannot be read, no printed labels on containers. Realistic shelf construction and restrained sage accents. No people, brands, text overlay or watermark."
+    },
+    {
+      "role": "detail and Pinterest",
+      "prompt": "Vertical 2:3 photorealistic editorial photograph on a light oak kitchen counter near a closed white refrigerator. One realistic small freestanding stainless steel refrigerator thermometer shown mostly from its side and rear, with a metal hanging clip at the top and support foot below. Its dial faces away from camera and no temperature reading is visible. Beside it an open blank cream notebook and pencil, with two clean covered glass food containers on the left. Warm natural daylight in modest American home. Detailed believable materials, uncluttered composition, no people, brand labels, watermarks or text overlays. The thermometer should be recognizable as a real physical appliance thermometer seen from behind."
+    }
+  ]
+}

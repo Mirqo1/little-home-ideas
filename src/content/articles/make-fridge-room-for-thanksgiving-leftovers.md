@@ -30,6 +30,8 @@ A serving dish can fit neatly on the Thanksgiving table and still take up most o
 
 Look at the refrigerator as it will be just before dinner. Leave room for the groceries that still need to stay cold. Move only items whose labels allow room-temperature storage. Use an appliance thermometer to check that the refrigerator is at **40°F or below** and the freezer is at **0°F or below**. Keep space around the food for cold air to circulate. Check your appliance instructions for shelf placement and vents. [FDA refrigerator guidance](https://www.fda.gov/food/buy-store-serve-safe-food/refrigerator-thermometers-cold-facts-about-food-safety)
 
+For a step-by-step temperature check and a record you can share, use our [refrigerator thermometer guide](/articles/check-fridge-temperature-before-holiday-groceries/) before adding the holiday groceries.
+
 Measure the free width, depth, and height of a reachable shelf area. Take the usable measurements inside any raised lip or side rail. Check the space in front of the containers as well, so you can lift one out without first removing everything in front of it.
 
 ## Try the actual containers, with their lids
