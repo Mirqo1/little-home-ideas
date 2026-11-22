@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Forty-six guides are published as of November 21, 2026, including the replacement shower liner fit guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Forty-seven guides are published as of November 22, 2026, including the refrigerator temperature check guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -148,3 +148,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 20, 2026 (Europe/Bratislava): “Water a Poinsettia Without Leaving It in Standing Water” — `/articles/water-poinsettia-without-standing-water/`. Garden-patio cluster. Seasonal indoor plant care, freely draining nursery pot, outer-container removal, observation-based watering and hypothetical three-check care log. Two original ImageGen illustrations, including a portrait used for Pinterest. Review: `poinsettia-drainage-editorial-review-2026-11-20.md`. Next rotation: renter-friendly or practical-solutions.
 
 - November 21, 2026 (Europe/Bratislava): “Choose a Replacement Shower Liner for the Rod You Have” — `/articles/replacement-shower-liner-existing-rod/`. Renter-friendly cluster. Existing rings and attachment reference, width versus hanging drop, hypothetical two-inch comparison, care differences and replacement worksheet. Two original ImageGen illustrations, including a portrait used for Pinterest. Review: `shower-liner-fit-editorial-review-2026-11-21.md`. Next rotation: practical-solutions or DIY-home.
+
+- November 22, 2026 (Europe/Bratislava): “Check Your Fridge Temperature Before the Holiday Grocery Trip” — `/articles/check-fridge-temperature-before-holiday-groceries/`. Practical-solutions cluster. Appliance thermometer setup, measurement timing, conditions log, hypothetical 38°F/39°F comparison, and prompt response to a warm reading. Two original ImageGen illustrations, including a portrait used for Pinterest. Review: `fridge-temperature-editorial-review-2026-11-22.md`. Next rotation: DIY-home or small-spaces.
