@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-23",
+  "conversion": "Whole-frame WebP article images and JPEG social assets. Facebook derives from the landscape cover. Pinterest derives from the independently generated portrait detail.",
+  "assets": [
+    {
+      "path": "/assets/articles/fabric-gift-wrap-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 126678,
+      "sha256": "e1bfea4851d3d2d9730b68b8bb783533a8232ef036cf8592038c2ff9d7d9a281",
+      "sourceSha256": "8ad46f1f4dee90e9cdfef8355e9d5086cdbd999b1152fb9f56b57373bfaf3fa7"
+    },
+    {
+      "path": "/assets/articles/fabric-gift-wrap-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 28156,
+      "sha256": "b945f2c95a4f05900f6941aa75a4d2e7a22c8f69fba9e934e6a083dd799fac7d",
+      "sourceSha256": "8ad46f1f4dee90e9cdfef8355e9d5086cdbd999b1152fb9f56b57373bfaf3fa7"
+    },
+    {
+      "path": "/assets/articles/fabric-gift-wrap-detail.webp",
+      "width": 800,
+      "height": 1200,
+      "bytes": 128308,
+      "sha256": "d1160365d63be577495e3f21a433e38659c2c53f987cbe6b55c8a5362ca02e48",
+      "sourceSha256": "79e2a8e39b8a6c0deb9c84331b063159868447ed5156ae69634cb4ef2ec63978"
+    },
+    {
+      "path": "/assets/social/fabric-gift-wrap-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 163059,
+      "sha256": "4952bcc81170cf0e3ebdc21b12c7f0910260a8361bc57f8c789cd10f3078f74d",
+      "sourceSha256": "8ad46f1f4dee90e9cdfef8355e9d5086cdbd999b1152fb9f56b57373bfaf3fa7"
+    },
+    {
+      "path": "/assets/social/fabric-gift-wrap-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 264030,
+      "sha256": "f77aaa33839b94588e252890a4041c9062f5a25b0acef6b2c3ef5810101e0d7f",
+      "sourceSha256": "79e2a8e39b8a6c0deb9c84331b063159868447ed5156ae69634cb4ef2ec63978"
+    }
+  ]
+}

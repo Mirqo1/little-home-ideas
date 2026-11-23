@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Forty-seven guides are published as of November 22, 2026, including the refrigerator temperature check guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Forty-eight guides are published as of November 23, 2026, including the fabric-square gift wrap guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -150,3 +150,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 21, 2026 (Europe/Bratislava): “Choose a Replacement Shower Liner for the Rod You Have” — `/articles/replacement-shower-liner-existing-rod/`. Renter-friendly cluster. Existing rings and attachment reference, width versus hanging drop, hypothetical two-inch comparison, care differences and replacement worksheet. Two original ImageGen illustrations, including a portrait used for Pinterest. Review: `shower-liner-fit-editorial-review-2026-11-21.md`. Next rotation: practical-solutions or DIY-home.
 
 - November 22, 2026 (Europe/Bratislava): “Check Your Fridge Temperature Before the Holiday Grocery Trip” — `/articles/check-fridge-temperature-before-holiday-groceries/`. Practical-solutions cluster. Appliance thermometer setup, measurement timing, conditions log, hypothetical 38°F/39°F comparison, and prompt response to a warm reading. Two original ImageGen illustrations, including a portrait used for Pinterest. Review: `fridge-temperature-editorial-review-2026-11-22.md`. Next rotation: DIY-home or small-spaces.
+
+- November 23, 2026 (Europe/Bratislava): “Wrap a Small Boxed Gift With a Fabric Square” — `/articles/wrap-boxed-gift-fabric-square/`. DIY-home cluster. Basic furoshiki-inspired box wrap, square knot, cloth-and-box fit trial, original record table and agreed reuse. Two original ImageGen illustrations, including a portrait used for Pinterest. Review: `fabric-gift-wrap-editorial-review-2026-11-23.md`. Next rotation: small-spaces or garden-patio.

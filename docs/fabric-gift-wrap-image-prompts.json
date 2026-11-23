@@ -1,0 +1,14 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-23",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Horizontal 3:2 photorealistic editorial DIY gift-wrapping still life in a modest warm American home. On an uncluttered light oak dining table, one small rectangular box neatly wrapped completely in a plain muted sage cotton square, two opposite cloth ends tied in a simple low square knot centered on top, short soft tails. Nearby a second neatly folded cream cloth square and a blank kraft gift tag, no ribbon or paper wrapping, no extra decorative clutter. Natural window light, realistic woven fabric texture and clean folded box corners, cozy restrained interior softly out of focus. No people, writing, logos, watermark or text overlay."
+    },
+    {
+      "role": "detail and Pinterest",
+      "prompt": "Vertical 2:3 photorealistic editorial overhead oblique DIY planning photograph. A small closed plain kraft rectangular gift box placed at the center of a large cream cotton cloth square spread flat diagonally like a diamond on a light oak table. All four cloth corners visible, plenty of cloth surrounds the box. Beside the cloth a neatly folded muted sage cotton square, a closed tape measure and a blank notebook. Warm soft daylight, believable fabric weave and hem, minimal home workspace, no hands or people, no knot yet, no ribbons, scissors or tape. No text, numbers, logos, watermark or overlay."
+    }
+  ]
+}
