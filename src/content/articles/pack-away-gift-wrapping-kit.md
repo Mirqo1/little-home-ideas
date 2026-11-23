@@ -71,3 +71,5 @@ Put small tools in a compartment where they are easy to retrieve. Keep usable of
 After the first session, close the kit and return it to its intended spot. Check that the lid closes freely, the container is manageable to carry, and the scissors are stored safely. If a shelf is the destination, our [closet measurement guide](/articles/measure-closet-before-buying-organizers/) explains how to check the opening and retrieval space.
 
 Finish by clearing the table for its next use. A kit that is easy to take out and return is more useful in a small home than a large supply collection that has no convenient place to go.
+
+For a small boxed gift, [try a fabric square you already own](/articles/wrap-boxed-gift-fabric-square/). Check the folds and knot with the actual box, then decide whether the cloth goes with the gift or returns to your kit.
