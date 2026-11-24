@@ -1,0 +1,14 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-24",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Horizontal 3:2 photorealistic editorial small kitchen photograph. Modest American apartment kitchen, light neutral countertop with stainless sink on left. Immediately beside sink stands a small plain stainless wire dish drying rack on a fitted light-gray draining tray whose short spout leads over sink edge. Rack holds four white dinner plates upright in separate slots and two plain mugs, stable with no crowded stacks. To the right is a generous clearly empty dry food-prep area with a wooden cutting board, no food. Ordinary white cabinets, warm natural window light, clean believable materials, no electrical appliances or people. No writing, labels, brands, watermark or text overlay."
+    },
+    {
+      "role": "detail and Pinterest",
+      "prompt": "Vertical 2:3 photorealistic editorial oblique close photograph of a compact unbranded stainless wire dish rack on a molded cream draining tray next to a stainless kitchen sink. A few white plates stand upright in separate slots, one plain sage mug is upside down in a stable position on raised tray ribs, small cutlery compartment holds two spoons. Tray's visible short drain channel reaches over the sink edge. No pooling water, no precarious stack, no knives, no hands. Warm diffuse natural light, realistic modest home kitchen countertop, detailed ordinary materials, no text, logos, watermark or overlay."
+    }
+  ]
+}

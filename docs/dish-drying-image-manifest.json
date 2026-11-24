@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-24",
+  "conversion": "Whole-frame WebP article images and JPEG social assets. Facebook derives from the landscape cover. Pinterest derives from the independently generated portrait detail.",
+  "assets": [
+    {
+      "path": "/assets/articles/dish-drying-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 85430,
+      "sha256": "a64385e189a6e2ec756652813404ea61354e54733120cf09b689aad4c01efca3",
+      "sourceSha256": "a480a498a89da1f48f08ef02ac9842c6e9fa8630ba03d82ed337c47e3b6d54ea"
+    },
+    {
+      "path": "/assets/articles/dish-drying-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 27560,
+      "sha256": "40f5204d173318bea7653b827ce24e3e7cb1fa17c92dd56c775da1ecd7d99164",
+      "sourceSha256": "a480a498a89da1f48f08ef02ac9842c6e9fa8630ba03d82ed337c47e3b6d54ea"
+    },
+    {
+      "path": "/assets/articles/dish-drying-detail.webp",
+      "width": 800,
+      "height": 1200,
+      "bytes": 105342,
+      "sha256": "900dfc4af9fb34952ce511bb876ed15862d3a02e4fb72e39e749cb9076914487",
+      "sourceSha256": "887b79f71ca90f8cfc806bbcc3b84c8ceabdd3ac87afb6fd6c89ad0e1dbc3783"
+    },
+    {
+      "path": "/assets/social/dish-drying-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 131760,
+      "sha256": "215c7225e03c9a6ea8466c5655b8768cf904eb44d3170bf3ddeb8a619772bd87",
+      "sourceSha256": "a480a498a89da1f48f08ef02ac9842c6e9fa8630ba03d82ed337c47e3b6d54ea"
+    },
+    {
+      "path": "/assets/social/dish-drying-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 229903,
+      "sha256": "55b55b8eceffe65f4537f726d9103632f75ab7c7a9a6efdfe37f8786e8df5310",
+      "sourceSha256": "887b79f71ca90f8cfc806bbcc3b84c8ceabdd3ac87afb6fd6c89ad0e1dbc3783"
+    }
+  ]
+}

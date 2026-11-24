@@ -62,3 +62,5 @@ If worn or awkward handles are part of the problem, [measure cabinet pull hole s
 If the drawer holds food containers, [match the intended lids and count complete sets before choosing a layout](/articles/organize-food-containers-match-lids/). Keep unidentified pieces separate so a new organizer does not simply hide the same pairing problem.
 
 If gift-wrapping tools keep landing in the kitchen drawer, [build a kit that packs away after each wrapping session](/articles/pack-away-gift-wrapping-kit/). Keep its scissors, tape, and tags together in their own assigned storage spot.
+
+If tools have a home but washed dishes still occupy your preparation space, [plan a drying spot around your normal dish load](/articles/dry-dishes-small-kitchen-counter/). Check drainage and the put-away step before changing the rack.
