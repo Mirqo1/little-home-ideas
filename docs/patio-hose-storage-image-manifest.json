@@ -1,0 +1,52 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-25",
+  "conversion": "Built-in ImageGen originals were edited with the same tool to correct fitting details. Whole-frame WebP article images and JPEG social assets. Facebook derives from the landscape cover. Pinterest derives from the independently generated portrait detail.",
+  "assets": [
+    {
+      "path": "/assets/articles/patio-hose-storage-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 117934,
+      "sha256": "e7fe758f5d1daa3a5627e1107695bba60dd8ceb1093434a1b5369a85d90b2554",
+      "sourceSha256": "ca38e76f90d93ea0e8cd24a3551c65414f5e104945297ec9785818eb7d0dc511",
+      "parentSourceSha256": "1f7b3766fa3dbe564d409384273ca6bd9544672d920322b0d5a93eefc1eed8f1"
+    },
+    {
+      "path": "/assets/articles/patio-hose-storage-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 38258,
+      "sha256": "6ca4a5b155e9069e5af97ffbe01b3484f0018f9cc9d7e2304e2220ae0493a96c",
+      "sourceSha256": "ca38e76f90d93ea0e8cd24a3551c65414f5e104945297ec9785818eb7d0dc511",
+      "parentSourceSha256": "1f7b3766fa3dbe564d409384273ca6bd9544672d920322b0d5a93eefc1eed8f1"
+    },
+    {
+      "path": "/assets/articles/patio-hose-storage-detail.webp",
+      "width": 800,
+      "height": 1200,
+      "bytes": 148964,
+      "sha256": "06cfe8d9c03264f8df555436c62b70d02109b0fc1bbd43cc4fbfaedce5069521",
+      "sourceSha256": "205d0709dd9d5c864bc4eb6584a878a7e0e7c1bb6acfbc3210abfd1e3ec3ea48",
+      "parentSourceSha256": "34adb381822183c1c5e6b53ca1593eff4612d38b4988dca96cb33bce371458b9"
+    },
+    {
+      "path": "/assets/social/patio-hose-storage-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 171716,
+      "sha256": "39d003f8fbcd1bd2b05b5bdb81e64b3181c74535fe3fca76d957b0a3fc081710",
+      "sourceSha256": "ca38e76f90d93ea0e8cd24a3551c65414f5e104945297ec9785818eb7d0dc511",
+      "parentSourceSha256": "1f7b3766fa3dbe564d409384273ca6bd9544672d920322b0d5a93eefc1eed8f1"
+    },
+    {
+      "path": "/assets/social/patio-hose-storage-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 281196,
+      "sha256": "fde097e86d769e0c550cb28b3293f881c71edb841858f0fe48dba6c06ccfdff8",
+      "sourceSha256": "205d0709dd9d5c864bc4eb6584a878a7e0e7c1bb6acfbc3210abfd1e3ec3ea48",
+      "parentSourceSha256": "34adb381822183c1c5e6b53ca1593eff4612d38b4988dca96cb33bce371458b9"
+    }
+  ]
+}

@@ -93,3 +93,5 @@ Plan checks appropriate to the products and local weather rather than assuming t
 In spring, review the instructions and your notes before returning pieces to use. If the winter arrangement repeatedly caused problems, use that information when planning the next season. Our [small patio layout guide](/articles/small-patio-furniture-layout/) helps you reassess furniture footprints and access, while the [Patio & Balcony Layout Planner](/tools/patio-privacy-planner/) can illustrate alternative positions. Its example furniture does not verify real storage dimensions, cover fit, or weather suitability.
 
 For live plants, make a separate [winter plan for potted perennials](/articles/overwinter-potted-perennials-small-patio/). Decide which pots can stay outside, which need a suitable shelter, and how you will reach each pot for winter checks.
+
+Include the watering equipment in your seasonal record. Our [garden hose storage guide](/articles/drain-store-patio-garden-hose/) covers the detachable hose, nozzle, and storage location, with outdoor faucet preparation assigned as a separate maintenance task.

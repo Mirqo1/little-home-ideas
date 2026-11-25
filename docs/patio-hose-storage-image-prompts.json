@@ -1,0 +1,20 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-25",
+  "prompts": [
+    {
+      "role": "cover",
+      "prompt": "Horizontal 3:2 photorealistic editorial garden storage photograph. Inside a modest dry garden shed beside a compact American patio, a plain sage-green flexible garden hose rests in broad neat circular coils on a sturdy low wooden shelf. Both brass threaded hose ends visible and disconnected, no joined couplings. A small shallow tray beside the coil holds a detached simple brass-and-gray spray nozzle. Clear floor and doorway, neutral wood walls, natural late-autumn daylight, practical ordinary materials, no wet surfaces or plumbing shown. No people, labels, writing, logos, watermark or text overlay.",
+      "editPrompt": "Correct the hardware in this photograph while preserving its composition, lighting, coil, background and aspect ratio. The green hose is a normal American garden hose: its left end has one female swivel connector with internal threads only and a knurled outside with no external threads; its right end has one narrower male brass connector with external screw threads only, with a smooth dark bore and absolutely no internal threads. Keep both hose ends separate. Rotate the detached nozzle on the tray so its handle inlet points away from the camera and the inlet connector cannot be seen. Keep it detached. Photorealistic, no other changes or lettering.",
+      "parentSourceSha256": "1f7b3766fa3dbe564d409384273ca6bd9544672d920322b0d5a93eefc1eed8f1",
+      "sourceSha256": "ca38e76f90d93ea0e8cd24a3551c65414f5e104945297ec9785818eb7d0dc511"
+    },
+    {
+      "role": "detail and Pinterest",
+      "prompt": "Vertical 2:3 photorealistic editorial close still life on a clean wooden utility workbench. A plain green garden hose arranged in a loose broad coil, with two disconnected brass threaded ends clearly resting at the front. A separate gray-and-brass hose spray nozzle lies on a shallow dry tray beside a closed blank notebook. No nozzle attached to hose, no joined hose ends, no water drops, no tools or plumbing. Warm diffuse daylight, realistic hose texture and fittings, modest garden maintenance setting, no people, letters, numbers, brands, watermark or text overlay.",
+      "editPrompt": "Correct the hardware in this photograph while preserving its composition, lighting, coil, background and aspect ratio. The green hose is a normal American garden hose: its left end has one female swivel connector with internal threads only and a knurled outside with no external threads; its right end has one narrower male brass connector with external screw threads only, with a smooth dark bore and absolutely no internal threads. Keep both hose ends separate. Rotate the detached nozzle on the tray so its handle inlet points away from the camera and the inlet connector cannot be seen. Keep it detached. Photorealistic, no other changes or lettering.",
+      "parentSourceSha256": "34adb381822183c1c5e6b53ca1593eff4612d38b4988dca96cb33bce371458b9",
+      "sourceSha256": "205d0709dd9d5c864bc4eb6584a878a7e0e7c1bb6acfbc3210abfd1e3ec3ea48"
+    }
+  ]
+}
