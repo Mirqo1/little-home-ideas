@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Forty-nine guides are published as of November 24, 2026, including the small-counter dish-drying guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Fifty guides are published as of November 25, 2026, including the patio garden hose storage guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -154,3 +154,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 23, 2026 (Europe/Bratislava): “Wrap a Small Boxed Gift With a Fabric Square” — `/articles/wrap-boxed-gift-fabric-square/`. DIY-home cluster. Basic furoshiki-inspired box wrap, square knot, cloth-and-box fit trial, original record table and agreed reuse. Two original ImageGen illustrations, including a portrait used for Pinterest. Review: `fabric-gift-wrap-editorial-review-2026-11-23.md`. Next rotation: small-spaces or garden-patio.
 
 - November 24, 2026 (Europe/Bratislava): “Make Room for Dishes to Dry on a Small Kitchen Counter” — `/articles/dry-dishes-small-kitchen-counter/`. Small-spaces cluster. Reserve preparation space, inspect rack drainage, rehearse an everyday load, stage oversized pieces and reset the counter. Original trial worksheet and hypothetical dish load. Two original ImageGen illustrations, including a portrait used for Pinterest. Review: `dish-drying-editorial-review-2026-11-24.md`. Next rotation: garden-patio or renter-friendly.
+
+- November 25, 2026 (Europe/Bratislava): “Disconnect, Drain, and Store a Patio Garden Hose” — `/articles/drain-store-patio-garden-hose/`. Garden-patio cluster. Detachable hose draining and storage, accessory locations, separate faucet maintenance and original spring-restart worksheet. Two original ImageGen illustrations, including a portrait used for Pinterest. Review: `patio-hose-storage-editorial-review-2026-11-25.md`. Next rotation: renter-friendly or practical-solutions.
