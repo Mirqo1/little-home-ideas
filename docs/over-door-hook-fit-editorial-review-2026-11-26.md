@@ -1,0 +1,15 @@
+# Editorial review: over-the-door hook fit
+Date: November 26, 2026 (Europe/Bratislava).
+
+- Base main: cb195628e7a9726251f17008900673aa2595b5a0. Reviewed current PUBLISHING.md, editorial plan and existing content. No November 26 daily article existed at this base.
+- Rotation: renter-friendly follows November 25 garden-patio. Distinct task from adhesive wall hooks, entry-door drafts and rug clearance: exact-model over-door bracket fit and normal loaded movement.
+- Search intent check: current U.S. manufacturer results emphasize product dimensions. This guide adds a one-door decision worksheet, rejects incompatible thickness before trial, separates unknown top clearance from a pass, and records normal movement. No keyword volume or ranking claim.
+- Primary sources checked November 26: Umbra Buddy double hook U.S. product page (up to 1½-inch doors, 5 lb per hook) and IKEA U.S. ENUDDEN 602.516.65 page (mounted with screws, assembly instructions). Links and model names checked against current pages. These examples are not purchase recommendations or universal specifications. Yamazaki results were also inspected but not used for a numeric clearance claim because retrieved variants/rounding and dynamic page content differed.
+- Original example: hypothetical 1¾-inch door versus 1½-inch maximum, excess ¼ inch. Not a real installation or product test. Original six-row worksheet records unresolved as unresolved.
+- Review: American English, no damage-free guarantee, no unsupported load combination, no invented price or performance, no universal clearance, no instruction to modify the door or force closure. Scope is a suitable approved ordinary interior door. No physical fit or firsthand test is claimed.
+- Relevant outgoing links: permission template, closet measurements, adhesive wall-hook checks. Contextual incoming link added to the adhesive hook guide, with truthful updated date.
+- Visual review: landscape door scene shows a three-hook white rack with two arms visibly passing over the top and a blue shirt, normal-scale handle and clear swing area. Portrait shows two separated continuous-strip hooks, notebook, pencil and tape measure. No text overlay, logos, extra limbs or unsupported measurement depiction. Both scenes are generated illustrations, disclosed in article text/caption and provenance.
+- Whole-frame optimization: 1200×800 cover, 600×400 card, 800×1200 portrait detail, 1200×800 Facebook JPEG and independently generated portrait 1000×1500 Pinterest JPEG. All decoded successfully. Prompts and source/output SHA-256 recorded in adjacent JSON files.
+- No logo, shared layout, styling, hosting, paid service, ad, or social account changes.
+- Editorial and image review completed before setting reviewed true and draft false.
+- Validation: npm test passed. Astro build generated 67 pages. npm run check:site passed all 67 pages, checking local links/fragments, image dimensions/integrity, canonical URLs, social metadata, Article schema and three sitemap files. Export generated 317 files. git diff --check passed. GitHub CI and post-deployment verification remain release gates.

@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-26",
+  "conversion": "Whole-frame WebP article images and JPEG social assets. Facebook derives from the landscape cover. Pinterest derives from the independently generated portrait detail.",
+  "assets": [
+    {
+      "path": "/assets/articles/over-door-hook-fit-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 30878,
+      "sha256": "4a834a3c88cbc41b1d6b6560f629d257a3b96a607afdc9e369c43ba1813887cd",
+      "sourceSha256": "74d9d13380f3ba85a9a2d0b7261566e68a5813a9c056fd96807c06942fd97597"
+    },
+    {
+      "path": "/assets/articles/over-door-hook-fit-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 11614,
+      "sha256": "9a963332ffe8ccc84514ffb39d4ed4bce9044216bdf3d6145cd42ea8a012f586",
+      "sourceSha256": "74d9d13380f3ba85a9a2d0b7261566e68a5813a9c056fd96807c06942fd97597"
+    },
+    {
+      "path": "/assets/articles/over-door-hook-fit-detail.webp",
+      "width": 800,
+      "height": 1200,
+      "bytes": 99286,
+      "sha256": "0b07be3670e32289997892805eb13b7a25f34561577391046985783cbd69ebe7",
+      "sourceSha256": "56ce6c187342adf9a30c87904865b4f5a9281087beecd4ba77533236382d2901"
+    },
+    {
+      "path": "/assets/social/over-door-hook-fit-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 74753,
+      "sha256": "01397b06cd4157db099bead870d1325dc4debab5b7cd14bb454c5390f68ae716",
+      "sourceSha256": "74d9d13380f3ba85a9a2d0b7261566e68a5813a9c056fd96807c06942fd97597"
+    },
+    {
+      "path": "/assets/social/over-door-hook-fit-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 222883,
+      "sha256": "415230ffd13ad360483704995fa6753e301a9d5e0b4aaaf9f2782c90bbd0b7f1",
+      "sourceSha256": "56ce6c187342adf9a30c87904865b4f5a9281087beecd4ba77533236382d2901"
+    }
+  ]
+}
