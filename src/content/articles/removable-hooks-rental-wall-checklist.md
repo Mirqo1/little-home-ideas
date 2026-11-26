@@ -10,7 +10,7 @@ imageWidth: 1200
 imageHeight: 800
 imageCaption: ""
 imageProvenance: "generated"
-updated: "2026-10-15"
+updated: "2026-11-26"
 reviewed: true
 draft: false
 sources: [{"title": "Command U.S.: Frequently asked questions and product instructions", "url": "https://www.command.com/3M/en_US/command/contact-us/faqs/", "note": "Surface suitability, product weight limits, preparation, and downward stretch-release removal."}, {"title": "CPSC: Get On Top of It Before They Do! — furniture anchoring guide (PDF)", "url": "https://www.cpsc.gov/s3fs-public/GetOnTopofItBeforeTheyDoPub250_05-2019en.pdf", "note": "Furniture anti-tip hardware; adhesive hooks are not presented as a substitute for a required anchor."}]
@@ -54,6 +54,8 @@ Command describes removal for its stretch-release strips as slowly stretching th
 Do not promise yourself damage-free removal. Even a permitted product can be affected by a weak finish, incorrect use, or unsuitable conditions. If a tab breaks, consult the maker's official removal guidance instead of improvising tools against the wall.
 
 ## Choose an alternative when the checks fail
+
+A suitable interior door may offer another hanging location. Before choosing a rack, use our [over-the-door hook fit worksheet](/articles/over-door-hooks-rental-door-fit/) to check thickness, top clearance, mounting requirements, and normal door movement.
 
 A small tray for keys, a suitable floor-standing coat rack, or storage inside existing furniture may serve the same purpose without adhesive mounting. Check any furniture's anti-tip requirements; a no-drill preference does not make required anchoring optional.
 

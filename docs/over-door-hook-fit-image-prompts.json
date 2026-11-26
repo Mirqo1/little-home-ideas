@@ -1,0 +1,14 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-26",
+  "prompts": [
+    {
+      "role": "landscape cover and Facebook",
+      "prompt": "Create a premium photorealistic editorial photograph for a practical American small-home magazine. Landscape 3:2 composition, 1536x1024. An ordinary white painted INTERIOR bedroom door stands partly open in a modest warm apartment. On its near face a simple narrow matte white steel over-door rack: two slim flat arms visibly bend OVER the real top edge of the door and join one horizontal bar with three smooth round hooks below. One lightweight pale blue cotton overshirt hangs naturally from one hook, the other two hooks empty. Door top and its realistic bracket attachment visible, correct perspective and hardware. Door has a plain brushed nickel lever, uncomplicated white trim, no closer, no fire label. Door swing area clear, no furniture in its path. Soft daylight, oak floor, off-white wall, tiny glimpse of bedroom. Useful realistic scale, restrained styling, documentary quality, 50mm lens. No text, labels, logos, overlays, people, hands, measuring diagrams, or claims of a tested installation. Illustrative scene only."
+    },
+    {
+      "role": "portrait detail and Pinterest",
+      "prompt": "Create a premium photorealistic editorial still life photograph for an American small-home planning guide. Vertical 2:3 composition, 1024x1536. On a pale oak tabletop lie two loose unbranded white powder-coated steel single over-door hooks, each a simple physically plausible continuous strip bent into an inverted U bracket at its upper end and an upward-curving J hook at its lower end. Arrange them separated, diagonally, without overlap so the bracket opening and thin strip are visible. Beside them a small closed yellow tape measure with a short retracted tip, a blank cream notebook open to completely empty pages, and one wood pencil. Natural side daylight, warm neutral home interior softly out of focus. Calm spacious composition, tactile metal and paper, accurate still-life photography, realistic shadows. This is preparation before installation, not a precision diagram or an actual product endorsement. No printed markings, writing, logos, text overlay, hands, people, extra floating pieces, impossible geometry, screws or adhesives."
+    }
+  ]
+}
