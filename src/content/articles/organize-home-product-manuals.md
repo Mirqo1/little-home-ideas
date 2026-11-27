@@ -10,6 +10,7 @@ imageWidth: 1200
 imageHeight: 800
 imageCaption: ""
 imageProvenance: "generated"
+updated: "2026-11-27"
 reviewed: true
 draft: false
 sources:
@@ -108,6 +109,8 @@ Search by brand and product, then compare the notice's identifying details with 
 Record the date and link of the notice you checked, along with any confirmed instructions or remedy correspondence. Follow that notice's directions, including a stop-use instruction when applicable. A past search with no match is not a permanent safety clearance, and the folder should never delay acting on a warning.
 
 ## Keep the folder small and current
+
+For a vacuum, connect the saved manual to a part-by-part care record. Our [vacuum filter care worksheet](/articles/check-vacuum-filter-before-washing/) separates washable parts from dry-cleaning or replacement requirements and includes a drying-time example.
 
 When a product arrives, add its identity and documents before the packaging disappears. When you replace an item, separate the old product's files so its manual cannot be mistaken for the replacement's. Retain purchase, service, and warranty records according to your actual needs; this guide does not set a legal retention period or decide warranty coverage.
 

@@ -1,0 +1,47 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-27",
+  "conversion": "Whole-frame WebP article images and JPEG social assets. Facebook derives from the landscape cover. Pinterest derives from the independently generated portrait detail.",
+  "assets": [
+    {
+      "path": "/assets/articles/vacuum-filter-care-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 102076,
+      "sha256": "8974c39faea833057a1e8ac4a6af0f83a9057ac56d16219c5494fc29156f35de",
+      "sourceSha256": "1aa1ad0818f4e6797a6ca5841877f3c4240071626711863b73ce50e95aeb5ce4"
+    },
+    {
+      "path": "/assets/articles/vacuum-filter-care-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 33260,
+      "sha256": "019d3635dfa4f429aaff0f9eab5115281e813d5928f58cf9d2011d69421970cd",
+      "sourceSha256": "1aa1ad0818f4e6797a6ca5841877f3c4240071626711863b73ce50e95aeb5ce4"
+    },
+    {
+      "path": "/assets/articles/vacuum-filter-care-detail.webp",
+      "width": 800,
+      "height": 1200,
+      "bytes": 68058,
+      "sha256": "992cba9e478e845a62c3609075c3f9e09eb3458b24deecc8e31e1ffbc92f52f8",
+      "sourceSha256": "83af87cf9ecf968ff88b27394ca00cd66b0a48d1185fc1e116d7d98796344e0e"
+    },
+    {
+      "path": "/assets/social/vacuum-filter-care-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 147299,
+      "sha256": "0bc8cc75521d447c53bbdae376dcf7661a8315e82440da96e9f9841c40652c6f",
+      "sourceSha256": "1aa1ad0818f4e6797a6ca5841877f3c4240071626711863b73ce50e95aeb5ce4"
+    },
+    {
+      "path": "/assets/social/vacuum-filter-care-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 166925,
+      "sha256": "d237e4bbe0b7d177e662d251089e0f96b3cc6fb18b90d7ff1206189850416efc",
+      "sourceSha256": "83af87cf9ecf968ff88b27394ca00cd66b0a48d1185fc1e116d7d98796344e0e"
+    }
+  ]
+}
