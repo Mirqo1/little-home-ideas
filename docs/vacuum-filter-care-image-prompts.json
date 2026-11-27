@@ -1,0 +1,14 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-27",
+  "prompts": [
+    {
+      "role": "landscape cover and Facebook",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape article cover and Facebook image for a practical American small-home magazine. Create an original premium editorial photograph, 3:2 landscape 1536x1024. A simple unbranded slate-gray cordless stick vacuum is fully assembled and parked safely in its broad freestanding floor stand in a modest tidy utility nook. No wall mount, no cords plugged in, no visible internal parts. Beside it a narrow pale oak console holds a completely blank open cream notebook and one pencil, suggesting checking care instructions before maintenance. Warm white walls, clean oak floor, soft morning window light. Accurate plausible handle, single straight wand and flat floor head, restrained realistic household proportions. Vacuum is an illustrative generic object, not an exact branded product or real tested project. Natural material textures, documentary photography, 50mm lens, no people. No text, numbers, logos, watermarks, overlays, dust clouds, cleaning chemicals, water, detached parts, extra hoses or bizarre hardware."
+    },
+    {
+      "role": "portrait detail and Pinterest",
+      "prompt": "Use case: photorealistic-natural. Asset type: vertical article detail and Pinterest image for a practical vacuum filter care planning guide. Original premium photorealistic editorial still life in 2:3 portrait, 1024x1536. A SINGLE clean cylindrical washable-style vacuum filter with a gray polymer rim, softly pleated white exterior and a clearly hollow open center stands upright on a small open stainless-wire drying rack on a utility-room counter. The filter is small about the size of a coffee mug. Plenty of empty space surrounds it for airflow. A folded pale cotton cloth sits off to the side and a blank cream note card with a plain pencil rests beyond the rack, completely dry. Daylight, neutral warm utility-room setting, off-white walls. Calm purposeful composition, tactile realistic textures, real photographic shadows. Illustrative scene only, not an exact named manufacturer's product, not a measured test. No vacuum motor, electrical device, heater, radiator, sunlight beam, running water, hands, people, printed text, numbers, logo, arrows, overlays, or clutter."
+    }
+  ]
+}
