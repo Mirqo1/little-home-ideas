@@ -10,6 +10,7 @@ imageWidth: 1200
 imageHeight: 800
 imageCaption: ""
 imageProvenance: "generated"
+updated: "2026-11-28"
 reviewed: true
 draft: false
 sources:
@@ -29,6 +30,8 @@ A fabric square can wrap a small gift and fold away afterward. Start with a clea
 This project uses a simple method inspired by **furoshiki**, the Japanese practice of wrapping with cloth. Japan's Ministry of the Environment provides an illustrated guide that includes the basic **Otsukai Tsutsumi** wrap. Use the original diagrams alongside the steps below if you are new to the folds. [Official furoshiki wrapping guide](https://www.env.go.jp/en/focus/attach/060403-5.html)
 
 ## Choose the cloth and the box together
+
+If you want to make a reusable cloth from a suitable fabric remnant, our [simple cloth napkin sewing guide](/articles/sew-cloth-napkins-fabric-remnant/) includes a cut plan and enclosed hems. Check the finished cloth with the actual box before deciding to use it as wrapping.
 
 Use a closed, lightweight box for your first attempt. Keep fragile items protected inside their own suitable packaging. The cloth adds a presentation layer. Support the box from underneath when moving it.
 

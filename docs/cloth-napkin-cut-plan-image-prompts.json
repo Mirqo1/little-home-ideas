@@ -1,0 +1,15 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-28",
+  "prompts": [
+    {
+      "role": "landscape cover and Facebook",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 article cover and Facebook image for a practical American small-home DIY magazine, 1536x1024. Original photorealistic editorial photograph of a modest pale oak dining table in a compact warm apartment. A small neat stack of four folded plain muted sage cotton cloth napkins in the foreground, with simple narrow stitched hems, tactile woven cotton and slightly natural folds. At one place setting a single cream ceramic plate with a fifth matching napkin loosely folded beside it; a plain clear drinking glass. Restrained daylight, warm off-white walls, oak chair backs softly blurred. The napkins are the main subject, useful real home setting, no holiday clutter. No food, elaborate decorations, branded products, people, hands, printed writing, logos, text overlays, labels, measurement diagrams, impossible utensils. Illustrated concept, not an actual tested sewing project. Premium natural photography, realistic proportions and shadows."
+    },
+    {
+      "role": "portrait detail and Pinterest",
+      "prompt": "Use case: photorealistic-natural. Asset type: independently composed vertical 2:3 article detail and Pinterest image, 1024x1536. Original premium photorealistic editorial still life on a pale oak sewing table. One square of plain muted sage cotton lies flat with its near edge and right edge folded inward into narrow simple double-fold hems, not mitered, neat square overlapping corner visible, held with three small sewing clips. A second fully sewn folded sage cloth napkin sits nearby with a simple narrow stitch line. A spool of matching thread, CLOSED silver fabric scissors, and a plain wooden ruler with subtle indistinct tick marks sit to the side. No active sewing machine or iron. Natural diffuse window light, warm neutral background, close view of fabric texture and the folded corner. Scene illustrates preparation, not a precise measurement diagram or verified real project. No people, hands, loose needles, prominent ruler numbers, letters, printed fabric pattern, logos, watermarks, text overlay, extra blades or odd geometry.",
+      "editPrompt": "Edit this photo only to correct the sewing illustration. Preserve the 2:3 portrait composition, lighting, sage fabric, scissors, spool, ruler and three clips. On the foreground large cloth and the folded finished napkin in the upper right, REMOVE every diagonal mitered-corner seam or diagonal fold. Show a simple square overlapping corner instead: a straight horizontal narrow folded hem runs all the way to the right edge, and the straight vertical hem overlaps that horizontal hem in a small rectangular square. There is no 45-degree diagonal join. These are beginner overlapping corners, not mitered corners. Keep narrow plausible double-fold hems and realistic fabric texture. No text overlays, logos or numbers. Change no other objects."
+    }
+  ]
+}
