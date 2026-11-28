@@ -16,7 +16,7 @@ Competitors are observations, not factual sources for our guides. Differentiate 
 
 ## Cluster map and 30-topic backlog
 
-Fifty-two guides are published as of November 27, 2026, including the vacuum filter care guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
+Fifty-three guides are published as of November 28, 2026, including the cloth napkin cut-plan guide. “Draft prepared” means a complete unpublished article is available in the content collection; it is not a scheduled release. Other topics remain research briefs. See `next-content-batch-2026-10-15.md` for the next batch and source review.
 
 | # | Cluster | Working title / target question | Intent and original value | Status |
 |---|---|---|---|---|
@@ -160,3 +160,5 @@ Use original full-frame portrait imagery for Pinterest, with the title and desti
 - November 26, 2026 (Europe/Bratislava): “Will Over-the-Door Hooks Fit Your Rental Door?” — `/articles/over-door-hooks-rental-door-fit/`. Renter-friendly cluster. Separate thickness and clearance checks, exact-model mounting and load requirements, normal empty and loaded door operation, original fit worksheet and hypothetical quarter-inch incompatibility example. Two original ImageGen illustrations, including a portrait used for Pinterest. Review: `over-door-hook-fit-editorial-review-2026-11-26.md`. Next rotation: practical-solutions or DIY-home; avoid another door accessory or rental hardware topic.
 
 - November 27, 2026 (Europe/Bratislava): “Check Your Vacuum Filter Before Washing It” — `/articles/check-vacuum-filter-before-washing/`. Practical-solutions cluster. Component-specific care identification, manufacturer washability differences, drying-space planning, original care card and hypothetical 24-hour check-time example. Two original ImageGen illustrations, including a portrait used for Pinterest. Review: `vacuum-filter-care-editorial-review-2026-11-27.md`. Next rotation: DIY-home or small-spaces; avoid another filter, appliance care or door accessory topic.
+
+- November 28, 2026 (Europe/Bratislava): “Sew Cloth Napkins From the Fabric You Already Have” — `/articles/sew-cloth-napkins-fabric-remnant/`. DIY-home cluster. Prepared remnant dimensions, quarter-inch double-fold hems, original two-versus-four cut comparison and first-sample care check before a batch. Two original ImageGen illustrations, including a portrait used for Pinterest. Review: `cloth-napkin-cut-plan-editorial-review-2026-11-28.md`. Next rotation: small-spaces or garden-patio; avoid another sewing, table textile or filter-care topic.

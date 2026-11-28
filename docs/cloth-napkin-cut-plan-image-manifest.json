@@ -1,0 +1,49 @@
+{
+  "method": "Built-in ImageGen",
+  "created": "2026-11-28",
+  "conversion": "Portrait edited with built-in ImageGen to replace diagonal corner joins with simple square overlaps. Whole-frame WebP article images and JPEG social assets. Facebook derives from the landscape cover. Pinterest derives from the independently generated, edited portrait detail.",
+  "assets": [
+    {
+      "path": "/assets/articles/cloth-napkin-cut-plan-cover.webp",
+      "width": 1200,
+      "height": 800,
+      "bytes": 137252,
+      "sha256": "3b32c800092c4cf5f033c7cf7cb88d27584408470d03a6a0305cd41f0d43e249",
+      "sourceSha256": "f427a1bd5f5a75626c4360106eb64b256da6bbd4292668fc54dcb738626cbb4e"
+    },
+    {
+      "path": "/assets/articles/cloth-napkin-cut-plan-cover-600.webp",
+      "width": 600,
+      "height": 400,
+      "bytes": 30398,
+      "sha256": "467d10e0ee9500ecfdf4e311a9f7ce900770f3d476fc77eb341c3ecf66027cd6",
+      "sourceSha256": "f427a1bd5f5a75626c4360106eb64b256da6bbd4292668fc54dcb738626cbb4e"
+    },
+    {
+      "path": "/assets/articles/cloth-napkin-cut-plan-detail.webp",
+      "width": 800,
+      "height": 1200,
+      "bytes": 169754,
+      "sha256": "796b159f7e96b70b3cea894a211edbf6b1ca35f1f0524f9e4bc4ecc2711444bf",
+      "sourceSha256": "16bf4522d948a34dd9b03f5c430159894f6aa6d9abe472030a5895b7fb690b75",
+      "parentSourceSha256": "e7092a58fc27140606687c2f36b11bf1366719085bb6897f4f65aa65047d612f"
+    },
+    {
+      "path": "/assets/social/cloth-napkin-cut-plan-facebook.jpg",
+      "width": 1200,
+      "height": 800,
+      "bytes": 168318,
+      "sha256": "b477027d1bb593e19651f4b98adc126eb35282f2bb206c6bd2f1f2e09534d43c",
+      "sourceSha256": "f427a1bd5f5a75626c4360106eb64b256da6bbd4292668fc54dcb738626cbb4e"
+    },
+    {
+      "path": "/assets/social/cloth-napkin-cut-plan-pinterest.jpg",
+      "width": 1000,
+      "height": 1500,
+      "bytes": 308546,
+      "sha256": "717b0402febc2be7bed048a0a645159d3c29681944daa68b8071e784b05fb4da",
+      "sourceSha256": "16bf4522d948a34dd9b03f5c430159894f6aa6d9abe472030a5895b7fb690b75",
+      "parentSourceSha256": "e7092a58fc27140606687c2f36b11bf1366719085bb6897f4f65aa65047d612f"
+    }
+  ]
+}
